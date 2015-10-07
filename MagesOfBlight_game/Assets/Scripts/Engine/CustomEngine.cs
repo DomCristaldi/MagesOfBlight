@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -233,6 +234,42 @@ namespace JBirdEngine {
 			pointList.Add(edges[(int)direction].point1);
 			pointList.Add(edges[(int)direction].point2);
 			return pointList;
+		}
+
+		public static Mesh hexMesh = CreateHexMesh();
+
+		public static Mesh CreateHexMesh () {
+			Mesh mesh = new Mesh();
+			mesh.name = "HexMesh";
+			Vector3 offset = new Vector3(0f, 0.1f, 0f);
+			mesh.vertices = new Vector3[] {
+				Vector3.zero,
+				_cornerDownRight,
+				_cornerDownLeft,
+				_cornerLeft,
+				_cornerUpLeft,
+				_cornerUpRight,
+				_cornerRight
+			};
+			Vector2[] uvs = new Vector2[mesh.vertices.Length];
+			for (int i = 0; i < mesh.vertices.Length; i++) {
+				uvs[i] = new Vector2(mesh.vertices[i].x, mesh.vertices[i].z);
+			}
+			mesh.uv = uvs;
+			mesh.triangles = new int[] {0, 1, 2, 0, 2, 3, 0, 3, 4, 0, 4, 5, 0, 5, 6, 0, 6, 1};
+			mesh.normals = new Vector3[] {
+				Vector3.up,
+				Vector3.up,
+				Vector3.up,
+				Vector3.up,
+				Vector3.up,
+				Vector3.up,
+				Vector3.up
+			};
+			mesh.RecalculateBounds();
+			AssetDatabase.CreateAsset(mesh, "Assets/Meshes/HexMesh.asset");
+			AssetDatabase.SaveAssets();
+			return mesh;
 		}
 
 		private static Vector3 _linkUp = new Vector3(0f, 0f, 1f);
