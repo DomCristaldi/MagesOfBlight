@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[AddComponentMenu("Scripts/BattleEngine/Tiles/Managers/BattleManager")]
 public class BattleManager : MonoBehaviour {
 
     public enum CombatTurn {
@@ -79,7 +80,6 @@ public class BattleManager : MonoBehaviour {
                             out hitTile)) 
 
             {
-                Debug.Log(hitTile.transform.position);
                 selectedTile = hitTile;
             }
 

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[AddComponentMenu("Scripts/BattleEngine/Tiles/HexTileInfo")]
 public class HexTileInfo : TileInfo {
 
     HexNode node;

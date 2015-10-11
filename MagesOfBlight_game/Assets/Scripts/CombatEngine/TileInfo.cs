@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[AddComponentMenu("Scripts/BattleEngine/Tiles/TileInfo")]
 public class TileInfo : MonoBehaviour {
 
     public BattleManager battleManager;

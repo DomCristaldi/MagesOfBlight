@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[AddComponentMenu("Scripts/BattleEngine/Tiles/Entities/TileAgent")]
 public class TileAgent : TileEntity {
 
 	// Use this for initialization
