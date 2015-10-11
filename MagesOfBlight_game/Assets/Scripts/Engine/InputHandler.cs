@@ -9,6 +9,7 @@ using System.Collections.Generic;
 
 public class InputHandler : MonoBehaviour {
 
+    //DATA STRUCTURE TO HOLD THE AXIS AND PERFORM CUSTOM INPUT HANDLING ON IT'S OUTPUT
     [System.Serializable]
     public class InputAxis {
         public string axisName;
@@ -58,7 +59,7 @@ public class InputHandler : MonoBehaviour {
 
     }
 
-    
+    //BINDS AN AXIS AND CONTROL VALUE, USED FOR GETTING InputAxis PROPERLY INTO A DICTIONARY
     [System.Serializable]
     public class ControlBinding {
         //public string controlKey;
@@ -66,7 +67,7 @@ public class InputHandler : MonoBehaviour {
         public InputAxis controlValue;
     }
 
-
+    //DATA STRUCTURE FOR ACCESSING ALL InputAxes IN ONE CONVENIENT PLACE, ALLOWS FOR PORTABILITY OF ALL CONTROLS
     [System.Serializable]
     public class ControlsLibrary {
         //public List<InputAxis> controlsList;
@@ -100,6 +101,10 @@ public class InputHandler : MonoBehaviour {
 
     }
 
+
+    public static InputHandler singleton;
+
+
     public ControlsLibrary controls;
 
     public enum AxisKey {
@@ -107,6 +112,10 @@ public class InputHandler : MonoBehaviour {
     }
 
     void Awake() {
+        if (singleton == null) {
+            singleton = this;
+        }
+
         controls.UpdateControlDictionary();
     }
 
