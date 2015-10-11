@@ -126,6 +126,6 @@ public class InputHandler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(controls.GetAxis(AxisKey.Select));
-	}
+
+    }
 }
