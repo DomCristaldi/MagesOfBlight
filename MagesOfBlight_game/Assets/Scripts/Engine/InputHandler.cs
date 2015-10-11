@@ -9,6 +9,12 @@ using System.Collections.Generic;
 
 public class InputHandler : MonoBehaviour {
 
+
+    public enum AxisKey {
+        Select,
+    }
+
+
     //DATA STRUCTURE TO HOLD THE AXIS AND PERFORM CUSTOM INPUT HANDLING ON IT'S OUTPUT
     [System.Serializable]
     public class InputAxis {
@@ -106,10 +112,6 @@ public class InputHandler : MonoBehaviour {
 
 
     public ControlsLibrary controls;
-
-    public enum AxisKey {
-        Select,
-    }
 
     void Awake() {
         if (singleton == null) {

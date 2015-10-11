@@ -18,6 +18,8 @@ public class BattleManager : MonoBehaviour {
 
     public static BattleManager singleton = null;
 
+    //private delegate currentActions;
+
     public Camera battleCam;//refrence to the camera we use for selection
     private Transform battleCamTf;//cached transform reference for speed of access
 
@@ -68,16 +70,20 @@ public class BattleManager : MonoBehaviour {
 
     private void HandleSelection() {
 
-        TileInfo hitTile;
+        if (InputHandler.singleton.controls.GetAxis(InputHandler.AxisKey.Select) != 0.0f) { 
+            TileInfo hitTile;
 
-        if (TileRaycast(battleCamTf.position,
-                        battleCamTf.rotation * Vector3.forward,
-                        out hitTile)) 
-        {
-            //Debug.Log("hit the bastard");
-            selectedTile = hitTile;
+            if (TileRaycast(//battleCamTf.position,
+                            battleCam.ScreenToWorldPoint(Input.mousePosition),//***CHANGE TO USING INPUT AXIS FROM INPUT HANDLER***
+                            battleCamTf.rotation * Vector3.forward,
+                            out hitTile)) 
+
+            {
+                Debug.Log(hitTile.transform.position);
+                selectedTile = hitTile;
+            }
+
         }
-
 
         //yield break;
     }
