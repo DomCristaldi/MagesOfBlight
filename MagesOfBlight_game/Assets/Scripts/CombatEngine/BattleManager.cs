@@ -19,7 +19,8 @@ public class BattleManager : MonoBehaviour {
 
     public static BattleManager singleton = null;
 
-    //private delegate currentActions;
+    private delegate void BattleState();
+    private BattleState currentBattleState;
 
     public Camera battleCam;//refrence to the camera we use for selection
     private Transform battleCamTf;//cached transform reference for speed of access
@@ -38,6 +39,9 @@ public class BattleManager : MonoBehaviour {
         if (singleton == null) {
             singleton = this;
         }
+
+
+        currentBattleState = HandleSelection;
     }
 
 	// Use this for initialization
@@ -50,7 +54,9 @@ public class BattleManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        HandleSelection();
+        currentBattleState();
+
+        //HandleSelection();
 	}
 
     public void SwitchCombatTurn(CombatTurn turn) {
