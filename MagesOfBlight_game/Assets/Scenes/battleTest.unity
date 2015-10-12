@@ -316,7 +316,7 @@ GameObject:
   - 114: {fileID: 1250668018}
   - 114: {fileID: 1250668015}
   - 114: {fileID: 1250668017}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MasterController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,7 +337,7 @@ MonoBehaviour:
   battleCam: {fileID: 0}
   tileLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   currentlyInCombat: 0
   curCombatTurn: 0
   curCombatPhase: 0

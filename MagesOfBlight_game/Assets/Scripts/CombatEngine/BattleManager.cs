@@ -98,7 +98,7 @@ public class BattleManager : MonoBehaviour {
     public bool TileRaycast(Vector3 origin, Vector3 direction, out TileInfo tInfo) {
 
         RaycastHit hit;
-        if (Physics.Raycast(origin, direction, out hit)) {
+        if (Physics.Raycast(origin, direction, out hit, Mathf.Infinity, tileLayer)) {
 
             tInfo = hit.collider.gameObject.GetComponent<TileInfo>();
             return true;
