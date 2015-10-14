@@ -4,12 +4,14 @@ using System.Collections;
 
 public class Healthbar : MonoBehaviour {
 
-	//public slider in inspector to adjust health
+	//public slider in inspector to adjust meter
 	[Range(0f,1f)]
 	public float fillAmount;
-	//image of the health circle
+	//image of the meter
 	public Image circularSilder;
+
 	void Start() {
+		//set to max health at beginning
 		fillAmount = 1f;
 	}
 	void Update () {
