@@ -312,40 +312,9 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11472182, guid: 0a4ab4633cde0d14e92cc0ab74119375, type: 2}
-      propertyPath: m_FillAmount
-      value: .5
-      objectReference: {fileID: 0}
-    - target: {fileID: 11472182, guid: 0a4ab4633cde0d14e92cc0ab74119375, type: 2}
-      propertyPath: m_FillClockwise
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0a4ab4633cde0d14e92cc0ab74119375, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &700908092 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 121738, guid: 0a4ab4633cde0d14e92cc0ab74119375, type: 2}
-  m_PrefabInternal: {fileID: 700908091}
---- !u!114 &700908093 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11472182, guid: 0a4ab4633cde0d14e92cc0ab74119375,
-    type: 2}
-  m_PrefabInternal: {fileID: 700908091}
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
---- !u!114 &700908094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 700908092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dddc89e96589a845a3f04daf00b715e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  circularSilder: {fileID: 700908093}
-  time: 30
 --- !u!1 &1327190433
 GameObject:
   m_ObjectHideFlags: 0

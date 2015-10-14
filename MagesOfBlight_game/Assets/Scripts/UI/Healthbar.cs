@@ -4,12 +4,15 @@ using System.Collections;
 
 public class Healthbar : MonoBehaviour {
 
-	public Image circularSilder;            //Healthbar image
-	public float time;                      //In how much time the progress bar will fill/empty
+	//public slider in inspector to adjust health
+	[Range(0f,1f)]
+	public float fillAmount;
+	//image of the health circle
+	public Image circularSilder;
 	void Start() {
-		circularSilder.fillAmount=0f;      // Initally progress bar is empty
+		fillAmount = 1f;
 	}
 	void Update () {
-		circularSilder.fillAmount += Time.deltaTime / time;         
+		circularSilder.fillAmount = fillAmount/2;    
 	}
 }
