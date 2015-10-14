@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
 using JBirdEngine;
@@ -68,7 +69,7 @@ public class HexNode : MonoBehaviour, INode<HexNode> {
 	}
 
 	void Start () {
-
+		transform.localScale = Vector3.one * radius;
 	}
 
 	void Update () {
@@ -76,7 +77,6 @@ public class HexNode : MonoBehaviour, INode<HexNode> {
 		if (showEdges) DebugDrawEdges(Color.black);
 		if (showRadialLines) DebugDrawLinks(Color.blue);
 		if (showConnections) DebugDrawConnections(Color.green);
-
 	}
 
 	void DebugDrawEdges (Color color) {

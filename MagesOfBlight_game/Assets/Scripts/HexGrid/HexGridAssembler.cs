@@ -28,6 +28,15 @@ public class HexGridAssembler : MonoBehaviour {
 		_showEdges = showEdges;
 		_showRadialLines = showRadialLines;
 		_showConnections = showConnections;
+		//Create Hex Mesh Asset
+		MeshFilter mf = nodePrefab.GetComponent<MeshFilter>();
+		if (mf != null && mf.sharedMesh == null) {
+			mf.sharedMesh = HexGrid.hexMesh;
+		}
+		MeshCollider col = nodePrefab.GetComponent<MeshCollider>();
+		if (col != null && col.sharedMesh == null) {
+			col.sharedMesh = HexGrid.hexMesh;
+		}
 	}
 
 	void Start () {
