@@ -1733,6 +1733,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionButton: {fileID: 11416366, guid: 6500e9ffa8372f2479ba15a2c5739517, type: 2}
   avonCanvas: {fileID: 889779457}
+  avonCommands:
+  - Attack
+  - Block
+  - Water Spell
 --- !u!1 &1464719278
 GameObject:
   m_ObjectHideFlags: 0
