@@ -8,8 +8,10 @@ public class TileInfo : MonoBehaviour {
 
     public TileEntity entityOnTile;
 
-    protected virtual void Awake() {
+    public HexNode node;
 
+    protected virtual void Awake() {
+        node = GetComponent<HexNode>();
     }
 
 	// Use this for initialization
