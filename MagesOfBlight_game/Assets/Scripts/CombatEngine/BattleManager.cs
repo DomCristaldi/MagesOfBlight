@@ -76,6 +76,8 @@ public class BattleManager : MonoBehaviour {
     public TileInfo selectedTile;
     public TileInfo targetTile;
 
+	public BaseAction selectedAction;
+
     void Awake() {
         if (singleton == null) {
             singleton = this;
