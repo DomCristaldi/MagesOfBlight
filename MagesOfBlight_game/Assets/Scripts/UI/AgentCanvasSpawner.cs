@@ -12,14 +12,14 @@ public class AgentCanvasSpawner : MonoBehaviour {
 	//need button prefab assigned in inspector
 	public Button actionButtonPrefab;
 
+	//canvas on the agent, need prefab assigned in inspector
+	public Canvas agentCanvasPrefab;
+
 	//list of possible actions
 	private List<AgentActions.ActionData> actionDataList;
 
 	//list of action buttons
 	private List<GameObject> actionButtonList;
-
-	//canvas on the agent, need prefab assigned in inspector
-	public Canvas agentCanvasPrefab;
 
 	void Start () {
 		//assign agent actions var
