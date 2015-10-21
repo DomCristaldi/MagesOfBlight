@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using JBirdEngine;
 
 public class RangeBaseAction : BaseAction {
 
@@ -30,7 +31,32 @@ public class RangeBaseAction : BaseAction {
 					if (nextRing.Contains(node)) {
 						continue;
 					}
-					
+					if (node.entityOnTile != null) {
+						if (checkThroughOccupied) {
+							nextRing.Add(node);
+						}
+					}
+					else {
+						nextRing.Add(node);
+					}
+					if (node.entityOnTile == null) {
+						if (EnumHelper.ContainsFlag(tileCheckFlags, TileCheckFlags.unoccupied)) {
+							nodeList.Add((HexNode)node);
+						}
+					}
+					else if (node.entityOnTile != null) {
+						if (node.entityOnTile as TileAgent != null) {
+							if (EnumHelper.ContainsFlag(tileCheckFlags, TileCheckFlags.agentOccupied)) {
+								nodeList.Add((HexNode)node);
+							}
+							else if (EnumHelper.ContainsFlag(tileCheckFlags, TileCheckFlags.occupied)) {
+								nodeList.Add((HexNode)node);
+							}
+						}
+						else if (EnumHelper.ContainsFlag(tileCheckFlags, TileCheckFlags.occupied)) {
+							nodeList.Add((HexNode)node);
+						}
+					}
 				}
 			}
 			while (outerRing.Count > 0) {
