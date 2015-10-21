@@ -14,6 +14,10 @@ public class ConfirmActionState : BaseCombatState {
 
         battleManRef.DrawPath(path, Color.red);
 
+        if (InputHandler.singleton.controls.GetAxis(InputHandler.AxisKey.Confirm) != 0.0f) {
+            battleManRef.ChangeCombatState(BattleManager.CombatPhase.PerformAction);
+        }
+
     }
 
 }

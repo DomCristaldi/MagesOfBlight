@@ -44,6 +44,7 @@ public class BattleManager : MonoBehaviour {
         ActionSelection,
         TargetSelection,
         ConfirmAction,
+        PerformAction,
         Proactive,
         Reactive,
     }
@@ -184,13 +185,11 @@ public class BattleManager : MonoBehaviour {
         return false;
     }
 
-
+    /*
     public void SwitchCombatPhase(CombatPhase phase) {
         curCombatPhase = phase;
-
-        
     }
-
+    */
 
     //END CURRENT STATE, DETERMINE NEXT STATE, AND INITIALIZE IT AFTER CHOSEN
     public void ChangeCombatState(CombatPhase state) {
@@ -216,6 +215,9 @@ public class BattleManager : MonoBehaviour {
                 break;
             case CombatPhase.ConfirmAction:
                 currentBattleState = new ConfirmActionState();
+                break;
+            case CombatPhase.PerformAction:
+                currentBattleState = new PerformActionState();
                 break;
         }
 
