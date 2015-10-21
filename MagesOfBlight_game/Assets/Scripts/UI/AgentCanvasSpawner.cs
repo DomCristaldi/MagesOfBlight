@@ -21,6 +21,9 @@ public class AgentCanvasSpawner : MonoBehaviour {
 	//list of action buttons
 	private List<GameObject> actionButtonList = new List<GameObject>();
 
+	//canvas reference for dom
+	public GameObject agentCanvas;
+
 	void Start () {
 		//assign agent actions var
 		agentActions = GetComponent<AgentActions>();
@@ -32,7 +35,7 @@ public class AgentCanvasSpawner : MonoBehaviour {
 
 	void CreateUI(){
 		//create canvas and parent it to the agent
-		GameObject agentCanvas = (GameObject)Instantiate (agentCanvasPrefab.gameObject);
+		agentCanvas = (GameObject)Instantiate (agentCanvasPrefab.gameObject);
 		agentCanvas.transform.SetParent (this.transform);
 		//create buttons
 		foreach (AgentActions.ActionData actionData in actionDataList) {
