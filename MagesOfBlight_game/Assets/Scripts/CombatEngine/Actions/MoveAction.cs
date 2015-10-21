@@ -18,12 +18,10 @@ public class MoveAction : RangeBaseAction {
 
 	public override bool DoAction () {
         if (!doneMoving && moveRoutine == null) {
-            //Init();
             moveRoutine = BattleManager.singleton.StartCoroutine(MoveRoutine());
         }
         else if (doneMoving) {
-            Init();
-            return true;
+			return ActionSuccess();
         }
         return doneMoving;
 	}
