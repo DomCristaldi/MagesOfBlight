@@ -36,7 +36,7 @@ public class MoveAction : RangeBaseAction {
 				break;
 			}
 			if (path.Count == 1) {
-				BattleManager.singleton.selectedAgent.motor.desiredPoint = path[0].transform.position;
+				BattleManager.singleton.selectedAgent.motor.desiredDirec = path[0].transform.position - BattleManager.singleton.selectedAgent.transform.position;
 			}
 			else {
 				BattleManager.singleton.selectedAgent.motor.desiredDirec = (path[0].transform.position - BattleManager.singleton.selectedAgent.transform.position).normalized;
