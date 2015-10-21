@@ -11,6 +11,7 @@ public class Motor_Tile : MonoBehaviour {
     public HexNode currentTile;
     public List<HexNode> suppliedPath;
 
+    [HideInInspector]
     public bool doneMoving = true;
     private Coroutine moveRoutine = null;
 
