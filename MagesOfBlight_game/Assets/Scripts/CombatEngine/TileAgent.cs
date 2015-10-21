@@ -5,6 +5,8 @@ using System.Collections.Generic;
 [RequireComponent(typeof(Motor_RigidBody))]
 public class TileAgent : TileEntity {
 
+    public Motor_RigidBody motor;
+
     public enum Team {
         player,
         enemy,
@@ -17,6 +19,8 @@ public class TileAgent : TileEntity {
 	// Use this for initialization
 	protected override void Start () {
         base.Start();
+
+        motor = GetComponent<Motor_RigidBody>();
 
         RegisterWithTeam();
 
