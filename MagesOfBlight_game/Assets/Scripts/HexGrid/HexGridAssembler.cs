@@ -6,6 +6,8 @@ using JBirdEngine;
 [AddComponentMenu("Scripts/HexGrid/Assembler")]
 public class HexGridAssembler : MonoBehaviour {
 
+	public static HexGridAssembler singleton;
+
 	[Header("Debug lines:")]
 	public bool showEdges;
 	private bool _showEdges;
@@ -24,6 +26,9 @@ public class HexGridAssembler : MonoBehaviour {
 	public Transform test;
 
 	void Awake () {
+		if (singleton == null) {
+			singleton = this;
+		}
 		tiles = new List<HexNode>();
 		_showEdges = showEdges;
 		_showRadialLines = showRadialLines;

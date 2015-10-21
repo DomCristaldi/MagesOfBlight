@@ -17,16 +17,24 @@ public class BaseAction : ScriptableObject {
 		none = 0,
 		unoccupied = 1,
 		occupied = 2,
+		agentOccupied = 4,
 	}
 
-	public bool passThroughOccupied = false;
+	public bool checkThroughOccupied = false;
+	public TileCheckFlags tileCheckFlags;
+	public int checkDistance = int.MaxValue;
 
 	public virtual List<HexNode> CheckTiles () {
 		return new List<HexNode>();
 	}
 
-	public virtual void DoAction () {
+	public virtual void Init () {
 
+	}
+
+	public virtual bool DoAction () {
+		Init();
+		return true;
 	}
 
 }
