@@ -109,4 +109,10 @@ public class Motor_RigidBody : MonoBehaviour
     {
         InputDirec(pos - tf.position);
     }
+
+    public virtual void KillMotor() {
+        trueDirec = Vector3.zero;
+        desiredDirec = Vector3.zero;
+        rigbod.velocity = Vector3.zero;
+    }
 }

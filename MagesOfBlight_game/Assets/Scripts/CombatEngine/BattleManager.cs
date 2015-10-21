@@ -44,6 +44,7 @@ public class BattleManager : MonoBehaviour {
         ActionSelection,
         TargetSelection,
         ConfirmAction,
+        PerformAction,
         Proactive,
         Reactive,
     }
@@ -106,6 +107,18 @@ public class BattleManager : MonoBehaviour {
             battleCam = Camera.main;
         }
         battleCamTf = battleCam.GetComponent<Transform>();
+
+        foreach (TileAgent agent in playerTeam.teamMembers) {
+            foreach (AgentActions.ActionData actionData in agent.GetComponent<AgentActions>().proactiveActions) {
+                actionData.action.Init();
+            }
+        }
+
+        foreach (TileAgent agent in enemyTeam.teamMembers) {
+            foreach (AgentActions.ActionData actionData in agent.GetComponent<AgentActions>().proactiveActions) {
+                actionData.action.Init();
+            }
+        }
 
         ChangeCombatState(CombatPhase.EnterCombat);
 
@@ -184,13 +197,11 @@ public class BattleManager : MonoBehaviour {
         return false;
     }
 
-
+    /*
     public void SwitchCombatPhase(CombatPhase phase) {
         curCombatPhase = phase;
-
-        
     }
-
+    */
 
     //END CURRENT STATE, DETERMINE NEXT STATE, AND INITIALIZE IT AFTER CHOSEN
     public void ChangeCombatState(CombatPhase state) {
@@ -217,6 +228,9 @@ public class BattleManager : MonoBehaviour {
             case CombatPhase.ConfirmAction:
                 currentBattleState = new ConfirmActionState();
                 break;
+            case CombatPhase.PerformAction:
+                currentBattleState = new PerformActionState();
+                break;
         }
 
         curCombatPhase = state;
@@ -233,5 +247,16 @@ public class BattleManager : MonoBehaviour {
         }
 
     }
+
+    public void ClearFrameInfo() {
+        targetTile.entityOnTile = selectedTile.entityOnTile;//this is fuckgin disgusting
+        selectedTile.entityOnTile = null;//***COME BACK AND FIX THIS***
+
+        selectedTile = null;
+        targetTile = null;
+        selectedAgent = null;
+        selectedAction = null;
+    }
+
 
 }
