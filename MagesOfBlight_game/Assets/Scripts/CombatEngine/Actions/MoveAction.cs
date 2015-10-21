@@ -35,7 +35,7 @@ public class MoveAction : RangeBaseAction {
 				doneMoving = true;
 				break;
 			}
-
+			BattleManager.singleton.selectedAgent
 			yield return null;
 		}
 		yield break;

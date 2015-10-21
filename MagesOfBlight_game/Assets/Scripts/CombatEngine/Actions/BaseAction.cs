@@ -24,6 +24,9 @@ public class BaseAction : ScriptableObject {
 	public TileCheckFlags tileCheckFlags;
 	public int checkDistance = int.MaxValue;
 
+	public bool canCounter;
+	public bool canBlock;
+
 	public virtual List<HexNode> CheckTiles () {
 		return new List<HexNode>();
 	}
