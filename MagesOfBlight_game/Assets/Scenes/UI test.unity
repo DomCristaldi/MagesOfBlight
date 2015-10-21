@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agentActions: {fileID: 0}
-  actionButtonPrefab: {fileID: 11416366, guid: 6500e9ffa8372f2479ba15a2c5739517, type: 2}
+  actionButtonPrefab: {fileID: 11448638, guid: 128ecbfe8d902e74dba6fefed89f8216, type: 2}
   agentCanvasPrefab: {fileID: 22358304, guid: bff4e445a558676409fc3b6d23d3728d, type: 2}
 --- !u!114 &123511649
 MonoBehaviour:
@@ -187,7 +187,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5489849a8d36b524c81874885725c2a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionDataList: []
+  blockAction:
+    action: {fileID: 0}
+    known: 0
+    usable: 0
+  counterAction:
+    action: {fileID: 0}
+    known: 0
+    usable: 0
+  proactiveActions:
+  - action: {fileID: 11400000, guid: 809e213b9ee99f24ab4548897eaa8fad, type: 2}
+    known: 1
+    usable: 1
 --- !u!224 &123511650
 RectTransform:
   m_ObjectHideFlags: 0
@@ -202,7 +213,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 400, y: 306.079651}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &597411020

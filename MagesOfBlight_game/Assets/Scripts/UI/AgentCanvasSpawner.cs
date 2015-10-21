@@ -19,7 +19,7 @@ public class AgentCanvasSpawner : MonoBehaviour {
 	private List<AgentActions.ActionData> actionDataList;
 
 	//list of action buttons
-	private List<GameObject> actionButtonList;
+	private List<GameObject> actionButtonList = new List<GameObject>();
 
 	void Start () {
 		//assign agent actions var
@@ -37,32 +37,34 @@ public class AgentCanvasSpawner : MonoBehaviour {
 		//create buttons
 		foreach (AgentActions.ActionData actionData in actionDataList) {
 			//create button
-			GameObject tmp = (GameObject)Instantiate (actionButtonPrefab.gameObject);
+			GameObject buttonObject = (GameObject)Instantiate (actionButtonPrefab.gameObject);
 			//set parent to canvas
-			tmp.transform.SetParent (agentCanvasPrefab.transform);
+			buttonObject.transform.SetParent (agentCanvas.transform);
 			//change text of button
-			tmp.GetComponentInChildren<Text>().text = actionData.action.actionName;
+			buttonObject.GetComponentInChildren<Text>().text = actionData.action.actionName;
 			//change action associated with button
-			tmp.GetComponent<ButtonActionInfo>().action = actionData.action;
+			buttonObject.GetComponent<ButtonActionInfo>().action = actionData.action;
 			//change button's onClick
-			tmp.GetComponent<Button>().onClick.AddListener(() => { tmp.GetComponent<ButtonActionInfo>().SendMessage("SetBattleManagerAction");});
+			buttonObject.GetComponent<Button>().onClick.AddListener(() => { buttonObject.GetComponent<ButtonActionInfo>().SendMessage("SetBattleManagerAction");Debug.Log("click");});
 			//change button colors
-			ColorBlock buttonColors = tmp.GetComponent<Button>().colors;
+			ColorBlock buttonColors = buttonObject.GetComponent<Button>().colors;
 			buttonColors.normalColor = actionData.action.normalColor;
 			buttonColors.highlightedColor = actionData.action.highlightedColor;
 			buttonColors.pressedColor = actionData.action.pressedColor;
 			buttonColors.disabledColor = actionData.action.disabledColor;
+			buttonObject.GetComponent<Button>().colors = buttonColors;
 			//change button text color
 			if(buttonColors.normalColor != Color.white){
 				//if its not white, the text should be white
-				tmp.GetComponentInChildren<Text>().color = Color.white;
+				buttonObject.GetComponentInChildren<Text>().color = Color.white;
 			}
 			else{
 				//else text should be black
-				tmp.GetComponentInChildren<Text>().color = Color.black;
+				buttonObject.GetComponentInChildren<Text>().color = Color.black;
 			}
+
 			//add button to list
-			actionButtonList.Add(tmp);
+			actionButtonList.Add(buttonObject);
 		}
 
 	}
