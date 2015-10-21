@@ -29,7 +29,7 @@ public class MoveAction : RangeBaseAction {
 			doneMoving = true;
 			yield break;
 		}
-		List<HexNode> path = AIHelper.AStar(BattleManager.singleton.selectedTile, BattleManager.singleton.targetTile, mode: AIHelper.HeuristicMode.hexagonal);
+		List<HexNode> path = AIHelper.AStar<HexNode>(BattleManager.singleton.selectedTile, BattleManager.singleton.targetTile, mode: AIHelper.HeuristicMode.hexagonal);
 		while (!doneMoving) {
 			if (path.Count == 0) {
 				doneMoving = true;
