@@ -23,6 +23,7 @@ public class AgentCanvasSpawner : MonoBehaviour {
 
 	//canvas reference for dom
 	public GameObject agentCanvas;
+	public GameObject damageCanvas;
 
 	void Start () {
 		//assign agent actions var
@@ -34,13 +35,22 @@ public class AgentCanvasSpawner : MonoBehaviour {
 	}
 
 	void CreateUI(){
+		//---------------Actions---------------------------------------------
 		//create canvas and parent it to the agent
 		agentCanvas = (GameObject)Instantiate (agentCanvasPrefab.gameObject);
 		agentCanvas.transform.SetParent (this.transform);
+		agentCanvas.transform.name = "Action Canvas";
+		//set canvas event camera and position in terms of the agent
+		agentCanvas.GetComponent<Canvas> ().worldCamera = Camera.main;
+		agentCanvas.transform.localPosition = new Vector3 (0f,2f,0f);
 		//create buttons
 		foreach (AgentActions.ActionData actionData in actionDataList) {
+			//bumps up canvas by .3 everytime a new action is added to the list
+			agentCanvas.transform.localPosition += new Vector3 (0f,.3f,0f);
 			//create button
 			GameObject buttonObject = (GameObject)Instantiate (actionButtonPrefab.gameObject);
+			//change name of button
+			buttonObject.transform.name = actionData.action.actionName + " Button";
 			//set parent to canvas
 			buttonObject.transform.SetParent (agentCanvas.transform);
 			//change text of button
@@ -65,12 +75,16 @@ public class AgentCanvasSpawner : MonoBehaviour {
 				//else text should be black
 				buttonObject.GetComponentInChildren<Text>().color = Color.black;
 			}
-
+			//scale button down
+			buttonObject.transform.localScale = new Vector3(1.5f,1.5f,1.5f);
 			//add button to list
 			actionButtonList.Add(buttonObject);
 		}
-
+		//set ui to false
         agentCanvas.SetActive(false);
+
+		//--------------Damage-------------------------------------
+		//damageCanvas = (GameObject)Instantiate (agentCanvasPrefab.gameObject);
 	}
 	
 }
