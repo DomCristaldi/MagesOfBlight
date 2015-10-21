@@ -7,6 +7,10 @@ using JBirdEngine;
 [AddComponentMenu("Scripts/HexGrid/Node")]
 public class HexNode : MonoBehaviour, INode<HexNode> {
 
+    public BattleManager battleManager;
+
+    public TileEntity entityOnTile;
+
 	[Header("Debug lines:")]
 	public bool showEdges;
 	public bool showRadialLines;
@@ -69,6 +73,8 @@ public class HexNode : MonoBehaviour, INode<HexNode> {
 	}
 
 	protected virtual void Start () {
+        battleManager = BattleManager.singleton;
+
 		transform.localScale = Vector3.one * radius;
 	}
 

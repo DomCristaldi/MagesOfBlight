@@ -20,7 +20,7 @@ public class EnterCombatState : BaseCombatState {
                                                                                      agent.transform.position);
 
             agent.transform.position = foundNode.transform.position;
-            foundNode.GetComponent<TileInfo>().entityOnTile = agent;
+            foundNode.GetComponent<HexNode>().entityOnTile = agent;
         }
 
 

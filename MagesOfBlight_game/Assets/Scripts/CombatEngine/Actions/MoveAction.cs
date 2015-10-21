@@ -16,7 +16,34 @@ public class MoveAction : RangeBaseAction {
 		doneMoving = false;
 	}
 
-	public override bool DoAction () {
+	public override bool DoAction () {        
+
+        //ASSIGN PATH
+        if (BattleManager.singleton.selectedAgent.tileMotor.suppliedPath == null || BattleManager.singleton.selectedAgent.tileMotor.suppliedPath.Count == 0) {
+
+            Debug.Log("assign");
+
+            BattleManager.singleton.selectedAgent.tileMotor.GivePath(AIHelper.AStar<HexNode>(BattleManager.singleton.selectedTile, BattleManager.singleton.targetTile, mode: AIHelper.HeuristicMode.hexagonal));
+            
+            //List<HexNode> hexPath = AIHelper.AStar<HexNode>(BattleManager.singleton.selectedTile, BattleManager.singleton.targetTile, mode: AIHelper.HeuristicMode.hexagonal);
+
+            //List<TileInfo> tilePath = (List<TileInfo>)hexPath.Cast<TileInfo>();
+
+            //BattleManager.singleton.selectedAgent.tileMotor.GivePath(tilePath);
+
+            //BattleManager.singleton.selectedAgent.tileMotor.suppliedPath = AIHelper.AStar<TileInfo>(BattleManager.singleton.selectedTile, BattleManager.singleton.targetTile, mode: AIHelper.HeuristicMode.hexagonal);
+        }
+
+        //EXECUTE
+        bool pathingResult = BattleManager.singleton.selectedAgent.tileMotor.NavigatePath();
+
+        if (pathingResult == true) {
+            return ActionSuccess();
+        }
+
+        return pathingResult;
+
+        /*
         if (!doneMoving && moveRoutine == null) {
             moveRoutine = BattleManager.singleton.StartCoroutine(MoveRoutine());
         }
@@ -24,6 +51,7 @@ public class MoveAction : RangeBaseAction {
 			return ActionSuccess();
         }
         return doneMoving;
+        */
 	}
 
 	IEnumerator MoveRoutine () {
