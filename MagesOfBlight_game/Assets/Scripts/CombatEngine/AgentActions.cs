@@ -11,8 +11,12 @@ public class AgentActions : MonoBehaviour {
 		public bool usable;
 	}
 
-	[SerializeField]
-	public List<ActionData> actionDataList;
+    public ActionData blockAction;
+    public ActionData counterAction;
+
+	//[SerializeField]
+	public List<ActionData> proactiveActions;
+
 
 	void Start () {
 		

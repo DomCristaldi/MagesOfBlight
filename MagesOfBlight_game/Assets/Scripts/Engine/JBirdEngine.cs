@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEditor;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -16,6 +17,52 @@ namespace JBirdEngine {
 		void ResetGH();
 		T GetCameFrom();
 		void SetCameFrom(T cameFrom);
+
+	}
+
+	public static class EnumHelper {
+
+		public static T CombineFlags<T> (params T[] flags) where T : IConvertible, IFormattable, IComparable {
+			if (!typeof(T).IsEnum) {
+				throw new ArgumentException ("CombineFlags<T>(): 'T' must be of type 'enum'");
+			}
+			T newFlags = (T)Enum.ToObject(typeof(T), 0);
+			foreach (T flag in flags) {
+				newFlags = (T)Enum.ToObject(typeof(T), Convert.ToInt32(newFlags) | Convert.ToInt32(flag));
+			}
+			return newFlags;
+		}
+
+		public static T ToggleFlags<T> (T flag, params T[] toggleList) where T : IConvertible, IFormattable, IComparable {
+			if (!typeof(T).IsEnum) {
+				throw new ArgumentException ("ToggleFlags<T>(): 'T' must be of type 'enum'");
+			}
+			T newFlags = flag;
+			foreach (T toggle in toggleList) {
+				newFlags = (T)Enum.ToObject(typeof(T), Convert.ToInt32(newFlags) ^ Convert.ToInt32(toggle));
+			}
+			return newFlags;
+		}
+
+		public static T RemoveFlags<T> (T flag, params T[] removeList) where T : IConvertible, IFormattable, IComparable {
+			if (!typeof(T).IsEnum) {
+				throw new ArgumentException ("RemoveFlags<T>(): 'T' must be of type 'enum'");
+			}
+			T newFlags = flag;
+			foreach (T remove in removeList) {
+				newFlags = (T)Enum.ToObject(typeof(T), Convert.ToInt32(newFlags) ^ Convert.ToInt32(remove));
+				newFlags = (T)Enum.ToObject(typeof(T), Convert.ToInt32(flag) & Convert.ToInt32(newFlags));
+				flag = newFlags;
+			}
+			return newFlags;
+		}
+		
+		public static bool ContainsFlag<T> (T flag, T checkFor) where T : IConvertible, IFormattable, IComparable {
+			if (!typeof(T).IsEnum) {
+				throw new ArgumentException ("ContainsFlag<T>(): 'T' must be of type 'enum'");
+			}
+			return (Convert.ToInt32(flag) & Convert.ToInt32(checkFor)) != 0;
+		}
 
 	}
 
