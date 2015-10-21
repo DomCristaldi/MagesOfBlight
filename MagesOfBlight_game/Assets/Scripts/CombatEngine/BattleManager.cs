@@ -108,18 +108,6 @@ public class BattleManager : MonoBehaviour {
         }
         battleCamTf = battleCam.GetComponent<Transform>();
 
-        foreach (TileAgent agent in playerTeam.teamMembers) {
-            foreach (AgentActions.ActionData actionData in agent.GetComponent<AgentActions>().proactiveActions) {
-                actionData.action.Init();
-            }
-        }
-
-        foreach (TileAgent agent in enemyTeam.teamMembers) {
-            foreach (AgentActions.ActionData actionData in agent.GetComponent<AgentActions>().proactiveActions) {
-                actionData.action.Init();
-            }
-        }
-
         ChangeCombatState(CombatPhase.EnterCombat);
 
     }

@@ -17,6 +17,9 @@ public class AgentActions : MonoBehaviour {
 	//[SerializeField]
 	public List<ActionData> proactiveActions;
 
+    void Awake() {
+        InitActions();
+    }
 
 	void Start () {
 		
@@ -25,4 +28,17 @@ public class AgentActions : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    private void InitActions() {
+        if (blockAction.action != null) {
+            blockAction.action.Init();
+        }
+        if (counterAction.action != null) {
+            counterAction.action.Init();
+        }
+
+        foreach (ActionData data in proactiveActions) {
+            data.action.Init();
+        }
+    }
 }
