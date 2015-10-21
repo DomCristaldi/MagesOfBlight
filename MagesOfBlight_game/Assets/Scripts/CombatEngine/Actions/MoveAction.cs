@@ -35,7 +35,15 @@ public class MoveAction : RangeBaseAction {
 				doneMoving = true;
 				break;
 			}
-			BattleManager.singleton.selectedAgent
+			if (path.Count == 1) {
+				BattleManager.singleton.selectedAgent.motor.desiredPoint = path[0].transform.position;
+			}
+			else {
+				BattleManager.singleton.selectedAgent.motor.desiredDirec = (path[0].transform.position - BattleManager.singleton.selectedAgent.transform.position).normalized;
+			}
+			if (Vector3.Distance(BattleManager.singleton.selectedAgent.transform.position, path[0].transform.position) < targetPrecision) {
+				path.RemoveAt(0);
+			}
 			yield return null;
 		}
 		yield break;
