@@ -79,6 +79,7 @@ public class BattleManager : MonoBehaviour {
     public TileInfo selectedTile;
     public TileInfo targetTile;
 
+    public TileAgent selectedAgent;
 	public BaseAction selectedAction;
 
     //public List<TileAgent> agentList;
