@@ -165,6 +165,9 @@ MonoBehaviour:
   - action: {fileID: 11400000, guid: 2ac5e5c44d06eee44b7fc64cf3a4193f, type: 2}
     known: 1
     usable: 1
+  - action: {fileID: 11400000, guid: 477fbf2ec749da948a5e3252e8ad5ac3, type: 2}
+    known: 1
+    usable: 1
 --- !u!114 &11464700
 MonoBehaviour:
   m_ObjectHideFlags: 1
