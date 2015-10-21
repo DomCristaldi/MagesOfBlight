@@ -105,7 +105,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
@@ -123,6 +123,7 @@ MonoBehaviour:
   agentActions: {fileID: 0}
   actionButtonPrefab: {fileID: 11448638, guid: 128ecbfe8d902e74dba6fefed89f8216, type: 2}
   agentCanvasPrefab: {fileID: 22358304, guid: bff4e445a558676409fc3b6d23d3728d, type: 2}
+  agentCanvas: {fileID: 0}
 --- !u!114 &11456682
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -137,7 +138,7 @@ MonoBehaviour:
   desiredDirec: {x: 0, y: 0, z: 0}
   trueDirec: {x: 0, y: 0, z: 0}
   moveSpeedModifier: 1
-  redirectSpeed: .5
+  redirectSpeed: 10
 --- !u!114 &11457126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -161,6 +162,9 @@ MonoBehaviour:
   - action: {fileID: 11400000, guid: 809e213b9ee99f24ab4548897eaa8fad, type: 2}
     known: 1
     usable: 1
+  - action: {fileID: 11400000, guid: 2ac5e5c44d06eee44b7fc64cf3a4193f, type: 2}
+    known: 1
+    usable: 1
 --- !u!114 &11464700
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -172,6 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01339d98af7d25e44a4642210e6040f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  motor: {fileID: 0}
   agentTeam: 0
   moveSpeed: 1
 --- !u!136 &13629850
