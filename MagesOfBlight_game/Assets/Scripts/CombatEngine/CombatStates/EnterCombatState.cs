@@ -6,16 +6,25 @@ public class EnterCombatState : BaseCombatState {
     public override void InitState() {
         base.InitState();
 
-        //***TODO: place all teams on the closest tiles***
 
-        battleManRef.ChangeCombatState(BattleManager.CombatPhase.TileSelection);
-    
+        
     }
 
     public override void UpdateState() {
         base.UpdateState();
 
+        //***TODO: place all teams on the closest tiles***
 
+        foreach (TileAgent agent in battleManRef.playerTeam.teamMembers) {
+            HexNode foundNode = JBirdEngine.ListHelper.GetClosestToPosition<HexNode>(HexGridAssembler.singleton.tiles,
+                                                                                     agent.transform.position);
+
+            agent.transform.position = foundNode.transform.position;
+            foundNode.GetComponent<TileInfo>().entityOnTile = agent;
+        }
+
+
+        battleManRef.ChangeCombatState(BattleManager.CombatPhase.TileSelection);
 
 
     }
