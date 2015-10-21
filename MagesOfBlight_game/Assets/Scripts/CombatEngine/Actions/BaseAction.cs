@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using JBirdEngine;
 
 public class BaseAction : ScriptableObject {
-	
+
+	protected static float targetPrecision = 0.01f;
+
 	public Color normalColor;
 	public Color highlightedColor;
 	public Color pressedColor;
@@ -23,6 +25,9 @@ public class BaseAction : ScriptableObject {
 	public bool checkThroughOccupied = false;
 	public TileCheckFlags tileCheckFlags;
 	public int checkDistance = int.MaxValue;
+
+	public bool canCounter;
+	public bool canBlock;
 
 	public virtual List<HexNode> CheckTiles () {
 		return new List<HexNode>();
