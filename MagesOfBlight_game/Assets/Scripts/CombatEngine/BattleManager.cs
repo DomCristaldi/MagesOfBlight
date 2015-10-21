@@ -38,6 +38,8 @@ public class BattleManager : MonoBehaviour {
     }
 
     public enum CombatPhase {
+        EnterCombat,
+        ExitCombat,
         TileSelection,
         ActionSelection,
         TargetSelection,
@@ -51,6 +53,7 @@ public class BattleManager : MonoBehaviour {
 
     //public List<BattleTeam> teams;
     public BattleTeam playerTeam;
+    public BattleTeam enemyTeam;
 
     //public delegate void CombatAction();
     //public CombatAction currentCombatAction;
@@ -78,10 +81,16 @@ public class BattleManager : MonoBehaviour {
 
 	public BaseAction selectedAction;
 
+    //public List<TileAgent> agentList;
+
     void Awake() {
         if (singleton == null) {
             singleton = this;
         }
+
+        playerTeam = new BattleTeam();
+        enemyTeam = new BattleTeam();
+
 
         //currentBattleState = new TileSelectionState();
         //currentBattleState.InitState();
@@ -97,7 +106,7 @@ public class BattleManager : MonoBehaviour {
         }
         battleCamTf = battleCam.GetComponent<Transform>();
 
-        ChangeCombatState(CombatPhase.TileSelection);
+        ChangeCombatState(CombatPhase.EnterCombat);
 
     }
 
@@ -189,6 +198,12 @@ public class BattleManager : MonoBehaviour {
         }
 
         switch (state) {
+            case CombatPhase.EnterCombat:
+                currentBattleState = new EnterCombatState();
+                break;
+            case CombatPhase.ExitCombat:
+                currentBattleState = new ExitCombatState();
+                break;
             case CombatPhase.TileSelection://TILE SELECTION
                 currentBattleState = new TileSelectionState();
                 break;

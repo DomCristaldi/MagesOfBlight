@@ -3,21 +3,12 @@ using System.Collections;
 
 public class TileSelectionState : BaseCombatState {
 
-    public override void InitState() {
-        base.InitState();
-
-    }
 
     public override void UpdateState() {
         //base.UpdateState();
 
         HandleSelection();
         
-    }
-
-    public override void EndState() {
-        base.EndState();
-
     }
 
 

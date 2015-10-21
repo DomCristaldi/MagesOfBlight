@@ -24,7 +24,7 @@ public class AgentCanvasSpawner : MonoBehaviour {
 	void Start () {
 		//assign agent actions var
 		agentActions = GetComponent<AgentActions>();
-		actionDataList = agentActions.actionDataList;
+		actionDataList = agentActions.proactiveActions;
 
 		//create ui for the agent
 		CreateUI ();
