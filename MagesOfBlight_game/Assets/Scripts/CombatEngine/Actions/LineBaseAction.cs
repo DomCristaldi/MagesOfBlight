@@ -4,10 +4,11 @@ using System.Collections.Generic;
 
 public class LineBaseAction : BaseAction {
 
-	public bool canPierce;
-
 	public override List<HexNode> CheckTiles () {
-		return base.CheckTiles();
+		List<HexNode> nodeList = new List<HexNode>();
+		HexNode start = BattleManager.singleton.selectedTile.node;
+		
+		return nodeList;
 	}
 
 }

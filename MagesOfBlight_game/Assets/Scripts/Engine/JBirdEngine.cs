@@ -52,6 +52,7 @@ namespace JBirdEngine {
 			foreach (T remove in removeList) {
 				newFlags = (T)Enum.ToObject(typeof(T), Convert.ToInt32(newFlags) ^ Convert.ToInt32(remove));
 				newFlags = (T)Enum.ToObject(typeof(T), Convert.ToInt32(flag) & Convert.ToInt32(newFlags));
+				flag = newFlags;
 			}
 			return newFlags;
 		}
