@@ -35,7 +35,7 @@ namespace JBirdEngine {
 
 		public static T ToggleFlags<T> (T flag, params T[] toggleList) where T : IConvertible, IFormattable, IComparable {
 			if (!typeof(T).IsEnum) {
-				throw new ArgumentException ("RemoveFlags<T>(): 'T' must be of type 'enum'");
+				throw new ArgumentException ("ToggleFlags<T>(): 'T' must be of type 'enum'");
 			}
 			T newFlags = flag;
 			foreach (T toggle in toggleList) {
