@@ -302,7 +302,7 @@ MonoBehaviour:
   showEdges: 1
   showRadialLines: 0
   showConnections: 0
-  nodePrefab: {fileID: 11455136, guid: a7f0cb2d4062abf4db027bdee284845f, type: 2}
+  nodePrefab: {fileID: 11429038, guid: a7f0cb2d4062abf4db027bdee284845f, type: 2}
   tileRadius: 1
   gridRadius: 20
   tiles: []

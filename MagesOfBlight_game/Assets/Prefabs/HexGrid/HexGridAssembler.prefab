@@ -42,7 +42,7 @@ MonoBehaviour:
   showEdges: 1
   showRadialLines: 0
   showConnections: 1
-  nodePrefab: {fileID: 11455136, guid: a7f0cb2d4062abf4db027bdee284845f, type: 2}
+  nodePrefab: {fileID: 11429038, guid: a7f0cb2d4062abf4db027bdee284845f, type: 2}
   tileRadius: 2
   gridRadius: 10
   tiles: []
@@ -58,6 +58,11 @@ Prefab:
       propertyPath: tileRadius
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: nodePrefab
+      value: 
+      objectReference: {fileID: 11429038, guid: a7f0cb2d4062abf4db027bdee284845f,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 104248}

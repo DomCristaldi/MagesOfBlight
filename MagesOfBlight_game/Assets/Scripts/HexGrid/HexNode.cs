@@ -60,7 +60,7 @@ public class HexNode : MonoBehaviour, INode<HexNode> {
 	}
 	//End INode necessities
 
-	void Awake () {
+	protected virtual void Awake () {
 		connections = new List<HexNode>();
 		for (int i  = 0; i < 6; i++) {
 			connections.Add(null);
@@ -68,11 +68,11 @@ public class HexNode : MonoBehaviour, INode<HexNode> {
 		ResetGH();
 	}
 
-	void Start () {
+	protected virtual void Start () {
 		transform.localScale = Vector3.one * radius;
 	}
 
-	void Update () {
+	protected virtual void Update () {
 		//Debug coloring
 		if (showEdges) DebugDrawEdges(Color.black);
 		if (showRadialLines) DebugDrawLinks(Color.blue);

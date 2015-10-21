@@ -8,19 +8,21 @@ public class TileInfo : HexNode {
 
     public TileEntity entityOnTile;
 
-    protected virtual void Awake() {
-       	
+    protected override void Awake() {
+        base.Awake();
     }
 
 	// Use this for initialization
-	protected virtual void Start () {
+	protected override void Start () {
+        base.Start();
+
         battleManager = BattleManager.singleton;
         
 
     }
 
     // Update is called once per frame
-    protected virtual void Update () {
-	
+    protected override void Update () {
+        base.Update();
 	}
 }
