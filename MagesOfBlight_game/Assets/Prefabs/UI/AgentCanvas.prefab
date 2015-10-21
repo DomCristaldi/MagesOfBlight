@@ -169,6 +169,10 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2016430, guid: 8d1b4ea8eef2b80428ee4a57b0c2fe9d, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_ChildAlignment
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 147898}
