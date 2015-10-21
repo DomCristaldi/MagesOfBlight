@@ -6,10 +6,10 @@ public class ConfirmActionState : BaseCombatState {
     public override void UpdateState() {
         base.UpdateState();
 
-        //Debug.Log("confirm?");
+        Debug.Log("confirm?");
 
-        List<HexNode> path = JBirdEngine.AIHelper.AStar<HexNode>(battleManRef.selectedTile.node,
-                                                                 battleManRef.targetTile.node,
+        List<HexNode> path = JBirdEngine.AIHelper.AStar<HexNode>(battleManRef.selectedTile,
+                                                                 battleManRef.targetTile,
                                                                  mode: JBirdEngine.AIHelper.HeuristicMode.hexagonal);
 
         battleManRef.DrawPath(path, Color.red);

@@ -9,6 +9,8 @@ public class TargetSelectinState : BaseCombatState {
         Debug.Log("Select Target");
 
         if (InputHandler.singleton.controls.GetAxis(InputHandler.AxisKey.Select) != 0.0f) {
+            Debug.Log("push");
+
             TileInfo hitTile;
 
             if (battleManRef.TileRaycast(battleManRef.battleCam.ScreenToWorldPoint(Input.mousePosition),

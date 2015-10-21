@@ -86,9 +86,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acab260b64fbcd448b444588f8b51b9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showEdges: 0
+  showRadialLines: 0
+  showConnections: 0
+  radius: 0
+  connections: []
   battleManager: {fileID: 0}
   entityOnTile: {fileID: 0}
-  node: {fileID: 0}
 --- !u!114 &11455136
 MonoBehaviour:
   m_ObjectHideFlags: 1
