@@ -6,7 +6,8 @@ public class ButtonActionInfo : MonoBehaviour {
 	public BaseAction action;
 
 	public void SetBattleManagerAction () {
-		//BattleManager.singleton.selectedAction = action;
+		BattleManager.singleton.selectedAction = action;
+		Debug.Log ("click");
 	}
 
 }

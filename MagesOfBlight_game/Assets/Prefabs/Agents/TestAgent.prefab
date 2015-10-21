@@ -12,6 +12,7 @@ GameObject:
   - 114: {fileID: 11464700}
   - 114: {fileID: 11457126}
   - 114: {fileID: 11456682}
+  - 114: {fileID: 11400882}
   m_Layer: 0
   m_Name: TestAgent
   m_TagString: Untagged
@@ -108,6 +109,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &11400882
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 138822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 439f861d8f13c364ca21016c82d19dda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentActions: {fileID: 0}
+  actionButtonPrefab: {fileID: 11448638, guid: 128ecbfe8d902e74dba6fefed89f8216, type: 2}
+  agentCanvasPrefab: {fileID: 22358304, guid: bff4e445a558676409fc3b6d23d3728d, type: 2}
 --- !u!114 &11456682
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -142,7 +157,10 @@ MonoBehaviour:
     action: {fileID: 0}
     known: 0
     usable: 0
-  proactiveActions: []
+  proactiveActions:
+  - action: {fileID: 11400000, guid: 809e213b9ee99f24ab4548897eaa8fad, type: 2}
+    known: 1
+    usable: 1
 --- !u!114 &11464700
 MonoBehaviour:
   m_ObjectHideFlags: 1
