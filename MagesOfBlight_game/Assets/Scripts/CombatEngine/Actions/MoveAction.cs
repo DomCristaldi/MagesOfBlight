@@ -16,9 +16,9 @@ public class MoveAction : RangeBaseAction {
 		doneMoving = false;
 	}
 
-	public override bool DoAction () {
-        //return BattleManager.singleton.selectedAgent.tileMotor.GivePath()
-        
+	public override bool DoAction () {        
+
+        //ASSIGN PATH
         if (BattleManager.singleton.selectedAgent.tileMotor.suppliedPath == null || BattleManager.singleton.selectedAgent.tileMotor.suppliedPath.Count == 0) {
 
             Debug.Log("assign");
@@ -34,8 +34,14 @@ public class MoveAction : RangeBaseAction {
             //BattleManager.singleton.selectedAgent.tileMotor.suppliedPath = AIHelper.AStar<TileInfo>(BattleManager.singleton.selectedTile, BattleManager.singleton.targetTile, mode: AIHelper.HeuristicMode.hexagonal);
         }
 
-        return BattleManager.singleton.selectedAgent.tileMotor.NavigatePath();
-        
+        //EXECUTE
+        bool pathingResult = BattleManager.singleton.selectedAgent.tileMotor.NavigatePath();
+
+        if (pathingResult == true) {
+            return ActionSuccess();
+        }
+
+        return pathingResult;
 
         /*
         if (!doneMoving && moveRoutine == null) {
