@@ -5,8 +5,8 @@ public class ActionSelectionState : BaseCombatState {
 
     public override void InitState() {
         base.InitState();
-    
-        //battleManRef.selectedAgent.GetComponent<AgentCanvasSpawner    
+
+        battleManRef.selectedAgent.GetComponent<AgentCanvasSpawner>().agentCanvas.SetActive(true);
     }
 
     public override void UpdateState() {
@@ -18,6 +18,13 @@ public class ActionSelectionState : BaseCombatState {
             battleManRef.ChangeCombatState(BattleManager.CombatPhase.TargetSelection);
         }
 
+    }
+
+    public override void EndState() {
+        base.EndState();
+
+        battleManRef.selectedAgent.GetComponent<AgentCanvasSpawner>().agentCanvas.SetActive(false);
+    
     }
 
 }

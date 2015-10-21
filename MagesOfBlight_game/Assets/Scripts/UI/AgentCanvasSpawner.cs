@@ -70,6 +70,7 @@ public class AgentCanvasSpawner : MonoBehaviour {
 			actionButtonList.Add(buttonObject);
 		}
 
+        agentCanvas.SetActive(false);
 	}
 	
 }
