@@ -1,8 +1,9 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿/*
+using UnityEngine;
+using System.Collections.Generic;
 
 [AddComponentMenu("Scripts/BattleEngine/Tiles/TileInfo")]
-public class TileInfo : HexNode {
+public class HexNode : HexNode, JBirdEngine.INode<HexNode> {
 
     public BattleManager battleManager;
 
@@ -25,4 +26,8 @@ public class TileInfo : HexNode {
     protected override void Update () {
         base.Update();
 	}
+
+
+
 }
+*/

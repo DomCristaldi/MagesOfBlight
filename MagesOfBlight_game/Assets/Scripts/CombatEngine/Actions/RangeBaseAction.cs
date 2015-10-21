@@ -7,18 +7,18 @@ public class RangeBaseAction : BaseAction {
 
 	public override List<HexNode> CheckTiles () {
 		List<HexNode> nodeList = new List<HexNode>();
-		TileInfo start = BattleManager.singleton.selectedTile;
-		List<TileInfo> outerRing = new List<TileInfo>();
-		List<TileInfo> innerCircle = new List<TileInfo>();
-		List<TileInfo> nextRing = new List<TileInfo>();
+		HexNode start = BattleManager.singleton.selectedTile;
+		List<HexNode> outerRing = new List<HexNode>();
+		List<HexNode> innerCircle = new List<HexNode>();
+		List<HexNode> nextRing = new List<HexNode>();
 		outerRing.Add(start);
 		int dist;
 		for (dist = 0; dist < checkDistance; dist++) {
 			if (outerRing.Count == 0) {
 				break;
 			}
-			foreach (TileInfo ringNode in outerRing) {
-				foreach (TileInfo node in ringNode.connections) {
+			foreach (HexNode ringNode in outerRing) {
+				foreach (HexNode node in ringNode.connections) {
 					if (node == null) {
 						continue;
 					}
@@ -63,7 +63,7 @@ public class RangeBaseAction : BaseAction {
 				innerCircle.Add(outerRing[0]);
 				outerRing.RemoveAt(0);
 			}
-			outerRing = new List<TileInfo>(nextRing);
+			outerRing = new List<HexNode>(nextRing);
 			nextRing.Clear();
 		}
 		return nodeList;

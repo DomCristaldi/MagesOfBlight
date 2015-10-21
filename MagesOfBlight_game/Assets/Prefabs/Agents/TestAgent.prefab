@@ -13,6 +13,7 @@ GameObject:
   - 114: {fileID: 11457126}
   - 114: {fileID: 11456682}
   - 114: {fileID: 11400882}
+  - 114: {fileID: 11471620}
   m_Layer: 0
   m_Name: TestAgent
   m_TagString: Untagged
@@ -105,7 +106,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
@@ -123,6 +124,7 @@ MonoBehaviour:
   agentActions: {fileID: 0}
   actionButtonPrefab: {fileID: 11448638, guid: 128ecbfe8d902e74dba6fefed89f8216, type: 2}
   agentCanvasPrefab: {fileID: 22358304, guid: bff4e445a558676409fc3b6d23d3728d, type: 2}
+  agentCanvas: {fileID: 0}
 --- !u!114 &11456682
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -137,7 +139,7 @@ MonoBehaviour:
   desiredDirec: {x: 0, y: 0, z: 0}
   trueDirec: {x: 0, y: 0, z: 0}
   moveSpeedModifier: 1
-  redirectSpeed: .5
+  redirectSpeed: 10
 --- !u!114 &11457126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -172,8 +174,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01339d98af7d25e44a4642210e6040f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  motor: {fileID: 0}
+  tileMotor: {fileID: 0}
   agentTeam: 0
   moveSpeed: 1
+--- !u!114 &11471620
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 138822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0193ceee98bf1543a0dddca93186931, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 1
+  currentTile: {fileID: 0}
+  suppliedPath: []
+  doneMoving: 1
 --- !u!136 &13629850
 CapsuleCollider:
   m_ObjectHideFlags: 1

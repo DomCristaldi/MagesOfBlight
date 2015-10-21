@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 
 [AddComponentMenu("Scripts/BattleEngine/Tiles/Entities/TileAgent")]
-[RequireComponent(typeof(Motor_RigidBody))]
+//[RequireComponent(typeof(Motor_RigidBody))]
+[RequireComponent(typeof(Motor_Tile))]
 public class TileAgent : TileEntity {
 
     public Motor_RigidBody motor;
+    public Motor_Tile tileMotor;
 
     public enum Team {
         player,
@@ -21,6 +23,7 @@ public class TileAgent : TileEntity {
         base.Start();
 
         motor = GetComponent<Motor_RigidBody>();
+        tileMotor = GetComponent<Motor_Tile>();
 
         RegisterWithTeam();
 

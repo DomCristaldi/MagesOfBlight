@@ -76,9 +76,9 @@ public class BattleManager : MonoBehaviour {
     public CombatTurn curCombatTurn;
     public CombatPhase curCombatPhase;
 
-    public TileInfo hoveredTile;
-    public TileInfo selectedTile;
-    public TileInfo targetTile;
+    public HexNode hoveredTile;
+    public HexNode selectedTile;
+    public HexNode targetTile;
 
     public TileAgent selectedAgent;
 	public BaseAction selectedAction;
@@ -157,12 +157,12 @@ public class BattleManager : MonoBehaviour {
     */
 
 //RAYCAST ON TILE LAYER AND RETURN THE TILE THAT WAS HIT, NULL IF NONE WAS HIT
-    public bool TileRaycast(Vector3 origin, Vector3 direction, out TileInfo tInfo) {
+    public bool TileRaycast(Vector3 origin, Vector3 direction, out HexNode tInfo) {
 
         RaycastHit hit;
         if (Physics.Raycast(origin, direction, out hit, Mathf.Infinity, tileLayer)) {
 
-            tInfo = hit.collider.gameObject.GetComponent<TileInfo>();
+            tInfo = hit.collider.gameObject.GetComponent<HexNode>();
             return true;
         }
 
@@ -172,12 +172,12 @@ public class BattleManager : MonoBehaviour {
 
 //STATIC
 //RAYCAST ON TILE LAYER AND RETURN THE TILE THAT WAS HIT, NULL IF NONE WAS HIT
-    public static bool TileRaycast(Vector3 origin, Vector3 direction, out TileInfo tInfo, LayerMask layer) {
+    public static bool TileRaycast(Vector3 origin, Vector3 direction, out HexNode tInfo, LayerMask layer) {
 
         RaycastHit hit;
         if (Physics.Raycast(origin, direction, out hit, Mathf.Infinity, layer)) {
 
-            tInfo = hit.collider.gameObject.GetComponent<TileInfo>();
+            tInfo = hit.collider.gameObject.GetComponent<HexNode>();
             return true;
         }
 
@@ -237,8 +237,8 @@ public class BattleManager : MonoBehaviour {
     }
 
     public void ClearFrameInfo() {
-        targetTile.entityOnTile = selectedTile.entityOnTile;//this is fuckgin disgusting
-        selectedTile.entityOnTile = null;//***COME BACK AND FIX THIS***
+        //targetTile.entityOnTile = selectedTile.entityOnTile;//this is fuckgin disgusting
+        //selectedTile.entityOnTile = null;//***COME BACK AND FIX THIS***
 
         selectedTile = null;
         targetTile = null;
