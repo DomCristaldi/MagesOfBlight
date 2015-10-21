@@ -42,6 +42,10 @@ public class AgentCanvasSpawner : MonoBehaviour {
 			tmp.transform.SetParent (agentCanvasPrefab.transform);
 			//change text of button
 			tmp.GetComponentInChildren<Text>().text = actionData.action.actionName;
+			//change action associated with button
+			tmp.GetComponent<ButtonActionInfo>().action = actionData.action;
+			//change button's onClick
+			tmp.GetComponent<Button>().onClick.AddListener(() => { tmp.GetComponent<ButtonActionInfo>().SendMessage("SetBattleManagerAction");});
 			//change button colors
 			ColorBlock buttonColors = tmp.GetComponent<Button>().colors;
 			buttonColors.normalColor = actionData.action.normalColor;
