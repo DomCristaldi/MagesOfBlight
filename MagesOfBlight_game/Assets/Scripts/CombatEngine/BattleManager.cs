@@ -108,6 +108,18 @@ public class BattleManager : MonoBehaviour {
         }
         battleCamTf = battleCam.GetComponent<Transform>();
 
+        foreach (TileAgent agent in playerTeam.teamMembers) {
+            foreach (AgentActions.ActionData actionData in agent.GetComponent<AgentActions>().proactiveActions) {
+                actionData.action.Init();
+            }
+        }
+
+        foreach (TileAgent agent in enemyTeam.teamMembers) {
+            foreach (AgentActions.ActionData actionData in agent.GetComponent<AgentActions>().proactiveActions) {
+                actionData.action.Init();
+            }
+        }
+
         ChangeCombatState(CombatPhase.EnterCombat);
 
     }
@@ -235,5 +247,16 @@ public class BattleManager : MonoBehaviour {
         }
 
     }
+
+    public void ClearFrameInfo() {
+        targetTile.entityOnTile = selectedTile.entityOnTile;//this is fuckgin disgusting
+        selectedTile.entityOnTile = null;//***COME BACK AND FIX THIS***
+
+        selectedTile = null;
+        targetTile = null;
+        selectedAgent = null;
+        selectedAction = null;
+    }
+
 
 }

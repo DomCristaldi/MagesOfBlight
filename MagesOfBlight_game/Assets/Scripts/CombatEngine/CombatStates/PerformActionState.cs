@@ -11,10 +11,16 @@ public class PerformActionState : BaseCombatState {
         base.UpdateState();
 
         Debug.Log("performing");
+
+        if (battleManRef.selectedAction.DoAction()) {//returns true when finished
+            battleManRef.ChangeCombatState(BattleManager.CombatPhase.TileSelection);
+        }
     }
 
     public override void EndState() {
         base.EndState();
+
+        battleManRef.ClearFrameInfo();
     }
 
 }

@@ -5,7 +5,7 @@ using JBirdEngine;
 
 public class BaseAction : ScriptableObject {
 
-	protected static float targetPrecision = 0.01f;
+	protected static float targetPrecision = 0.1f;
 
 	public Color normalColor;
 	public Color highlightedColor;
