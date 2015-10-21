@@ -8,7 +8,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 410820}
-  - 114: {fileID: 11455136}
   - 23: {fileID: 2323764}
   - 33: {fileID: 3314680}
   - 64: {fileID: 6429150}
@@ -93,28 +92,6 @@ MonoBehaviour:
   connections: []
   battleManager: {fileID: 0}
   entityOnTile: {fileID: 0}
---- !u!114 &11455136
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 106004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 354e37dd7787fcf40acd79a0ea0643ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  showEdges: 1
-  showRadialLines: 0
-  showConnections: 0
-  radius: 1
-  connections:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
