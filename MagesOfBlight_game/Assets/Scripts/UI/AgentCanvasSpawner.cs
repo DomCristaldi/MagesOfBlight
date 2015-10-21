@@ -45,7 +45,7 @@ public class AgentCanvasSpawner : MonoBehaviour {
 			//change action associated with button
 			buttonObject.GetComponent<ButtonActionInfo>().action = actionData.action;
 			//change button's onClick
-			buttonObject.GetComponent<Button>().onClick.AddListener(() => { buttonObject.GetComponent<ButtonActionInfo>().SendMessage("SetBattleManagerAction");Debug.Log("click");});
+			buttonObject.GetComponent<Button>().onClick.AddListener(() => { buttonObject.GetComponent<ButtonActionInfo>().SetBattleManagerAction();});
 			//change button colors
 			ColorBlock buttonColors = buttonObject.GetComponent<Button>().colors;
 			buttonColors.normalColor = actionData.action.normalColor;
