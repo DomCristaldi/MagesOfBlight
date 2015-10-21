@@ -75,6 +75,7 @@ MonoBehaviour:
   hoveredTile: {fileID: 0}
   selectedTile: {fileID: 0}
   targetTile: {fileID: 0}
+  selectedAgent: {fileID: 0}
   selectedAction: {fileID: 0}
 --- !u!114 &11474930
 MonoBehaviour:
@@ -92,6 +93,11 @@ MonoBehaviour:
     - controlKey: 0
       controlValue:
         axisName: Select
+        isTrigger: 1
+        snap: 0
+    - controlKey: 1
+      controlValue:
+        axisName: Submit
         isTrigger: 1
         snap: 0
 --- !u!1001 &100100000

@@ -12,6 +12,7 @@ public class InputHandler : MonoBehaviour {
 
     public enum AxisKey {
         Select,
+        Confirm,
     }
 
 
