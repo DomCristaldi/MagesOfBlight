@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 [AddComponentMenu("Scripts/BattleEngine/Tiles/Entities/TileAgent")]
+[RequireComponent(typeof(Motor_RigidBody))]
 public class TileAgent : TileEntity {
 
     public enum Team {

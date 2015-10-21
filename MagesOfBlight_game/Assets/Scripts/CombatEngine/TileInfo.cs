@@ -2,27 +2,27 @@
 using System.Collections;
 
 [AddComponentMenu("Scripts/BattleEngine/Tiles/TileInfo")]
-public class TileInfo : MonoBehaviour {
+public class TileInfo : HexNode {
 
     public BattleManager battleManager;
 
     public TileEntity entityOnTile;
 
-    public HexNode node;
-
-    protected virtual void Awake() {
-        node = GetComponent<HexNode>();
+    protected override void Awake() {
+        base.Awake();
     }
 
 	// Use this for initialization
-	protected virtual void Start () {
+	protected override void Start () {
+        base.Start();
+
         battleManager = BattleManager.singleton;
         
 
     }
 
     // Update is called once per frame
-    protected virtual void Update () {
-	
+    protected override void Update () {
+        base.Update();
 	}
 }

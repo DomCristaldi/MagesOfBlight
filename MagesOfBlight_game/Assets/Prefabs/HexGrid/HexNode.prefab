@@ -8,7 +8,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 410820}
-  - 114: {fileID: 11455136}
   - 23: {fileID: 2323764}
   - 33: {fileID: 3314680}
   - 64: {fileID: 6429150}
@@ -42,7 +41,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f777e042759b87649be16501e5b899f5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -86,31 +85,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acab260b64fbcd448b444588f8b51b9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  battleManager: {fileID: 0}
-  entityOnTile: {fileID: 0}
-  node: {fileID: 0}
---- !u!114 &11455136
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 106004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 354e37dd7787fcf40acd79a0ea0643ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  showEdges: 1
+  showEdges: 0
   showRadialLines: 0
   showConnections: 0
-  radius: 1
-  connections:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  radius: 0
+  connections: []
+  battleManager: {fileID: 0}
+  entityOnTile: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -121,7 +102,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 2100000, guid: f777e042759b87649be16501e5b899f5, type: 2}
     - target: {fileID: 0}
       propertyPath: m_Mesh
       value: 

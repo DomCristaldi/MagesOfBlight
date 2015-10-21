@@ -24,7 +24,13 @@ public class TileSelectionState : BaseCombatState {
             {
                 battleManRef.selectedTile = hitTile;
 
-                battleManRef.ChangeCombatState(BattleManager.CombatPhase.ActionSelection);
+                //MOVE TO ACTION SELECTION STATE IF WE'VE SELECTED AN AGENT
+                if (battleManRef.selectedTile.entityOnTile as TileAgent != null) {
+                    battleManRef.selectedAgent = battleManRef.selectedTile.entityOnTile as TileAgent;
+
+                    battleManRef.ChangeCombatState(BattleManager.CombatPhase.ActionSelection);
+
+                }
 
                 //return true;
             }

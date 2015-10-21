@@ -6,7 +6,7 @@ public class LineBaseAction : BaseAction {
 
 	public override List<HexNode> CheckTiles () {
 		List<HexNode> nodeList = new List<HexNode>();
-		HexNode start = BattleManager.singleton.selectedTile.node;
+		HexNode start = BattleManager.singleton.selectedTile;
 		
 		return nodeList;
 	}
