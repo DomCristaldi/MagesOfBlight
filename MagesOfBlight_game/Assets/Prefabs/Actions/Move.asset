@@ -17,5 +17,7 @@ MonoBehaviour:
   disabledColor: {r: .323529422, g: .323529422, b: .323529422, a: 1}
   actionName: Move
   checkThroughOccupied: 0
-  tileCheckFlags: 0
+  tileCheckFlags: 1
   checkDistance: 2147483647
+  canCounter: 0
+  canBlock: 0

@@ -9,13 +9,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b730b21c1c0839498b3879122e4e02d, type: 3}
-  m_Name: Attack
+  m_Name: Fire Ball Placeholder
   m_EditorClassIdentifier: 
-  normalColor: {r: 1, g: 1, b: 1, a: 1}
-  highlightedColor: {r: .727941155, g: .727941155, b: .727941155, a: 1}
-  pressedColor: {r: .639705896, g: .639705896, b: .639705896, a: 1}
-  disabledColor: {r: .41911763, g: .422199368, b: .422199368, a: 1}
-  actionName: Attack
+  normalColor: {r: .91911763, g: .155438989, b: .155438989, a: 1}
+  highlightedColor: {r: .720588207, g: .0423875377, b: .0423875377, a: 1}
+  pressedColor: {r: .669117689, g: .00983997528, b: .00983997528, a: 1}
+  disabledColor: {r: .360294104, g: .360294104, b: .360294104, a: 1}
+  actionName: Fire Ball
   checkThroughOccupied: 0
   tileCheckFlags: 1
   checkDistance: 2147483647
