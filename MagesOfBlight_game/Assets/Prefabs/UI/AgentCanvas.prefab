@@ -84,8 +84,8 @@ Canvas:
   m_GameObject: {fileID: 147898}
   m_Enabled: 1
   serializedVersion: 2
-  m_RenderMode: 0
-  m_Camera: {fileID: 2016430, guid: 8d1b4ea8eef2b80428ee4a57b0c2fe9d, type: 2}
+  m_RenderMode: 2
+  m_Camera: {fileID: 2086642, guid: ebc4d994a4da3cb43926286d26feabc8, type: 2}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -101,7 +101,7 @@ RectTransform:
   m_GameObject: {fileID: 147898}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: .00999999978, y: .00999999978, z: .00999999978}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -135,7 +135,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_RenderMode
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_AnchoredPosition.x
@@ -168,10 +168,22 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 2016430, guid: 8d1b4ea8eef2b80428ee4a57b0c2fe9d, type: 2}
+      objectReference: {fileID: 2086642, guid: ebc4d994a4da3cb43926286d26feabc8, type: 2}
     - target: {fileID: 0}
       propertyPath: m_ChildAlignment
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.x
+      value: .00999999978
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.y
+      value: .00999999978
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.z
+      value: .00999999978
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
