@@ -42,4 +42,9 @@ public class BaseAction : ScriptableObject {
 		return true;
 	}
 
+	protected virtual bool ActionSuccess () {
+		Init();
+		return true;
+	}
+
 }
