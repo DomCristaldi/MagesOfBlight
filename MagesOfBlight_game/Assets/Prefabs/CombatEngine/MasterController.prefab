@@ -100,6 +100,11 @@ MonoBehaviour:
         axisName: Submit
         isTrigger: 1
         snap: 0
+    - controlKey: 2
+      controlValue:
+        axisName: Cancel
+        isTrigger: 1
+        snap: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

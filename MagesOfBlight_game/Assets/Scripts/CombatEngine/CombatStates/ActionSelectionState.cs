@@ -3,10 +3,12 @@ using System.Collections;
 
 public class ActionSelectionState : BaseCombatState {
 
-    public override void InitState() {
-        base.InitState();
+    public override void InitState(BattleManager.CombatPhase cameFromPhase, bool logPrev = true) {
+        base.InitState(cameFromPhase, logPrev);
 
         battleManRef.selectedAgent.GetComponent<AgentCanvasSpawner>().agentCanvas.SetActive(true);
+
+        battleManRef.selectedAction = null;
     }
 
     public override void UpdateState() {

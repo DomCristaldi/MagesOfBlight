@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TargetSelectinState : BaseCombatState {
+public class TargetSelectionState : BaseCombatState {
 
     public override void UpdateState() {
         base.UpdateState();

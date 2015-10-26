@@ -3,13 +3,7 @@ using System.Collections;
 
 public class EnterCombatState : BaseCombatState {
 
-    public override void InitState() {
-        base.InitState();
-
-
-        
-    }
-
+    
     public override void UpdateState() {
         base.UpdateState();
 
@@ -23,6 +17,13 @@ public class EnterCombatState : BaseCombatState {
             foundNode.GetComponent<HexNode>().entityOnTile = agent;
         }
 
+        foreach (TileAgent agent in battleManRef.enemyTeam.teamMembers) {
+            HexNode foundNode = JBirdEngine.ListHelper.GetClosestToPosition<HexNode>(HexGridAssembler.singleton.tiles,
+                                                                                     agent.transform.position);
+
+            agent.transform.position = foundNode.transform.position;
+            foundNode.GetComponent<HexNode>().entityOnTile = agent;
+        }
 
         battleManRef.ChangeCombatState(BattleManager.CombatPhase.TileSelection);
 

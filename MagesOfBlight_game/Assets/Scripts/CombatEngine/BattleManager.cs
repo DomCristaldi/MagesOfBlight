@@ -47,6 +47,7 @@ public class BattleManager : MonoBehaviour {
         PerformAction,
         Proactive,
         Reactive,
+        None,
     }
 
 
@@ -75,6 +76,7 @@ public class BattleManager : MonoBehaviour {
 
     public CombatTurn curCombatTurn;
     public CombatPhase curCombatPhase;
+    public Stack<CombatPhase> prevCombatPhaseStack;
 
     public HexNode hoveredTile;
     public HexNode selectedTile;
@@ -89,6 +91,8 @@ public class BattleManager : MonoBehaviour {
         if (singleton == null) {
             singleton = this;
         }
+
+        prevCombatPhaseStack = new Stack<CombatPhase>();
 
         playerTeam = new BattleTeam();
         enemyTeam = new BattleTeam();
@@ -109,7 +113,7 @@ public class BattleManager : MonoBehaviour {
         battleCamTf = battleCam.GetComponent<Transform>();
 
         ChangeCombatState(CombatPhase.EnterCombat);
-
+        currentBattleState.InitState(CombatPhase.None);
     }
 
     // Update is called once per frame
@@ -119,20 +123,31 @@ public class BattleManager : MonoBehaviour {
         //currentBattleState();
 
         //HandleSelection();
+
+        
+        string debugString = prevCombatPhaseStack.Count().ToString() + "\n";
+        foreach (CombatPhase phase in prevCombatPhaseStack) {
+            debugString += phase.ToString() + "\n";
+        }
+        print(debugString);
+        
 	}
+
+    public void PushPreviousCombatPhase(CombatPhase prevPhase) {
+        Debug.Log("pushing: " + prevPhase);
+
+        prevCombatPhaseStack.Push(prevPhase);
+    }
+
+    public CombatPhase PopPreviousCombatPhase() {
+        return prevCombatPhaseStack.Pop();
+    }
+
 
     public void SwitchCombatTurn(CombatTurn turn) {
         curCombatTurn = turn;
     }
 
-
-    private void SwitchToSelectionMode() {
-        //StartCoroutine(HandleSelection());
-    }
-
-    private void HandleCombatTurn() {
-
-    }
 
     /*
     private void HandleSelection() {
@@ -192,7 +207,7 @@ public class BattleManager : MonoBehaviour {
     */
 
     //END CURRENT STATE, DETERMINE NEXT STATE, AND INITIALIZE IT AFTER CHOSEN
-    public void ChangeCombatState(CombatPhase state) {
+    public void ChangeCombatState(CombatPhase state, bool logPrev = true) {
         if (currentBattleState != null) {
             currentBattleState.EndState();
         }
@@ -211,7 +226,7 @@ public class BattleManager : MonoBehaviour {
                 currentBattleState = new ActionSelectionState();
                 break;
             case CombatPhase.TargetSelection://TARGET SELECTION
-                currentBattleState = new TargetSelectinState();
+                currentBattleState = new TargetSelectionState();
                 break;
             case CombatPhase.ConfirmAction:
                 currentBattleState = new ConfirmActionState();
@@ -221,12 +236,12 @@ public class BattleManager : MonoBehaviour {
                 break;
         }
 
+
+        currentBattleState.InitState(curCombatPhase, logPrev);//initialize the next state with a reference to the previous state
         curCombatPhase = state;
 
-        currentBattleState.InitState();
-
     }
-    
+
     public void DrawPath(List<HexNode> pathToDraw, Color color) {
         for (int i = 0; i < pathToDraw.Count - 1; ++i) {
             Debug.DrawLine(pathToDraw[i].transform.position,
