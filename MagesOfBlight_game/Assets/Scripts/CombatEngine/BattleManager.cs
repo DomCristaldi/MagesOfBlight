@@ -213,31 +213,33 @@ public class BattleManager : MonoBehaviour {
         }
 
         switch (state) {
-            case CombatPhase.EnterCombat:
+            case CombatPhase.EnterCombat://ENTER COMBAT (bring up hex grid, place teams)
                 currentBattleState = new EnterCombatState();
                 break;
-            case CombatPhase.ExitCombat:
+            case CombatPhase.ExitCombat://EXIT COMBAT (remove hex grid)
                 currentBattleState = new ExitCombatState();
                 break;
-            case CombatPhase.TileSelection://TILE SELECTION
+            case CombatPhase.TileSelection://TILE SELECTION (select agent to perform actions with)
                 currentBattleState = new TileSelectionState();
                 break;
-            case CombatPhase.ActionSelection://ACTION SELECTION
+            case CombatPhase.ActionSelection://ACTION SELECTION (enable Actions menu)
                 currentBattleState = new ActionSelectionState();
                 break;
-            case CombatPhase.TargetSelection://TARGET SELECTION
+            case CombatPhase.TargetSelection://TARGET SELECTION (select a target tile for the action)
                 currentBattleState = new TargetSelectionState();
                 break;
-            case CombatPhase.ConfirmAction:
+            case CombatPhase.ConfirmAction://ACTION CONFIRMATION (final confirmation, may change to something available to all Combat States)
                 currentBattleState = new ConfirmActionState();
                 break;
-            case CombatPhase.PerformAction:
+            case CombatPhase.PerformAction://PERFORM ACTION (no user control)
                 currentBattleState = new PerformActionState();
                 break;
         }
 
-
+        //at this time, curCombatPhase is now the previous combat phase
         currentBattleState.InitState(curCombatPhase, logPrev);//initialize the next state with a reference to the previous state
+
+
         curCombatPhase = state;
 
     }
