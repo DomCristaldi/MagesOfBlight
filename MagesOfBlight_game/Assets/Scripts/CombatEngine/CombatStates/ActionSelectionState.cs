@@ -5,8 +5,8 @@ public class ActionSelectionState : BaseCombatState {
 
     public ActionSelectionState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = true) : base(thisCombatPhase, canUndo) { }
 
-    public override void InitState(BattleManager.CombatPhase cameFromPhase, bool logPrev = true) {
-        base.InitState(cameFromPhase, logPrev);
+    public override void InitState() {
+        base.InitState();
 
         battleManRef.selectedAgent.GetComponent<AgentCanvasSpawner>().agentCanvas.SetActive(true);
 

@@ -127,41 +127,18 @@ public class BattleManager : MonoBehaviour {
     void Update () {
         currentBattleState.UpdateState();
 
-        //currentBattleState();
 
-        //HandleSelection();
-
-        
+        /*DEBUG FOR SHOWING UNDO STACK
         string debugString = prevCombatPhaseStack.Count().ToString() + "\n";
         foreach (CombatPhase phase in prevCombatPhaseStack) {
             debugString += phase.ToString() + "\n";
         }
         print(debugString);
-        
+        */
 	}
 
     public void PushPreviousCombatPhase(CombatPhase prevPhase) {
         
-        /*
-        //prevent adding states that shouldn't be undo-able
-        switch (prevPhase) {//***TODO: use enum flags ***
-            case CombatPhase.None:
-                return;
-            case CombatPhase.EnterCombat:
-                return;
-            case CombatPhase.ExitCombat:
-                return;
-            case CombatPhase.PerformAction:
-                return;
-            case CombatPhase.Proactive:
-                return;
-            case CombatPhase.Reactive:
-                return;
-            case CombatPhase.CheckTeam:
-                return;
-        }
-        */
-
         prevCombatPhaseStack.Push(prevPhase);
     }
 
@@ -236,7 +213,7 @@ public class BattleManager : MonoBehaviour {
     */
 
     //END CURRENT STATE, DETERMINE NEXT STATE, AND INITIALIZE IT AFTER CHOSEN
-    public void ChangeCombatState(CombatPhase state, bool logPrev = true) {
+    public void ChangeCombatState(CombatPhase state) {
         if (currentBattleState != null) {
             currentBattleState.EndState();
         }
@@ -268,8 +245,7 @@ public class BattleManager : MonoBehaviour {
                 break;
         }
 
-        //at this time, curCombatPhase is now the previous combat phase
-        currentBattleState.InitState(curCombatPhase, logPrev);//initialize the next state with a reference to the previous state
+        currentBattleState.InitState();//make sure we initialize the state
 
 
         curCombatPhase = state;
@@ -286,8 +262,6 @@ public class BattleManager : MonoBehaviour {
     }
 
     public void ClearFrameInfo() {
-        //targetTile.entityOnTile = selectedTile.entityOnTile;//this is fuckgin disgusting
-        //selectedTile.entityOnTile = null;//***COME BACK AND FIX THIS***
 
         selectedTile = null;
         targetTile = null;

@@ -23,7 +23,7 @@ public class BaseCombatState {
     }
 
 
-    public virtual void InitState(BattleManager.CombatPhase cameFromPhase, bool logPrev = true) {
+    public virtual void InitState() {
 
 
 
@@ -55,7 +55,7 @@ public class BaseCombatState {
             undoingState = true;
 
             //battleManRef.ChangeCombatState(prevPhase);
-            battleManRef.ChangeCombatState(battleManRef.PopPreviousCombatPhase(), false);
+            battleManRef.ChangeCombatState(battleManRef.PopPreviousCombatPhase());
         }
     }
 

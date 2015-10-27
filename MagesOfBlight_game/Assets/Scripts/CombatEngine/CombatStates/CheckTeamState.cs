@@ -5,8 +5,8 @@ public class CheckTeamState : BaseCombatState {
 
     public CheckTeamState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = false) : base(thisCombatPhase, canUndo) { }
 
-    public override void InitState(BattleManager.CombatPhase cameFromPhase, bool logPrev = true) {
-        base.InitState(cameFromPhase, false);
+    public override void InitState() {
+        base.InitState();
 
         battleManRef.RefreshPrevPhaseStack();
 
