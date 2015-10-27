@@ -3,6 +3,8 @@ using System.Collections;
 
 public class TileSelectionState : BaseCombatState {
 
+    public TileSelectionState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = true) : base(thisCombatPhase, canUndo) { }
+
 
     public override void UpdateState() {
         //base.UpdateState();

@@ -38,6 +38,7 @@ public class BattleManager : MonoBehaviour {
     }
 
     public enum CombatPhase {
+        None,
         EnterCombat,
         ExitCombat,
         TileSelection,
@@ -47,24 +48,14 @@ public class BattleManager : MonoBehaviour {
         PerformAction,
         Proactive,
         Reactive,
-        None,
+        CheckTeam,
     }
 
 
     public static BattleManager singleton = null;
 
-    //public List<BattleTeam> teams;
-    public BattleTeam playerTeam;
-    public BattleTeam enemyTeam;
 
-    //public delegate void CombatAction();
-    //public CombatAction currentCombatAction;
-
-    /*
-    private delegate void BattleState();
-    private BattleState currentBattleState;
-    */
-    private BaseCombatState currentBattleState;
+    [Header("Setup")]
 
     public Camera battleCam;//refrence to the camera we use for selection
     public Transform battleCamTf;//cached transform reference for speed of access
@@ -72,7 +63,22 @@ public class BattleManager : MonoBehaviour {
     public LayerMask tileLayer = 8;
 
 
-    public bool currentlyInCombat = false;
+
+
+
+    [Space]
+    [Header("Teams")]
+
+    //public List<BattleTeam> teams;
+    public BattleTeam playerTeam;
+    public BattleTeam enemyTeam;
+
+
+    private BaseCombatState currentBattleState;
+
+    [Space]
+    [Header("Battle Info")]
+
 
     public CombatTurn curCombatTurn;
     public CombatPhase curCombatPhase;
@@ -86,6 +92,7 @@ public class BattleManager : MonoBehaviour {
 	public BaseAction selectedAction;
 
     //public List<TileAgent> agentList;
+
 
     void Awake() {
         if (singleton == null) {
@@ -113,7 +120,7 @@ public class BattleManager : MonoBehaviour {
         battleCamTf = battleCam.GetComponent<Transform>();
 
         ChangeCombatState(CombatPhase.EnterCombat);
-        currentBattleState.InitState(CombatPhase.None);
+        //currentBattleState.InitState(CombatPhase.None);
     }
 
     // Update is called once per frame
@@ -134,7 +141,26 @@ public class BattleManager : MonoBehaviour {
 	}
 
     public void PushPreviousCombatPhase(CombatPhase prevPhase) {
-        Debug.Log("pushing: " + prevPhase);
+        
+        /*
+        //prevent adding states that shouldn't be undo-able
+        switch (prevPhase) {//***TODO: use enum flags ***
+            case CombatPhase.None:
+                return;
+            case CombatPhase.EnterCombat:
+                return;
+            case CombatPhase.ExitCombat:
+                return;
+            case CombatPhase.PerformAction:
+                return;
+            case CombatPhase.Proactive:
+                return;
+            case CombatPhase.Reactive:
+                return;
+            case CombatPhase.CheckTeam:
+                return;
+        }
+        */
 
         prevCombatPhaseStack.Push(prevPhase);
     }
@@ -143,6 +169,9 @@ public class BattleManager : MonoBehaviour {
         return prevCombatPhaseStack.Pop();
     }
 
+    public void RefreshPrevPhaseStack() {
+        prevCombatPhaseStack.Clear();
+    }
 
     public void SwitchCombatTurn(CombatTurn turn) {
         curCombatTurn = turn;
@@ -214,25 +243,28 @@ public class BattleManager : MonoBehaviour {
 
         switch (state) {
             case CombatPhase.EnterCombat://ENTER COMBAT (bring up hex grid, place teams)
-                currentBattleState = new EnterCombatState();
+                currentBattleState = new EnterCombatState(state);
                 break;
             case CombatPhase.ExitCombat://EXIT COMBAT (remove hex grid)
-                currentBattleState = new ExitCombatState();
+                currentBattleState = new ExitCombatState(state);
                 break;
             case CombatPhase.TileSelection://TILE SELECTION (select agent to perform actions with)
-                currentBattleState = new TileSelectionState();
+                currentBattleState = new TileSelectionState(state);//UNDOABLE
                 break;
             case CombatPhase.ActionSelection://ACTION SELECTION (enable Actions menu)
-                currentBattleState = new ActionSelectionState();
+                currentBattleState = new ActionSelectionState(state);//UNDOABLE
                 break;
             case CombatPhase.TargetSelection://TARGET SELECTION (select a target tile for the action)
-                currentBattleState = new TargetSelectionState();
+                currentBattleState = new TargetSelectionState(state);//UNDOABLE
                 break;
             case CombatPhase.ConfirmAction://ACTION CONFIRMATION (final confirmation, may change to something available to all Combat States)
-                currentBattleState = new ConfirmActionState();
+                currentBattleState = new ConfirmActionState(state);//UNDOABLE
                 break;
             case CombatPhase.PerformAction://PERFORM ACTION (no user control)
-                currentBattleState = new PerformActionState();
+                currentBattleState = new PerformActionState(state);
+                break;
+            case CombatPhase.CheckTeam://CHECK TEAM (switch which team is going based on if all team members have gone)
+                currentBattleState = new CheckTeamState(state);
                 break;
         }
 
@@ -262,6 +294,7 @@ public class BattleManager : MonoBehaviour {
         selectedAgent = null;
         selectedAction = null;
     }
+
 
 
 }

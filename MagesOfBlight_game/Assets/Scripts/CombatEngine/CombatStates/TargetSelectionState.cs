@@ -3,6 +3,8 @@ using System.Collections;
 
 public class TargetSelectionState : BaseCombatState {
 
+    public TargetSelectionState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = true) : base(thisCombatPhase, canUndo) { }
+
     public override void UpdateState() {
         base.UpdateState();
 

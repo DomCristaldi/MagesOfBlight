@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 public class ConfirmActionState : BaseCombatState {
 
+    public ConfirmActionState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = true) : base(thisCombatPhase, canUndo) { }
+
     public override void UpdateState() {
         base.UpdateState();
 

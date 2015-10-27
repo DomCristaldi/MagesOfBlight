@@ -3,6 +3,8 @@ using System.Collections;
 
 public class ActionSelectionState : BaseCombatState {
 
+    public ActionSelectionState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = true) : base(thisCombatPhase, canUndo) { }
+
     public override void InitState(BattleManager.CombatPhase cameFromPhase, bool logPrev = true) {
         base.InitState(cameFromPhase, logPrev);
 
@@ -13,8 +15,6 @@ public class ActionSelectionState : BaseCombatState {
 
     public override void UpdateState() {
         base.UpdateState();
-
-        Debug.Log("Select action");
 
         if (battleManRef.selectedAction != null) {
             battleManRef.ChangeCombatState(BattleManager.CombatPhase.TargetSelection);

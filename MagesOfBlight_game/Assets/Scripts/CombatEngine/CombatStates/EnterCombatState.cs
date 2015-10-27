@@ -3,6 +3,7 @@ using System.Collections;
 
 public class EnterCombatState : BaseCombatState {
 
+    public EnterCombatState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = false) : base(thisCombatPhase, canUndo) { }
     
     public override void UpdateState() {
         base.UpdateState();
