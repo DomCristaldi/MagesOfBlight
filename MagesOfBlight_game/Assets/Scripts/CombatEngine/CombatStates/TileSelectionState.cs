@@ -1,6 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// State handles selecting Tiles on the Hex Grid.
+/// Allows selection of any Tile
+///     Will only transition to ActionSelectionState if the
+///         current Tile has a TileAgent of the currently
+///         acting Battle Team
+/// </summary>
+
 public class TileSelectionState : BaseCombatState {
 
     public TileSelectionState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = true) : base(thisCombatPhase, canUndo) { }

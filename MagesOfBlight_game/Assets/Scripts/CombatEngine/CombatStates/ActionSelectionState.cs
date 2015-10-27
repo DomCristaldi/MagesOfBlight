@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// State for selecting Combat Actions via the UI
+/// </summary>
+
 public class ActionSelectionState : BaseCombatState {
 
     public ActionSelectionState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = true) : base(thisCombatPhase, canUndo) { }

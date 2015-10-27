@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// State that handles entering a battle
+/// Places all agents on the closest tile
+/// </summary>
+
 public class EnterCombatState : BaseCombatState {
 
     public EnterCombatState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = false) : base(thisCombatPhase, canUndo) { }

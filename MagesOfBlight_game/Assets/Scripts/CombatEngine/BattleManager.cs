@@ -156,12 +156,6 @@ public class BattleManager : MonoBehaviour {
         playerTeam = new BattleTeam();
         enemyTeam = new BattleTeam();
 
-
-        //currentBattleState = new TileSelectionState();
-        //currentBattleState.InitState();
-
-        //currentBattleState = HandleSelection;
-
     }
 
 	// Use this for initialization
@@ -171,8 +165,7 @@ public class BattleManager : MonoBehaviour {
         }
         battleCamTf = battleCam.GetComponent<Transform>();
 
-        ChangeCombatState(CombatPhase.EnterCombat);
-        //currentBattleState.InitState(CombatPhase.None);
+        ChangeCombatState(CombatPhase.EnterCombat);//TESTING
     }
 
     // Update is called once per frame
@@ -200,6 +193,7 @@ public class BattleManager : MonoBehaviour {
         }
     }
 
+    //RESET THE CURRENT TEAM SO THEY CAN PERFORM TURNS
     public void RefreshCurrentTeam() {
         switch (curCombatTeam) {
             case CombatTeam.Player:
@@ -215,8 +209,8 @@ public class BattleManager : MonoBehaviour {
         curCombatTeam = team;
     }
 
-    public void PushPreviousCombatPhase(CombatPhase prevPhase) {
-        
+
+    public void PushPreviousCombatPhase(CombatPhase prevPhase) {    
         prevCombatPhaseStack.Push(prevPhase);
     }
 
@@ -226,10 +220,6 @@ public class BattleManager : MonoBehaviour {
 
     public void RefreshPrevPhaseStack() {
         prevCombatPhaseStack.Clear();
-    }
-
-    public void SwitchCombatTurn(CombatTeam turn) {
-        curCombatTeam = turn;
     }
 
 

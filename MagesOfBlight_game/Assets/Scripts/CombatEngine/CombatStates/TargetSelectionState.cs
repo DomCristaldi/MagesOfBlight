@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// State that handles selecting a tile for an Action from ActionSelectionState
+/// </summary>
+
 public class TargetSelectionState : BaseCombatState {
 
     public TargetSelectionState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = true) : base(thisCombatPhase, canUndo) { }

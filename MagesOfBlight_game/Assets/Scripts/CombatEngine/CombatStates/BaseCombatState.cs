@@ -4,7 +4,12 @@ using System.Collections;
 [System.Serializable]
 public class BaseCombatState {
 
-    
+    /// <summary>
+    /// Base State for all Combat States
+    /// Handles making a connectoin with the Battle Manager,
+    ///     Undo funcionality
+    ///     TODO: Confirmation locks
+    /// </summary>
 
     protected BattleManager battleManRef;
     protected delegate void ConfirmationFunc();

@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// This state handles any actions that are being performed
+/// PLANS: add in interactions a la Paper Mario (maybe through other states / substates)
+/// </summary>
+
 public class PerformActionState : BaseCombatState {
 
     public PerformActionState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = false) : base(thisCombatPhase, canUndo) { }
