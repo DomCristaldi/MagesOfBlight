@@ -25,15 +25,7 @@ public class BaseCombatState {
 
     public virtual void InitState() {
 
-
-
         battleManRef = BattleManager.singleton;
-
-        /*
-        if (logPrev && this.canUndo == true) { 
-            battleManRef.PushPreviousCombatPhase(cameFromPhase);
-        }
-        */
 
     }
 

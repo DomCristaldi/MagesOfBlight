@@ -1,38 +1,90 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Linq;//Linq is love, Linq is life
 
 [AddComponentMenu("Scripts/BattleEngine/Tiles/Managers/BattleManager")]
 public class BattleManager : MonoBehaviour {
 
     [System.Serializable]
     public class BattleTeam {
+        /*
+        [System.Serializable]
+        public class MemberInfo {
+            public TileAgent agent;
+            public bool hasTurn = true;
+
+            public MemberInfo(TileAgent agent, bool hasTurn = true) {
+                this.agent = agent;
+                this.hasTurn = hasTurn;
+            }
+        }
+        */
+
+        public CombatTeam teamType;
+
+        //public List<MemberInfo> teamMembers;
         public List<TileAgent> teamMembers;
 
         public BattleTeam(params TileAgent[] membersToAdd) {
             if (membersToAdd.Length > 0) {
                 teamMembers = membersToAdd.ToList<TileAgent>();
+                /*
+                foreach (TileAgent agent in membersToAdd) {
+                    teamMembers.Add(new MemberInfo(agent));
+                }
+                */
             }
             else {
                 teamMembers = new List<TileAgent>();
+                //teamMembers = new List<MemberInfo>();
             }
         }
 
         public void AddToTeam(TileAgent agent) {
             if (teamMembers == null) {
                 teamMembers = new List<TileAgent>();
+                //teamMembers = new List<MemberInfo>();
             }
             teamMembers.Add(agent);
+            //teamMembers.Add(new MemberInfo(agent));
         }
 
         public void RemoveFromTeam(TileAgent agent) {
+            
             if (teamMembers.Contains(agent)) {
                 teamMembers.Remove(agent);
             }
+            
+            
+            //teamMembers.RemoveAll(x => x.agent == agent);//remove all instances of MemberInfos with the supplied Agent
+            
         }
+
+        /*
+        public List<TileAgent> GetTeamMembers() {
+            return teamMembers.Select<MemberInfo, TileAgent>(x => x.agent).ToList<TileAgent>();
+        }
+        */
+
+        //CHECK IF ALL TEAM MEMBERS HAVE COMPLETED THIER TURN
+        public bool TurnComplete() {
+            if (teamMembers.Count(x => x.canPerformTurn == false) == teamMembers.Count) {
+                return true;
+            }
+            return false;
+
+        }
+
+        public void RefreshTeam() {
+            foreach (TileAgent agent in teamMembers) {
+                agent.RefreshTurn();
+            }
+        }
+
     }
 
-    public enum CombatTurn {
+    public enum CombatTeam {
         Player,
         Enemy,
     }
@@ -80,7 +132,7 @@ public class BattleManager : MonoBehaviour {
     [Header("Battle Info")]
 
 
-    public CombatTurn curCombatTurn;
+    public CombatTeam curCombatTeam;
     public CombatPhase curCombatPhase;
     public Stack<CombatPhase> prevCombatPhaseStack;
 
@@ -137,6 +189,32 @@ public class BattleManager : MonoBehaviour {
         */
 	}
 
+    public BattleTeam GetCurrentTeam() {//***TODO: reimplement with more generic team handling (no distinct varialbes for playerTeam and enemyTeam)
+        switch (curCombatTeam) {
+            case CombatTeam.Player:
+                return playerTeam;
+            case CombatTeam.Enemy:
+                return enemyTeam;
+            default:
+                throw new Exception("Switch Case is totally broken what the hell?!");
+        }
+    }
+
+    public void RefreshCurrentTeam() {
+        switch (curCombatTeam) {
+            case CombatTeam.Player:
+                playerTeam.RefreshTeam();
+                return;
+            case CombatTeam.Enemy:
+                enemyTeam.RefreshTeam();
+                return;
+        }
+    }
+
+    public void ChangeActingTeam(CombatTeam team) {
+        curCombatTeam = team;
+    }
+
     public void PushPreviousCombatPhase(CombatPhase prevPhase) {
         
         prevCombatPhaseStack.Push(prevPhase);
@@ -150,8 +228,8 @@ public class BattleManager : MonoBehaviour {
         prevCombatPhaseStack.Clear();
     }
 
-    public void SwitchCombatTurn(CombatTurn turn) {
-        curCombatTurn = turn;
+    public void SwitchCombatTurn(CombatTeam turn) {
+        curCombatTeam = turn;
     }
 
 

@@ -16,6 +16,8 @@ public class PerformActionState : BaseCombatState {
     public override void EndState() {
         base.EndState();
 
+        battleManRef.selectedAgent.UseTurn();
+
         battleManRef.ClearFrameInfo();
     }
 

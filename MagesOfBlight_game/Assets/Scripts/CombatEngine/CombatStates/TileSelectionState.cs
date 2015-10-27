@@ -30,16 +30,15 @@ public class TileSelectionState : BaseCombatState {
                 if (battleManRef.selectedTile.entityOnTile as TileAgent != null) {
                     battleManRef.selectedAgent = battleManRef.selectedTile.entityOnTile as TileAgent;
 
-                    battleManRef.ChangeCombatState(BattleManager.CombatPhase.ActionSelection);
-
+                    //only advance to Action Selection if it's the proper team and capable of performing a turn
+                    if (battleManRef.selectedAgent.team == battleManRef.curCombatTeam && battleManRef.selectedAgent.canPerformTurn) {
+                        battleManRef.ChangeCombatState(BattleManager.CombatPhase.ActionSelection);
+                    }
                 }
 
-                //return true;
             }
-            //return false;
 
         }
-        //return false;
 
     }
 }

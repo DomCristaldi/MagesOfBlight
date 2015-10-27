@@ -85,6 +85,12 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &399436239 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11464700, guid: b261d2291804c4c46bf0ed8c2bdcd09a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1641669374}
+  m_Script: {fileID: 11500000, guid: 01339d98af7d25e44a4642210e6040f0, type: 3}
 --- !u!1001 &401827906
 Prefab:
   m_ObjectHideFlags: 0
@@ -92,6 +98,14 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11464438, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
+      propertyPath: enemyTeam.teamMembers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11464438, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
+      propertyPath: playerTeam.teamMembers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 411570, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -124,9 +138,31 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11464438, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
+      propertyPath: enemyTeam.teamType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11464438, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
+      propertyPath: playerTeam.teamMembers.Array.data[0]
+      value: 
+      objectReference: {fileID: 399436239}
+    - target: {fileID: 11464438, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
+      propertyPath: playerTeam.teamMembers.Array.data[1]
+      value: 
+      objectReference: {fileID: 430703759}
+    - target: {fileID: 11464438, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
+      propertyPath: enemyTeam.teamMembers.Array.data[0]
+      value: 
+      objectReference: {fileID: 1507083196}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &430703759 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11464700, guid: b261d2291804c4c46bf0ed8c2bdcd09a,
+    type: 2}
+  m_PrefabInternal: {fileID: 919325389}
+  m_Script: {fileID: 11500000, guid: 01339d98af7d25e44a4642210e6040f0, type: 3}
 --- !u!1 &608279065
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,6 +387,12 @@ Prefab:
     - {fileID: 5402994, guid: b261d2291804c4c46bf0ed8c2bdcd09a, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: b261d2291804c4c46bf0ed8c2bdcd09a, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1507083196 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11464700, guid: b261d2291804c4c46bf0ed8c2bdcd09a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1767734584}
+  m_Script: {fileID: 11500000, guid: 01339d98af7d25e44a4642210e6040f0, type: 3}
 --- !u!1 &1597241716
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,7 +466,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!1001 &1641669374
 Prefab:
   m_ObjectHideFlags: 0
@@ -580,6 +622,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ac47ae050c38987488555fea37b4c2f6, type: 2}
+    - target: {fileID: 11464700, guid: b261d2291804c4c46bf0ed8c2bdcd09a, type: 2}
+      propertyPath: team
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11456682, guid: b261d2291804c4c46bf0ed8c2bdcd09a, type: 2}
     - {fileID: 5402994, guid: b261d2291804c4c46bf0ed8c2bdcd09a, type: 2}

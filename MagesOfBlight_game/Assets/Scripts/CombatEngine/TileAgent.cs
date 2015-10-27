@@ -9,12 +9,25 @@ public class TileAgent : TileEntity {
     public Motor_RigidBody motor;
     public Motor_Tile tileMotor;
 
+    public bool hasTurn = true;
+    public bool canPerformTurn {//checks all possible conditions that would disallow a turn
+        get {
+            if (hasTurn) {
+                return true;
+            }
+            return false;
+        }
+    }
+
+    /*
     public enum Team {
         player,
         enemy,
     }
 
     public Team agentTeam;
+    */
+    public BattleManager.CombatTeam team;
 
     public float moveSpeed = 1.0f;
 
@@ -39,14 +52,21 @@ public class TileAgent : TileEntity {
     }
 
     private void RegisterWithTeam() {
-        switch (agentTeam) {
-            case Team.player:
+        switch (team) {
+            case BattleManager.CombatTeam.Player:
                 battleManRef.playerTeam.AddToTeam(this);
                 break;
-            case Team.enemy:
+            case BattleManager.CombatTeam.Enemy:
                 battleManRef.enemyTeam.AddToTeam(this);
                 break;
         }
     }
 
+    public void UseTurn() {
+        hasTurn = false;
+    }
+
+    public void RefreshTurn() {
+        hasTurn = true;
+    }
 }
