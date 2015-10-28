@@ -105,6 +105,7 @@ GameObject:
   - 114: {fileID: 11428950}
   - 114: {fileID: 11433614}
   - 114: {fileID: 11440636}
+  - 114: {fileID: 11410682}
   m_Layer: 0
   m_Name: Nuria
   m_TagString: Untagged
@@ -1755,6 +1756,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11410682
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8988acbf316b6144792901b6be0c716d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 100
 --- !u!114 &11414674
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1934,6 +1948,14 @@ Prefab:
       value: 
       objectReference: {fileID: 11400000, guid: 55982705f4677714a90bf58620a2246f,
         type: 2}
+    - target: {fileID: 0}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: currentHealth
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 111550}
