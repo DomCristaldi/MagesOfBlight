@@ -60,17 +60,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c62c0642d8bb0e4592c1fd4c87800d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTeam:
-    teamMembers: []
-  enemyTeam:
-    teamMembers: []
   battleCam: {fileID: 0}
   battleCamTf: {fileID: 0}
   tileLayer:
     serializedVersion: 2
     m_Bits: 256
-  currentlyInCombat: 0
-  curCombatTurn: 0
+  playerTeam:
+    teamType: 0
+    teamMembers:
+    - {fileID: 0}
+    - {fileID: 0}
+  enemyTeam:
+    teamType: 1
+    teamMembers:
+    - {fileID: 0}
+  curCombatTeam: 0
   curCombatPhase: 0
   hoveredTile: {fileID: 0}
   selectedTile: {fileID: 0}
@@ -93,17 +97,32 @@ MonoBehaviour:
     - controlKey: 0
       controlValue:
         axisName: Select
-        isTrigger: 1
-        snap: 0
-    - controlKey: 1
-      controlValue:
-        axisName: Submit
+        isJoystick: 0
         isTrigger: 1
         snap: 0
     - controlKey: 2
       controlValue:
-        axisName: Cancel
+        axisName: Submit
+        isJoystick: 0
         isTrigger: 1
+        snap: 0
+    - controlKey: 3
+      controlValue:
+        axisName: Cancel
+        isJoystick: 0
+        isTrigger: 1
+        snap: 0
+    - controlKey: 4
+      controlValue:
+        axisName: SelectionX
+        isJoystick: 0
+        isTrigger: 0
+        snap: 0
+    - controlKey: 5
+      controlValue:
+        axisName: SelectionY
+        isJoystick: 0
+        isTrigger: 0
         snap: 0
 --- !u!1001 &100100000
 Prefab:
