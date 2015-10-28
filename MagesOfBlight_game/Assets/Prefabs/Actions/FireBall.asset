@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fad13f98d76aa340841ee7ce8c9e3c2, type: 3}
+  m_Name: FireBall
+  m_EditorClassIdentifier: 
+  normalColor: {r: 1, g: 0, b: 0, a: 1}
+  highlightedColor: {r: .697000027, g: 0, b: 0, a: 1}
+  pressedColor: {r: .697000027, g: 0, b: 0, a: 1}
+  disabledColor: {r: .588235259, g: .588235259, b: .588235259, a: 1}
+  actionName: Fireball
+  checkThroughOccupied: 0
+  tileCheckFlags: 0
+  checkDistance: 2147483647
+  canCounter: 1
+  canBlock: 1
+  projectilePrefab: {fileID: 11428334, guid: 1a4eedb6a1b68fc4ca7145aaf4b7405f, type: 2}
+  waitTimeAfterHit: 1
