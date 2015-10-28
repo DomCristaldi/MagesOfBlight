@@ -124,12 +124,6 @@ MonoBehaviour:
         isJoystick: 0
         isTrigger: 0
         snap: 0
-    - controlKey: 1
-      controlValue:
-        axisName: SelectionY
-        isJoystick: 0
-        isTrigger: 0
-        snap: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

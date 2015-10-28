@@ -103,7 +103,7 @@ public class InputHandler : MonoBehaviour {
                     controlsDict.Add(cB.controlKey, cB.controlValue);
                 }
                 else {//Throw error if we try to add two instances of the same axis
-                    Debug.LogError("Failed to add" + cB.controlKey + " to controlsDict. More than one instance of its axis binding string exists.");
+                    Debug.LogError("Failed to add " + cB.controlKey + " to controlsDict. More than one instance of its axis binding string exists.");
                 }
             }
         }
