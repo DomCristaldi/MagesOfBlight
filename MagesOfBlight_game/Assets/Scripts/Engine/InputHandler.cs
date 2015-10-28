@@ -12,8 +12,15 @@ public class InputHandler : MonoBehaviour {
 
     public enum AxisKey {
         Select,
+        Move,
         Confirm,
         Cancel,
+
+        SelectionX,
+        SelectionY,
+
+        MovementX,
+        MovementY,
     }
 
 
@@ -21,12 +28,18 @@ public class InputHandler : MonoBehaviour {
     [System.Serializable]
     public class InputAxis {
         public string axisName;
+
+        public bool isJoystick = false;
+
         [Tooltip("Trigger like in the Animator, not xbox controller")]
         public bool isTrigger = false;
         private bool _triggered = false;
         public bool snap = false;
 
+        //public AnimationCurve valueRamp = AnimationCurve.Linear(0.0f, 0.0f, 1.0f, 1.0f);
+
         public float GetAxis() {
+
             //TRIGGER
             if (isTrigger) {
 
@@ -131,6 +144,10 @@ public class InputHandler : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //Debug.Log(Input.GetAxis("ViewY"));
+        //Debug.Log(controls.GetAxis(AxisKey.SelectionX) + " | " + controls.GetAxis(AxisKey.SelectionY));
+        //if (controls.GetAxis(AxisKey.SelectionX) > 1.0f) { Debug.Log("boom"); }
+        
+        
     }
 
 }
