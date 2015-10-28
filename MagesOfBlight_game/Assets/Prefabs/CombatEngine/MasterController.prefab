@@ -100,25 +100,25 @@ MonoBehaviour:
         isJoystick: 0
         isTrigger: 1
         snap: 0
-    - controlKey: 1
+    - controlKey: 2
       controlValue:
         axisName: Submit
         isJoystick: 0
         isTrigger: 1
         snap: 0
-    - controlKey: 2
+    - controlKey: 3
       controlValue:
         axisName: Cancel
         isJoystick: 0
         isTrigger: 1
         snap: 0
-    - controlKey: 3
+    - controlKey: 4
       controlValue:
         axisName: SelectionX
         isJoystick: 0
         isTrigger: 0
         snap: 0
-    - controlKey: 4
+    - controlKey: 5
       controlValue:
         axisName: SelectionY
         isJoystick: 0

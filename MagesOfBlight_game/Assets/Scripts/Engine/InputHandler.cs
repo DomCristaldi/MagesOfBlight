@@ -11,16 +11,16 @@ public class InputHandler : MonoBehaviour {
 
 
     public enum AxisKey {
-        Select,
-        Move,
-        Confirm,
-        Cancel,
+        Select = 0,
+        Move = 1,
+        Confirm = 2,
+        Cancel = 3,
 
-        SelectionX,
-        SelectionY,
+        SelectionX = 4,
+        SelectionY = 5,
 
-        MovementX,
-        MovementY,
+        MovementX = 6,
+        MovementY = 7,
     }
 
 
