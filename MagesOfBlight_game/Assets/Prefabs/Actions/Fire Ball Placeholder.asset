@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b730b21c1c0839498b3879122e4e02d, type: 3}
   m_Name: Fire Ball Placeholder
   m_EditorClassIdentifier: 
-  normalColor: {r: .91911763, g: .155438989, b: .155438989, a: 1}
+  normalColor: {r: 1, g: 0, b: 0, a: 1}
   highlightedColor: {r: .720588207, g: .0423875377, b: .0423875377, a: 1}
   pressedColor: {r: .669117689, g: .00983997528, b: .00983997528, a: 1}
   disabledColor: {r: .360294104, g: .360294104, b: .360294104, a: 1}

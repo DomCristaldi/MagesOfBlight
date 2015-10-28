@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 /// <summary>
 /// State that handles selecting a tile for an Action from ActionSelectionState
@@ -7,7 +7,15 @@ using System.Collections;
 
 public class TargetSelectionState : BaseCombatState {
 
+    private List<HexNode> acceptableTiles;
+
     public TargetSelectionState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = true) : base(thisCombatPhase, canUndo) { }
+
+    public override void InitState() {
+        base.InitState();
+
+        acceptableTiles = battleManRef.selectedAction.CheckTiles();
+    }
 
     public override void UpdateState() {
         base.UpdateState();
@@ -18,9 +26,12 @@ public class TargetSelectionState : BaseCombatState {
 
             HexNode hitTile;
 
+            //raycast from screen-space to the tile and check it against the list of acceptable tiles
             if (battleManRef.TileRaycast(battleManRef.battleCam.ScreenToWorldPoint(Input.mousePosition),
                                          battleManRef.battleCamTf.rotation * Vector3.forward,
-                                         out hitTile))
+                                         out hitTile)
+             && acceptableTiles.Contains(hitTile)
+             )
             {
                 battleManRef.targetTile = hitTile;
 
