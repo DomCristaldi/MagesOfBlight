@@ -7,14 +7,18 @@ public class ProjectileAction : LineBaseAction {
 
 	public BaseProjectile projectilePrefab;
 	public float waitTimeAfterHit;
+	public BaseProjectile projectile;
 
-	BaseProjectile projectile;
+	bool projectileMade;
+	bool projectileHit;
 	bool waitOver;
 
 	public override void Init () {
 		base.Init ();
 		tileCheckFlags = EnumHelper.CombineFlags<TileCheckFlags>(TileCheckFlags.agentOccupied);
 		projectile = null;
+		projectileMade = false;
+		projectileHit = false;
 		waitOver = false;
 	}
 
@@ -24,6 +28,8 @@ public class ProjectileAction : LineBaseAction {
 			Debug.LogError("Error saving projectile instance!");
 			return;
 		}
+		projectileMade = true;
+		projectile.action = this;
 		projectile.target = BattleManager.singleton.targetTile.entityOnTile.transform;
 	}
 
@@ -35,10 +41,11 @@ public class ProjectileAction : LineBaseAction {
 	}
 
 	public override bool DoAction () {
-		if (projectile == null) {
+		if (!projectileMade && projectile == null) {
 			CreateProjectile();
 		}
-		if (projectile.CheckProximity()) {
+		if (!projectileHit && projectile.CheckProximity()) {
+			projectileHit = true;
 			projectile.DealDamage();
 			projectile.DestroySelf();
 			BattleManager.singleton.StartCoroutine(WaitAfterHit());
