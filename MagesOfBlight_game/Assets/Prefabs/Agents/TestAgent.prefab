@@ -8,10 +8,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 448964}
-  - 54: {fileID: 5402994}
   - 114: {fileID: 11464700}
   - 114: {fileID: 11457126}
-  - 114: {fileID: 11456682}
   - 114: {fileID: 11400882}
   - 114: {fileID: 11471620}
   m_Layer: 0
@@ -58,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 138822}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .223000005, y: 0, z: .202999994}
+  m_LocalPosition: {x: 3.58135653, y: -6.79053593, z: -.429075241}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 429836}
@@ -95,21 +93,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 192016}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &5402994
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 138822}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
 --- !u!114 &11400882
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,21 +109,6 @@ MonoBehaviour:
   agentCanvasPrefab: {fileID: 22358304, guid: bff4e445a558676409fc3b6d23d3728d, type: 2}
   agentCanvas: {fileID: 0}
   damageCanvas: {fileID: 0}
---- !u!114 &11456682
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 138822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aef55a2567e0d414dac9579db105decd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  desiredDirec: {x: 0, y: 0, z: 0}
-  trueDirec: {x: 0, y: 0, z: 0}
-  moveSpeedModifier: 1
-  redirectSpeed: 10
 --- !u!114 &11457126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -164,6 +132,12 @@ MonoBehaviour:
   - action: {fileID: 11400000, guid: 809e213b9ee99f24ab4548897eaa8fad, type: 2}
     known: 1
     usable: 1
+  - action: {fileID: 11400000, guid: 2ac5e5c44d06eee44b7fc64cf3a4193f, type: 2}
+    known: 1
+    usable: 1
+  - action: {fileID: 11400000, guid: 477fbf2ec749da948a5e3252e8ad5ac3, type: 2}
+    known: 1
+    usable: 1
 --- !u!114 &11464700
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -177,7 +151,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   motor: {fileID: 0}
   tileMotor: {fileID: 0}
-  agentTeam: 0
+  hasTurn: 1
+  team: 0
   moveSpeed: 1
 --- !u!114 &11471620
 MonoBehaviour:
@@ -190,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0193ceee98bf1543a0dddca93186931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 5
   currentTile: {fileID: 0}
   suppliedPath: []
   doneMoving: 0
