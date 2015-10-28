@@ -1794,10 +1794,7 @@ MonoBehaviour:
   - action: {fileID: 11400000, guid: 809e213b9ee99f24ab4548897eaa8fad, type: 2}
     known: 1
     usable: 1
-  - action: {fileID: 11400000, guid: 2ac5e5c44d06eee44b7fc64cf3a4193f, type: 2}
-    known: 1
-    usable: 1
-  - action: {fileID: 11400000, guid: 477fbf2ec749da948a5e3252e8ad5ac3, type: 2}
+  - action: {fileID: 11400000, guid: 55982705f4677714a90bf58620a2246f, type: 2}
     known: 1
     usable: 1
 --- !u!114 &11433614
@@ -1914,7 +1911,29 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: proactiveActions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: proactiveActions.Array.data[2].action
+      value: 
+      objectReference: {fileID: 11400000, guid: 477fbf2ec749da948a5e3252e8ad5ac3,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: proactiveActions.Array.data[2].known
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: proactiveActions.Array.data[2].usable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: proactiveActions.Array.data[1].action
+      value: 
+      objectReference: {fileID: 11400000, guid: 55982705f4677714a90bf58620a2246f,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 111550}
