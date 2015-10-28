@@ -30,7 +30,7 @@ public class TargetSelectionState : BaseCombatState {
             if (battleManRef.TileRaycast(battleManRef.battleCam.ScreenToWorldPoint(Input.mousePosition),
                                          battleManRef.battleCamTf.rotation * Vector3.forward,
                                          out hitTile)
-             //&& acceptableTiles.Contains(hitTile)
+             && acceptableTiles.Contains(hitTile)
              )
             {
                 battleManRef.targetTile = hitTile;
