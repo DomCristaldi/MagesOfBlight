@@ -1,7 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
+/// <summary>
+/// State to act as final confirmation lock before finally deciding to perform an action
+/// WARNING: Future plans to add Confirmation Lock to the BaseCombatState
+///     will make this class obsolete
+/// </summary>
+
 public class ConfirmActionState : BaseCombatState {
+
+    public ConfirmActionState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = true) : base(thisCombatPhase, canUndo) { }
 
     public override void UpdateState() {
         base.UpdateState();

@@ -11,8 +11,16 @@ public class InputHandler : MonoBehaviour {
 
 
     public enum AxisKey {
-        Select,
-        Confirm,
+        Select = 0,
+        Move = 1,
+        Confirm = 2,
+        Cancel = 3,
+
+        SelectionX = 4,
+        SelectionY = 5,
+
+        MovementX = 6,
+        MovementY = 7,
     }
 
 
@@ -20,12 +28,18 @@ public class InputHandler : MonoBehaviour {
     [System.Serializable]
     public class InputAxis {
         public string axisName;
+
+        public bool isJoystick = false;
+
         [Tooltip("Trigger like in the Animator, not xbox controller")]
         public bool isTrigger = false;
         private bool _triggered = false;
         public bool snap = false;
 
+        //public AnimationCurve valueRamp = AnimationCurve.Linear(0.0f, 0.0f, 1.0f, 1.0f);
+
         public float GetAxis() {
+
             //TRIGGER
             if (isTrigger) {
 
@@ -89,7 +103,7 @@ public class InputHandler : MonoBehaviour {
                     controlsDict.Add(cB.controlKey, cB.controlValue);
                 }
                 else {//Throw error if we try to add two instances of the same axis
-                    Debug.LogError("Failed to add" + cB.controlKey + " to controlsDict. More than one instance of its axis binding string exists.");
+                    Debug.LogError("Failed to add " + cB.controlKey + " to controlsDict. More than one instance of its axis binding string exists.");
                 }
             }
         }
@@ -130,6 +144,10 @@ public class InputHandler : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //Debug.Log(Input.GetAxis("ViewY"));
+        //Debug.Log(controls.GetAxis(AxisKey.SelectionX) + " | " + controls.GetAxis(AxisKey.SelectionY));
+        //if (controls.GetAxis(AxisKey.SelectionX) > 1.0f) { Debug.Log("boom"); }
+        
+        
     }
 
 }

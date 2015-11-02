@@ -1,7 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// State handles selecting Tiles on the Hex Grid.
+/// Allows selection of any Tile
+///     Will only transition to ActionSelectionState if the
+///         current Tile has a TileAgent of the currently
+///         acting Battle Team
+/// </summary>
+
 public class TileSelectionState : BaseCombatState {
+
+    public TileSelectionState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = true) : base(thisCombatPhase, canUndo) { }
 
 
     public override void UpdateState() {
@@ -16,7 +26,7 @@ public class TileSelectionState : BaseCombatState {
     private void HandleSelection() {
 
         if (InputHandler.singleton.controls.GetAxis(InputHandler.AxisKey.Select) != 0.0f) {
-            TileInfo hitTile;
+            HexNode hitTile;
 
             if (battleManRef.TileRaycast(battleManRef.battleCam.ScreenToWorldPoint(Input.mousePosition),//***CHANGE TO USING INPUT AXIS FROM INPUT HANDLER***
                                          battleManRef.battleCamTf.rotation * Vector3.forward,
@@ -28,16 +38,15 @@ public class TileSelectionState : BaseCombatState {
                 if (battleManRef.selectedTile.entityOnTile as TileAgent != null) {
                     battleManRef.selectedAgent = battleManRef.selectedTile.entityOnTile as TileAgent;
 
-                    battleManRef.ChangeCombatState(BattleManager.CombatPhase.ActionSelection);
-
+                    //only advance to Action Selection if it's the proper team and capable of performing a turn
+                    if (battleManRef.selectedAgent.team == battleManRef.curCombatTeam && battleManRef.selectedAgent.canPerformTurn) {
+                        battleManRef.ChangeCombatState(BattleManager.CombatPhase.ActionSelection);
+                    }
                 }
 
-                //return true;
             }
-            //return false;
 
         }
-        //return false;
 
     }
 }

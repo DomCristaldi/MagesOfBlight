@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[AddComponentMenu("Scripts/Engine/Motor")]
+[AddComponentMenu("Scripts/Engine/Motor_Rigidbody")]
 [RequireComponent(typeof(Rigidbody))]
 public class Motor_RigidBody : MonoBehaviour
 {
@@ -73,14 +73,12 @@ public class Motor_RigidBody : MonoBehaviour
         //ApplyMovementFixed();
     }
 
-    protected virtual void FixedUpdate()
-    {
+    protected virtual void FixedUpdate() {
         ApplyMovementFixed();
     }
 
     //HANDLE ANY MODIFICATIONS THE MOTOR HAS TO MAKE TO MOVEMENT
-    protected virtual void HandleMovement()
-    {
+    protected virtual void HandleMovement() {
         //trueDirec = desiredDirec;
 
         //Vector3 newDirec = Vector3.MoveTowards(truePoint, desiredPoint, redirectSpeed) - tf.position;
@@ -94,19 +92,16 @@ public class Motor_RigidBody : MonoBehaviour
     }
 
     //APPLY THE MOVEMENT TO THE RIGID BODY
-    protected virtual void ApplyMovementFixed()
-    {//only do in FixedUpdate()
+    protected virtual void ApplyMovementFixed() {//only do in FixedUpdate()
         rigbod.velocity = new Vector3(trueDirec.x, rigbod.velocity.y, trueDirec.z);
     }
 
-    public virtual void InputDirec(Vector3 direc)
-    {
+    public virtual void InputDirec(Vector3 direc) {
         //desiredDirec = Vector3.ClampMagnitude(direc, maxDesiredDirecMag);
         desiredDirec = direc.normalized;
     }
 
-    public virtual void InputPos(Vector3 pos)
-    {
+    public virtual void InputPos(Vector3 pos) {
         InputDirec(pos - tf.position);
     }
 

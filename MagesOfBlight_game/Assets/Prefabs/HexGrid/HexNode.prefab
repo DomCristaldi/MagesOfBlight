@@ -61,7 +61,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 106004}
-  m_Mesh: {fileID: 4300000, guid: 04c5aab7639a29d468969d354c8e7c14, type: 2}
+  m_Mesh: {fileID: 0}
 --- !u!64 &6429150
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -73,7 +73,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 04c5aab7639a29d468969d354c8e7c14, type: 2}
+  m_Mesh: {fileID: 0}
 --- !u!114 &11429038
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -82,16 +82,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 106004}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acab260b64fbcd448b444588f8b51b9b, type: 3}
+  m_Script: {fileID: 11500000, guid: 354e37dd7787fcf40acd79a0ea0643ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  battleManager: {fileID: 0}
+  entityOnTile: {fileID: 0}
   showEdges: 0
   showRadialLines: 0
   showConnections: 0
   radius: 0
   connections: []
-  battleManager: {fileID: 0}
-  entityOnTile: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

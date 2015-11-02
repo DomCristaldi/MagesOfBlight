@@ -37,7 +37,7 @@ public class AgentCanvasSpawner : MonoBehaviour {
 	void CreateUI(){
 		//---------------Actions---------------------------------------------
 		//create canvas and parent it to the agent
-		agentCanvas = (GameObject)Instantiate (agentCanvasPrefab.gameObject);
+		agentCanvas = (GameObject)Instantiate (agentCanvasPrefab.gameObject, Vector3.zero, Quaternion.identity);
 		agentCanvas.transform.SetParent (this.transform);
 		agentCanvas.transform.name = "Action Canvas";
 		//set canvas event camera and position in terms of the agent
