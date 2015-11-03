@@ -15,6 +15,9 @@ public class AgentCanvasSpawner : MonoBehaviour {
 	//canvas on the agent, need prefab assigned in inspector
 	public Canvas agentCanvasPrefab;
 
+	//healthbar prefab assigned in inspector
+	public Slider healthbarPrefab;
+
 	//list of possible actions
 	private List<AgentActions.ActionData> actionDataList;
 
@@ -53,6 +56,8 @@ public class AgentCanvasSpawner : MonoBehaviour {
 			buttonObject.transform.name = actionData.action.actionName + " Button";
 			//set parent to canvas
 			buttonObject.transform.SetParent (agentCanvas.transform);
+			//zero out button position
+			buttonObject.transform.localPosition = Vector3.zero;
 			//change text of button
 			buttonObject.GetComponentInChildren<Text>().text = actionData.action.actionName;
 			//change action associated with button
@@ -68,14 +73,14 @@ public class AgentCanvasSpawner : MonoBehaviour {
 			buttonObject.GetComponent<Button>().colors = buttonColors;
 			//change button text color
 			if(buttonColors.normalColor != Color.white){
-				//if its not white, the text should be white
+				//if button color is not white, the text should be white
 				buttonObject.GetComponentInChildren<Text>().color = Color.white;
 			}
 			else{
 				//else text should be black
 				buttonObject.GetComponentInChildren<Text>().color = Color.black;
 			}
-			//if action is not useable than disable it
+			//if action is not usable than disable it
 			if(!actionData.usable){
 				buttonObject.GetComponent<Button>().interactable = false;
 			}
@@ -91,8 +96,10 @@ public class AgentCanvasSpawner : MonoBehaviour {
 		//set ui to false
         agentCanvas.SetActive(false);
 
-		//--------------Damage-------------------------------------
-		//damageCanvas = (GameObject)Instantiate (agentCanvasPrefab.gameObject);
+		//--------------healthbar-------------------------------------
+		GameObject healthbar = (GameObject)Instantiate (healthbarPrefab.gameObject);
+		healthbar.transform.SetParent (this.transform);
+		healthbar.name = "Health Bar";
 	}
 	
 }
