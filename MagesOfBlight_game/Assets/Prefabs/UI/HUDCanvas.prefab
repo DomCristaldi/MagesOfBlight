@@ -1,20 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &101178
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 22436986}
-  m_Layer: 5
-  m_Name: Portraits
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &105454
 GameObject:
   m_ObjectHideFlags: 1
@@ -105,7 +90,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &145082
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -205,7 +190,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &159690
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -255,7 +240,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &175308
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -590,7 +575,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 800, y: 900}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1117,31 +1102,11 @@ RectTransform:
   - {fileID: 22497296}
   - {fileID: 22418674}
   m_Father: {fileID: 22440800}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1, y: 1}
-  m_Pivot: {x: .5, y: .5}
---- !u!224 &22436986
-RectTransform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101178}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 22490740}
-  - {fileID: 22470486}
-  - {fileID: 22457658}
-  m_Father: {fileID: 22440800}
-  m_RootOrder: 0
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -388.399994, y: 204}
-  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22440800
 RectTransform:
@@ -1153,7 +1118,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 22436986}
+  - {fileID: 22490740}
+  - {fileID: 22470486}
+  - {fileID: 22457658}
   - {fileID: 22433226}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1227,11 +1194,11 @@ RectTransform:
   - {fileID: 22488678}
   - {fileID: 22422066}
   - {fileID: 22444572}
-  m_Father: {fileID: 22436986}
+  m_Father: {fileID: 22440800}
   m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 69.3999939, y: -181.300003}
+  m_AnchoredPosition: {x: -319, y: -51}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22460528
@@ -1265,11 +1232,11 @@ RectTransform:
   - {fileID: 22407760}
   - {fileID: 22457650}
   - {fileID: 22430430}
-  m_Father: {fileID: 22436986}
+  m_Father: {fileID: 22440800}
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 69.3999939, y: -48.5}
+  m_AnchoredPosition: {x: -319, y: 82}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22477878
@@ -1320,11 +1287,11 @@ RectTransform:
   - {fileID: 22443842}
   - {fileID: 22495340}
   - {fileID: 22477878}
-  m_Father: {fileID: 22436986}
+  m_Father: {fileID: 22440800}
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 69.4000015, y: 88.6999969}
+  m_AnchoredPosition: {x: -319, y: 219}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22495340
