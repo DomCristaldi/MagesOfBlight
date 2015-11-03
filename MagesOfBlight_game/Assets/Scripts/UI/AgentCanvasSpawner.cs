@@ -75,6 +75,14 @@ public class AgentCanvasSpawner : MonoBehaviour {
 				//else text should be black
 				buttonObject.GetComponentInChildren<Text>().color = Color.black;
 			}
+			//if action is not useable than disable it
+			if(!actionData.usable){
+				buttonObject.GetComponent<Button>().interactable = false;
+			}
+			//if action is not known, disable the game object
+			if(!actionData.known){
+				buttonObject.SetActive(false);
+			}
 			//scale button down
 			buttonObject.transform.localScale = new Vector3(1.5f,1.5f,1.5f);
 			//add button to list

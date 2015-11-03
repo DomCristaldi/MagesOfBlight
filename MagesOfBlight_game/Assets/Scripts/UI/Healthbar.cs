@@ -13,6 +13,7 @@ public class Healthbar : MonoBehaviour {
 	void Start() {
 		//set to max health at beginning
 		fillAmount = 1f;
+		circularSilder = gameObject.GetComponent<Image> ();
 	}
 	void Update () {
 		circularSilder.fillAmount = fillAmount/2;    

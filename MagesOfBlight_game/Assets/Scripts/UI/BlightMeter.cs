@@ -13,6 +13,7 @@ public class BlightMeter : MonoBehaviour {
 	void Start() {
 		//set to half blight at beginning
 		fillAmount = .5f;
+		circularSilder = gameObject.GetComponent<Image> ();
 	}
 	void Update () {
 		circularSilder.fillAmount = fillAmount/2;    
