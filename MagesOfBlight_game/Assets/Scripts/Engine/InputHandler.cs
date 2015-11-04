@@ -21,6 +21,8 @@ public class InputHandler : MonoBehaviour {
 
         MovementX = 6,
         MovementY = 7,
+
+        Zoom = 8,
     }
 
 

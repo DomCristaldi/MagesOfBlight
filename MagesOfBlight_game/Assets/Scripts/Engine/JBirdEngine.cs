@@ -1,5 +1,7 @@
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -471,9 +473,11 @@ namespace JBirdEngine {
 				Vector3.up
 			};
 			mesh.RecalculateBounds();
-			AssetDatabase.CreateAsset(mesh, "Assets/Meshes/HexMesh.asset");
+#if UNITY_EDITOR
+            AssetDatabase.CreateAsset(mesh, "Assets/Meshes/HexMesh.asset");
 			AssetDatabase.SaveAssets();
-			return mesh;
+#endif
+            return mesh;
 		}
 
 		private static Vector3 _linkUp = new Vector3(0f, 0f, 1f);

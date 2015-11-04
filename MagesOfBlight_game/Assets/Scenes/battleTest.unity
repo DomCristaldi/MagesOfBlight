@@ -145,6 +145,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11474930, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
+      propertyPath: controls.controlMapping.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 411570, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -191,11 +195,35 @@ Prefab:
       objectReference: {fileID: 1507083196}
     - target: {fileID: 11474930, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
       propertyPath: controls.controlMapping.Array.data[4].controlValue.negate
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11474930, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
       propertyPath: controls.controlMapping.Array.data[3].controlValue.negate
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474930, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
+      propertyPath: controls.controlMapping.Array.data[3].controlKey
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474930, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
+      propertyPath: controls.controlMapping.Array.data[4].controlKey
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474930, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
+      propertyPath: controls.controlMapping.Array.data[4].controlValue.axisName
+      value: ClickMove
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474930, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
+      propertyPath: controls.controlMapping.Array.data[5].controlKey
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474930, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
+      propertyPath: controls.controlMapping.Array.data[5].controlValue.axisName
+      value: ClickMove
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474930, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
+      propertyPath: controls.controlMapping.Array.data[3].controlValue.axisName
+      value: Mouse ScrollWheel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}

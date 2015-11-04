@@ -31,6 +31,10 @@ public class BattleCameraController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        //if (!Application.isEditor) {
+            Cursor.lockState = CursorLockMode.Confined;
+        //}
+
         dragMarkerPos = GetMousePosOnGrid();
         projectionPlane = new Plane(Vector3.up, HexGridAssembler.singleton.transform.position);
 	}
@@ -39,9 +43,19 @@ public class BattleCameraController : MonoBehaviour {
 	void Update () {
         HandleTiles();
         HandleMovement();
+        HandleZoom();
 
         Debug.DrawRay(dragMarkerPos, Vector3.up, Color.green);
 	}
+
+    private void HandleTiles() {
+        HexNode node;
+        if (BattleManager.singleton.TileRaycast(mousePosOnScreen, mouseDirec, out node)) {
+            Debug.Log("hit");
+
+            BattleManager.singleton.SetHoveredTile(node);
+        }
+    }
 
     private void HandleMovement() {
         if (InputHandler.singleton.controls.GetAxis(InputHandler.AxisKey.Move) != 0.0f) {
@@ -75,13 +89,8 @@ public class BattleCameraController : MonoBehaviour {
 
     }
 
-    private void HandleTiles() {
-        HexNode node;
-        if (BattleManager.singleton.TileRaycast(mousePosOnScreen, mouseDirec, out node)) {
-            Debug.Log("hit");
-
-            BattleManager.singleton.SetHoveredTile(node);
-        }
+    private void HandleZoom() {
+        Debug.LogFormat("Zoom: {0}", InputHandler.singleton.controls.GetAxis(InputHandler.AxisKey.Zoom));
     }
 
     public Vector3 GetMousePosOnGrid() {
