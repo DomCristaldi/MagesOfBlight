@@ -51,7 +51,7 @@ public class BattleCameraController : MonoBehaviour {
     private void HandleTiles() {
         HexNode node;
         if (BattleManager.singleton.TileRaycast(mousePosOnScreen, mouseDirec, out node)) {
-            Debug.Log("hit");
+            //Debug.Log("hit");
 
             BattleManager.singleton.SetHoveredTile(node);
         }
@@ -90,7 +90,12 @@ public class BattleCameraController : MonoBehaviour {
     }
 
     private void HandleZoom() {
-        Debug.LogFormat("Zoom: {0}", InputHandler.singleton.controls.GetAxis(InputHandler.AxisKey.Zoom));
+        //Debug.LogFormat("Zoom: {0}", InputHandler.singleton.controls.GetAxis(InputHandler.AxisKey.Zoom));
+
+        float zoomAmount = InputHandler.singleton.controls.GetAxis(InputHandler.AxisKey.Zoom);
+
+        //transform.Translate(Vector3.forward * zoomAmount, Space.Self);
+        cam.orthographicSize += zoomAmount;
     }
 
     public Vector3 GetMousePosOnGrid() {
