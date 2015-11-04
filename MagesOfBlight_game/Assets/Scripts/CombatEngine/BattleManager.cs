@@ -182,6 +182,11 @@ public class BattleManager : MonoBehaviour {
         */
 	}
 
+    public void SetHoveredTile(HexNode tile) {
+        hoveredTile = tile;
+    }
+
+
     public BattleTeam GetCurrentTeam() {//***TODO: reimplement with more generic team handling (no distinct varialbes for playerTeam and enemyTeam)
         switch (curCombatTeam) {
             case CombatTeam.Player:

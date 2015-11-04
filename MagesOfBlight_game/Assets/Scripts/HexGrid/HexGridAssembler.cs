@@ -26,9 +26,7 @@ public class HexGridAssembler : MonoBehaviour {
 	public Transform test;
 
 	void Awake () {
-		if (singleton == null) {
-			singleton = this;
-		}
+		Singleton.ManageSingleton<HexGridAssembler>(this, ref singleton);
 		tiles = new List<HexNode>();
 		_showEdges = showEdges;
 		_showRadialLines = showRadialLines;
