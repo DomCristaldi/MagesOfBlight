@@ -42,10 +42,14 @@ public class InputHandler : MonoBehaviour {
         //public AnimationCurve valueRamp = AnimationCurve.Linear(0.0f, 0.0f, 1.0f, 1.0f);
 
         public float GetAxis() {
-
-            float retVal = Input.GetAxisRaw(axisName);
+            
+            float retVal = Input.GetAxis(axisName);
 
             retVal = TriggerAxisProtocol(retVal);
+            //Debug.Log(retVal);
+
+            //retVal = HandleTriggerAxis();
+
             retVal = SnapAxisProtocol(retVal);
             retVal = NegateAxisProtocol(retVal);
 
@@ -110,7 +114,7 @@ public class InputHandler : MonoBehaviour {
                 return Input.GetAxisRaw(axisName);
             }
         }
-        /*
+        
         private float HandleTriggerAxis() {
 
             //reset trigger if not using button
@@ -128,7 +132,7 @@ public class InputHandler : MonoBehaviour {
             //was not untriggered, return as if it wasn't be used
             return 0.0f;
         }
-        */
+        
     }
 
     //BINDS AN AXIS AND CONTROL VALUE, USED FOR GETTING InputAxis PROPERLY INTO A DICTIONARY
@@ -197,11 +201,11 @@ public class InputHandler : MonoBehaviour {
         //Debug.Log(Input.GetAxis("ViewY"));
         //Debug.Log(controls.GetAxis(AxisKey.SelectionX) + " | " + controls.GetAxis(AxisKey.SelectionY));
         //if (controls.GetAxis(AxisKey.SelectionX) > 1.0f) { Debug.Log("boom"); }
-        
+        /*
         if (controls.GetAxis(AxisKey.Select) != 0.0f) {
             Debug.Log("boom");
         }
-        
+        */
     }
 
 }
