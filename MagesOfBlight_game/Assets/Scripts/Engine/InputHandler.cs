@@ -29,6 +29,9 @@ public class InputHandler : MonoBehaviour {
     //DATA STRUCTURE TO HOLD THE AXIS AND PERFORM CUSTOM INPUT HANDLING ON IT'S OUTPUT
     [System.Serializable]
     public class InputAxis {
+        private float _axisValue;
+        public float axisValue { get { return _axisValue; } }
+
         public string axisName;
 
         public bool isJoystick = false;
@@ -41,9 +44,13 @@ public class InputHandler : MonoBehaviour {
 
         //public AnimationCurve valueRamp = AnimationCurve.Linear(0.0f, 0.0f, 1.0f, 1.0f);
 
-        public float GetAxis() {
+        public void UpdateAxisValue() {
+            _axisValue = GetAxis();
+        }
 
-            float retVal = Input.GetAxisRaw(axisName);
+        private float GetAxis() {
+            
+            float retVal = Input.GetAxis(axisName);
 
             retVal = TriggerAxisProtocol(retVal);
             retVal = SnapAxisProtocol(retVal);
@@ -110,7 +117,7 @@ public class InputHandler : MonoBehaviour {
                 return Input.GetAxisRaw(axisName);
             }
         }
-        /*
+        
         private float HandleTriggerAxis() {
 
             //reset trigger if not using button
@@ -128,7 +135,7 @@ public class InputHandler : MonoBehaviour {
             //was not untriggered, return as if it wasn't be used
             return 0.0f;
         }
-        */
+        
     }
 
     //BINDS AN AXIS AND CONTROL VALUE, USED FOR GETTING InputAxis PROPERLY INTO A DICTIONARY
@@ -154,7 +161,7 @@ public class InputHandler : MonoBehaviour {
                     controlsDict.Add(cB.controlKey, cB.controlValue);
                 }
                 else {//Throw error if we try to add two instances of the same axis
-                    Debug.LogError("Failed to add " + cB.controlKey + " to controlsDict. More than one instance of its axis binding string exists.");
+                    Debug.LogErrorFormat("Failed to add {0} to controlsDict. More than one instance of its axis binding string exists.", cB.controlKey);
                 }
             }
         }
@@ -168,7 +175,8 @@ public class InputHandler : MonoBehaviour {
                 }
             }
 
-            return controlsDict[keyName].GetAxis();
+            //return controlsDict[keyName].GetAxis();
+            return controlsDict[keyName].axisValue;
         }
 
     }
@@ -194,14 +202,22 @@ public class InputHandler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        RefreshInputs();
+
         //Debug.Log(Input.GetAxis("ViewY"));
         //Debug.Log(controls.GetAxis(AxisKey.SelectionX) + " | " + controls.GetAxis(AxisKey.SelectionY));
         //if (controls.GetAxis(AxisKey.SelectionX) > 1.0f) { Debug.Log("boom"); }
-        
+        /*
         if (controls.GetAxis(AxisKey.Select) != 0.0f) {
             Debug.Log("boom");
         }
-        
+        */
+    }
+
+    void RefreshInputs() {
+        foreach (KeyValuePair<AxisKey, InputAxis> kvp in controls.controlsDict) {
+            kvp.Value.UpdateAxisValue();
+        }
     }
 
 }
