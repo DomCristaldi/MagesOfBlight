@@ -11,6 +11,7 @@ GameObject:
   - 114: {fileID: 11474930}
   - 114: {fileID: 11464438}
   - 114: {fileID: 11464216}
+  - 114: {fileID: 11414330}
   m_Layer: 8
   m_Name: MasterController
   m_TagString: Untagged
@@ -30,6 +31,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11414330
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 147074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70b343acd9ba78d4ca16aa355cf80bc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultPortrait: {fileID: 0}
+  characters:
+  - character: 0
+    defaultPortrait: {fileID: 0}
+    moodSprites: []
+  - character: 1
+    defaultPortrait: {fileID: 0}
+    moodSprites:
+    - mood: 1
+      sprite: {fileID: 0}
+  - character: 2
+    defaultPortrait: {fileID: 0}
+    moodSprites: []
 --- !u!114 &11464216
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -98,7 +123,7 @@ MonoBehaviour:
       controlValue:
         axisName: Select
         isJoystick: 0
-        isTrigger: 1
+        isTrigger: 0
         snap: 0
         negate: 0
     - controlKey: 2
