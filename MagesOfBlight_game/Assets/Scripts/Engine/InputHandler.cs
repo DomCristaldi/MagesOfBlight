@@ -29,6 +29,9 @@ public class InputHandler : MonoBehaviour {
     //DATA STRUCTURE TO HOLD THE AXIS AND PERFORM CUSTOM INPUT HANDLING ON IT'S OUTPUT
     [System.Serializable]
     public class InputAxis {
+        private float _axisValue;
+        public float axisValue { get { return _axisValue; } }
+
         public string axisName;
 
         public bool isJoystick = false;
@@ -41,15 +44,15 @@ public class InputHandler : MonoBehaviour {
 
         //public AnimationCurve valueRamp = AnimationCurve.Linear(0.0f, 0.0f, 1.0f, 1.0f);
 
-        public float GetAxis() {
+        public void UpdateAxisValue() {
+            _axisValue = GetAxis();
+        }
+
+        private float GetAxis() {
             
             float retVal = Input.GetAxis(axisName);
 
             retVal = TriggerAxisProtocol(retVal);
-            //Debug.Log(retVal);
-
-            //retVal = HandleTriggerAxis();
-
             retVal = SnapAxisProtocol(retVal);
             retVal = NegateAxisProtocol(retVal);
 
@@ -172,7 +175,8 @@ public class InputHandler : MonoBehaviour {
                 }
             }
 
-            return controlsDict[keyName].GetAxis();
+            //return controlsDict[keyName].GetAxis();
+            return controlsDict[keyName].axisValue;
         }
 
     }
@@ -198,6 +202,8 @@ public class InputHandler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        RefreshInputs();
+
         //Debug.Log(Input.GetAxis("ViewY"));
         //Debug.Log(controls.GetAxis(AxisKey.SelectionX) + " | " + controls.GetAxis(AxisKey.SelectionY));
         //if (controls.GetAxis(AxisKey.SelectionX) > 1.0f) { Debug.Log("boom"); }
@@ -206,6 +212,12 @@ public class InputHandler : MonoBehaviour {
             Debug.Log("boom");
         }
         */
+    }
+
+    void RefreshInputs() {
+        foreach (KeyValuePair<AxisKey, InputAxis> kvp in controls.controlsDict) {
+            kvp.Value.UpdateAxisValue();
+        }
     }
 
 }
