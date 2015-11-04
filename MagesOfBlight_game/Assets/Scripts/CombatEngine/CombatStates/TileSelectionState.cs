@@ -32,6 +32,10 @@ public class TileSelectionState : BaseCombatState {
                                          battleManRef.battleCamTf.rotation * Vector3.forward,
                                          out hitTile))
             {
+
+                //DEBUG TO DRAW WHICH TILE WAS SELECTED
+                //Debug.DrawRay(hitTile.transform.position, Vector3.up, Color.black, 20.0f);
+
                 battleManRef.selectedTile = hitTile;
 
                 //MOVE TO ACTION SELECTION STATE IF WE'VE SELECTED AN AGENT
