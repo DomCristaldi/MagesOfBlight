@@ -13,9 +13,12 @@ public class PerformActionState : BaseCombatState {
     public override void UpdateState() {
         base.UpdateState();
 
+        CheckForBlock();
+
         if (battleManRef.selectedAction.DoAction()) {//returns true when finished
             battleManRef.ChangeCombatState(BattleManager.CombatPhase.CheckTeam);
         }
+
     }
 
     public override void EndState() {
@@ -24,6 +27,10 @@ public class PerformActionState : BaseCombatState {
         battleManRef.selectedAgent.UseTurn();
 
         battleManRef.ClearFrameInfo();
+    }
+
+    private void CheckForBlock() {
+
     }
 
 }

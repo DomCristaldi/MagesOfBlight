@@ -143,6 +143,8 @@ public class BattleManager : MonoBehaviour {
     public TileAgent selectedAgent;
 	public BaseAction selectedAction;
 
+    //public bool reactionWindowOpen;
+
     //public List<TileAgent> agentList;
 
 
@@ -322,6 +324,14 @@ public class BattleManager : MonoBehaviour {
 
 
         curCombatPhase = state;
+
+    }
+
+    public void OpenReactionWindow() {
+
+    }
+
+    public void CloseReactionWindow() {
 
     }
 
