@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(Camera))]
 public class BattleCameraController : MonoBehaviour {
 
     BattleCameraController singleton = null;
@@ -12,6 +13,11 @@ public class BattleCameraController : MonoBehaviour {
     Vector3 prevMousePos;
     Plane projectionPlane;
     Ray mouseRay;
+
+    public float zoomAmount = 5.0f;
+    public float closestZoom = 3.0f;
+    public float farthestZoom = 7.0f;
+    public float zoomScaling = 6f;
 
     public Vector3 mousePosOnScreen {
         get { return cam.ScreenToWorldPoint(Input.mousePosition); }
@@ -92,10 +98,13 @@ public class BattleCameraController : MonoBehaviour {
     private void HandleZoom() {
         //Debug.LogFormat("Zoom: {0}", InputHandler.singleton.controls.GetAxis(InputHandler.AxisKey.Zoom));
 
-        float zoomAmount = InputHandler.singleton.controls.GetAxis(InputHandler.AxisKey.Zoom);
+        float deltaZoom = InputHandler.singleton.controls.GetAxis(InputHandler.AxisKey.Zoom);
+        zoomAmount += deltaZoom * zoomScaling;
+        zoomAmount = Mathf.Clamp(zoomAmount, closestZoom, farthestZoom);
+
 
         //transform.Translate(Vector3.forward * zoomAmount, Space.Self);
-        cam.orthographicSize += zoomAmount;
+        cam.orthographicSize = zoomAmount;
     }
 
     public Vector3 GetMousePosOnGrid() {

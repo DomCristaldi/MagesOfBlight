@@ -325,6 +325,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bea0478e5ca124468b960fcc0785dba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zoomAmount: 5
+  closestZoom: 3
+  farthestZoom: 7
+  zoomScaling: 6
 --- !u!1 &633667723
 GameObject:
   m_ObjectHideFlags: 0
