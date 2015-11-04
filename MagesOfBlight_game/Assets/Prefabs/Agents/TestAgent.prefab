@@ -108,9 +108,12 @@ MonoBehaviour:
   agentActions: {fileID: 0}
   actionButtonPrefab: {fileID: 11448638, guid: 128ecbfe8d902e74dba6fefed89f8216, type: 2}
   agentCanvasPrefab: {fileID: 22358304, guid: bff4e445a558676409fc3b6d23d3728d, type: 2}
-  healthbarPrefab: {fileID: 0}
+  agentHUDCanvasPrefab: {fileID: 22365666, guid: 8a53028a6dfd44d4db395d8c8f6eb877,
+    type: 2}
+  healthbarPrefab: {fileID: 11436868, guid: 01e15a3a0fba34c4aae9b28c20ef805d, type: 2}
   agentCanvas: {fileID: 0}
-  damageCanvas: {fileID: 0}
+  agentHUDCanvas: {fileID: 0}
+  healthbar: {fileID: 0}
 --- !u!114 &11419572
 MonoBehaviour:
   m_ObjectHideFlags: 1

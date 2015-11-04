@@ -16,8 +16,11 @@ public class AgentCanvasSpawner : MonoBehaviour {
 	//canvas on the agent, need prefab assigned in inspector
 	public Canvas agentCanvasPrefab;
 
+	//HUD canvas on the agent, need prefab assigned in inspector
+	public Canvas agentHUDCanvasPrefab;
+
 	//healthbar prefab assigned in inspector
-	//public Slider healthbarPrefab;
+	public Slider healthbarPrefab;
 
 	//list of possible actions
 	private List<AgentActions.ActionData> actionDataList;
@@ -82,10 +85,10 @@ public class AgentCanvasSpawner : MonoBehaviour {
 				//else text should be black
 				buttonObject.GetComponentInChildren<Text> ().color = Color.black;
 			}
-			//if action is not usable than disable it
-			if (!actionData.usable) {
-				buttonObject.GetComponent<Button> ().interactable = false;
-			}
+//			//if action is not usable than disable it
+//			if (!actionData.usable) {
+//				buttonObject.GetComponent<Button> ().interactable = false;
+//			}
 			//if action is not known, disable the game object
 			if (!actionData.known) {
 				buttonObject.SetActive (false);
@@ -97,17 +100,15 @@ public class AgentCanvasSpawner : MonoBehaviour {
 		}
 		//set ui to false
 		agentCanvas.SetActive (false);
-	}
+
 	//--------------Healthbar-------------------------------------
-		/*
 		//needs a new canvas, set up same way as action button canvas
-		agentHUDCanvas = (GameObject)Instantiate (agentCanvasPrefab.gameObject, Vector3.zero, Quaternion.identity);
+		agentHUDCanvas = (GameObject)Instantiate (agentHUDCanvasPrefab.gameObject, Vector3.zero, Quaternion.identity);
 		agentHUDCanvas.transform.SetParent (this.transform);
 		agentHUDCanvas.transform.name = "HUD Canvas";
-		agentHUDCanvas.transform.localPosition = new Vector3 (0f,2.3f,0f);
 		//set canvas event camera and position in terms of the agent
 		agentHUDCanvas.GetComponent<Canvas> ().worldCamera = Camera.main;
-		agentHUDCanvas.transform.localPosition = new Vector3 (0f,2f,0f);
+		agentHUDCanvas.transform.localPosition = new Vector3 (0f,2.3f,0f);
 		healthbar = (GameObject)Instantiate (healthbarPrefab.gameObject);
 		healthbar.transform.SetParent (agentHUDCanvas.transform);
 		healthbar.name = "Health Bar";
@@ -118,7 +119,7 @@ public class AgentCanvasSpawner : MonoBehaviour {
 		healthbarSlider.minValue = 0;
 		healthbarSlider.value = GetComponent<BaseStats> ().currentHealth;
 		//scale healthbar
-		healthbar.transform.localScale = new Vector3(10f,10f,0);
+		healthbar.transform.localScale = new Vector3(1f,1f,0);
 	}
 	//function to call to change UI e.g. when button canvas is enabled, check button usability and deactivate hud cavas
 	public void activateUI(){
@@ -129,5 +130,5 @@ public class AgentCanvasSpawner : MonoBehaviour {
 		//update health
 		healthbar.GetComponent<Slider> ().value = GetComponent<BaseStats> ().currentHealth;
 	}
-	*/
+
 }

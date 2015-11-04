@@ -124,11 +124,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 11451408, guid: 3b5d888d35355ee4994ff37f23c3f318, type: 2}
-      propertyPath: healthbarPrefab
-      value: 
-      objectReference: {fileID: 11436868, guid: 01e15a3a0fba34c4aae9b28c20ef805d,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3b5d888d35355ee4994ff37f23c3f318, type: 2}
   m_IsPrefabParent: 0
@@ -610,11 +605,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 11433614, guid: c5970baba0de8c041812a38defa7d052, type: 2}
-      propertyPath: healthbarPrefab
-      value: 
-      objectReference: {fileID: 11436868, guid: 01e15a3a0fba34c4aae9b28c20ef805d,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c5970baba0de8c041812a38defa7d052, type: 2}
   m_IsPrefabParent: 0
@@ -817,11 +807,6 @@ Prefab:
       propertyPath: m_Name
       value: TestAgent_Enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 11400882, guid: b261d2291804c4c46bf0ed8c2bdcd09a, type: 2}
-      propertyPath: healthbarPrefab
-      value: 
-      objectReference: {fileID: 11436868, guid: 01e15a3a0fba34c4aae9b28c20ef805d,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b261d2291804c4c46bf0ed8c2bdcd09a, type: 2}
   m_IsPrefabParent: 0
