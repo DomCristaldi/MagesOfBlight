@@ -118,7 +118,7 @@ public class BattleManager : MonoBehaviour {
 
 
 
-    [Space]
+    //[Space]
     [Header("Teams")]
 
     //public List<BattleTeam> teams;
@@ -128,7 +128,7 @@ public class BattleManager : MonoBehaviour {
 
     private BaseCombatState currentBattleState;
 
-    [Space]
+    //[Space]
     [Header("Battle Info")]
 
 
