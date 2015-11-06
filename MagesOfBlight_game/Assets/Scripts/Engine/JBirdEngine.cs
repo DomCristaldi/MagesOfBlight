@@ -13,12 +13,157 @@ namespace JBirdEngine {
 	/// </summary>
 	public static class MoreColors {
 
+		/// <summary>
+		/// I'll tell you what, you know me; let's have some fun.
+		/// </summary>
+		public static class BobRoss {
+
+			/// <summary>
+			/// One of the most versatile of the Bob Ross colors.
+			/// </summary>
+			public static Color alizarinCrimson () {
+				return ColorHelper.ToColor(0xE32636);
+			}
+
+			/// <summary>
+			/// Bob’s customary color for signing his paintings.
+			/// </summary>
+			public static Color brightRed () {
+				return ColorHelper.ToColor(0xAA0114);
+			}
+
+			/// <summary>
+			/// An oldie, but a goodie.
+			/// </summary>
+			public static Color permanentRed () {
+				return ColorHelper.ToColor(0x742C1E);
+			}
+
+			/// <summary>
+			/// Sometimes used to indicate the brilliant sunlight in the sky.
+			/// </summary>
+			public static Color cadmiumYellow () {
+				return ColorHelper.ToColor(0xFFF600);
+			}
+
+			/// <summary>
+			/// The lighter of the two Bob Ross brown colors.
+			/// </summary>
+			public static Color darkSienna () {
+				return ColorHelper.ToColor(0x3C1414);
+			}
+
+			/// <summary>
+			/// Occasionally Bob will use Indian Yellow to paint the sun in the sky of his painting.
+			/// </summary>
+			public static Color indianYellow () {
+				return ColorHelper.ToColor(0xE3A857);
+			}
+
+			/// <summary>
+			/// Often used as a base color to block in the basic shapes of trees and bushes.
+			/// </summary>
+			public static Color midnightBlack () {
+				return ColorHelper.ToColor(0x000316);
+			}
+
+			/// <summary>
+			/// A very strong color, most commonly used to paint skies and water.
+			/// </summary>
+			public static Color phthaloBlue () {
+				return ColorHelper.ToColor(0x000F89);
+			}
+
+			/// <summary>
+			/// An almost fluorescent green color.
+			/// </summary>
+			public static Color phthaloGreen () {
+				return ColorHelper.ToColor(0x123524);
+			}
+
+			/// <summary>
+			/// Often found in the skies of Bob’s frigid winter scenes.
+			/// </summary>
+			public static Color prussianBlue () {
+				return ColorHelper.ToColor(0x003153);
+			}
+
+			/// <summary>
+			/// Used primarily for all things foliage.
+			/// </summary>
+			public static Color sapGreen () {
+				return ColorHelper.ToColor(0x507D2A);
+			}
+
+			/// <summary>
+			/// The most consistently used of all the Bob Ross colors.
+			/// </summary>
+			public static Color titaniumWhite () {
+				return ColorHelper.ToColor(0xFCFFF0);
+			}
+
+			/// <summary>
+			/// A "go-to" color for all of your dark basecoat needs.
+			/// </summary>
+			public static Color vanDykeBrown () {
+				return ColorHelper.ToColor(0x584630);
+			}
+
+			/// <summary>
+			/// A beautiful soft hue, excellent for highlighting foliage.
+			/// </summary>
+			public static Color yellowOchre () {
+				return ColorHelper.ToColor(0xF5C52C);
+			}
+
+			/// <summary>
+			/// There are no mistakes, just happy little accidents.
+			/// </summary>
+			/// <returns>A random landscape paint color.</returns>
+			public static Color HappyLittleAccident () {
+				int colorIndex = UnityEngine.Random.Range(0, 14);
+				switch (colorIndex) {
+				case 0:
+					return alizarinCrimson();
+				case 1:
+					return brightRed();
+				case 2:
+					return permanentRed();
+				case 3:
+					return cadmiumYellow();
+				case 4:
+					return darkSienna();
+				case 5:
+					return indianYellow();
+				case 6:
+					return midnightBlack();
+				case 7:
+					return phthaloBlue();
+				case 8:
+					return phthaloGreen();
+				case 9:
+					return prussianBlue();
+				case 10:
+					return sapGreen();
+				case 11:
+					return titaniumWhite();
+				case 12:
+					return vanDykeBrown();
+				case 13:
+					return yellowOchre();
+				default:
+					return titaniumWhite();
+				}
+			}
+
+		}
+
 		public static Color purple () {
-			return new Color(0.333f, 0.102f, 0.545f, 1.0f);
+			return ColorHelper.ToColor(0x800080);
 		}
 		
 		public static Color orange () {
-			return new Color(1.0f, 0.647f, 0.0f, 1.0f);
+			return ColorHelper.ToColor(0xFF8C00);
 		}
 
 		public static Color chartreuseYellow () {
@@ -27,6 +172,18 @@ namespace JBirdEngine {
 
 		public static Color chartreuseGreen () {
 			return ColorHelper.ToColor(0x7FFF00);
+		}
+
+		public static Color linkTunicGreen () {
+			return ColorHelper.ToColor(0x00CC00);
+		}
+
+		public static Color teal () {
+			return ColorHelper.ToColor(0x008080);
+		}
+
+		public static Color indigo () {
+			return ColorHelper.ToColor(0x4B0082);
 		}
 
 	}

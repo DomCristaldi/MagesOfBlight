@@ -77,6 +77,8 @@ public class HexNode : MonoBehaviour, INode<HexNode> {
         battleManager = BattleManager.singleton;
 
 		transform.localScale = Vector3.one * radius;
+
+		hexRing.material.color = MoreColors.BobRoss.HappyLittleAccident();
 	}
 
 	protected virtual void Update () {
