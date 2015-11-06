@@ -3,7 +3,7 @@ using System.Collections;
 
 [AddComponentMenu("Scripts/Engine/Motor_Rigidbody")]
 [RequireComponent(typeof(Rigidbody))]
-public class Motor_RigidBody : MonoBehaviour
+public class RigidBodyMotor : MonoBehaviour
 {
 
     Transform tf;

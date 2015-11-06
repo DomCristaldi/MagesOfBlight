@@ -715,7 +715,7 @@ Animator:
   m_GameObject: {fileID: 103834}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 6525a4abea38b974798322fa936fd99c, type: 3}
-  m_Controller: {fileID: 9100000, guid: 87f6dd7ad670a5242b33df8625106c57, type: 2}
+  m_Controller: {fileID: 9100000, guid: 135605dc3bf7a5746b806c0926a0dca4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -748,7 +748,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   motor: {fileID: 0}
-  tileMotor: {fileID: 0}
   hasTurn: 1
   team: 1
   moveSpeed: 1
@@ -784,6 +783,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  speedRamp:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 10
+    - time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 10
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  desiredDirec: {x: 0, y: 0, z: 0}
+  redirectSpeed: 1
+  moveSpeedModifier: 1
   currentTile: {fileID: 0}
   suppliedPath: []
   doneMoving: 0
@@ -878,9 +895,17 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: speedRamp.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 135605dc3bf7a5746b806c0926a0dca4, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 115730}
