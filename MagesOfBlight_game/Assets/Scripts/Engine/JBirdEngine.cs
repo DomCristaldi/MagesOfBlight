@@ -312,10 +312,6 @@ namespace JBirdEngine {
 				blueBalance += colorAmount.color.b * colorAmount.amount;
 				alpha += colorAmount.color.a * colorAmount.amount;
 			}
-			redBalance /= (float)colors.Length;
-			greenBalance /= (float)colors.Length;
-			blueBalance /= (float)colors.Length;
-			alpha /= (float)colors.Length;
 			return new Color (redBalance, greenBalance, blueBalance, alpha);
 		}
 
@@ -330,6 +326,26 @@ namespace JBirdEngine {
 				colorAmounts[i] = new ColorAmount(colors[i]);
 			}
 			return MixColors(colorAmounts);
+		}
+
+		/// <summary>
+		/// Make a gradient between two colors (Returns a list of colors blended from startColor to endColor).
+		/// </summary>
+		/// <returns>A list of colors blended from startColor to endColor.</returns>
+		/// <param name="startColor">Start color.</param>
+		/// <param name="endColor">End color.</param>
+		/// <param name="blendColors">Number of blended colors in the middle (returned list's length will be this value plus two).</param>
+		public static List<Color> MakeGradient (Color startColor, Color endColor, int blendColors) {
+			List<Color> gradient = new List<Color>();
+			float amountPerBlendStep = 1f / (float)(blendColors + 1);
+			float blendAmount = 0f;
+			gradient.Add(startColor);
+			for (int i = 0; i < blendColors; i++) {
+				blendAmount += amountPerBlendStep;
+				gradient.Add(MixColors(new ColorAmount(startColor, 1f - blendAmount), new ColorAmount(endColor, blendAmount)));
+			}
+			gradient.Add(endColor);
+			return gradient;
 		}
 
 	}
