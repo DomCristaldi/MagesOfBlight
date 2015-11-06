@@ -8,6 +8,7 @@ using System.Collections.Generic;
 
 namespace JBirdEngine {
 
+	/*
 	/// <summary>
 	/// More colors; because Unity's base colors just aren't enough.
 	/// </summary>
@@ -21,7 +22,16 @@ namespace JBirdEngine {
 			return new Color(1.0f, 0.647f, 0.0f, 1.0f);
 		}
 
+		public static Color ToColor(int HexValue) {
+			return ToColor(new Color32((byte)((HexValue >> 16) & 0xFF), (byte)((HexValue >> 8) & 0xFF), (byte)((HexValue) & 0xFF), 255));
+		}
+
+		public static Color ToColor (Color32 color32) {
+			return Color.white;
+		}
+
 	}
+	*/
 
 	/// <summary>
 	/// Contains functions for managing singleton classes.
