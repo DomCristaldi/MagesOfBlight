@@ -10,6 +10,8 @@ public class HexNode : MonoBehaviour, INode<HexNode> {
 
     public TileEntity entityOnTile;
 
+	public Renderer hexRing;
+
 	[Header("Debug lines:")]
 	public bool showEdges;
 	public bool showRadialLines;

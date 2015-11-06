@@ -40,6 +40,10 @@ public class HexGridAssembler : MonoBehaviour {
 		if (col != null && col.sharedMesh == null) {
 			col.sharedMesh = HexGrid.hexMesh;
 		}
+		MeshFilter ringMf = nodePrefab.hexRing.GetComponent<MeshFilter>();
+		if (ringMf != null && ringMf.sharedMesh == null) {
+			ringMf.sharedMesh = HexGrid.hexRingMesh;
+		}
 	}
 
 	void Start () {

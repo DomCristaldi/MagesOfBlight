@@ -7,31 +7,51 @@ using System.Collections;
 using System.Collections.Generic;
 
 namespace JBirdEngine {
-
-	/*
+	
 	/// <summary>
 	/// More colors; because Unity's base colors just aren't enough.
 	/// </summary>
 	public static class MoreColors {
 
-		public static Color purple (this MoreColors colors) {
+		public static Color purple () {
 			return new Color(0.333f, 0.102f, 0.545f, 1.0f);
 		}
-
-		public static Color orange (this MoreColors colors) {
+		
+		public static Color orange () {
 			return new Color(1.0f, 0.647f, 0.0f, 1.0f);
 		}
 
-		public static Color ToColor(int HexValue) {
-			return ToColor(new Color32((byte)((HexValue >> 16) & 0xFF), (byte)((HexValue >> 8) & 0xFF), (byte)((HexValue) & 0xFF), 255));
+		public static Color chartreuseYellow () {
+			return ColorHelper.ToColor(0xDFFF00);
 		}
 
-		public static Color ToColor (Color32 color32) {
-			return Color.white;
+		public static Color chartreuseGreen () {
+			return ColorHelper.ToColor(0x7FFF00);
 		}
 
 	}
-	*/
+
+	/// <summary>
+	/// Helper class to convert other color formats to Unity-recognized colors.
+	/// </summary>
+	public static class ColorHelper {
+
+		public static Color ToColor(int HexValue) {
+			byte r = (byte)((HexValue >> 16) & 0xFF);
+			byte g = (byte)((HexValue >> 8) & 0xFF);
+			byte b = (byte)((HexValue) & 0xFF);
+			return ToColor(new Color32(r, g, b, 255));
+		}
+
+		public static Color ToColor (Color32 color32) {
+			return (Color)color32;
+		}
+
+		public static Color ToColor (int red, int green, int blue) {
+			return new Color((float)red/255f, (float)green/255f, (float)blue/255f);
+		}
+
+	}
 
 	/// <summary>
 	/// Contains functions for managing singleton classes.
@@ -472,7 +492,6 @@ namespace JBirdEngine {
 		private static Mesh CreateHexMesh () {
 			Mesh mesh = new Mesh();
 			mesh.name = "HexMesh";
-			Vector3 offset = new Vector3(0f, 0.1f, 0f);
 			mesh.vertices = new Vector3[] {
 				Vector3.zero,
 				_cornerDownRight,
@@ -488,21 +507,53 @@ namespace JBirdEngine {
 			}
 			mesh.uv = uvs;
 			mesh.triangles = new int[] {0, 1, 2, 0, 2, 3, 0, 3, 4, 0, 4, 5, 0, 5, 6, 0, 6, 1};
-			mesh.normals = new Vector3[] {
-				Vector3.up,
-				Vector3.up,
-				Vector3.up,
-				Vector3.up,
-				Vector3.up,
-				Vector3.up,
-				Vector3.up
-			};
+			mesh.RecalculateNormals();
 			mesh.RecalculateBounds();
 #if UNITY_EDITOR
             AssetDatabase.CreateAsset(mesh, "Assets/Meshes/HexMesh.asset");
 			AssetDatabase.SaveAssets();
 #endif
             return mesh;
+		}
+
+		// Thickness of the hex ring (must be between 0.0f and 1.0f)
+		static float outerDistance = 0.98f;
+		static float ringThickness = 0.2f;
+		public static Mesh hexRingMesh = CreateHexRingMesh();
+		
+		/// <summary>
+		/// Creates the hex mesh and stores it in the assets folder.
+		/// </summary>
+		private static Mesh CreateHexRingMesh () {
+			Mesh mesh = new Mesh();
+			mesh.name = "HexRingMesh";
+			mesh.vertices = new Vector3[] {
+				_cornerDownRight * outerDistance,
+				_cornerDownLeft * outerDistance,
+				_cornerLeft * outerDistance,
+				_cornerUpLeft * outerDistance,
+				_cornerUpRight * outerDistance,
+				_cornerRight * outerDistance,
+				_cornerDownRight * (outerDistance - ringThickness),
+				_cornerDownLeft * (outerDistance - ringThickness),
+				_cornerLeft * (outerDistance - ringThickness),
+				_cornerUpLeft * (outerDistance - ringThickness),
+				_cornerUpRight * (outerDistance- ringThickness),
+				_cornerRight * (outerDistance - ringThickness)
+			};
+			Vector2[] uvs = new Vector2[mesh.vertices.Length];
+			for (int i = 0; i < mesh.vertices.Length; i++) {
+				uvs[i] = new Vector2(mesh.vertices[i].x, mesh.vertices[i].z);
+			}
+			mesh.uv = uvs;
+			mesh.triangles = new int[] {0, 1, 6, 7, 6, 1, 1, 2, 7, 8, 7, 2, 2, 3, 8, 9, 8, 3, 3, 4, 9, 10, 9, 4, 4, 5, 10, 11, 10, 5, 5, 0, 11, 6, 11, 0};
+			mesh.RecalculateNormals();
+			mesh.RecalculateBounds();
+			#if UNITY_EDITOR
+			AssetDatabase.CreateAsset(mesh, "Assets/Meshes/HexRingMesh.asset");
+			AssetDatabase.SaveAssets();
+			#endif
+			return mesh;
 		}
 
 		private static Vector3 _linkUp = new Vector3(0f, 0f, 1f);
