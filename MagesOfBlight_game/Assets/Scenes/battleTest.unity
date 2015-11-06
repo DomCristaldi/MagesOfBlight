@@ -184,10 +184,6 @@ Prefab:
       propertyPath: playerTeam.teamMembers.Array.data[1]
       value: 
       objectReference: {fileID: 430703759}
-    - target: {fileID: 11464438, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
-      propertyPath: enemyTeam.teamMembers.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
   m_IsPrefabParent: 0
