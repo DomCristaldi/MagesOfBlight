@@ -9,12 +9,10 @@ public class HealthBlightGUIHandler : MonoBehaviour {
 
 	public BaseStats stats;
 
-	// Use this for initialization
-	void Start () {
+	protected virtual void Start () {
 
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		healthMeter.fillAmount = stats.currentHealth/200f;
 		blightMeter.fillAmount = stats.currentBlight/200f;
