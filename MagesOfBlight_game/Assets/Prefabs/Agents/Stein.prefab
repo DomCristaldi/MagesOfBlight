@@ -117,7 +117,7 @@ GameObject:
   - 114: {fileID: 11486464}
   - 114: {fileID: 11496634}
   - 114: {fileID: 11450754}
-  - 114: {fileID: 11448542}
+  - 114: {fileID: 11491364}
   m_Layer: 0
   m_Name: Stein
   m_TagString: Untagged
@@ -661,7 +661,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 114998}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.51999998, y: 0, z: -2.13000011}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 419798}
@@ -715,7 +715,7 @@ Animator:
   m_GameObject: {fileID: 116840}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 15e4eb5c831dd8245b14977fc821d76d, type: 3}
-  m_Controller: {fileID: 9100000, guid: 8f84ea5f168e53046bd5c620007a45c6, type: 2}
+  m_Controller: {fileID: 9100000, guid: 135605dc3bf7a5746b806c0926a0dca4, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -739,19 +739,6 @@ MonoBehaviour:
   hasTurn: 1
   team: 0
   moveSpeed: 1
---- !u!114 &11448542
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 114998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8988acbf316b6144792901b6be0c716d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 100
 --- !u!114 &11450754
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -790,6 +777,21 @@ MonoBehaviour:
   - action: {fileID: 11400000, guid: 809e213b9ee99f24ab4548897eaa8fad, type: 2}
     known: 1
     usable: 1
+--- !u!114 &11491364
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ffb1ebdc8be65b4c875f27dd08cf9a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 100
+  maxBlight: 100
+  currentBlight: 50
 --- !u!114 &11496634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -810,6 +812,8 @@ MonoBehaviour:
   agentCanvas: {fileID: 0}
   agentHUDCanvas: {fileID: 0}
   healthbar: {fileID: 0}
+  healthbarSlider: {fileID: 0}
+  stats: {fileID: 0}
 --- !u!137 &13726622
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
