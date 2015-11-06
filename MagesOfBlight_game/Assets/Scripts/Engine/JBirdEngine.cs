@@ -9,6 +9,21 @@ using System.Collections.Generic;
 namespace JBirdEngine {
 
 	/// <summary>
+	/// More colors; because Unity's base colors just aren't enough.
+	/// </summary>
+	public static class MoreColors {
+
+		public static Color purple (this MoreColors colors) {
+			return new Color(0.333f, 0.102f, 0.545f, 1.0f);
+		}
+
+		public static Color orange (this MoreColors colors) {
+			return new Color(1.0f, 0.647f, 0.0f, 1.0f);
+		}
+
+	}
+
+	/// <summary>
 	/// Contains functions for managing singleton classes.
 	/// </summary>
 	public static class Singleton {
