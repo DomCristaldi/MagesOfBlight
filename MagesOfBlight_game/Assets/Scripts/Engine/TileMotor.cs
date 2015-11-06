@@ -50,12 +50,18 @@ public class TileMotor : MonoBehaviour {
 
 
     [HideInInspector]
-    public bool doneMoving = true;
+    public bool doneMoving;
+    [HideInInspector]
+    public bool isMoving;
     private Coroutine moveRoutine = null;
 
     void Awake() {
         //desiredDirec = Vector3.zero;
         _trueDirec = Vector3.zero;
+
+        doneMoving = false;
+
+        isMoving = false;
     }
 
 	void Start () {
@@ -75,7 +81,7 @@ public class TileMotor : MonoBehaviour {
     public void GivePath(List<HexNode> path) {
         suppliedPath = path;
 
-        Debug.Log(suppliedPath.Count);
+        //Debug.Log(suppliedPath.Count);
 
     }
 
@@ -103,11 +109,11 @@ public class TileMotor : MonoBehaviour {
 
             moveRoutine = StartCoroutine(MoveRoutine(suppliedPath));
 
-            Debug.Log("start move routine");
+            //Debug.Log("start move routine");
             
         }
 
-        Debug.Log("Exit condition reached");
+        //Debug.Log("Exit condition reached");
 
         //we're still moving, return false
         return false;
@@ -123,6 +129,8 @@ public class TileMotor : MonoBehaviour {
     private void UpdateTrueDirec() {
         _trueDirec = Vector3.MoveTowards(_trueDirec, desiredDirec, redirectSpeed);
     }
+
+
 
     /*
     public Vector3 SetDesiredDirec(Vector3 position) {
@@ -175,6 +183,8 @@ public class TileMotor : MonoBehaviour {
 
     private IEnumerator MoveRoutine(List<HexNode> pathList) {
 
+        isMoving = true;
+
         if (pathList.Count < 2) { yield break; }//path isn't long enough, break out
 
         //SetDesiredDirec(pathList[1].transform.position - pathList[0].transform.position);
@@ -193,7 +203,10 @@ public class TileMotor : MonoBehaviour {
             yield return null;
         }
 
+
+
         doneMoving = true;
+        isMoving = false;
 
         yield break;
     }

@@ -20,7 +20,7 @@ public class TargetSelectionState : BaseCombatState {
     public override void UpdateState() {
         base.UpdateState();
 
-        Debug.Log("Select Target");
+        //Debug.Log("Select Target");
 
         if (InputHandler.singleton.controls.GetAxis(InputHandler.AxisKey.Select) != 0.0f) {
 
