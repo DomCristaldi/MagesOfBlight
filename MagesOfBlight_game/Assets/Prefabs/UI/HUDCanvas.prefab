@@ -44,7 +44,6 @@ GameObject:
   - 224: {fileID: 22443842}
   - 222: {fileID: 22200284}
   - 114: {fileID: 11465580}
-  - 114: {fileID: 11430122}
   m_Layer: 5
   m_Name: health meter
   m_TagString: Untagged
@@ -62,7 +61,6 @@ GameObject:
   - 224: {fileID: 22412750}
   - 222: {fileID: 22283474}
   - 114: {fileID: 11479798}
-  - 114: {fileID: 11414234}
   m_Layer: 5
   m_Name: blight meter
   m_TagString: Untagged
@@ -80,7 +78,6 @@ GameObject:
   - 224: {fileID: 22405766}
   - 222: {fileID: 22280158}
   - 114: {fileID: 11473174}
-  - 114: {fileID: 11474890}
   m_Layer: 5
   m_Name: blight meter
   m_TagString: Untagged
@@ -180,7 +177,6 @@ GameObject:
   - 224: {fileID: 22407760}
   - 222: {fileID: 22293618}
   - 114: {fileID: 11490708}
-  - 114: {fileID: 11485384}
   m_Layer: 5
   m_Name: health meter
   m_TagString: Untagged
@@ -230,7 +226,6 @@ GameObject:
   - 224: {fileID: 22498916}
   - 222: {fileID: 22239080}
   - 114: {fileID: 11460426}
-  - 114: {fileID: 11433064}
   m_Layer: 5
   m_Name: blight meter
   m_TagString: Untagged
@@ -297,7 +292,6 @@ GameObject:
   - 224: {fileID: 22488678}
   - 222: {fileID: 22205174}
   - 114: {fileID: 11456184}
-  - 114: {fileID: 11471850}
   m_Layer: 5
   m_Name: health meter
   m_TagString: Untagged
@@ -339,19 +333,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &11414234
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 128786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6368afb963bc3d64b8bcb22898a271db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fillAmount: 0
-  circularSilder: {fileID: 0}
 --- !u!114 &11426946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -379,32 +360,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &11430122
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dddc89e96589a845a3f04daf00b715e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fillAmount: 0
-  circularSilder: {fileID: 0}
---- !u!114 &11433064
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 163310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6368afb963bc3d64b8bcb22898a271db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fillAmount: 0
-  circularSilder: {fileID: 0}
 --- !u!114 &11442354
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -609,19 +564,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &11471850
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 192294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dddc89e96589a845a3f04daf00b715e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fillAmount: 0
-  circularSilder: {fileID: 0}
 --- !u!114 &11472136
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -681,19 +623,6 @@ MonoBehaviour:
   m_FillAmount: .5
   m_FillClockwise: 0
   m_FillOrigin: 0
---- !u!114 &11474890
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 130618}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6368afb963bc3d64b8bcb22898a271db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fillAmount: 0
-  circularSilder: {fileID: 0}
 --- !u!114 &11476754
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -780,19 +709,6 @@ MonoBehaviour:
   m_FillAmount: .5
   m_FillClockwise: 0
   m_FillOrigin: 0
---- !u!114 &11485384
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 158962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dddc89e96589a845a3f04daf00b715e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fillAmount: 0
-  circularSilder: {fileID: 0}
 --- !u!114 &11486762
 MonoBehaviour:
   m_ObjectHideFlags: 1
