@@ -53,6 +53,7 @@ public class AgentCanvasSpawner : MonoBehaviour {
 		agentCanvas.transform.name = "Action Canvas";
 		//set canvas event camera and position in terms of the agent
 		agentCanvas.GetComponent<Canvas> ().worldCamera = Camera.main;
+		agentCanvas.GetComponent<Canvas> ().sortingOrder = 1;
 		agentCanvas.transform.localPosition = new Vector3 (0f, 2f, 0f);
 		//create buttons
 		foreach (AgentActions.ActionData actionData in actionDataList) {
