@@ -9,6 +9,7 @@ public class Healthbar : MonoBehaviour {
 	public float fillAmount;
 	//image of the meter
 	public Image circularSilder;
+	public BaseStats stats;
 
 	void Start() {
 		//set to max health at beginning
