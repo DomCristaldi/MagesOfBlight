@@ -174,8 +174,16 @@ namespace JBirdEngine {
 			return ColorHelper.ToColor(0x7FFF00);
 		}
 
-		public static Color linkTunicGreen () {
+		public static Color kokiriTunic () {
 			return ColorHelper.ToColor(0x00CC00);
+		}
+
+		public static Color goronTunic () {
+			return ColorHelper.ToColor(0xCC0000);
+		}
+
+		public static Color zoraTunic () {
+			return ColorHelper.ToColor(0x0000CC);
 		}
 
 		public static Color teal () {
@@ -184,6 +192,58 @@ namespace JBirdEngine {
 
 		public static Color indigo () {
 			return ColorHelper.ToColor(0x4B0082);
+		}
+
+		public static Color sage () {
+			return ColorHelper.ToColor(0x9C9F84);
+		}
+
+		public static Color mintIceCream () {
+			return ColorHelper.ToColor(0xBAEBAE);
+		}
+
+		public static Color sarcoline () {
+			return ColorHelper.ToColor(0xFADFAE);
+		}
+
+		public static Color coquelicot () {
+			return ColorHelper.ToColor(0xFF3800);
+		}
+
+		public static Color smaragdine () {
+			return ColorHelper.ToColor(0x50C875);
+		}
+
+		public static Color mikado () {
+			return ColorHelper.ToColor(0xFFC40C);
+		}
+
+		public static Color glaucous () {
+			return ColorHelper.ToColor(0x6082B6);
+		}
+
+		public static Color wenge () {
+			return ColorHelper.ToColor(0x645452);
+		}
+
+		public static Color fulvous () {
+			return ColorHelper.ToColor(0xE48400);
+		}
+
+		public static Color xanadu () {
+			return ColorHelper.ToColor(0x738678);
+		}
+
+		public static Color falu () {
+			return ColorHelper.ToColor(0x7F1917);
+		}
+
+		public static Color eburnean () {
+			return ColorHelper.ToColor(0xFEF6CC);
+		}
+
+		public static Color amaranth () {
+			return ColorHelper.ToColor(0xE52B50);
 		}
 
 	}
@@ -206,6 +266,86 @@ namespace JBirdEngine {
 
 		public static Color ToColor (int red, int green, int blue) {
 			return new Color((float)red/255f, (float)green/255f, (float)blue/255f);
+		}
+
+		/// <summary>
+		/// A container class for holding a color and an amount (for mixing).
+		/// </summary>
+		public class ColorAmount {
+
+			public Color color;
+			public float amount;
+
+			/// <summary>
+			/// Initializes a new instance of the ColorAmount class.
+			/// </summary>
+			/// <param name="c">Color.</param>
+			/// <param name="a">Amount (should be between 0.0f and 1.0f).</param>
+			public ColorAmount(Color c, float a) {
+				color = c;
+				amount = a;
+			}
+
+			/// <summary>
+			/// Initializes a new instance of the ColorAmount class (amount defaults to 1.0f).
+			/// </summary>
+			/// <param name="c">Color.</param>
+			public ColorAmount(Color c) {
+				color = c;
+				amount = 1.0f;
+			}
+		}
+
+		/// <summary>
+		/// Mixes the specified colors in their respective quantities.
+		/// </summary>
+		/// <returns>The result of mixing the colors.</returns>
+		/// <param name="colors">Colors to mix.</param>
+		public static Color MixColors (params ColorAmount[] colors) {
+			float redBalance = 0f;
+			float greenBalance = 0f;
+			float blueBalance = 0f;
+			float alpha = 0f;
+			foreach (ColorAmount colorAmount in colors) {
+				redBalance += colorAmount.color.r * colorAmount.amount;
+				greenBalance += colorAmount.color.g * colorAmount.amount;
+				blueBalance += colorAmount.color.b * colorAmount.amount;
+				alpha += colorAmount.color.a * colorAmount.amount;
+			}
+			return new Color (redBalance, greenBalance, blueBalance, alpha);
+		}
+
+		/// <summary>
+		/// Mixes the specified colors in equal quantities.
+		/// </summary>
+		/// <returns>The result of mixing the colors.</returns>
+		/// <param name="colors">Colors to mix.</param>
+		public static Color MixColors (params Color[] colors) {
+			ColorAmount[] colorAmounts = new ColorAmount[colors.Length];
+			for (int i = 0; i < colors.Length; i++) {
+				colorAmounts[i] = new ColorAmount(colors[i]);
+			}
+			return MixColors(colorAmounts);
+		}
+
+		/// <summary>
+		/// Make a gradient between two colors (Returns a list of colors blended from startColor to endColor).
+		/// </summary>
+		/// <returns>A list of colors blended from startColor to endColor.</returns>
+		/// <param name="startColor">Start color.</param>
+		/// <param name="endColor">End color.</param>
+		/// <param name="blendColors">Number of blended colors in the middle (returned list's length will be this value plus two).</param>
+		public static List<Color> MakeGradient (Color startColor, Color endColor, int blendColors) {
+			List<Color> gradient = new List<Color>();
+			float amountPerBlendStep = 1f / (float)(blendColors + 1);
+			float blendAmount = 0f;
+			gradient.Add(startColor);
+			for (int i = 0; i < blendColors; i++) {
+				blendAmount += amountPerBlendStep;
+				gradient.Add(MixColors(new ColorAmount(startColor, 1f - blendAmount), new ColorAmount(endColor, blendAmount)));
+			}
+			gradient.Add(endColor);
+			return gradient;
 		}
 
 	}

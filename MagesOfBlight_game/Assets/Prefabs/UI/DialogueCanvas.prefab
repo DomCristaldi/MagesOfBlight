@@ -144,11 +144,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d646ead2e42a24fa0ecc5ef2d077a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  convo: {fileID: 11400000, guid: 3627f515eb747654cbbc751b99cc95f6, type: 2}
+  convo:
+  - {fileID: 11400000, guid: 3627f515eb747654cbbc751b99cc95f6, type: 2}
+  - {fileID: 11400000, guid: 3627f515eb747654cbbc751b99cc95f6, type: 2}
+  dialogueCanvas: {fileID: 22313860}
   textDialogue: {fileID: 11445078}
   characterImage: {fileID: 11484838}
   audioClip: {fileID: 0}
-  indexNumber: -1
 --- !u!114 &11461500
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -48,6 +48,14 @@ public class HexGridAssembler : MonoBehaviour {
 
 	void Start () {
 		CreateGrid();
+
+		/*
+		List<Color> blendColors = ColorHelper.MakeGradient(MoreColors.BobRoss.midnightBlack(), MoreColors.BobRoss.alizarinCrimson(), tiles.Count - 2);
+
+		for (int i = 0; i < tiles.Count; i++) {
+			tiles[i].hexRing.material.color = blendColors[i];
+		}
+		*/
 	}
 
 	void Update () {
