@@ -11,4 +11,124 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8390fab74d50410489b9ab73f9ba586b, type: 3}
   m_Name: TestConvo
   m_EditorClassIdentifier: 
-  dialogue: []
+  dialogue:
+  - character: 0
+    mood: 1
+    line: My name is Avon and I love to hate to love everyone ever
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 1
+    line: My name is Nuria and I hate to love to hate everyone ever
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 1
+    line: Stein!
+    audioClip: {fileID: 0}
+  - character: 0
+    mood: 0
+    line: Stein are you hungry?
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: Stein
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: Stein?
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: Stein why are you so awesome?
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: Stein
+    audioClip: {fileID: 0}
+  - character: 0
+    mood: 0
+    line: Nuria don't tease him
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 1
+    line: Stein!
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: Bobby is just doing this to text the dialogue system
+    audioClip: {fileID: 0}
+  - character: 0
+    mood: 0
+    line: So?
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: So its okay if I'm a dick to Stein and that Stein is an idiot
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 1
+    line: Stein!
+    audioClip: {fileID: 0}
+  - character: 0
+    mood: 0
+    line: But you are hurting Stien's feelings
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: Stein!
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: Well maybe Stein should tell me how he feels
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: Stein!
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: What was that?
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: Stein!
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: Stein, say your name if you want me to make fun of you
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: '...'
+    audioClip: {fileID: 0}
+  - character: 0
+    mood: 0
+    line: Nuria...
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: Let Stein speak for himself
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 1
+    line: Stein!
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: See he loves to be made fun of
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: Stein! Stein! Stein!
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: Stein you suck
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: '...'
+    audioClip: {fileID: 0}
+  - character: 0
+    mood: 0
+    line: Yeah Stein you suck
+    audioClip: {fileID: 0}

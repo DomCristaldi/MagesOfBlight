@@ -238,7 +238,8 @@ GameObject:
   - 114: {fileID: 11444124}
   - 114: {fileID: 11451408}
   - 114: {fileID: 11438072}
-  - 114: {fileID: 11465456}
+  - 95: {fileID: 9535058}
+  - 114: {fileID: 11426590}
   m_Layer: 0
   m_Name: Avon
   m_TagString: Untagged
@@ -751,6 +752,38 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &9535058
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169116}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11426590
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56e071cec7bca134cbc95b10ccc5cb62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 100
+  maxBlight: 100
+  currentBlight: 50
 --- !u!114 &11438072
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -827,19 +860,8 @@ MonoBehaviour:
   agentCanvas: {fileID: 0}
   agentHUDCanvas: {fileID: 0}
   healthbar: {fileID: 0}
---- !u!114 &11465456
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 169116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8988acbf316b6144792901b6be0c716d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 100
+  healthbarSlider: {fileID: 0}
+  stats: {fileID: 0}
 --- !u!114 &11467982
 MonoBehaviour:
   m_ObjectHideFlags: 1

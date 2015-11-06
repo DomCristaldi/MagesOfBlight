@@ -33,6 +33,9 @@ public class AgentCanvasSpawner : MonoBehaviour {
 	public GameObject agentHUDCanvas;
 	public GameObject healthbar;
 
+	public Slider healthbarSlider;
+	public BaseStats stats;
+
 	void Start () {
 		//assign agent actions var
 		agentActions = GetComponent<AgentActions>();
@@ -50,6 +53,7 @@ public class AgentCanvasSpawner : MonoBehaviour {
 		agentCanvas.transform.name = "Action Canvas";
 		//set canvas event camera and position in terms of the agent
 		agentCanvas.GetComponent<Canvas> ().worldCamera = Camera.main;
+		agentCanvas.GetComponent<Canvas> ().sortingOrder = 1;
 		agentCanvas.transform.localPosition = new Vector3 (0f, 2f, 0f);
 		//create buttons
 		foreach (AgentActions.ActionData actionData in actionDataList) {
@@ -114,10 +118,11 @@ public class AgentCanvasSpawner : MonoBehaviour {
 		healthbar.name = "Health Bar";
 		//zero out health position
 		healthbar.transform.localPosition = Vector3.zero;
-		Slider healthbarSlider = healthbar.GetComponent<Slider> ();
-		healthbarSlider.maxValue = GetComponent<BaseStats> ().maxHealth;
+		healthbarSlider = healthbar.GetComponent<Slider> ();
+		stats = GetComponent<BaseStats>();
+		healthbarSlider.maxValue = stats.maxHealth;
 		healthbarSlider.minValue = 0;
-		healthbarSlider.value = GetComponent<BaseStats> ().currentHealth;
+		healthbarSlider.value = stats.currentHealth;
 		//scale healthbar
 		healthbar.transform.localScale = new Vector3(1f,1f,0);
 	}
@@ -128,7 +133,7 @@ public class AgentCanvasSpawner : MonoBehaviour {
 
 	void Update(){
 		//update health
-		healthbar.GetComponent<Slider> ().value = GetComponent<BaseStats> ().currentHealth;
+		healthbarSlider.value = stats.currentHealth;
 	}
 
 }
