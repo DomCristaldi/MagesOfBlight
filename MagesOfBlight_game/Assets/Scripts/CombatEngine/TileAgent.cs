@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 [AddComponentMenu("Scripts/BattleEngine/Tiles/Entities/TileAgent")]
 //[RequireComponent(typeof(Motor_RigidBody))]
-[RequireComponent(typeof(Motor_Tile))]
+[RequireComponent(typeof(TileMotor))]
 public class TileAgent : TileEntity {
 
-    public Motor_RigidBody motor;
-    public Motor_Tile tileMotor;
+    //public RigidBodyMotor motor;
+    public TileMotor motor;
 
     public bool hasTurn = true;
     public bool canPerformTurn {//checks all possible conditions that would disallow a turn
@@ -29,14 +29,14 @@ public class TileAgent : TileEntity {
     */
     public BattleManager.CombatTeam team;
 
-    public float moveSpeed = 1.0f;
+    //public float moveSpeed = 1.0f;
 
 	// Use this for initialization
 	protected override void Start () {
         base.Start();
 
-        motor = GetComponent<Motor_RigidBody>();
-        tileMotor = GetComponent<Motor_Tile>();
+        //motor = GetComponent<RigidBodyMotor>();
+        motor = GetComponent<TileMotor>();
 
         RegisterWithTeam();
 
