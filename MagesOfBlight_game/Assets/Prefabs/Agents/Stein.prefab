@@ -117,7 +117,7 @@ GameObject:
   - 114: {fileID: 11486464}
   - 114: {fileID: 11496634}
   - 114: {fileID: 11450754}
-  - 114: {fileID: 11448542}
+  - 114: {fileID: 11491364}
   m_Layer: 0
   m_Name: Stein
   m_TagString: Untagged
@@ -739,21 +739,6 @@ MonoBehaviour:
   hasTurn: 1
   team: 0
   moveSpeed: 1
---- !u!114 &11448542
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 114998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8988acbf316b6144792901b6be0c716d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 100
-  maxBlight: 0
-  currentBlight: 0
 --- !u!114 &11450754
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -792,6 +777,21 @@ MonoBehaviour:
   - action: {fileID: 11400000, guid: 809e213b9ee99f24ab4548897eaa8fad, type: 2}
     known: 1
     usable: 1
+--- !u!114 &11491364
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ffb1ebdc8be65b4c875f27dd08cf9a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 100
+  maxBlight: 100
+  currentBlight: 50
 --- !u!114 &11496634
 MonoBehaviour:
   m_ObjectHideFlags: 1

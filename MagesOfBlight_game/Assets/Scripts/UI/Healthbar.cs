@@ -17,6 +17,6 @@ public class Healthbar : MonoBehaviour {
 		circularSilder = gameObject.GetComponent<Image> ();
 	}
 	void Update () {
-		circularSilder.fillAmount = fillAmount/2;    
+		circularSilder.fillAmount = (stats.currentHealth/stats.maxHealth)/2f;    
 	}
 }

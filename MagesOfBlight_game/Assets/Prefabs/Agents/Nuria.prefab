@@ -43,7 +43,7 @@ GameObject:
   - 114: {fileID: 11428950}
   - 114: {fileID: 11433614}
   - 114: {fileID: 11440636}
-  - 114: {fileID: 11410682}
+  - 114: {fileID: 11402222}
   m_Layer: 0
   m_Name: Nuria
   m_TagString: Untagged
@@ -653,7 +653,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 111550}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.91899991, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 438682}
@@ -743,7 +743,7 @@ Animator:
   m_GameObject: {fileID: 196264}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 03b6d170a6cc67c46a77a3e0cf7904cf, type: 3}
-  m_Controller: {fileID: 9100000, guid: 49d2fe359a598844d82dc6d4b067848c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 135605dc3bf7a5746b806c0926a0dca4, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -751,7 +751,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11410682
+--- !u!114 &11402222
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -759,11 +759,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 111550}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8988acbf316b6144792901b6be0c716d, type: 3}
+  m_Script: {fileID: 11500000, guid: 038446decd2954f4fbfea1b3b8fdc7be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 100
+  maxBlight: 100
+  currentBlight: 50
 --- !u!114 &11414674
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -826,6 +828,8 @@ MonoBehaviour:
   agentCanvas: {fileID: 0}
   agentHUDCanvas: {fileID: 0}
   healthbar: {fileID: 0}
+  healthbarSlider: {fileID: 0}
+  stats: {fileID: 0}
 --- !u!114 &11440636
 MonoBehaviour:
   m_ObjectHideFlags: 1
