@@ -30,9 +30,19 @@ public class ModelRotationController : MonoBehaviour {
 	}
 
     private void UpdateTrueDirec() {
+        /*
         _trueDirec = Vector3.MoveTowards(_trueDirec,
                                          desiredDirec,
                                          redirectSpeed * Time.deltaTime);
+        */
+
+        
+        _trueDirec = Vector3.RotateTowards(_trueDirec, desiredDirec, redirectSpeed, Mathf.Infinity);
+
+        Debug.DrawRay(transform.position, _trueDirec, JBirdEngine.MoreColors.goronTunic());
+
+
+        //_trueDirec = _trueDirec.normalized;
     }
 
     private void AssignRotationToModel() {

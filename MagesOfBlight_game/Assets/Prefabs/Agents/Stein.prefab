@@ -737,7 +737,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modelTf: {fileID: 419798}
   desiredDirec: {x: 0, y: 0, z: 0}
-  redirectSpeed: 10
+  redirectSpeed: .0799999982
 --- !u!114 &11418880
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -937,7 +937,7 @@ Prefab:
       objectReference: {fileID: 419798}
     - target: {fileID: 0}
       propertyPath: redirectSpeed
-      value: 10
+      value: .0799999982
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

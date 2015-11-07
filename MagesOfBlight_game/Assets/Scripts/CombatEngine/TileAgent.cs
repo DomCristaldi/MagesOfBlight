@@ -62,7 +62,9 @@ public class TileAgent : TileEntity {
 
         RegisterWithTeam();
 
-	}
+        _modelRotControl.SetDesiredLookDirec(-Vector3.forward);
+
+    }
 	
 	protected override void Update () {
         base.Update();
@@ -96,28 +98,19 @@ public class TileAgent : TileEntity {
     }
 
     protected void LookProtocol() {
+
+        Debug.DrawRay(transform.position, _motor.desiredDirec * 5.0f, Color.black);
+
         if (_motor.isMoving) {
             Debug.Log("moving");
 
             _modelRotControl.SetDesiredLookDirec(_motor.desiredDirec.normalized);
+            //_modelRotControl.SetDesiredLookDirec(-Vector3.right);
         }
         else {
             _modelRotControl.SetDesiredLookDirec(-Vector3.forward);
         }
     }
 
-    protected void MovementProtocol() {
-        Debug.LogFormat("Done Moving: {0}", motor.doneMoving);
 
-        if (_motor.isMoving) {
-            Debug.Log("not done");
-
-            ModelLookAt(_motor.desiredDirec);
-
-        }
-        else {
-            ModelLookAt(-Vector3.forward);
-
-        }
-    }
 }

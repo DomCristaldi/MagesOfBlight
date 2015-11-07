@@ -28,8 +28,9 @@ public class TileEntity : MonoBehaviour {
 	protected virtual void Update () {
 	
 	}
-
+    /*
     public virtual void ModelLookAt(Vector3 direc) {
         modelTf.localRotation = Quaternion.LookRotation(direc, modelTf.up);
     }
+    */
 }
