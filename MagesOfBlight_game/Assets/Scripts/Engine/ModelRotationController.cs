@@ -36,6 +36,8 @@ public class ModelRotationController : MonoBehaviour {
                                          redirectSpeed * Time.deltaTime);
         */
 
+        //DEBUG: show comparison between true and desired direction
+        //Debug.LogFormat("True: {0} | Desired: {1}", trueDirec, desiredDirec);
         
         _trueDirec = Vector3.RotateTowards(_trueDirec, desiredDirec, redirectSpeed, Mathf.Infinity);
 
@@ -50,6 +52,8 @@ public class ModelRotationController : MonoBehaviour {
     }
 
     public void SetDesiredLookDirec(Vector3 direc) {
-        desiredDirec = direc.normalized;
+        if (direc != Vector3.zero) {//if zero it will auto-snap the rotation, we don't want this
+            desiredDirec = direc.normalized;
+        }
     }
 }

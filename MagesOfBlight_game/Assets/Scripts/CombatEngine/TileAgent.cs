@@ -105,11 +105,11 @@ public class TileAgent : TileEntity {
             Debug.Log("moving");
 
             _modelRotControl.SetDesiredLookDirec(_motor.desiredDirec.normalized);
-            //_modelRotControl.SetDesiredLookDirec(-Vector3.right);
         }
         else {
             _modelRotControl.SetDesiredLookDirec(-Vector3.forward);
         }
+
     }
 
 
