@@ -9,6 +9,8 @@ public class TargetSelectionState : BaseCombatState {
 
     private List<HexNode> acceptableTiles;
 
+    List<HexNode> path;
+
     public TargetSelectionState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = true) : base(thisCombatPhase, canUndo) { }
 
     public override void InitState() {
@@ -30,14 +32,32 @@ public class TargetSelectionState : BaseCombatState {
             if (battleManRef.TileRaycast(battleManRef.battleCam.ScreenToWorldPoint(Input.mousePosition),
                                          battleManRef.battleCamTf.rotation * Vector3.forward,
                                          out hitTile)
-             && acceptableTiles.Contains(hitTile)
-             )
+             && acceptableTiles.Contains(hitTile))
             {
                 battleManRef.targetTile = hitTile;
 
-                battleManRef.ChangeCombatState(BattleManager.CombatPhase.ConfirmAction);
+
+
+                path = JBirdEngine.AIHelper.AStar<HexNode>(battleManRef.selectedTile,
+                                                         battleManRef.targetTile,
+                                                         mode: JBirdEngine.AIHelper.HeuristicMode.hexagonal);
+
+                //battleManRef.ChangeCombatState(BattleManager.CombatPhase.ConfirmAction);
             }
 
+        }
+
+        if (path != null) {
+            Debug.DrawRay(path[0].transform.position, Vector3.up * 5.0f, JBirdEngine.MoreColors.BobRoss.alizarinCrimson());
+        }
+
+        battleManRef.DrawPath(path, Color.red);
+
+        if (path != null
+         && path.Count != 1
+         && InputHandler.singleton.controls.GetAxis(InputHandler.AxisKey.Confirm) != 0.0f) {
+
+            battleManRef.ChangeCombatState(BattleManager.CombatPhase.PerformAction);
         }
 
 

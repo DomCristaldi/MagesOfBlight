@@ -9,16 +9,24 @@ using System.Collections.Generic;
 
 public class ConfirmActionState : BaseCombatState {
 
+    List<HexNode> path;
+
     public ConfirmActionState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = true) : base(thisCombatPhase, canUndo) { }
+
+    public override void InitState() {
+        base.InitState();
+
+        path = JBirdEngine.AIHelper.AStar<HexNode>(battleManRef.selectedTile,
+                                                   battleManRef.targetTile,
+                                             mode: JBirdEngine.AIHelper.HeuristicMode.hexagonal);
+    }
 
     public override void UpdateState() {
         base.UpdateState();
 
         //Debug.Log("confirm?");
 
-        List<HexNode> path = JBirdEngine.AIHelper.AStar<HexNode>(battleManRef.selectedTile,
-                                                                 battleManRef.targetTile,
-                                                                 mode: JBirdEngine.AIHelper.HeuristicMode.hexagonal);
+
 
         battleManRef.DrawPath(path, Color.red);
 
