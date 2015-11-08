@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0655e45fbbc8c6a4199779d187f2cbfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showEdges: 1
+  showEdges: 0
   showRadialLines: 0
   showConnections: 0
   nodePrefab: {fileID: 11429038, guid: a7f0cb2d4062abf4db027bdee284845f, type: 2}
@@ -93,13 +93,10 @@ MonoBehaviour:
     m_Bits: 256
   playerTeam:
     teamType: 0
-    teamMembers:
-    - {fileID: 0}
-    - {fileID: 0}
+    teamMembers: []
   enemyTeam:
     teamType: 1
-    teamMembers:
-    - {fileID: 0}
+    teamMembers: []
   curCombatTeam: 0
   curCombatPhase: 0
   hoveredTile: {fileID: 0}
