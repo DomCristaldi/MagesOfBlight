@@ -761,7 +761,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 114998}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0193ceee98bf1543a0dddca93186931, type: 3}
+  m_Script: {fileID: 11500000, guid: 731c945318d9395429d1fe0e3d1e3394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
@@ -787,6 +787,7 @@ MonoBehaviour:
   suppliedPath: []
   doneMoving: 0
   isMoving: 0
+  animController: {fileID: 9574302}
 --- !u!114 &11486464
 MonoBehaviour:
   m_ObjectHideFlags: 1

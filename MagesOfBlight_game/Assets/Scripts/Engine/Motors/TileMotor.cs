@@ -146,7 +146,7 @@ public class TileMotor : MonoBehaviour {
     /// <param name="start"></param>
     /// <param name="end"></param>
     /// <returns></returns>
-    private bool MoveToLocation(HexNode start, HexNode end) {
+    protected bool MoveToLocation(HexNode start, HexNode end) {
         //transform.position = Vector3.MoveTowards(transform.position, end.transform.position, moveSpeed * Time.deltaTime);
 
 
@@ -157,9 +157,9 @@ public class TileMotor : MonoBehaviour {
         //SetDesiredDirec(Vector3.Normalize(end.transform.position - transform.position));
 
         
-        transform.position = Vector3.MoveTowards(transform.position,
-                                                 desiredPoint,
-                                                 moveSpeed * Time.deltaTime);
+        transform.position = MoveToLocationMethod(transform.position,
+                                                  desiredPoint,//HACK: start using _trueDirec
+                                                  moveSpeed * Time.deltaTime);
         
 
         //update current tile to the one the Agent is currently over
@@ -177,7 +177,13 @@ public class TileMotor : MonoBehaviour {
         }
 
         return false;
+    }
 
+
+    protected virtual Vector3 MoveToLocationMethod(Vector3 position, Vector3 destination, float deltaTime) {
+        return Vector3.MoveTowards(position,
+                                   destination,
+                                   deltaTime);
     }
 
 
