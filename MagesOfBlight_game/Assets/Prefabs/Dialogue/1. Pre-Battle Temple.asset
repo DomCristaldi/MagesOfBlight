@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8390fab74d50410489b9ab73f9ba586b, type: 3}
+  m_Name: 1. Pre-Battle Temple
+  m_EditorClassIdentifier: 
+  dialogue:
+  - character: 2
+    mood: 0
+    line: You're Awake? Good. As sonn as you can move we leave.
+    audioClip: {fileID: 0}
+  - character: 0
+    mood: 0
+    line: What? What is this? Where am I?
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: "You\u2019re in the Manqus temple. My name is Stein, now hurry, we can\u2019t
+      linger here much longer."
+    audioClip: {fileID: 0}
+  - character: 0
+    mood: 0
+    line: "(while getting up) Why, what\u2019s going on?"
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: "I\u2019m sure you\u2019re confused.  I\u2019ll explain everything in time,
+      but for now trust me and get moving."
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: "Stein! There\u2019s a hoard of Blight Puppets outside moving towards the
+      temple, - so unless you plan to be consumed, we\u2019ve got maybe five minutes.
+      Get him up and move!"
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: You heard her, go!
+    audioClip: {fileID: 0}
+  - character: 0
+    mood: 0
+    line: Wait, who is she?
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: "Nuria. We\u2019re both Blighted, like you. It\u2019ll be useful if we\u2019re
+      going to get out of here alive. "
+    audioClip: {fileID: 0}
+  - character: 0
+    mood: 0
+    line: "Blighted? I mean, I feel weird, but\u2026 What do you mean, \u201CBlighted\u201D?"
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: Look at your arm.
+    audioClip: {fileID: 0}
+  - character: 0
+    mood: 0
+    line: "My--WOAH. That\u2019s\u2026 I imagine that\u2019s not good... "
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: Not good!? This Blight gives us powers! With it, I can set things on fire,
+      throw fireballs, spontaneous combustion, all that stuff. Stein throws rocks!
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: "If you\u2019re not careful, it will kill you."
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: "It won\u2019t kill you, it\u2019ll just-"
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 1
+    line: "Enough, Nuria.  We\u2019ll talk more later. Let\u2019s get moving."
+    audioClip: {fileID: 0}

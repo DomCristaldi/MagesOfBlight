@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8390fab74d50410489b9ab73f9ba586b, type: 3}
+  m_Name: 4. Agricultural Terraces
+  m_EditorClassIdentifier: 
+  dialogue:
+  - character: 0
+    mood: 0
+    line: It feels wrong. Killing all those people, I mean.
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: They are no longer people. There is no reason to regret.
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 1
+    line: "What do you mean? They\u2019re people just like us, Stein!"
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 1
+    line: They are nothing more than an abomination Nuria. All things of nature are
+      sacred. This Blight is no thing of nature.
+    audioClip: {fileID: 0}
+  - character: 0
+    mood: 0
+    line: "They\u2019re here! Argue later, I need backup!"
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: "It\u2019s time to act Nuria. You\u2019re either with us or against us."
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: "Alright, but only because they\u2019re in our way."
+    audioClip: {fileID: 0}
