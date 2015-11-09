@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8390fab74d50410489b9ab73f9ba586b, type: 3}
+  m_Name: 9. In-Battle Blight Nest
+  m_EditorClassIdentifier: 
+  dialogue:
+  - character: 0
+    mood: 0
+    line: Stein, what is that?
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: The brain.
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: So we kill that, we free these people?
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: Probably.
+    audioClip: {fileID: 0}
+  - character: 0
+    mood: 0
+    line: Good odds.
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: "I\u2019ll take it!"
+    audioClip: {fileID: 0}

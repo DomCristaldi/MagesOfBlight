@@ -11,19 +11,57 @@ using System.Collections;
 
 public class TileSelectionState : BaseCombatState {
 
+    public bool actionMenuOpen;
+
     public TileSelectionState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = true) : base(thisCombatPhase, canUndo) { }
 
+    /*
+    public override void InitState() {
+        base.InitState();
+
+        battleManRef.selectedAgent.GetComponent<AgentCanvasSpawner>().agentCanvas.SetActive(false);
+        battleManRef.selectedAction = null;
+
+        actionMenuOpen = false;
+
+        SwitchToTileSelection();
+    }
+
+    public override void EndState() {
+        base.EndState();
+
+        battleManRef.selectedAgent.GetComponent<AgentCanvasSpawner>().agentCanvas.SetActive(false);
+        battleManRef.ClearSelectedAction();
+    }
+    */
 
     public override void UpdateState() {
         //base.UpdateState();
 
-        HandleSelection();
+        if (!actionMenuOpen) {
+            HandleTileSelection();
+        }
+        else {
+            HandleActionSelection();
+        }
         
+    }
+
+    private void SwitchToTileSelection() {
+        actionMenuOpen = false;
+
+        battleManRef.selectedAgent.GetComponent<AgentCanvasSpawner>().agentCanvas.SetActive(false);
+    }
+
+    private void SwitchToActionSelection() {
+        actionMenuOpen = true;
+
+        battleManRef.selectedAgent.GetComponent<AgentCanvasSpawner>().agentCanvas.SetActive(true);
     }
 
 
 //TODO: let take a lambda expression and inject different functionality depending on if it passes or not
-    private void HandleSelection() {
+    private void HandleTileSelection() {
 
         if (InputHandler.singleton.controls.GetAxis(InputHandler.AxisKey.Select) != 0.0f) {
             HexNode hitTile;
@@ -52,5 +90,10 @@ public class TileSelectionState : BaseCombatState {
 
         }
 
+    }
+
+
+    private void HandleActionSelection() {
+        
     }
 }

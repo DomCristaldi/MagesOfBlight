@@ -19,6 +19,15 @@ public class BattleCameraController : MonoBehaviour {
     public float farthestZoom = 7.0f;
     public float zoomScaling = 6f;
 
+
+    public float cameraAngleDown;
+    /*
+    private Vector3 cameraAngle{
+        set { }
+    }
+    */
+
+
     public Vector3 mousePosOnScreen {
         get { return cam.ScreenToWorldPoint(Input.mousePosition); }
     }
@@ -33,6 +42,8 @@ public class BattleCameraController : MonoBehaviour {
         if (singleton == null) { singleton = this; }
 
         cam = GetComponent<Camera>();
+
+        AssignCameraAngle();
     }
 
 	// Use this for initialization
@@ -125,6 +136,12 @@ public class BattleCameraController : MonoBehaviour {
         Vector3 camPoint = cam.transform.position + camToHitPointDirec;
         */
         return camPoint;
+    }
+
+    private void AssignCameraAngle() {
+        Quaternion camRot = Quaternion.Euler(cameraAngleDown, 0.0f, 0.0f);
+
+        cam.transform.rotation = camRot;
     }
 
     /*

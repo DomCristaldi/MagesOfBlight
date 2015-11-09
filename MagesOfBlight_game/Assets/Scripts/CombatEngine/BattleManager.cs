@@ -217,6 +217,10 @@ public class BattleManager : MonoBehaviour {
     }
 
 
+    public void ClearSelectedAction() {
+        selectedAction = null;
+    }
+
     public void PushPreviousCombatPhase(CombatPhase prevPhase) {    
         prevCombatPhaseStack.Push(prevPhase);
     }
@@ -336,6 +340,8 @@ public class BattleManager : MonoBehaviour {
     }
 
     public void DrawPath(List<HexNode> pathToDraw, Color color) {
+        if (pathToDraw == null) { return; } 
+
         for (int i = 0; i < pathToDraw.Count - 1; ++i) {
             Debug.DrawLine(pathToDraw[i].transform.position,
                            pathToDraw[i + 1].transform.position,

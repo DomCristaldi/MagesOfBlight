@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Linq;
 
 /// <summary>
 /// State that handles entering a battle
@@ -15,21 +16,20 @@ public class EnterCombatState : BaseCombatState {
 
         //***TODO: place all teams on the closest tiles***
 
-        foreach (TileAgent agent in battleManRef.playerTeam.teamMembers) {
+        //go through all agents on both teams
+        foreach (TileAgent agent in battleManRef.playerTeam.teamMembers.Concat<TileAgent>(battleManRef.enemyTeam.teamMembers)) {
+            //find the closest node to put the agent
             HexNode foundNode = JBirdEngine.ListHelper.GetClosestToPosition<HexNode>(HexGridAssembler.singleton.tiles,
                                                                                      agent.transform.position);
 
+            //place the agent on the node
             agent.transform.position = foundNode.transform.position;
             foundNode.GetComponent<HexNode>().entityOnTile = agent;
+
+            //initialize the agent's motor
+            agent.motor.desiredPoint = agent.transform.position;
         }
 
-        foreach (TileAgent agent in battleManRef.enemyTeam.teamMembers) {
-            HexNode foundNode = JBirdEngine.ListHelper.GetClosestToPosition<HexNode>(HexGridAssembler.singleton.tiles,
-                                                                                     agent.transform.position);
-
-            agent.transform.position = foundNode.transform.position;
-            foundNode.GetComponent<HexNode>().entityOnTile = agent;
-        }
 
         battleManRef.ChangeCombatState(BattleManager.CombatPhase.TileSelection);
 

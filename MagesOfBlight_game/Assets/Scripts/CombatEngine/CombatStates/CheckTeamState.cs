@@ -27,6 +27,9 @@ public class CheckTeamState : BaseCombatState {
 
                 battleManRef.ChangeActingTeam(BattleManager.CombatTeam.Player);
             }
+            else {
+                Debug.LogError("WE HAVE A PROBLEM");
+            }
         }
 
         //***TODO: add in switching to AI where necessary***

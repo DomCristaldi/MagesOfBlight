@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8390fab74d50410489b9ab73f9ba586b, type: 3}
+  m_Name: 10. Post-Battle Blight Nest
+  m_EditorClassIdentifier: 
+  dialogue:
+  - character: 1
+    mood: 0
+    line: We did it!
+    audioClip: {fileID: 0}
+  - character: 0
+    mood: 0
+    line: "Look! The Puppets! They\u2019ve stopped attacking!"
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: "You\u2019re right! This thing, it must have been what was controlling them!
+      That means\u2026"
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: "It lost its control over us. We\u2019re free."
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: Yes!
+    audioClip: {fileID: 0}
+  - character: 0
+    mood: 0
+    line: But the Blight is still here, I can still use magic. I assumed that if we
+      could cut this thing off at the source, our magic would go away.
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: Why would you want to be normal when you can light things on fire!?
+    audioClip: {fileID: 0}
+  - character: 0
+    mood: 0
+    line: "I can\u2019t light things on fire, Nuria\u2026"
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: We still have the Puppets to be concerned with. Those accursed things are
+      still here as well. It should be quick work to end their suffering.
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: "Those people, you mean! There\u2019s nothing to be done, we saved them
+      from that brain controlling them! Their suffering has already ended!"
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: "If they truly can still be called people. We\u2019ll see. So long as the
+      Blight subsides, I am content."
+    audioClip: {fileID: 0}
+  - character: 0
+    mood: 0
+    line: "Now that we\u2019ve made it safe for them to use magic, I think giving
+      these people the choice of how to handle their Blight is the best thing we can
+      do for them. Now help me get these guys back on their feet."
+    audioClip: {fileID: 0}

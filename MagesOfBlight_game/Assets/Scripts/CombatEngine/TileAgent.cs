@@ -7,7 +7,14 @@ using System.Collections.Generic;
 public class TileAgent : TileEntity {
 
     //public RigidBodyMotor motor;
-    public TileMotor motor;
+    //[HideInInspector]
+    private TileMotor _motor;
+    public TileMotor motor {
+        get { return _motor; }
+    }
+
+    private ModelRotationController _modelRotControl;
+
 
     public bool hasTurn = true;
     public bool canPerformTurn {//checks all possible conditions that would disallow a turn
@@ -31,20 +38,40 @@ public class TileAgent : TileEntity {
 
     //public float moveSpeed = 1.0f;
 
-	// Use this for initialization
+    public Vector3 defaultModelLookDirec = -Vector3.forward;
+
+
+    protected override void Awake() {
+        _motor = GetComponent<TileMotor>();
+        _modelRotControl = GetComponent<ModelRotationController>();
+
+        //Ensure model we have is synchronized
+        if (_modelRotControl.modelTf == null && model != null) {//assign to rotation controller
+            _modelRotControl.modelTf = model.transform;
+        }
+        else if (model == null && _modelRotControl.modelTf != null) {//get model from rotation controller
+            model = _modelRotControl.gameObject;
+        }
+
+        base.Awake();
+
+    }
+
 	protected override void Start () {
         base.Start();
 
-        //motor = GetComponent<RigidBodyMotor>();
-        motor = GetComponent<TileMotor>();
-
         RegisterWithTeam();
 
-	}
+        _modelRotControl.SetDesiredLookDirec(-Vector3.forward);
+
+    }
 	
-	// Update is called once per frame
 	protected override void Update () {
         base.Update();
+
+        //MovementProtocol();
+        LookProtocol();
+
 	}
 
     public void FollowPath(List<Vector3> pathToFollow) {
@@ -69,4 +96,21 @@ public class TileAgent : TileEntity {
     public void RefreshTurn() {
         hasTurn = true;
     }
+
+    protected void LookProtocol() {
+
+        Debug.DrawRay(transform.position, _motor.desiredDirec * 5.0f, Color.black);
+
+        if (_motor.isMoving) {
+            Debug.Log("moving");
+
+            _modelRotControl.SetDesiredLookDirec(_motor.desiredDirec.normalized);
+        }
+        else {
+            _modelRotControl.SetDesiredLookDirec(-Vector3.forward);
+        }
+
+    }
+
+
 }

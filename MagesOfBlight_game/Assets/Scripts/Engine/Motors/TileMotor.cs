@@ -50,12 +50,18 @@ public class TileMotor : MonoBehaviour {
 
 
     [HideInInspector]
-    public bool doneMoving = true;
+    public bool doneMoving;
+    [HideInInspector]
+    public bool isMoving;
     private Coroutine moveRoutine = null;
 
     void Awake() {
         //desiredDirec = Vector3.zero;
         _trueDirec = Vector3.zero;
+
+        doneMoving = false;
+
+        isMoving = false;
     }
 
 	void Start () {
@@ -75,7 +81,7 @@ public class TileMotor : MonoBehaviour {
     public void GivePath(List<HexNode> path) {
         suppliedPath = path;
 
-        Debug.Log(suppliedPath.Count);
+        //Debug.Log(suppliedPath.Count);
 
     }
 
@@ -103,11 +109,11 @@ public class TileMotor : MonoBehaviour {
 
             moveRoutine = StartCoroutine(MoveRoutine(suppliedPath));
 
-            Debug.Log("start move routine");
+            //Debug.Log("start move routine");
             
         }
 
-        Debug.Log("Exit condition reached");
+        //Debug.Log("Exit condition reached");
 
         //we're still moving, return false
         return false;
@@ -124,6 +130,8 @@ public class TileMotor : MonoBehaviour {
         _trueDirec = Vector3.MoveTowards(_trueDirec, desiredDirec, redirectSpeed);
     }
 
+
+
     /*
     public Vector3 SetDesiredDirec(Vector3 position) {
         //desiredDirec = direc.normalized;
@@ -138,7 +146,7 @@ public class TileMotor : MonoBehaviour {
     /// <param name="start"></param>
     /// <param name="end"></param>
     /// <returns></returns>
-    private bool MoveToLocation(HexNode start, HexNode end) {
+    protected bool MoveToLocation(HexNode start, HexNode end) {
         //transform.position = Vector3.MoveTowards(transform.position, end.transform.position, moveSpeed * Time.deltaTime);
 
 
@@ -149,9 +157,9 @@ public class TileMotor : MonoBehaviour {
         //SetDesiredDirec(Vector3.Normalize(end.transform.position - transform.position));
 
         
-        transform.position = Vector3.MoveTowards(transform.position,
-                                                 desiredPoint,
-                                                 moveSpeed * Time.deltaTime);
+        transform.position = MoveToLocationMethod(transform.position,
+                                                  desiredPoint,//HACK: start using _trueDirec
+                                                  moveSpeed * Time.deltaTime);
         
 
         //update current tile to the one the Agent is currently over
@@ -169,11 +177,19 @@ public class TileMotor : MonoBehaviour {
         }
 
         return false;
+    }
 
+
+    protected virtual Vector3 MoveToLocationMethod(Vector3 position, Vector3 destination, float deltaTime) {
+        return Vector3.MoveTowards(position,
+                                   destination,
+                                   deltaTime);
     }
 
 
     private IEnumerator MoveRoutine(List<HexNode> pathList) {
+
+        isMoving = true;
 
         if (pathList.Count < 2) { yield break; }//path isn't long enough, break out
 
@@ -193,7 +209,10 @@ public class TileMotor : MonoBehaviour {
             yield return null;
         }
 
+
+
         doneMoving = true;
+        isMoving = false;
 
         yield break;
     }

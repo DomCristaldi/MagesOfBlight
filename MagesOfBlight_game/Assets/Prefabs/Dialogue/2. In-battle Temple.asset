@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8390fab74d50410489b9ab73f9ba586b, type: 3}
+  m_Name: 2. In-battle Temple
+  m_EditorClassIdentifier: 
+  dialogue:
+  - character: 0
+    mood: 0
+    line: 'WHAT ARE THOSE!? '
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: 'Not good, the Puppets are right outside. How good are you at learning on
+      your feet? '
+    audioClip: {fileID: 0}
+  - character: 0
+    mood: 0
+    line: Uh, good, I hope.
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: 'No holding back, kill them all. '
+    audioClip: {fileID: 0}
+  - character: 0
+    mood: 0
+    line: "What are they, though? There\u2019s so many of them! "
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: "They\u2019re what you\u2019ll become if you abuse your power. Watch your
+      Blight, and don\u2019t let them get you. "
+    audioClip: {fileID: 0}
