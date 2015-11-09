@@ -55,7 +55,7 @@ public class TileMotor : MonoBehaviour {
     public bool isMoving;
     private Coroutine moveRoutine = null;
 
-    void Awake() {
+    protected virtual void Awake() {
         //desiredDirec = Vector3.zero;
         _trueDirec = Vector3.zero;
 
@@ -64,12 +64,12 @@ public class TileMotor : MonoBehaviour {
         isMoving = false;
     }
 
-	void Start () {
+	protected virtual void Start () {
 	
 	}
 	
 	
-	void Update () {
+	protected virtual void Update () {
         HandleMovement();
 	}
 
