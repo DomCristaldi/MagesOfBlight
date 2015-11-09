@@ -31,9 +31,6 @@ public class AnimationTileMotor : TileMotor {
         return base.MoveToLocationMethod(position, destination, deltaTime);
         */
 
-        if (position == destination) {
-            Debug.Log("f;adsfasfadf");
-        }
 
         if (Vector3.Distance(position, destination) < _rmCapture.deltaAnimPosition.magnitude) {
             return (destination);
@@ -44,12 +41,6 @@ public class AnimationTileMotor : TileMotor {
         Vector3 retPos = Vector3.MoveTowards(position,
                                              position + (direc * _rmCapture.deltaAnimPosition.magnitude),
                                              Mathf.Infinity);
-
-        /*
-        if (Vector3.Distance(transform.position, retPos) < _rmCapture.deltaAnimPosition.magnitude) {
-            retPos = destination;
-        }
-        */
 
         return retPos;
     }
