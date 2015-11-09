@@ -14,7 +14,7 @@ MonoBehaviour:
   dialogue:
   - character: 2
     mood: 0
-    line: You're Awake? Good. As sonn as you can move we leave.
+    line: You're Awake? Good. As soon as you can move we leave.
     audioClip: {fileID: 0}
   - character: 0
     mood: 0
