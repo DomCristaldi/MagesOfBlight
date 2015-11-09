@@ -286,14 +286,6 @@ namespace JBirdEngine {
 				amount = a;
 			}
 
-			/// <summary>
-			/// Initializes a new instance of the ColorAmount class (amount defaults to 1.0f).
-			/// </summary>
-			/// <param name="c">Color.</param>
-			public ColorAmount(Color c) {
-				color = c;
-				amount = 1.0f;
-			}
 		}
 
 		/// <summary>
@@ -323,7 +315,7 @@ namespace JBirdEngine {
 		public static Color MixColors (params Color[] colors) {
 			ColorAmount[] colorAmounts = new ColorAmount[colors.Length];
 			for (int i = 0; i < colors.Length; i++) {
-				colorAmounts[i] = new ColorAmount(colors[i]);
+				colorAmounts[i] = new ColorAmount(colors[i], 1f / (float)colors.Length);
 			}
 			return MixColors(colorAmounts);
 		}
