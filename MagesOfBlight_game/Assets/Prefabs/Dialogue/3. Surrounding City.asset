@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8390fab74d50410489b9ab73f9ba586b, type: 3}
+  m_Name: 3. Surrounding City
+  m_EditorClassIdentifier: 
+  dialogue:
+  - character: 0
+    mood: 0
+    line: "So those things.  You\u2019re saying they\u2019re people?"
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: There was a time when they were human.The lucky ones never awoke to this
+      nightmare, consumed before they awoke. Others regained consciousness before
+      the curse took them.
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: "That\u2019s what happens when you use too much magic. The Blight spreads
+      through you.  It\u2019s a gift...but it can destroy you."
+    audioClip: {fileID: 0}
+  - character: 0
+    mood: 0
+    line: "Honestly, that makes me skeptical about using magic at all. (if used magic
+      in the last battle) It does seem pretty useful, though\u2026 (if no magic used)
+      I think I could probably survive without it\u2026"
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: "Just make sure it\u2019s managed and you\u2019ll be fine."
+    audioClip: {fileID: 0}
+  - character: 0
+    mood: 0
+    line: "Are we all that\u2019s left? There were so many people in the city, are
+      we the only ones that survived?"
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: There were more. I searched the city when I arose. I saw some who were awake
+      like me, two joined me for a time. The Blight spread faster in some, but others
+      I brought to the temple. You were the first who woke.
+    audioClip: {fileID: 0}
+  - character: 0
+    mood: 0
+    line: How long was I asleep?
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: Two weeks.
+    audioClip: {fileID: 0}
+  - character: 0
+    mood: 0
+    line: "That long? ... Thank you. For watching over me. I\u2019ll make it up to
+      you somehow."
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: "There\u2019s no need.  It is my duty as a priest. "
+    audioClip: {fileID: 0}
+  - character: 0
+    mood: 0
+    line: Still. So where are we going now, exactly?
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: "We follow the road. Until we\u2019ve left this forsaken country behind."
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: "Our first priority is to get away from the city.  It\u2019s crawling with
+      Puppets. Once we\u2019re on the road we can figure out what comes next."
+    audioClip: {fileID: 0}

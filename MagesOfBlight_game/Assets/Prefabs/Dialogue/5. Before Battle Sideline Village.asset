@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8390fab74d50410489b9ab73f9ba586b, type: 3}
+  m_Name: 5. Before Battle Sideline Village
+  m_EditorClassIdentifier: 
+  dialogue:
+  - character: 0
+    mood: 0
+    line: "How far do you think we\u2019ll have to go."
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: "We\u2019ll probably be following the road all the way to the coast."
+    audioClip: {fileID: 0}
+  - character: 0
+    mood: 0
+    line: "I\u2019ve never been this far out into the country before. It\u2019s kind
+      of peaceful, albeit ominous."
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: "I\u2019ve been all the way to the coast before. It\u2019s just a straight
+      line North from here."
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: "There\u2019s a village a few miles to the east, let\u2019s head that way."
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: "What? Why? There\u2019s still several hours of light left, we could cover
+      more ground if we press on. We might even reach the next village along the road."
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: "Still, I\u2019d like to head for this village. I know the way well enough,
+      and can get us there before nightfall."
+    audioClip: {fileID: 0}
+  - character: 0
+    mood: 0
+    line: "I think I agree with Stein; I\u2019d like to know we can reach a roof to
+      sleep under, rather than stumble on the road at night."
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: "Alright, but we get up early and hit the road as soon as we can. I don\u2019t
+      like the idea of being a sitting duck."
+    audioClip: {fileID: 0}
