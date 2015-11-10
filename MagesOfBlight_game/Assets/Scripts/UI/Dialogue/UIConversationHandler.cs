@@ -18,6 +18,8 @@ public class UIConversationHandler : MonoBehaviour {
 	int dialogueIndexNumber;
 	int conversationIndexNumber;
 
+	public bool startConversation;
+
 	//list of dialogue obj from the conversation
 	List<DialogueObject> dialogueList = new List<DialogueObject>();
 
@@ -31,26 +33,34 @@ public class UIConversationHandler : MonoBehaviour {
 		conversationIndexNumber = 0;
 		dialogueIndexNumber = 0;
 		dialogueList = convo[0].dialogue;
+		startConversation = false;
+		showConversation(dialogueIndexNumber);
+		dialogueIndexNumber++;
+		dialogueCanvas.enabled = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		//--------below is for testing only---------
-		if (Input.GetKeyDown (KeyCode.Return) && !dialogueCanvas.enabled) {
+		if (startConversation) {
 			dialogueCanvas.enabled = true;
+			runConversation ();
 		}
-		//if enter is pressed, move to next convo as long as the dialogue is not over yet
-		if(Input.GetKeyDown(KeyCode.Return) && dialogueIndexNumber < dialogueList.Count-1){
-			showConversation(dialogueIndexNumber);
-			dialogueIndexNumber++;
-		}
+	}
+
+	//function to call when we want to activate the next conversation
+	public void runConversation(){
 		//if enter is pressed and the conversation is done, turn off dialogue box and interate conversation number
-		if (Input.GetKeyDown (KeyCode.Return) && dialogueIndexNumber == dialogueList.Count - 1) {
+		if (Input.GetKeyDown (KeyCode.Return) && dialogueIndexNumber == dialogueList.Count) {
 			dialogueCanvas.enabled = false;
 			dialogueIndexNumber = 0;
 			conversationIndexNumber++;
-			if(conversationIndexNumber < convo.Count) dialogueList = convo[conversationIndexNumber].dialogue;
+			if(conversationIndexNumber < convo.Count) {dialogueList = convo[conversationIndexNumber].dialogue;startConversation = false;}
 			else Destroy(gameObject);
+		}
+		//if enter is pressed, move to next convo as long as the dialogue is not over yet
+		if(Input.GetKeyDown(KeyCode.Return) && dialogueIndexNumber < dialogueList.Count){
+			showConversation(dialogueIndexNumber);
+			dialogueIndexNumber++;
 		}
 	}
 

@@ -102,7 +102,7 @@ public class TileAgent : TileEntity {
         Debug.DrawRay(transform.position, _motor.desiredDirec * 5.0f, Color.black);
 
         if (_motor.isMoving) {
-            Debug.Log("moving");
+            //Debug.Log("moving");
 
             _modelRotControl.SetDesiredLookDirec(_motor.desiredDirec.normalized);
         }
