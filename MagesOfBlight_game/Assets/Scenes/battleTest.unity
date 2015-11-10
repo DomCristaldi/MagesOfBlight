@@ -256,6 +256,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11464216, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
+      propertyPath: gridRadius
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
   m_IsPrefabParent: 0
@@ -649,6 +653,10 @@ Prefab:
     - target: {fileID: 445314, guid: d5840b95b7fc0c641867a5e9e0859870, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11434364, guid: d5840b95b7fc0c641867a5e9e0859870, type: 2}
+      propertyPath: cameraAngleDown
+      value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5840b95b7fc0c641867a5e9e0859870, type: 2}
@@ -1309,7 +1317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01339d98af7d25e44a4642210e6040f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  model: {fileID: 497136041}
+  model: {fileID: 0}
   hasTurn: 1
   team: 0
   defaultModelLookDirec: {x: -0, y: -0, z: -1}

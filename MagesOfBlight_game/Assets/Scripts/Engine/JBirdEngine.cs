@@ -253,18 +253,136 @@ namespace JBirdEngine {
 	/// </summary>
 	public static class ColorHelper {
 
-		public static Color ToColor(int HexValue) {
+		public class ColorHSV {
+
+			public float h;
+			public float s;
+			public float v;
+			public float a;
+
+			public ColorHSV () {
+				h = 0;
+				s = 0;
+				v = 0;
+				a = 0;
+			}
+
+			public ColorHSV (ColorHSV cHSV) {
+				h = cHSV.h;
+				s = cHSV.s;
+				v = cHSV.v;
+				a = cHSV.a;
+			}
+
+			public ColorHSV (float hue, float saturation, float value, float alpha) {
+				h = hue;
+				s = saturation;
+				v = value;
+				a = alpha;
+			}
+
+		}
+
+		/// <summary>
+		/// Converts a Color to the ColorHSV class.
+		/// </summary>
+		/// <returns>ColorHSV class instance.</returns>
+		/// <param name="color">Color to convert.</param>
+		public static ColorHSV ToHSV (this Color color) {
+			float hue;
+			float sat;
+			float val;
+			float cMax = Mathf.Max(color.r, color.g, color.b);
+			float cMin = Mathf.Min(color.r, color.g, color.b);
+			float delta = cMax - cMin;
+			//HUE
+			if (delta == 0f) {
+				hue = 0f;
+			}
+			else if (cMax == color.r) {
+				hue = (color.g - color.b) / delta;
+			}
+			else if (cMax == color.g) {
+				hue = (color.b - color.r) / delta;
+			}
+			else {
+				hue = (color.r - color.g) / delta;
+			}
+			//Convert to degrees
+			hue *= 60f;
+			if (hue < 0f) {
+				hue += 360f;
+			}
+			//SATURATION
+			if (cMax == 0f) {
+				sat = 0f;
+			}
+			else {
+				sat = delta / cMax;
+			}
+			//VALUE
+			val = cMax;
+			return new ColorHSV(hue, sat, val, color.a);
+		}
+
+		public static Color ToColor (this ColorHSV colorHSV) {
+			float c = colorHSV.v * colorHSV.s;
+			float x = c * (1f - Mathf.Abs((colorHSV.h / 60f) % 2 - 1));
+			float m = colorHSV.v - c;
+			float r = 0f;
+			float g = 0f;
+			float b = 0f;
+			if (0f <= colorHSV.h && colorHSV.h < 60f) {
+				r = c + m;
+				g = x + m;
+				b = m;
+			}
+			else if (60f <= colorHSV.h && colorHSV.h < 120f) {
+				r = x + m;
+				g = c + m;
+				b = m;
+			}
+			else if (120f <= colorHSV.h && colorHSV.h < 180f) {
+				r = m;
+				g = c + m;
+				b = x + m;
+			}
+			else if (180f <= colorHSV.h && colorHSV.h < 240f) {
+				r = m;
+				g = x + m;
+				b = c + m;
+			}
+			else if (240f <= colorHSV.h && colorHSV.h < 300f) {
+				r = x + m;
+				g = m;
+				b = c + m;
+			}
+			else {
+				r = c + m;
+				g = m;
+				b = x + m;
+			}
+			return new Color(r, g, b, colorHSV.a);
+		}
+
+		public static Color ToColor (this int HexValue) {
 			byte r = (byte)((HexValue >> 16) & 0xFF);
 			byte g = (byte)((HexValue >> 8) & 0xFF);
 			byte b = (byte)((HexValue) & 0xFF);
 			return ToColor(new Color32(r, g, b, 255));
 		}
 
-		public static Color ToColor (Color32 color32) {
+		public static Color ToColor (this Color32 color32) {
 			return (Color)color32;
 		}
 
-		public static Color ToColor (int red, int green, int blue) {
+		/// <summary>
+		/// Create a Color using red, green, and blue values from 0 to 255.
+		/// </summary>
+		/// <param name="red">Red (0 to 255).</param>
+		/// <param name="green">Green (0 to 255).</param>
+		/// <param name="blue">Blue (0 to 255).</param>
+		public static Color From255to1 (int red, int green, int blue) {
 			return new Color((float)red/255f, (float)green/255f, (float)blue/255f);
 		}
 
@@ -286,10 +404,40 @@ namespace JBirdEngine {
 				amount = a;
 			}
 
+			public ColorAmount (ColorAmount cA) {
+				color = cA.color;
+				amount = cA.amount;
+			}
+
 		}
 
 		/// <summary>
-		/// Mixes the specified colors in their respective quantities.
+		/// A container class for holding a color (in HSV) and an amount (for mixing).
+		/// </summary>
+		public class ColorHSVAmount {
+			
+			public ColorHSV colorHSV;
+			public float amount;
+			
+			/// <summary>
+			/// Initializes a new instance of the ColorHSVAmount class.
+			/// </summary>
+			/// <param name="c">Color (in HSV).</param>
+			/// <param name="a">Amount (should be between 0.0f and 1.0f).</param>
+			public ColorHSVAmount (ColorHSV c, float a) {
+				colorHSV = c;
+				amount = a;
+			}
+
+			public ColorHSVAmount (ColorHSVAmount cHSVA) {
+				colorHSV = cHSVA.colorHSV;
+				amount = cHSVA.amount;
+			}
+			
+		}
+
+		/// <summary>
+		/// Mixes the specified colors in their respective quantities using RGB.
 		/// </summary>
 		/// <returns>The result of mixing the colors.</returns>
 		/// <param name="colors">Colors to mix.</param>
@@ -308,7 +456,7 @@ namespace JBirdEngine {
 		}
 
 		/// <summary>
-		/// Mixes the specified colors in equal quantities.
+		/// Mixes the specified colors in equal quantities using RGB.
 		/// </summary>
 		/// <returns>The result of mixing the colors.</returns>
 		/// <param name="colors">Colors to mix.</param>
@@ -318,6 +466,83 @@ namespace JBirdEngine {
 				colorAmounts[i] = new ColorAmount(colors[i], 1f / (float)colors.Length);
 			}
 			return MixColors(colorAmounts);
+		}
+
+		/// <summary>
+		/// Mixes the specified HSV colors in their respective quantities using HSV.
+		/// </summary>
+		/// <returns>The result of mixing the colors.</returns>
+		/// <param name="colors">Colors to mix.</param>
+		public static Color MixColorsHSV (params ColorHSVAmount[] colorsHSV) {
+			float hue = 0f;
+			float saturation = 0f;
+			float value = 0f;
+			float alpha = 0f;
+			foreach (ColorHSVAmount colorHSVAmount in colorsHSV) {
+				hue += colorHSVAmount.colorHSV.h * colorHSVAmount.amount;
+				saturation += colorHSVAmount.colorHSV.s * colorHSVAmount.amount;
+				value += colorHSVAmount.colorHSV.v * colorHSVAmount.amount;
+				alpha += colorHSVAmount.colorHSV.a * colorHSVAmount.amount;
+			}
+			return new ColorHSV (hue, saturation, value, alpha).ToColor();
+		}
+
+		/// <summary>
+		/// Mixes the specified colors in their respective quantities using HSV.
+		/// </summary>
+		/// <returns>The result of mixing the colors.</returns>
+		/// <param name="colors">Colors to mix.</param>
+		public static Color MixColorsHSV (params ColorAmount[] colors) {
+			ColorHSVAmount[] colorHSVAmounts = new ColorHSVAmount[colors.Length];
+			for (int i = 0; i < colors.Length; i++) {
+				colorHSVAmounts[i] = new ColorHSVAmount(colors[i].color.ToHSV(), colors[i].amount);
+			}
+			return MixColorsHSV(colorHSVAmounts);
+		}
+
+		/// <summary>
+		/// Mixes the specified HSV colors in their respective quantities using HSV.
+		/// </summary>
+		/// <returns>The result of mixing the colors.</returns>
+		/// <param name="colors">Colors to mix.</param>
+		public static Color MixColorsHSV (params ColorHSV[] colorsHSV) {
+			ColorHSVAmount[] colorHSVAmounts = new ColorHSVAmount[colorsHSV.Length];
+			for (int i = 0; i < colorsHSV.Length; i++) {
+				colorHSVAmounts[i] = new ColorHSVAmount(colorsHSV[i], 1f / (float)colorsHSV.Length);
+			}
+			return MixColorsHSV(colorHSVAmounts);
+		}
+
+		/// <summary>
+		/// Mixes the specified colors in their respective quantities using HSV.
+		/// </summary>
+		/// <returns>The result of mixing the colors.</returns>
+		/// <param name="colors">Colors to mix.</param>
+		public static Color MixColorsHSV (params Color[] colors) {
+			ColorHSVAmount[] colorHSVAmounts = new ColorHSVAmount[colors.Length];
+			for (int i = 0; i < colors.Length; i++) {
+				colorHSVAmounts[i] = new ColorHSVAmount(colors[i].ToHSV(), 1f / (float)colors.Length);
+			}
+			return MixColorsHSV(colorHSVAmounts);
+		}
+
+		/// <summary>
+		/// Shifts the hue by the specified number of degrees.
+		/// </summary>
+		/// <returns>The HSV color with hue shifted.</returns>
+		/// <param name="startColor">Starting HSV color.</param>
+		/// <param name="degrees">Degrees to shift the hue.</param>
+		public static ColorHSV ShiftHue (this ColorHSV startColor, float degrees) {
+			float hue = startColor.h;
+			hue += degrees;
+			if (hue > 360f) {
+				hue -= 360f;
+			}
+			if (hue < 0f) {
+				hue += 360f;
+			}
+			startColor.h = hue;
+			return startColor;
 		}
 
 		/// <summary>
@@ -338,6 +563,86 @@ namespace JBirdEngine {
 			}
 			gradient.Add(endColor);
 			return gradient;
+		}
+
+		/// <summary>
+		/// Make a gradient between two colors using HSV (Returns a list of colors blended from startColor to endColor).
+		/// </summary>
+		/// <returns>A list of colors blended from startColor to endColor.</returns>
+		/// <param name="startColor">Start color.</param>
+		/// <param name="endColor">End color.</param>
+		/// <param name="blendColors>Number of blended colors in the middle (returned list's length will be this value plus two).</param>
+		public static List<Color> MakeGradientHSV (Color startColor, Color endColor, int blendColors) {
+			List<Color> gradient = new List<Color>();
+			float startHue = startColor.ToHSV().h;
+			float endHue = endColor.ToHSV().h;
+			float startSat = startColor.ToHSV().s;
+			float endSat = endColor.ToHSV().s;
+			float startVal = startColor.ToHSV().v;
+			float endVal = endColor.ToHSV().v;
+			float degreesPerStep = (endHue - startHue);
+			if (degreesPerStep > 180f) {
+				degreesPerStep = degreesPerStep - 360f;
+			}
+			if (degreesPerStep < -180f) {
+				degreesPerStep = degreesPerStep + 360f;
+			}
+			float saturationPerStep = (endSat - startSat);
+			float valuePerStep = (endVal - startVal);
+			degreesPerStep /= (float)(blendColors + 1);
+			saturationPerStep /= (float)(blendColors + 1);
+			valuePerStep /= (float)(blendColors + 1);
+			gradient.Add(startColor);
+			ColorHSV colorHSV = startColor.ToHSV();
+			for (int i = 0; i < blendColors; i++) {
+				colorHSV.ShiftHue(degreesPerStep);
+				colorHSV.s += saturationPerStep;
+				colorHSV.v += valuePerStep;
+				gradient.Add(colorHSV.ToColor());
+			}
+			gradient.Add(endColor);
+			return gradient;
+		}
+
+		/// <summary>
+		/// Make a rainbow from the start color, shifting the hue a specified number of degrees each step (Returns a list of Colors).
+		/// </summary>
+		/// <param name="startColor">Start color.</param>
+		/// <param name="degreesPerStep">Degrees to shift the hue per step.</param>
+		/// <param name="length">Desired length of the list.</param>
+		public static List<Color> Rainbowify (Color startColor, float degreesPerStep, int length) {
+			List<Color> rainbow = new List<Color>();
+			rainbow.Add(startColor);
+			ColorHSV colorHSV = startColor.ToHSV();
+			for (int i = 0; i < length - 1; i++) {
+				colorHSV.ShiftHue(degreesPerStep);
+				rainbow.Add(colorHSV.ToColor());
+			}
+			return rainbow;
+		}
+
+		/// <summary>
+		/// Make a rainbow from the start color, shifting the hue until it reaches the end hue. (Returns a list of Colors).
+		/// </summary>
+		/// <param name="startColor">Start color.</param>
+		/// <param name="endColor">Hue to stop shifting at (will only use the hue of this color, not value or saturation).</param>
+		/// <param name="length">Desired length of the list.</param>
+		public static List<Color> Rainbowify (Color startColor, Color endColor, int length) {
+			List<Color> rainbow = new List<Color>();
+			float startHue = startColor.ToHSV().h;
+			float endHue = endColor.ToHSV().h;
+			if (endHue < startHue) {
+				endHue += 360f;
+			}
+			float degreesPerStep = (endHue - startHue);
+			degreesPerStep /= (float)length - 1;
+			rainbow.Add(startColor);
+			ColorHSV colorHSV = startColor.ToHSV();
+			for (int i = 0; i < length - 1; i++) {
+				colorHSV.ShiftHue(degreesPerStep);
+				rainbow.Add(colorHSV.ToColor());
+			}
+			return rainbow;
 		}
 
 	}
