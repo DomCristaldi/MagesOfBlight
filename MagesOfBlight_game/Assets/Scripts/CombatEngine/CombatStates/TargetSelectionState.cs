@@ -48,7 +48,7 @@ public class TargetSelectionState : BaseCombatState {
         }
 
         if (path != null) {
-            Debug.DrawRay(path[0].transform.position, Vector3.up * 5.0f, JBirdEngine.MoreColors.BobRoss.alizarinCrimson());
+            Debug.DrawRay(path[0].transform.position, Vector3.up * 5.0f, JBirdEngine.MoreColors.BobRoss.alizarinCrimson);
         }
 
         battleManRef.DrawPath(path, Color.red);

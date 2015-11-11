@@ -151,7 +151,7 @@ public class TileMotor : MonoBehaviour {
 
 
 
-        Debug.DrawRay(transform.position, desiredDirec, JBirdEngine.MoreColors.orange());
+        Debug.DrawRay(transform.position, desiredDirec, JBirdEngine.MoreColors.orange);
 
 
         //SetDesiredDirec(Vector3.Normalize(end.transform.position - transform.position));

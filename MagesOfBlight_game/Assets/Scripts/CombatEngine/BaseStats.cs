@@ -20,7 +20,6 @@ public class BaseStats : MonoBehaviour {
 	public float currentBlight;
 	public float blightRecovery;
 
-
 	protected virtual void Awake () {
 		currentHealth = maxHealth;
 		//currentBlight = maxBlight / 2f;
