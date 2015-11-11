@@ -184,7 +184,23 @@ public class BattleManager : MonoBehaviour {
 	}
 
     public void SetHoveredTile(HexNode tile) {
-        hoveredTile = tile;
+
+        if (!currentBattleState.canHoverGrid) {//we can't hover over a tile in this state, prevent it from happening
+            if (hoveredTile != null) {//clean up any hovered tile if we need to
+                hoveredTile.SetNormalMat();
+                hoveredTile = null;
+            }
+            return;
+        }
+
+        if (hoveredTile != tile) {//swap out the currently hovered tile
+            if (hoveredTile != null) {
+                hoveredTile.SetNormalMat();
+            }
+
+            hoveredTile = tile;//set parameters of hovered tile
+            hoveredTile.SetHoverMat();
+        }
     }
 
 

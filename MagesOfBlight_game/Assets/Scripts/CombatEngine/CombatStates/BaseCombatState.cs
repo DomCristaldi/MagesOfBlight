@@ -11,6 +11,8 @@ public class BaseCombatState {
     ///     TODO: Confirmation locks
     /// </summary>
 
+    public bool canHoverGrid;
+
     protected BattleManager battleManRef;
     protected delegate void ConfirmationFunc();
 
@@ -22,9 +24,10 @@ public class BaseCombatState {
     protected bool canUndo = false;
     protected bool undoingState = false;
 
-    public BaseCombatState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = false) {
+    public BaseCombatState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = false, bool canHoverGrid = false) {
         phase = thisCombatPhase;
         this.canUndo = canUndo;
+        this.canHoverGrid = canHoverGrid;
     }
 
 

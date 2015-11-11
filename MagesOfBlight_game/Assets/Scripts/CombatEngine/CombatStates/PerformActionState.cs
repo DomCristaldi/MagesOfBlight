@@ -9,7 +9,7 @@ using JBirdEngine;
 
 public class PerformActionState : BaseCombatState {
 
-    public PerformActionState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = false) : base(thisCombatPhase, canUndo) { }
+    public PerformActionState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = false, bool canHoverGrid = false) : base(thisCombatPhase, canUndo, canHoverGrid) { }
 
 	public override void InitState (){
 		base.InitState ();

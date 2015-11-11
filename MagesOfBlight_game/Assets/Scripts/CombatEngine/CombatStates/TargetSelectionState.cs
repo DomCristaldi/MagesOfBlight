@@ -11,7 +11,7 @@ public class TargetSelectionState : BaseCombatState {
 
     List<HexNode> path;
 
-    public TargetSelectionState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = true) : base(thisCombatPhase, canUndo) { }
+    public TargetSelectionState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = true, bool canHoverGrid = true) : base(thisCombatPhase, canUndo, canHoverGrid) { }
 
     public override void InitState() {
         base.InitState();

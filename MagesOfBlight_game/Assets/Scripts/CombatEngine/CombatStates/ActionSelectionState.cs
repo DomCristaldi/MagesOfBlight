@@ -8,10 +8,12 @@ using JBirdEngine;
 
 public class ActionSelectionState : BaseCombatState {
 
-    public ActionSelectionState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = true) : base(thisCombatPhase, canUndo) { }
+    public ActionSelectionState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = true, bool canHoverGrid = false) : base(thisCombatPhase, canUndo, canHoverGrid) { }
 
     public override void InitState() {
         base.InitState();
+
+        battleManRef.targetTile = null;
 
 		foreach (AgentActions.ActionData actionData in battleManRef.selectedAgent.agentActions.proactiveActions) {
 			if (battleManRef.selectedAgent.stats.currentBlight >= actionData.action.blightRequired) {

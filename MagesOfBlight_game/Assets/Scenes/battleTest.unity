@@ -177,21 +177,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &497136041 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 116840, guid: a861b7774222e684299c7b1327781ad8, type: 2}
-  m_PrefabInternal: {fileID: 1009549948}
---- !u!114 &497136044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 497136041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e171e8b8584cc1e47878f250f5f94350, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &725534530
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,6 +359,10 @@ Prefab:
     - target: {fileID: 445314, guid: d5840b95b7fc0c641867a5e9e0859870, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11434364, guid: d5840b95b7fc0c641867a5e9e0859870, type: 2}
+      propertyPath: cameraAngleCurve.m_Curve.Array.data[0].tangentMode
+      value: 17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5840b95b7fc0c641867a5e9e0859870, type: 2}

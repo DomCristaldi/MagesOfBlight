@@ -41,7 +41,7 @@ public class AnimationTileMotor : TileMotor {
         return base.MoveToLocationMethod(position, destination, deltaTime);
         */
 
-
+        //if we're going to overshoot the target just set it as the destination
         if (Vector3.Distance(position, destination) < _rmCapture.deltaAnimPosition.magnitude) {
             return (destination);
         }
