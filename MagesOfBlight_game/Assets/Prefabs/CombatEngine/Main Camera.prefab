@@ -91,10 +91,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bea0478e5ca124468b960fcc0785dba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoomAmount: 5
-  closestZoom: 3
-  farthestZoom: 7
+  zoomAmount: 6.39999962
+  closestZoom: 1
+  farthestZoom: 10
   zoomScaling: 6
+  zoomSpeed: 4
+  cameraAngleCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: -5.5789814
+      outSlope: -5.5789814
+      tangentMode: 10
+    - time: .0896220952
+      value: .5
+      inSlope: -.066084668
+      outSlope: -0
+      tangentMode: 17
+    - time: .464088082
+      value: .5
+      inSlope: 0
+      outSlope: Infinity
+      tangentMode: 29
+    - time: .879999995
+      value: .25
+      inSlope: Infinity
+      outSlope: -0
+      tangentMode: 17
+    - time: 1
+      value: .25
+      inSlope: 0
+      outSlope: -.5
+      tangentMode: 5
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  cameraRotateSpeed: 10
   cameraAngleDown: 45
 --- !u!124 &12434906
 Behaviour:
