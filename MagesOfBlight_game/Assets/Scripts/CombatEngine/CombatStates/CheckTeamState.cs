@@ -7,7 +7,7 @@ using System.Collections;
 
 public class CheckTeamState : BaseCombatState {
 
-    public CheckTeamState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = false) : base(thisCombatPhase, canUndo) { }
+    public CheckTeamState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = false, bool canHoverGrid = false) : base(thisCombatPhase, canUndo, canHoverGrid) { }
 
     public override void InitState() {
         base.InitState();

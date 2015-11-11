@@ -79,6 +79,7 @@ public class BattleManager : MonoBehaviour {
         public void RefreshTeam() {
             foreach (TileAgent agent in teamMembers) {
                 agent.RefreshTurn();
+				agent.stats.RecoverBlight();
             }
         }
 
@@ -113,9 +114,7 @@ public class BattleManager : MonoBehaviour {
     public Transform battleCamTf;//cached transform reference for speed of access
 
     public LayerMask tileLayer = 8;
-
-
-
+	
 
 
     //[Space]
@@ -185,7 +184,23 @@ public class BattleManager : MonoBehaviour {
 	}
 
     public void SetHoveredTile(HexNode tile) {
-        hoveredTile = tile;
+
+        if (!currentBattleState.canHoverGrid) {//we can't hover over a tile in this state, prevent it from happening
+            if (hoveredTile != null) {//clean up any hovered tile if we need to
+                hoveredTile.SetNormalMat();
+                hoveredTile = null;
+            }
+            return;
+        }
+
+        if (hoveredTile != tile) {//swap out the currently hovered tile
+            if (hoveredTile != null) {
+                hoveredTile.SetNormalMat();
+            }
+
+            hoveredTile = tile;//set parameters of hovered tile
+            hoveredTile.SetHoverMat();
+        }
     }
 
 

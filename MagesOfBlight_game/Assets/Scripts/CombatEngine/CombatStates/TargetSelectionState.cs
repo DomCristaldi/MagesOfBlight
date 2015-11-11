@@ -11,7 +11,7 @@ public class TargetSelectionState : BaseCombatState {
 
     List<HexNode> path;
 
-    public TargetSelectionState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = true) : base(thisCombatPhase, canUndo) { }
+    public TargetSelectionState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = true, bool canHoverGrid = true) : base(thisCombatPhase, canUndo, canHoverGrid) { }
 
     public override void InitState() {
         base.InitState();
@@ -48,7 +48,7 @@ public class TargetSelectionState : BaseCombatState {
         }
 
         if (path != null) {
-            Debug.DrawRay(path[0].transform.position, Vector3.up * 5.0f, JBirdEngine.MoreColors.BobRoss.alizarinCrimson());
+            Debug.DrawRay(path[0].transform.position, Vector3.up * 5.0f, JBirdEngine.MoreColors.BobRoss.alizarinCrimson);
         }
 
         battleManRef.DrawPath(path, Color.red);

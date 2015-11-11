@@ -12,7 +12,12 @@ public class HexNode : MonoBehaviour, INode<HexNode> {
 
 	public Renderer hexRing;
 
-	[Header("Debug lines:")]
+    public Material tileNormalMat;
+    public Material tileHoverMat;
+    public Material tileTargetMat;
+    public Material tileSelectableMat;
+
+    [Header("Debug lines:")]
 	public bool showEdges;
 	public bool showRadialLines;
 	public bool showConnections;
@@ -78,7 +83,7 @@ public class HexNode : MonoBehaviour, INode<HexNode> {
 
 		transform.localScale = Vector3.one * radius;
 
-		hexRing.material.color = MoreColors.BobRoss.HappyLittleAccident();
+		//hexRing.material.color = MoreColors.BobRoss.HappyLittleAccident();
 	}
 
 	protected virtual void Update () {
@@ -119,5 +124,24 @@ public class HexNode : MonoBehaviour, INode<HexNode> {
 		connections[(int)direction] = other;
 		other.connections[HexGrid.ReverseConnectionIndex(direction)] = this;
 	}
+
+    public void SetNormalMat() {
+        hexRing.material = tileNormalMat;
+    }
+
+    public void SetHoverMat() {
+        hexRing.material = tileHoverMat;
+    }
+
+    public void SetTargetedMat() {
+        hexRing.material = tileTargetMat;
+    }
+
+    public void SetSelectableMat() {
+        hexRing.material = tileSelectableMat;
+    }
+
+
+
 
 }

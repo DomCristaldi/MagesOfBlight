@@ -41,7 +41,7 @@ public class ModelRotationController : MonoBehaviour {
         
         _trueDirec = Vector3.RotateTowards(_trueDirec, desiredDirec, redirectSpeed, Mathf.Infinity);
 
-        Debug.DrawRay(transform.position, _trueDirec, JBirdEngine.MoreColors.goronTunic());
+        Debug.DrawRay(transform.position, _trueDirec, JBirdEngine.MoreColors.goronTunic);
 
 
         //_trueDirec = _trueDirec.normalized;

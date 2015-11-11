@@ -11,7 +11,7 @@ public class ConfirmActionState : BaseCombatState {
 
     List<HexNode> path;
 
-    public ConfirmActionState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = true) : base(thisCombatPhase, canUndo) { }
+    public ConfirmActionState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = true, bool canHoverGrid = false) : base(thisCombatPhase, canUndo, canHoverGrid) { }
 
     public override void InitState() {
         base.InitState();

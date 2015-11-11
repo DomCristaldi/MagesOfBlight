@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using JBirdEngine;
 
 /// <summary>
 /// State handles selecting Tiles on the Hex Grid.
@@ -13,7 +14,7 @@ public class TileSelectionState : BaseCombatState {
 
     public bool actionMenuOpen;
 
-    public TileSelectionState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = true) : base(thisCombatPhase, canUndo) { }
+    public TileSelectionState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = true, bool canHoverGrid = true) : base(thisCombatPhase, canUndo, canHoverGrid) { }
 
     /*
     public override void InitState() {

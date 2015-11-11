@@ -149,6 +149,10 @@ MonoBehaviour:
   battleManager: {fileID: 0}
   entityOnTile: {fileID: 0}
   hexRing: {fileID: 2370416}
+  tileNormalMat: {fileID: 2100000, guid: c9005def17466a543b40a3a6cb3ed817, type: 2}
+  tileHoverMat: {fileID: 2100000, guid: b0e2f589e1b7d6b499a2fda640dbed2c, type: 2}
+  tileTargetMat: {fileID: 2100000, guid: ac47ae050c38987488555fea37b4c2f6, type: 2}
+  tileSelectableMat: {fileID: 2100000, guid: 2b22a9c991cedba4eaec2d9220f56622, type: 2}
   showEdges: 0
   showRadialLines: 0
   showConnections: 0
@@ -185,6 +189,26 @@ Prefab:
       propertyPath: hexRing
       value: 
       objectReference: {fileID: 2370416}
+    - target: {fileID: 0}
+      propertyPath: tileNormalMat
+      value: 
+      objectReference: {fileID: 2100000, guid: c9005def17466a543b40a3a6cb3ed817, type: 2}
+    - target: {fileID: 0}
+      propertyPath: tileHoverMat
+      value: 
+      objectReference: {fileID: 2100000, guid: b0e2f589e1b7d6b499a2fda640dbed2c, type: 2}
+    - target: {fileID: 0}
+      propertyPath: tileSelectedMat
+      value: 
+      objectReference: {fileID: 2100000, guid: ac47ae050c38987488555fea37b4c2f6, type: 2}
+    - target: {fileID: 0}
+      propertyPath: tileSelectableMat
+      value: 
+      objectReference: {fileID: 2100000, guid: 2b22a9c991cedba4eaec2d9220f56622, type: 2}
+    - target: {fileID: 0}
+      propertyPath: tileTargetMat
+      value: 
+      objectReference: {fileID: 2100000, guid: ac47ae050c38987488555fea37b4c2f6, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 106004}

@@ -24,6 +24,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 452506}
   - 95: {fileID: 9516060}
+  - 114: {fileID: 11420842}
   m_Layer: 0
   m_Name: water_rig
   m_TagString: Untagged
@@ -752,6 +753,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11420842
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 106296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e171e8b8584cc1e47878f250f5f94350, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11426590
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -767,6 +779,7 @@ MonoBehaviour:
   currentHealth: 100
   maxBlight: 100
   currentBlight: 50
+  blightRecovery: 3
 --- !u!114 &11434162
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -789,7 +802,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 169116}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0193ceee98bf1543a0dddca93186931, type: 3}
+  m_Script: {fileID: 11500000, guid: 731c945318d9395429d1fe0e3d1e3394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
@@ -815,6 +828,8 @@ MonoBehaviour:
   suppliedPath: []
   doneMoving: 0
   isMoving: 0
+  animController: {fileID: 9516060}
+  _rmCapture: {fileID: 11420842}
 --- !u!114 &11444124
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -830,14 +845,21 @@ MonoBehaviour:
     action: {fileID: 0}
     known: 0
     usable: 0
+    button: {fileID: 0}
   counterAction:
     action: {fileID: 0}
     known: 0
     usable: 0
+    button: {fileID: 0}
   proactiveActions:
   - action: {fileID: 11400000, guid: 809e213b9ee99f24ab4548897eaa8fad, type: 2}
-    known: 1
-    usable: 1
+    known: 0
+    usable: 0
+    button: {fileID: 0}
+  - action: {fileID: 11400000, guid: 4ab90e3ae44e2ff4197240d9f0524387, type: 2}
+    known: 0
+    usable: 0
+    button: {fileID: 0}
 --- !u!114 &11451408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -850,11 +872,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agentActions: {fileID: 0}
+  agent: {fileID: 0}
   actionButtonPrefab: {fileID: 11448638, guid: 128ecbfe8d902e74dba6fefed89f8216, type: 2}
   agentCanvasPrefab: {fileID: 22358304, guid: bff4e445a558676409fc3b6d23d3728d, type: 2}
   agentHUDCanvasPrefab: {fileID: 22365666, guid: 8a53028a6dfd44d4db395d8c8f6eb877,
     type: 2}
   healthbarPrefab: {fileID: 11436868, guid: 01e15a3a0fba34c4aae9b28c20ef805d, type: 2}
+  actionButtonList: []
   agentCanvas: {fileID: 0}
   agentHUDCanvas: {fileID: 0}
   healthbar: {fileID: 0}
@@ -872,6 +896,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   model: {fileID: 106296}
+  agentCanvas: {fileID: 0}
+  agentActions: {fileID: 0}
   hasTurn: 1
   team: 0
   defaultModelLookDirec: {x: -0, y: -0, z: -1}
@@ -942,7 +968,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: proactiveActions.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: speedRamp.m_Curve.Array.size
@@ -951,15 +977,15 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: proactiveActions.Array.data[1].action
       value: 
-      objectReference: {fileID: 11400000, guid: 2ac5e5c44d06eee44b7fc64cf3a4193f,
+      objectReference: {fileID: 11400000, guid: 4ab90e3ae44e2ff4197240d9f0524387,
         type: 2}
     - target: {fileID: 0}
       propertyPath: proactiveActions.Array.data[1].known
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: proactiveActions.Array.data[1].usable
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: proactiveActions.Array.data[2].action
@@ -1018,6 +1044,26 @@ Prefab:
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: blightRecovery
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: proactiveActions.Array.data[0].known
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: proactiveActions.Array.data[0].usable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: animController
+      value: 
+      objectReference: {fileID: 9516060}
+    - target: {fileID: 0}
+      propertyPath: _rmCapture
+      value: 
+      objectReference: {fileID: 11420842}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 169116}

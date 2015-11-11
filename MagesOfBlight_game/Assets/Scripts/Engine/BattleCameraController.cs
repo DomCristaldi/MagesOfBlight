@@ -17,8 +17,13 @@ public class BattleCameraController : MonoBehaviour {
     public float zoomAmount = 5.0f;
     public float closestZoom = 3.0f;
     public float farthestZoom = 7.0f;
-    public float zoomScaling = 6f;
+    public float zoomScaling = 6.0f;
+    public float zoomSpeed = 1.0f;
 
+    [Space]
+    public AnimationCurve cameraAngleCurve;
+    public float cameraRotateSpeed = 4.0f;
+    private Quaternion cameraRot;
 
     public float cameraAngleDown;
     /*
@@ -43,7 +48,9 @@ public class BattleCameraController : MonoBehaviour {
 
         cam = GetComponent<Camera>();
 
-        AssignCameraAngle();
+        
+
+        //AssignCameraAngle();
     }
 
 	// Use this for initialization
@@ -61,6 +68,9 @@ public class BattleCameraController : MonoBehaviour {
         HandleTiles();
         HandleMovement();
         HandleZoom();
+
+        AssignCameraAngle();
+        AdjustCamera();
 
         Debug.DrawRay(dragMarkerPos, Vector3.up, Color.green);
 	}
@@ -115,7 +125,10 @@ public class BattleCameraController : MonoBehaviour {
 
 
         //transform.Translate(Vector3.forward * zoomAmount, Space.Self);
-        cam.orthographicSize = zoomAmount;
+        //cam.orthographicSize = zoomAmount;
+        cam.orthographicSize = Mathf.Lerp(cam.orthographicSize,
+                                          zoomAmount,
+                                          zoomSpeed * Time.deltaTime);
     }
 
     public Vector3 GetMousePosOnGrid() {
@@ -139,11 +152,31 @@ public class BattleCameraController : MonoBehaviour {
     }
 
     private void AssignCameraAngle() {
+        //Quaternion camRot = Quaternion.Euler(cameraAngleDown, 0.0f, 0.0f);
+
+        float lerpAmount = 1.0f - ((zoomAmount - closestZoom) / (farthestZoom - closestZoom));
+
+        cameraAngleDown = 90.0f * cameraAngleCurve.Evaluate(lerpAmount);
+
         Quaternion camRot = Quaternion.Euler(cameraAngleDown, 0.0f, 0.0f);
 
-        cam.transform.rotation = camRot;
+
+        cameraRot = camRot;
     }
 
+    private void AdjustCamera() {
+        //cam.transform.rotation = cameraRot;
+        cam.transform.rotation = Quaternion.Slerp(cam.transform.rotation,
+                                                  cameraRot,
+                                                  cameraRotateSpeed * Time.deltaTime);
+
+    }
+
+    /*
+    private void AssignCameraAngle(float angleX = 0.0f, float angleY = 0.0f, float angleZ = 0.0f) {
+        cam.transform.rotation = Quaternion.Euler(angleX, angleY, angleZ);
+    }
+    */
     /*
     public bool RaycastFromScreenIntoScene(ref Vector3 result, Vector2 position, Vector3 direction, int layerMask) {
         RaycastHit hit;
