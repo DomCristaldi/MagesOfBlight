@@ -12,23 +12,46 @@ MonoBehaviour:
   m_Name: 8. Blight Nest
   m_EditorClassIdentifier: 
   dialogue:
-  - character: 0
+  - character: 2
     mood: 1
-    line: "What were you thinking!? We\u2019ve never seen a place so infested with
-      Blighted; why would you just run in here on your own?"
+    line: "What were you thinking, Nuria! We\u2019ve never seen a place so infested.
+      Did you think you could walk amongst them unharmed!"
     audioClip: {fileID: 0}
   - character: 1
     mood: 0
-    line: "They were guarding something. I don\u2019t know what, but these things
-      didn\u2019t want us in here."
+    line: "Don\u2019t tell me you were worried about me?"
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: '...'
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: "I- I\u2019m sorry Stein. It\u2019s just, I followed a small group here.The
+      next thing I knew I was in the middle of them."
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: "I trust now you understand our situation? We cannot look upon these creatures
+      with sympathy. For Pacha\u2019s sake you must steel yourself."
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: "I can\u2019t believe they are beyond help Stein, but I\u2019ll do what
+      I must."
+    audioClip: {fileID: 0}
+  - character: 0
+    mood: 0
+    line: "That\u2019s all we can ask. Welcome back, Nuria. We were both worried."
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: "Thanks Avon. Now for the task at hand. These puppets are here for a reason.
+      I think they\u2019re guarding something in those caves."
     audioClip: {fileID: 0}
   - character: 0
     mood: 0
     line: "Maybe it\u2019s a way to break the curse?"
-    audioClip: {fileID: 0}
-  - character: 1
-    mood: 0
-    line: Or better yet, a way to control it!
     audioClip: {fileID: 0}
   - character: 2
     mood: 0

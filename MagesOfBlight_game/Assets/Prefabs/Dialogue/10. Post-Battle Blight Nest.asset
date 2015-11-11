@@ -27,11 +27,11 @@ MonoBehaviour:
     audioClip: {fileID: 0}
   - character: 2
     mood: 0
-    line: "It lost its control over us. We\u2019re free."
+    line: It lost its control over us. Pacha is once again free.
     audioClip: {fileID: 0}
   - character: 1
     mood: 0
-    line: Yes!
+    line: More importantly, us! Yes!
     audioClip: {fileID: 0}
   - character: 0
     mood: 0
@@ -58,8 +58,9 @@ MonoBehaviour:
     audioClip: {fileID: 0}
   - character: 2
     mood: 0
-    line: "If they truly can still be called people. We\u2019ll see. So long as the
-      Blight subsides, I am content."
+    line: "If they truly can still be called people. We\u2019ll see. I shall leave
+      them in your hands Nuria. I must see to rebuilding my order, and healing the
+      scar upon the land."
     audioClip: {fileID: 0}
   - character: 0
     mood: 0

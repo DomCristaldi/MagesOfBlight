@@ -20,9 +20,13 @@ MonoBehaviour:
     mood: 0
     line: "Stupid Puppets! Don\u2019t you know I\u2019m trying to help you!?"
     audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: The Earth weeps at such a corruption. For Pacha we must stop this.
+    audioClip: {fileID: 0}
   - character: 0
     mood: 0
-    line: "Damn it! There\u2019s too many of them! We have to get through!"
+    line: "There\u2019s too many of them! She won\u2019t last long Stein!"
     audioClip: {fileID: 0}
   - character: 2
     mood: 0

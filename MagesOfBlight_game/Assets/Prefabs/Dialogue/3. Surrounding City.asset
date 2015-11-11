@@ -29,9 +29,8 @@ MonoBehaviour:
     audioClip: {fileID: 0}
   - character: 0
     mood: 0
-    line: "Honestly, that makes me skeptical about using magic at all. (if used magic
-      in the last battle) It does seem pretty useful, though\u2026 (if no magic used)
-      I think I could probably survive without it\u2026"
+    line: "Honestly, that\u2019s concerning. It does seem pretty useful, but you\u2019re
+      sure it\u2019s safe?"
     audioClip: {fileID: 0}
   - character: 1
     mood: 0
@@ -67,14 +66,44 @@ MonoBehaviour:
     audioClip: {fileID: 0}
   - character: 0
     mood: 0
-    line: Still. So where are we going now, exactly?
+    line: You were a priest?
     audioClip: {fileID: 0}
   - character: 2
     mood: 0
-    line: "We follow the road. Until we\u2019ve left this forsaken country behind."
+    line: I am a priest. According to the priests I am of the same blood as the goddess
+      of land. Now, Pacha is wounded, and I must care for her.
+    audioClip: {fileID: 0}
+  - character: 0
+    mood: 0
+    line: What about you, Nuria?
     audioClip: {fileID: 0}
   - character: 1
     mood: 0
-    line: "Our first priority is to get away from the city.  It\u2019s crawling with
+    line: "I didn\u2019t have a job before. I lived in the streets, moving from place
+      to place. Not much different from now. What about you?"
+    audioClip: {fileID: 0}
+  - character: 0
+    mood: 0
+    line: "My father was a goldsmith. I lived on the other side of the city. My father
+      occasionally traveled to the coast, but I\u2019ve never traveled beyond the
+      city."
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: "Well, here\u2019s your chance."
+    audioClip: {fileID: 0}
+  - character: 0
+    mood: 0
+    line: Where will we go?
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: We follow the road. Fight off the Blight as we can, helping survivors, and
+      warning others of this corruption. Until we know how to cleanse Pacha, leaving
+      this accursed place is the best we can do.
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: "Our first priority is to get away from the city. It\u2019s crawling with
       Puppets. Once we\u2019re on the road we can figure out what comes next."
     audioClip: {fileID: 0}
