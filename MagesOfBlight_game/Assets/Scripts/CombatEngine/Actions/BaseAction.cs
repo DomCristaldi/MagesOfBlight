@@ -7,11 +7,16 @@ public class BaseAction : ScriptableObject {
 
 	protected static float targetPrecision = 0.1f;
 
+	public TileAgent agent;
+
 	public Color normalColor;
 	public Color highlightedColor;
 	public Color pressedColor;
 	public Color disabledColor;
 	public string actionName;
+
+	public float blightRequired;
+	public float blightGiven;
 
 	float range = Mathf.Infinity;
 
@@ -44,6 +49,7 @@ public class BaseAction : ScriptableObject {
 
 	protected virtual bool ActionSuccess () {
 		Init();
+		agent.stats.AddBlight(blightGiven);
 		return true;
 	}
 

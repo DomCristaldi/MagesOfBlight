@@ -737,8 +737,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   currentHealth: 20
-  maxBlight: 0
-  currentBlight: 0
+  maxBlight: 100
+  currentBlight: 100
+  blightRecovery: 0
 --- !u!114 &11417384
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -751,6 +752,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   model: {fileID: 103834}
+  agentCanvas: {fileID: 0}
+  agentActions: {fileID: 0}
   hasTurn: 1
   team: 1
   defaultModelLookDirec: {x: -0, y: -0, z: -1}
@@ -766,11 +769,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agentActions: {fileID: 0}
+  agent: {fileID: 0}
   actionButtonPrefab: {fileID: 11448638, guid: 128ecbfe8d902e74dba6fefed89f8216, type: 2}
   agentCanvasPrefab: {fileID: 22358304, guid: bff4e445a558676409fc3b6d23d3728d, type: 2}
   agentHUDCanvasPrefab: {fileID: 22365666, guid: 8a53028a6dfd44d4db395d8c8f6eb877,
     type: 2}
   healthbarPrefab: {fileID: 11436868, guid: 01e15a3a0fba34c4aae9b28c20ef805d, type: 2}
+  actionButtonList: []
   agentCanvas: {fileID: 0}
   agentHUDCanvas: {fileID: 0}
   healthbar: {fileID: 0}
@@ -839,17 +844,21 @@ MonoBehaviour:
     action: {fileID: 0}
     known: 0
     usable: 0
+    button: {fileID: 0}
   counterAction:
     action: {fileID: 0}
     known: 0
     usable: 0
+    button: {fileID: 0}
   proactiveActions:
   - action: {fileID: 11400000, guid: 809e213b9ee99f24ab4548897eaa8fad, type: 2}
     known: 1
     usable: 1
-  - action: {fileID: 0}
+    button: {fileID: 0}
+  - action: {fileID: 11400000, guid: 55982705f4677714a90bf58620a2246f, type: 2}
     known: 1
     usable: 1
+    button: {fileID: 0}
 --- !u!137 &13795278
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

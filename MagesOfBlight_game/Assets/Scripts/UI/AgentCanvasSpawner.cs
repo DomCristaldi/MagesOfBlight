@@ -2,13 +2,17 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using JBirdEngine;
 
+[RequireComponent(typeof(TileAgent))]
 [RequireComponent(typeof(AgentActions))]
 [RequireComponent(typeof(BaseStats))]
 public class AgentCanvasSpawner : MonoBehaviour {
 
 	//assigned on start
 	public AgentActions agentActions;
+
+	public TileAgent agent;
 
 	//need button prefab assigned in inspector
 	public Button actionButtonPrefab;
@@ -26,20 +30,22 @@ public class AgentCanvasSpawner : MonoBehaviour {
 	private List<AgentActions.ActionData> actionDataList;
 
 	//list of action buttons
-	private List<GameObject> actionButtonList = new List<GameObject>();
+	public List<Button> actionButtonList = new List<Button>();
 
 	//canvas reference for dom
-	public GameObject agentCanvas;
+	public Canvas agentCanvas;
 	public GameObject agentHUDCanvas;
 	public GameObject healthbar;
 
 	public Slider healthbarSlider;
 	public BaseStats stats;
 
-	void Start () {
+	void Awake () {
 		//assign agent actions var
 		agentActions = GetComponent<AgentActions>();
 		actionDataList = agentActions.proactiveActions;
+		agent = GetComponent<TileAgent>();
+		agent.agentActions = agentActions;
 
 		//create ui for the agent
 		CreateUI ();
@@ -48,12 +54,13 @@ public class AgentCanvasSpawner : MonoBehaviour {
 	void CreateUI(){
 	//---------------Actions---------------------------------------------
 		//create canvas and parent it to the agent
-		agentCanvas = (GameObject)Instantiate (agentCanvasPrefab.gameObject, Vector3.zero, Quaternion.identity);
+		agentCanvas = ((GameObject)Instantiate (agentCanvasPrefab.gameObject, Vector3.zero, Quaternion.identity)).GetComponent<Canvas>();
 		agentCanvas.transform.SetParent (this.transform);
 		agentCanvas.transform.name = "Action Canvas";
+		agent.agentCanvas = agentCanvas;
 		//set canvas event camera and position in terms of the agent
-		agentCanvas.GetComponent<Canvas> ().worldCamera = Camera.main;
-		agentCanvas.GetComponent<Canvas> ().sortingOrder = 1;
+		agentCanvas.worldCamera = Camera.main;
+		agentCanvas.sortingOrder = 1;
 		agentCanvas.transform.localPosition = new Vector3 (0f, 2f, 0f);
 		//create buttons
 		foreach (AgentActions.ActionData actionData in actionDataList) {
@@ -70,7 +77,8 @@ public class AgentCanvasSpawner : MonoBehaviour {
 			//change text of button
 			buttonObject.GetComponentInChildren<Text> ().text = actionData.action.actionName;
 			//change action associated with button
-			buttonObject.GetComponent<ButtonActionInfo> ().action = actionData.action;
+			buttonObject.GetComponent<ButtonActionInfo> ().actionData = actionData;
+			actionData.button = buttonObject.GetComponent<Button>();
 			//change button's onClick
 			buttonObject.GetComponent<Button> ().onClick.AddListener (() => {
 				buttonObject.GetComponent<ButtonActionInfo> ().SetBattleManagerAction ();});
@@ -89,10 +97,10 @@ public class AgentCanvasSpawner : MonoBehaviour {
 				//else text should be black
 				buttonObject.GetComponentInChildren<Text> ().color = Color.black;
 			}
-//			//if action is not usable than disable it
-//			if (!actionData.usable) {
-//				buttonObject.GetComponent<Button> ().interactable = false;
-//			}
+			//if action is not usable than disable it
+			if (!actionData.usable) {
+				buttonObject.GetComponent<Button> ().interactable = false;
+			}
 			//if action is not known, disable the game object
 			if (!actionData.known) {
 				buttonObject.SetActive (false);
@@ -100,7 +108,7 @@ public class AgentCanvasSpawner : MonoBehaviour {
 			//scale button down
 			buttonObject.transform.localScale = new Vector3 (1.5f, 1.5f, 1.5f);
 			//add button to list
-			actionButtonList.Add (buttonObject);
+			actionButtonList.Add (buttonObject.GetComponent<Button>());
 		}
 		//set ui to false
 		agentCanvas.SetActive (false);

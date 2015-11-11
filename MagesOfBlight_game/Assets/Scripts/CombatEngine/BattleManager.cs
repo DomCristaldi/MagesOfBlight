@@ -79,6 +79,7 @@ public class BattleManager : MonoBehaviour {
         public void RefreshTeam() {
             foreach (TileAgent agent in teamMembers) {
                 agent.RefreshTurn();
+				agent.stats.RecoverBlight();
             }
         }
 
@@ -113,9 +114,7 @@ public class BattleManager : MonoBehaviour {
     public Transform battleCamTf;//cached transform reference for speed of access
 
     public LayerMask tileLayer = 8;
-
-
-
+	
 
 
     //[Space]

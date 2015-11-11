@@ -767,6 +767,7 @@ MonoBehaviour:
   currentHealth: 100
   maxBlight: 100
   currentBlight: 50
+  blightRecovery: 3
 --- !u!114 &11414674
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -779,6 +780,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   model: {fileID: 196264}
+  agentCanvas: {fileID: 0}
+  agentActions: {fileID: 0}
   hasTurn: 1
   team: 0
   defaultModelLookDirec: {x: -0, y: -0, z: -1}
@@ -803,11 +806,11 @@ MonoBehaviour:
     usable: 0
   proactiveActions:
   - action: {fileID: 11400000, guid: 809e213b9ee99f24ab4548897eaa8fad, type: 2}
-    known: 1
-    usable: 1
+    known: 0
+    usable: 0
   - action: {fileID: 11400000, guid: 55982705f4677714a90bf58620a2246f, type: 2}
-    known: 1
-    usable: 1
+    known: 0
+    usable: 0
 --- !u!114 &11433614
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -820,6 +823,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agentActions: {fileID: 0}
+  agent: {fileID: 0}
   actionButtonPrefab: {fileID: 11448638, guid: 128ecbfe8d902e74dba6fefed89f8216, type: 2}
   agentCanvasPrefab: {fileID: 22358304, guid: bff4e445a558676409fc3b6d23d3728d, type: 2}
   agentHUDCanvasPrefab: {fileID: 22365666, guid: 8a53028a6dfd44d4db395d8c8f6eb877,
@@ -1003,6 +1007,26 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: blightRecovery
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: proactiveActions.Array.data[0].known
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: proactiveActions.Array.data[0].usable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: proactiveActions.Array.data[1].known
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: proactiveActions.Array.data[1].usable
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

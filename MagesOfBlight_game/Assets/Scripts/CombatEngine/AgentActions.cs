@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -9,6 +10,7 @@ public class AgentActions : MonoBehaviour {
 		public BaseAction action;
 		public bool known;
 		public bool usable;
+		public Button button;
 	}
 
     public ActionData blockAction;

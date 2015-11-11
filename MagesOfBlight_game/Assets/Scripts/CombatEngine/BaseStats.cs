@@ -18,12 +18,12 @@ public class BaseStats : MonoBehaviour {
 	public float currentHealth;
 	public float maxBlight;
 	public float currentBlight;
-
+	public float blightRecovery;
 
 
 	protected virtual void Awake () {
 		currentHealth = maxHealth;
-		currentBlight = maxBlight / 2f;
+		//currentBlight = maxBlight / 2f;
 	}
 
     protected virtual void Update() {
@@ -32,6 +32,14 @@ public class BaseStats : MonoBehaviour {
 
 	public virtual void TakeDamage (float amount) {
 		currentHealth -= amount;
+	}
+
+	public virtual void AddBlight (float amount) {
+		currentBlight += amount;
+	}
+
+	public virtual void RecoverBlight () {
+		currentBlight -= blightRecovery;
 	}
 
     public virtual void SetActionWindow(ActionWindow setting) {

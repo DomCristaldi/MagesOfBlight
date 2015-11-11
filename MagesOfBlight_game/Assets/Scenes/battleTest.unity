@@ -291,15 +291,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 9555288, guid: 6268bc88abe48a945b7a4dc22c0560c1, type: 2}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 135605dc3bf7a5746b806c0926a0dca4, type: 2}
-    - target: {fileID: 11474130, guid: 6268bc88abe48a945b7a4dc22c0560c1, type: 2}
-      propertyPath: proactiveActions.Array.data[1].action
-      value: 
-      objectReference: {fileID: 11400000, guid: 55982705f4677714a90bf58620a2246f,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6268bc88abe48a945b7a4dc22c0560c1, type: 2}
   m_IsPrefabParent: 0
@@ -579,10 +570,6 @@ Prefab:
     - target: {fileID: 466210, guid: c5970baba0de8c041812a38defa7d052, type: 2}
       propertyPath: m_RootOrder
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 11452920, guid: c5970baba0de8c041812a38defa7d052, type: 2}
-      propertyPath: showDebug
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c5970baba0de8c041812a38defa7d052, type: 2}

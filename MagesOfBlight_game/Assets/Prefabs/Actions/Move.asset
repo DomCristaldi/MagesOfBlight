@@ -16,8 +16,10 @@ MonoBehaviour:
   pressedColor: {r: .522058845, g: .522058845, b: .522058845, a: 1}
   disabledColor: {r: .323529422, g: .323529422, b: .323529422, a: 1}
   actionName: Move
+  blightRequired: 0
+  blightGiven: 0
   checkThroughOccupied: 0
   tileCheckFlags: 1
-  checkDistance: 2147483647
+  checkDistance: 5
   canCounter: 0
   canBlock: 0

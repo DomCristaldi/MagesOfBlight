@@ -115,7 +115,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 106004}
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 4300000, guid: 04c5aab7639a29d468969d354c8e7c14, type: 2}
 --- !u!33 &3372540
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -134,7 +134,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Convex: 0
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 4300000, guid: 04c5aab7639a29d468969d354c8e7c14, type: 2}
 --- !u!114 &11429038
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -7,6 +8,20 @@ using System.Collections;
 using System.Collections.Generic;
 
 namespace JBirdEngine {
+
+	/// <summary>
+	/// Contains extension methods for Unity base functionality.
+	/// </summary>
+	public static class UnityHelper {
+
+		/// <summary>
+		/// Calls SetActive on the component's gameObject.
+		/// </summary>
+		public static void SetActive (this Component component, bool value) {
+			component.gameObject.SetActive(value);
+		}
+
+	}
 	
 	/// <summary>
 	/// More colors; because Unity's base colors just aren't enough.

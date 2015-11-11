@@ -9,21 +9,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fad13f98d76aa340841ee7ce8c9e3c2, type: 3}
-  m_Name: FireBall
+  m_Name: WaterBolt
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
-  normalColor: {r: 1, g: 0, b: 0, a: 1}
-  highlightedColor: {r: .697000027, g: 0, b: 0, a: 1}
-  pressedColor: {r: .697000027, g: 0, b: 0, a: 1}
-  disabledColor: {r: .588235259, g: .588235259, b: .588235259, a: 1}
-  actionName: Fireball
+  normalColor: {r: 0, g: .337931156, b: 1, a: 1}
+  highlightedColor: {r: 0, g: .226774842, b: .764705896, a: 1}
+  pressedColor: {r: 0, g: .227450997, b: .764705956, a: 1}
+  disabledColor: {r: .588235319, g: .588235319, b: .588235319, a: 1}
+  actionName: Water Bolt
   blightRequired: .00999999978
   blightGiven: 10
   checkThroughOccupied: 0
   tileCheckFlags: 4
-  checkDistance: 5
+  checkDistance: 6
   canCounter: 1
   canBlock: 1
-  projectilePrefab: {fileID: 11412994, guid: 4f2766e8d07a65e43b350edc664a4af3, type: 2}
+  projectilePrefab: {fileID: 11479426, guid: 66606a982a43e844fbece67bf73032e9, type: 2}
   waitTimeAfterHit: 1
   projectile: {fileID: 0}
