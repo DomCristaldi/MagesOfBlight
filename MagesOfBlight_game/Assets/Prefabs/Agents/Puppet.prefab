@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 459704}
   - 95: {fileID: 9555288}
+  - 114: {fileID: 11458532}
   m_Layer: 0
   m_Name: puppet_rig
   m_TagString: Untagged
@@ -795,6 +796,17 @@ MonoBehaviour:
   modelTf: {fileID: 459704}
   desiredDirec: {x: 0, y: 0, z: 0}
   redirectSpeed: .0799999982
+--- !u!114 &11458532
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 103834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e171e8b8584cc1e47878f250f5f94350, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11470562
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -803,7 +815,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 115730}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0193ceee98bf1543a0dddca93186931, type: 3}
+  m_Script: {fileID: 11500000, guid: 731c945318d9395429d1fe0e3d1e3394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
@@ -829,6 +841,8 @@ MonoBehaviour:
   suppliedPath: []
   doneMoving: 0
   isMoving: 0
+  animController: {fileID: 9555288}
+  _rmCapture: {fileID: 11458532}
 --- !u!114 &11474130
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -959,6 +973,14 @@ Prefab:
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: animController
+      value: 
+      objectReference: {fileID: 9555288}
+    - target: {fileID: 0}
+      propertyPath: _rmCapture
+      value: 
+      objectReference: {fileID: 11458532}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 115730}

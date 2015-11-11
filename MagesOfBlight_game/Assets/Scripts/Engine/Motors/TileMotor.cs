@@ -71,6 +71,8 @@ public class TileMotor : MonoBehaviour {
 	
 	protected virtual void Update () {
         HandleMovement();
+
+        //Debug.DrawRay(transform.position, _trueDirec, Color.red);
 	}
 
     /*

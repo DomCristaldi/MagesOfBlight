@@ -376,6 +376,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 438682}
   - 95: {fileID: 9525000}
+  - 114: {fileID: 11480964}
   m_Layer: 0
   m_Name: fire_rig
   m_TagString: Untagged
@@ -800,17 +801,21 @@ MonoBehaviour:
     action: {fileID: 0}
     known: 0
     usable: 0
+    button: {fileID: 0}
   counterAction:
     action: {fileID: 0}
     known: 0
     usable: 0
+    button: {fileID: 0}
   proactiveActions:
   - action: {fileID: 11400000, guid: 809e213b9ee99f24ab4548897eaa8fad, type: 2}
     known: 0
     usable: 0
+    button: {fileID: 0}
   - action: {fileID: 11400000, guid: 55982705f4677714a90bf58620a2246f, type: 2}
     known: 0
     usable: 0
+    button: {fileID: 0}
 --- !u!114 &11433614
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -829,6 +834,7 @@ MonoBehaviour:
   agentHUDCanvasPrefab: {fileID: 22365666, guid: 8a53028a6dfd44d4db395d8c8f6eb877,
     type: 2}
   healthbarPrefab: {fileID: 11436868, guid: 01e15a3a0fba34c4aae9b28c20ef805d, type: 2}
+  actionButtonList: []
   agentCanvas: {fileID: 0}
   agentHUDCanvas: {fileID: 0}
   healthbar: {fileID: 0}
@@ -842,7 +848,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 111550}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0193ceee98bf1543a0dddca93186931, type: 3}
+  m_Script: {fileID: 11500000, guid: 731c945318d9395429d1fe0e3d1e3394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
@@ -868,6 +874,8 @@ MonoBehaviour:
   suppliedPath: []
   doneMoving: 0
   isMoving: 0
+  animController: {fileID: 9525000}
+  _rmCapture: {fileID: 11480964}
 --- !u!114 &11452920
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -882,6 +890,17 @@ MonoBehaviour:
   modelTf: {fileID: 438682}
   desiredDirec: {x: 0, y: 0, z: 0}
   redirectSpeed: .0799999982
+--- !u!114 &11480964
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e171e8b8584cc1e47878f250f5f94350, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!137 &13762642
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -1029,6 +1048,14 @@ Prefab:
       propertyPath: proactiveActions.Array.data[1].usable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: animController
+      value: 
+      objectReference: {fileID: 9525000}
+    - target: {fileID: 0}
+      propertyPath: _rmCapture
+      value: 
+      objectReference: {fileID: 11480964}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 111550}
