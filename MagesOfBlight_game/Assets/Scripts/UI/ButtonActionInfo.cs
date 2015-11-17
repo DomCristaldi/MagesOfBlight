@@ -3,11 +3,13 @@ using System.Collections;
 
 public class ButtonActionInfo : MonoBehaviour {
 
-	public BaseAction action;
+	public AgentActions.ActionData actionData;
 
 	public void SetBattleManagerAction () {
-		BattleManager.singleton.selectedAction = action;
-		//Debug.Log ("click");
+		if (actionData.known && actionData.usable) {
+			BattleManager.singleton.selectedAction = actionData.action;
+			//Debug.Log ("click");
+		}
 	}
 
 }

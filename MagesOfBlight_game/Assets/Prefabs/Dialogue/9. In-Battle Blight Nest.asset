@@ -18,21 +18,26 @@ MonoBehaviour:
     audioClip: {fileID: 0}
   - character: 2
     mood: 0
-    line: The brain.
+    line: This must be their nest.
     audioClip: {fileID: 0}
   - character: 1
     mood: 0
-    line: So we kill that, we free these people?
+    line: You think that thing is controlling the Blight?
     audioClip: {fileID: 0}
   - character: 2
     mood: 0
-    line: Probably.
+    line: Look how the Puppets shield it. I have no doubt. That Hive governs all Blight
+      Puppets.
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: So killing that will end this?
+    audioClip: {fileID: 0}
+  - character: 2
+    mood: 0
+    line: Probably
     audioClip: {fileID: 0}
   - character: 0
     mood: 0
     line: Good odds.
-    audioClip: {fileID: 0}
-  - character: 1
-    mood: 0
-    line: "I\u2019ll take it!"
     audioClip: {fileID: 0}

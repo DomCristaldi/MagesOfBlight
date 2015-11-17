@@ -18,7 +18,7 @@ MonoBehaviour:
     audioClip: {fileID: 0}
   - character: 2
     mood: 0
-    line: They are no longer people. There is no reason to regret.
+    line: They are no longer people. There is no reason for regret.
     audioClip: {fileID: 0}
   - character: 1
     mood: 1

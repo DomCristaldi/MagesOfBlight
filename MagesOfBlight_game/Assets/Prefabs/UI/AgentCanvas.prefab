@@ -12,6 +12,7 @@ GameObject:
   - 114: {fileID: 11453770}
   - 114: {fileID: 11488320}
   - 114: {fileID: 11407182}
+  - 114: {fileID: 11433590}
   m_Layer: 5
   m_Name: AgentCanvas
   m_TagString: Untagged
@@ -39,6 +40,17 @@ MonoBehaviour:
   m_Spacing: 10
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
+--- !u!114 &11433590
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 147898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a4a014b1fd91c34ea4b0617767a65e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11453770
 MonoBehaviour:
   m_ObjectHideFlags: 1

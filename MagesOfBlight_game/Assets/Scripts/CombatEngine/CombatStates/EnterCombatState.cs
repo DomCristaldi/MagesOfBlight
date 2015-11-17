@@ -9,7 +9,7 @@ using System.Linq;
 
 public class EnterCombatState : BaseCombatState {
 
-    public EnterCombatState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = false) : base(thisCombatPhase, canUndo) { }
+    public EnterCombatState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = false, bool canHoverGrid = false) : base(thisCombatPhase, canUndo, canHoverGrid) { }
     
     public override void UpdateState() {
         base.UpdateState();

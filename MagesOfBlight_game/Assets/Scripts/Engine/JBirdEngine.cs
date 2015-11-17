@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -7,6 +8,192 @@ using System.Collections;
 using System.Collections.Generic;
 
 namespace JBirdEngine {
+
+	/// <summary>
+	/// Contains extension methods for Unity base functionality.
+	/// </summary>
+	public static class UnityHelper {
+
+		/// <summary>
+		/// Calls SetActive on the component's gameObject.
+		/// </summary>
+		public static void SetActive (this Component component, bool value) {
+			component.gameObject.SetActive(value);
+		}
+
+	}
+
+    namespace DataTracking {
+
+        /// <summary>
+        /// Interface for making a class have trackable data.
+        /// GetData function implementation must be public and return the data you want to track with a DataTracker.
+        /// Subscribe to a properly-typed DataTracker to have it automatically track the data from something with this interface.
+        /// </summary>
+        /// <typeparam name="D">The data type of what you want to track.</typeparam>
+        public interface ITrackableData<D> {
+
+            /// <summary>
+            /// Implementation of this function should return the data you want to track.
+            /// </summary>
+            /// <returns>Data that will be tracked by a DataTracker.</returns>
+            D GetData ();
+
+        }
+
+        /// <summary>
+        /// A class that will track data of any object that susbcribes to it.
+        /// Subscribed objects must inherit from ITrackableData<D>, where D is the type of the data being tracked.
+        /// </summary>
+        /// <typeparam name="T">Type of the class that uses the ITrackableData<D> interface.</typeparam>
+        /// <typeparam name="D">Type of the data to be tracked.</typeparam>
+        [System.Serializable]
+        public class DataTracker<T, D> where T : UnityEngine.Object, ITrackableData<D> {
+
+            /// <summary>
+            /// Class used by the DataTracker to keep track of the data history from subscribed objects.
+            /// </summary>
+            /// <typeparam name="T">Type of the class that uses the ITrackableData<D> interface.</typeparam>
+            /// <typeparam name="D">Type of the data to be tracked.</typeparam>
+            protected class History<T, D> {
+
+                public T trackedItem;
+                private List<D> _history;
+                public List<D> history {
+                    get { return _history; }
+                }
+
+                /// <summary>
+                /// Initializes a History object to start keeping track of the specified item.
+                /// </summary>
+                /// <param name="item">The item to track.</param>
+                public History (T item) {
+                    trackedItem = item;
+                    Initialize();
+                }
+
+                /// <summary>
+                /// Private initializer for History class.
+                /// </summary>
+                void Initialize () {
+                    _history = new List<D>();
+                }
+
+            }
+
+            private List<T> _trackedItems;
+            /// <summary>
+            /// A list of the items subscribed to this DataTracker.
+            /// </summary>
+            public List<T> trackedItems {
+                get { return new List<T>(_trackedItems); }
+            }
+            /// <summary>
+            /// The number of seconds between each time the DataTracker records data from its subscribers.
+            /// </summary>
+            public float dataTrackingTimestep;
+            private float timestep;
+            /// <summary>
+            /// Max length of the list of recorded data.
+            /// </summary>
+            public int maxHistoryLength;
+            private List<History<T, D>> _historyList;
+
+            /// <summary>
+            /// Creates an instance of a DataTracker.
+            /// </summary>
+            public DataTracker () {
+                Initialize();
+            }
+
+            /// <summary>
+            /// Creates and instance of a DataTracker.
+            /// </summary>
+            /// <param name="maxHist">Max length of the list of recorded data.</param>
+            /// <param name="tStep">The number of seconds between each time the DataTracker records data from its subscribers.</param>
+            public DataTracker (int maxHist, float tStep) {
+                maxHistoryLength = maxHist;
+                dataTrackingTimestep = tStep;
+                Initialize();
+            }
+            
+            /// <summary>
+            /// Private initialization function.
+            /// </summary>
+            void Initialize () {
+                _trackedItems = new List<T>();
+                _historyList = new List<History<T, D>>();
+                if (dataTrackingTimestep < 0f) {
+                    dataTrackingTimestep = 0f;
+                }
+                if (maxHistoryLength < 1) {
+                    maxHistoryLength = 1;
+                }
+            }
+
+            /// <summary>
+            /// Adds the specified item as a subscriber to this DataTracker.
+            /// </summary>
+            /// <param name="item">Item to add as a subscriber.</param>
+            public void Subscribe (T item) {
+                _trackedItems.Add(item);
+                _historyList.Add(new History<T, D>(item));
+            }
+
+            /// <summary>
+            /// DataTracker update function. Make sure to call this from a MonoBehaviour's Update() function or it won't actually do anything.
+            /// If this DataTracker has a dataTrackingTimestep of 0, it will record the data whenver the Update function is called. This allows for a lazy update implementation (useful for turn-based).
+            /// </summary>
+            public void Update () {
+                timestep += Time.deltaTime;
+                if (timestep >= dataTrackingTimestep) {
+                    timestep -= dataTrackingTimestep;
+                    FetchData();
+                }
+            }
+
+            /// <summary>
+            /// Internal function to fetch the data from all subscribers.
+            /// </summary>
+            void FetchData () {
+                foreach (History<T, D> historyItem in _historyList) {
+                    UpdateHistoryData(historyItem);
+                }
+            }
+
+            /// <summary>
+            /// Internal function to update a History instance.
+            /// </summary>
+            /// <param name="historyItem">History instance to update.</param>
+            void UpdateHistoryData (History<T, D> historyItem) {
+                if (historyItem.history.Count >= maxHistoryLength) {
+                    while (historyItem.history.Count > maxHistoryLength - 1) {
+                        historyItem.history.RemoveAt(0);
+                    }
+                }
+                historyItem.history.Add(historyItem.trackedItem.GetData());
+            }
+
+            /// <summary>
+            /// Returns the history recorded from the specified item as a list of data.
+            /// </summary>
+            /// <param name="item">Item to get the history from.</param>
+            /// <returns>A list of data history recorded by this DataTracker.</returns>
+            public List<D> GetItemDataHistory (T item) {
+                List<D> dataList = new List<D>();
+                foreach (History<T, D> historyItem in _historyList) {
+                    if (historyItem.trackedItem == item) {
+                        dataList = historyItem.history;
+                        return dataList;
+                    }
+                }
+                Debug.LogErrorFormat("DataTracker<{0}>: Item {1} could not be found!", typeof(T).ToString(), item);
+                return dataList;
+            }
+
+        }
+
+    }
 	
 	/// <summary>
 	/// More colors; because Unity's base colors just aren't enough.
@@ -21,99 +208,99 @@ namespace JBirdEngine {
 			/// <summary>
 			/// One of the most versatile of the Bob Ross colors.
 			/// </summary>
-			public static Color alizarinCrimson () {
-				return ColorHelper.ToColor(0xE32636);
+			public static Color alizarinCrimson {
+				get { return ColorHelper.ToColor(0xE32636); }
 			}
 
 			/// <summary>
 			/// Bob’s customary color for signing his paintings.
 			/// </summary>
-			public static Color brightRed () {
-				return ColorHelper.ToColor(0xAA0114);
+			public static Color brightRed {
+                get { return ColorHelper.ToColor(0xAA0114); }
 			}
 
 			/// <summary>
 			/// An oldie, but a goodie.
 			/// </summary>
-			public static Color permanentRed () {
-				return ColorHelper.ToColor(0x742C1E);
+			public static Color permanentRed {
+                get { return ColorHelper.ToColor(0x742C1E); }
 			}
 
 			/// <summary>
 			/// Sometimes used to indicate the brilliant sunlight in the sky.
 			/// </summary>
-			public static Color cadmiumYellow () {
-				return ColorHelper.ToColor(0xFFF600);
+			public static Color cadmiumYellow {
+                get { return ColorHelper.ToColor(0xFFF600); }
 			}
 
 			/// <summary>
 			/// The lighter of the two Bob Ross brown colors.
 			/// </summary>
-			public static Color darkSienna () {
-				return ColorHelper.ToColor(0x3C1414);
+			public static Color darkSienna {
+				get { return ColorHelper.ToColor(0x3C1414); }
 			}
 
 			/// <summary>
 			/// Occasionally Bob will use Indian Yellow to paint the sun in the sky of his painting.
 			/// </summary>
-			public static Color indianYellow () {
-				return ColorHelper.ToColor(0xE3A857);
+			public static Color indianYellow {
+                get { return ColorHelper.ToColor(0xE3A857); }
 			}
 
 			/// <summary>
 			/// Often used as a base color to block in the basic shapes of trees and bushes.
 			/// </summary>
-			public static Color midnightBlack () {
-				return ColorHelper.ToColor(0x000316);
+			public static Color midnightBlack {
+                get { return ColorHelper.ToColor(0x000316); }
 			}
 
 			/// <summary>
 			/// A very strong color, most commonly used to paint skies and water.
 			/// </summary>
-			public static Color phthaloBlue () {
-				return ColorHelper.ToColor(0x000F89);
+			public static Color phthaloBlue {
+                get { return ColorHelper.ToColor(0x000F89); }
 			}
 
 			/// <summary>
 			/// An almost fluorescent green color.
 			/// </summary>
-			public static Color phthaloGreen () {
-				return ColorHelper.ToColor(0x123524);
+			public static Color phthaloGreen {
+                get { return ColorHelper.ToColor(0x123524); }
 			}
 
 			/// <summary>
 			/// Often found in the skies of Bob’s frigid winter scenes.
 			/// </summary>
-			public static Color prussianBlue () {
-				return ColorHelper.ToColor(0x003153);
+			public static Color prussianBlue {
+                get { return ColorHelper.ToColor(0x003153); }
 			}
 
 			/// <summary>
 			/// Used primarily for all things foliage.
 			/// </summary>
-			public static Color sapGreen () {
-				return ColorHelper.ToColor(0x507D2A);
+			public static Color sapGreen {
+                get { return ColorHelper.ToColor(0x507D2A); }
 			}
 
 			/// <summary>
 			/// The most consistently used of all the Bob Ross colors.
 			/// </summary>
-			public static Color titaniumWhite () {
-				return ColorHelper.ToColor(0xFCFFF0);
+			public static Color titaniumWhite {
+                get { return ColorHelper.ToColor(0xFCFFF0); }
 			}
 
 			/// <summary>
 			/// A "go-to" color for all of your dark basecoat needs.
 			/// </summary>
-			public static Color vanDykeBrown () {
-				return ColorHelper.ToColor(0x584630);
+			public static Color vanDykeBrown {
+                get { return ColorHelper.ToColor(0x584630); }
 			}
 
 			/// <summary>
 			/// A beautiful soft hue, excellent for highlighting foliage.
 			/// </summary>
-			public static Color yellowOchre () {
-				return ColorHelper.ToColor(0xF5C52C);
+			public static Color yellowOchre {
+                get { return ColorHelper.ToColor(0xF5C52C); }
 			}
 
 			/// <summary>
@@ -124,126 +311,126 @@ namespace JBirdEngine {
 				int colorIndex = UnityEngine.Random.Range(0, 14);
 				switch (colorIndex) {
 				case 0:
-					return alizarinCrimson();
+					return alizarinCrimson;
 				case 1:
-					return brightRed();
+					return brightRed;
 				case 2:
-					return permanentRed();
+					return permanentRed;
 				case 3:
-					return cadmiumYellow();
+					return cadmiumYellow;
 				case 4:
-					return darkSienna();
+					return darkSienna;
 				case 5:
-					return indianYellow();
+					return indianYellow;
 				case 6:
-					return midnightBlack();
+					return midnightBlack;
 				case 7:
-					return phthaloBlue();
+					return phthaloBlue;
 				case 8:
-					return phthaloGreen();
+					return phthaloGreen;
 				case 9:
-					return prussianBlue();
+					return prussianBlue;
 				case 10:
-					return sapGreen();
+					return sapGreen;
 				case 11:
-					return titaniumWhite();
+					return titaniumWhite;
 				case 12:
-					return vanDykeBrown();
+					return vanDykeBrown;
 				case 13:
-					return yellowOchre();
+					return yellowOchre;
 				default:
-					return titaniumWhite();
+					return titaniumWhite;
 				}
 			}
 
 		}
 
-		public static Color purple () {
-			return ColorHelper.ToColor(0x800080);
+		public static Color purple {
+            get { return ColorHelper.ToColor(0x800080); }
 		}
 		
-		public static Color orange () {
-			return ColorHelper.ToColor(0xFF8C00);
+		public static Color orange {
+            get { return ColorHelper.ToColor(0xFF8C00); }
 		}
 
-		public static Color chartreuseYellow () {
-			return ColorHelper.ToColor(0xDFFF00);
+		public static Color chartreuseYellow {
+            get { return ColorHelper.ToColor(0xDFFF00); }
 		}
 
-		public static Color chartreuseGreen () {
-			return ColorHelper.ToColor(0x7FFF00);
+		public static Color chartreuseGreen {
+            get { return ColorHelper.ToColor(0x7FFF00); }
 		}
 
-		public static Color kokiriTunic () {
-			return ColorHelper.ToColor(0x00CC00);
+		public static Color kokiriTunic {
+			get { return ColorHelper.ToColor(0x00CC00); }
 		}
 
-		public static Color goronTunic () {
-			return ColorHelper.ToColor(0xCC0000);
+		public static Color goronTunic {
+            get { return ColorHelper.ToColor(0xCC0000); }
 		}
 
-		public static Color zoraTunic () {
-			return ColorHelper.ToColor(0x0000CC);
+		public static Color zoraTunic {
+            get { return ColorHelper.ToColor(0x0000CC); }
 		}
 
-		public static Color teal () {
-			return ColorHelper.ToColor(0x008080);
+		public static Color teal {
+            get { return ColorHelper.ToColor(0x008080); }
 		}
 
-		public static Color indigo () {
-			return ColorHelper.ToColor(0x4B0082);
+		public static Color indigo {
+            get { return ColorHelper.ToColor(0x4B0082); }
 		}
 
-		public static Color sage () {
-			return ColorHelper.ToColor(0x9C9F84);
+		public static Color sage {
+            get { return ColorHelper.ToColor(0x9C9F84); }
 		}
 
-		public static Color mintIceCream () {
-			return ColorHelper.ToColor(0xBAEBAE);
+		public static Color mintIceCream {
+            get { return ColorHelper.ToColor(0xBAEBAE); }
 		}
 
-		public static Color sarcoline () {
-			return ColorHelper.ToColor(0xFADFAE);
+		public static Color sarcoline {
+            get { return ColorHelper.ToColor(0xFADFAE); }
 		}
 
-		public static Color coquelicot () {
-			return ColorHelper.ToColor(0xFF3800);
+		public static Color coquelicot {
+            get { return ColorHelper.ToColor(0xFF3800); }
 		}
 
-		public static Color smaragdine () {
-			return ColorHelper.ToColor(0x50C875);
+		public static Color smaragdine {
+            get { return ColorHelper.ToColor(0x50C875); }
 		}
 
-		public static Color mikado () {
-			return ColorHelper.ToColor(0xFFC40C);
+		public static Color mikado {
+            get { return ColorHelper.ToColor(0xFFC40C); }
 		}
 
-		public static Color glaucous () {
-			return ColorHelper.ToColor(0x6082B6);
+		public static Color glaucous {
+            get { return ColorHelper.ToColor(0x6082B6); }
 		}
 
-		public static Color wenge () {
-			return ColorHelper.ToColor(0x645452);
+		public static Color wenge {
+            get { return ColorHelper.ToColor(0x645452); }
 		}
 
-		public static Color fulvous () {
-			return ColorHelper.ToColor(0xE48400);
+		public static Color fulvous {
+            get { return ColorHelper.ToColor(0xE48400); }
 		}
 
-		public static Color xanadu () {
-			return ColorHelper.ToColor(0x738678);
+		public static Color xanadu {
+            get { return ColorHelper.ToColor(0x738678); }
 		}
 
-		public static Color falu () {
-			return ColorHelper.ToColor(0x7F1917);
+		public static Color falu {
+            get { return ColorHelper.ToColor(0x7F1917); }
 		}
 
-		public static Color eburnean () {
-			return ColorHelper.ToColor(0xFEF6CC);
+		public static Color eburnean {
+			get { return ColorHelper.ToColor(0xFEF6CC); }
 		}
 
-		public static Color amaranth () {
-			return ColorHelper.ToColor(0xE52B50);
+		public static Color amaranth {
+			get { return ColorHelper.ToColor(0xE52B50); }
 		}
 
 	}
@@ -253,18 +440,136 @@ namespace JBirdEngine {
 	/// </summary>
 	public static class ColorHelper {
 
-		public static Color ToColor(int HexValue) {
+		public class ColorHSV {
+
+			public float h;
+			public float s;
+			public float v;
+			public float a;
+
+			public ColorHSV () {
+				h = 0;
+				s = 0;
+				v = 0;
+				a = 0;
+			}
+
+			public ColorHSV (ColorHSV cHSV) {
+				h = cHSV.h;
+				s = cHSV.s;
+				v = cHSV.v;
+				a = cHSV.a;
+			}
+
+			public ColorHSV (float hue, float saturation, float value, float alpha) {
+				h = hue;
+				s = saturation;
+				v = value;
+				a = alpha;
+			}
+
+		}
+
+		/// <summary>
+		/// Converts a Color to the ColorHSV class.
+		/// </summary>
+		/// <returns>ColorHSV class instance.</returns>
+		/// <param name="color">Color to convert.</param>
+		public static ColorHSV ToHSV (this Color color) {
+			float hue;
+			float sat;
+			float val;
+			float cMax = Mathf.Max(color.r, color.g, color.b);
+			float cMin = Mathf.Min(color.r, color.g, color.b);
+			float delta = cMax - cMin;
+			//HUE
+			if (delta == 0f) {
+				hue = 0f;
+			}
+			else if (cMax == color.r) {
+				hue = (color.g - color.b) / delta;
+			}
+			else if (cMax == color.g) {
+				hue = (color.b - color.r) / delta;
+			}
+			else {
+				hue = (color.r - color.g) / delta;
+			}
+			//Convert to degrees
+			hue *= 60f;
+			if (hue < 0f) {
+				hue += 360f;
+			}
+			//SATURATION
+			if (cMax == 0f) {
+				sat = 0f;
+			}
+			else {
+				sat = delta / cMax;
+			}
+			//VALUE
+			val = cMax;
+			return new ColorHSV(hue, sat, val, color.a);
+		}
+
+		public static Color ToColor (this ColorHSV colorHSV) {
+			float c = colorHSV.v * colorHSV.s;
+			float x = c * (1f - Mathf.Abs((colorHSV.h / 60f) % 2 - 1));
+			float m = colorHSV.v - c;
+			float r = 0f;
+			float g = 0f;
+			float b = 0f;
+			if (0f <= colorHSV.h && colorHSV.h < 60f) {
+				r = c + m;
+				g = x + m;
+				b = m;
+			}
+			else if (60f <= colorHSV.h && colorHSV.h < 120f) {
+				r = x + m;
+				g = c + m;
+				b = m;
+			}
+			else if (120f <= colorHSV.h && colorHSV.h < 180f) {
+				r = m;
+				g = c + m;
+				b = x + m;
+			}
+			else if (180f <= colorHSV.h && colorHSV.h < 240f) {
+				r = m;
+				g = x + m;
+				b = c + m;
+			}
+			else if (240f <= colorHSV.h && colorHSV.h < 300f) {
+				r = x + m;
+				g = m;
+				b = c + m;
+			}
+			else {
+				r = c + m;
+				g = m;
+				b = x + m;
+			}
+			return new Color(r, g, b, colorHSV.a);
+		}
+
+		public static Color ToColor (this int HexValue) {
 			byte r = (byte)((HexValue >> 16) & 0xFF);
 			byte g = (byte)((HexValue >> 8) & 0xFF);
 			byte b = (byte)((HexValue) & 0xFF);
 			return ToColor(new Color32(r, g, b, 255));
 		}
 
-		public static Color ToColor (Color32 color32) {
+		public static Color ToColor (this Color32 color32) {
 			return (Color)color32;
 		}
 
-		public static Color ToColor (int red, int green, int blue) {
+		/// <summary>
+		/// Create a Color using red, green, and blue values from 0 to 255.
+		/// </summary>
+		/// <param name="red">Red (0 to 255).</param>
+		/// <param name="green">Green (0 to 255).</param>
+		/// <param name="blue">Blue (0 to 255).</param>
+		public static Color From255to1 (int red, int green, int blue) {
 			return new Color((float)red/255f, (float)green/255f, (float)blue/255f);
 		}
 
@@ -286,10 +591,40 @@ namespace JBirdEngine {
 				amount = a;
 			}
 
+			public ColorAmount (ColorAmount cA) {
+				color = cA.color;
+				amount = cA.amount;
+			}
+
 		}
 
 		/// <summary>
-		/// Mixes the specified colors in their respective quantities.
+		/// A container class for holding a color (in HSV) and an amount (for mixing).
+		/// </summary>
+		public class ColorHSVAmount {
+			
+			public ColorHSV colorHSV;
+			public float amount;
+			
+			/// <summary>
+			/// Initializes a new instance of the ColorHSVAmount class.
+			/// </summary>
+			/// <param name="c">Color (in HSV).</param>
+			/// <param name="a">Amount (should be between 0.0f and 1.0f).</param>
+			public ColorHSVAmount (ColorHSV c, float a) {
+				colorHSV = c;
+				amount = a;
+			}
+
+			public ColorHSVAmount (ColorHSVAmount cHSVA) {
+				colorHSV = cHSVA.colorHSV;
+				amount = cHSVA.amount;
+			}
+			
+		}
+
+		/// <summary>
+		/// Mixes the specified colors in their respective quantities using RGB.
 		/// </summary>
 		/// <returns>The result of mixing the colors.</returns>
 		/// <param name="colors">Colors to mix.</param>
@@ -308,7 +643,7 @@ namespace JBirdEngine {
 		}
 
 		/// <summary>
-		/// Mixes the specified colors in equal quantities.
+		/// Mixes the specified colors in equal quantities using RGB.
 		/// </summary>
 		/// <returns>The result of mixing the colors.</returns>
 		/// <param name="colors">Colors to mix.</param>
@@ -318,6 +653,83 @@ namespace JBirdEngine {
 				colorAmounts[i] = new ColorAmount(colors[i], 1f / (float)colors.Length);
 			}
 			return MixColors(colorAmounts);
+		}
+
+		/// <summary>
+		/// Mixes the specified HSV colors in their respective quantities using HSV.
+		/// </summary>
+		/// <returns>The result of mixing the colors.</returns>
+		/// <param name="colors">Colors to mix.</param>
+		public static Color MixColorsHSV (params ColorHSVAmount[] colorsHSV) {
+			float hue = 0f;
+			float saturation = 0f;
+			float value = 0f;
+			float alpha = 0f;
+			foreach (ColorHSVAmount colorHSVAmount in colorsHSV) {
+				hue += colorHSVAmount.colorHSV.h * colorHSVAmount.amount;
+				saturation += colorHSVAmount.colorHSV.s * colorHSVAmount.amount;
+				value += colorHSVAmount.colorHSV.v * colorHSVAmount.amount;
+				alpha += colorHSVAmount.colorHSV.a * colorHSVAmount.amount;
+			}
+			return new ColorHSV (hue, saturation, value, alpha).ToColor();
+		}
+
+		/// <summary>
+		/// Mixes the specified colors in their respective quantities using HSV.
+		/// </summary>
+		/// <returns>The result of mixing the colors.</returns>
+		/// <param name="colors">Colors to mix.</param>
+		public static Color MixColorsHSV (params ColorAmount[] colors) {
+			ColorHSVAmount[] colorHSVAmounts = new ColorHSVAmount[colors.Length];
+			for (int i = 0; i < colors.Length; i++) {
+				colorHSVAmounts[i] = new ColorHSVAmount(colors[i].color.ToHSV(), colors[i].amount);
+			}
+			return MixColorsHSV(colorHSVAmounts);
+		}
+
+		/// <summary>
+		/// Mixes the specified HSV colors in their respective quantities using HSV.
+		/// </summary>
+		/// <returns>The result of mixing the colors.</returns>
+		/// <param name="colors">Colors to mix.</param>
+		public static Color MixColorsHSV (params ColorHSV[] colorsHSV) {
+			ColorHSVAmount[] colorHSVAmounts = new ColorHSVAmount[colorsHSV.Length];
+			for (int i = 0; i < colorsHSV.Length; i++) {
+				colorHSVAmounts[i] = new ColorHSVAmount(colorsHSV[i], 1f / (float)colorsHSV.Length);
+			}
+			return MixColorsHSV(colorHSVAmounts);
+		}
+
+		/// <summary>
+		/// Mixes the specified colors in their respective quantities using HSV.
+		/// </summary>
+		/// <returns>The result of mixing the colors.</returns>
+		/// <param name="colors">Colors to mix.</param>
+		public static Color MixColorsHSV (params Color[] colors) {
+			ColorHSVAmount[] colorHSVAmounts = new ColorHSVAmount[colors.Length];
+			for (int i = 0; i < colors.Length; i++) {
+				colorHSVAmounts[i] = new ColorHSVAmount(colors[i].ToHSV(), 1f / (float)colors.Length);
+			}
+			return MixColorsHSV(colorHSVAmounts);
+		}
+
+		/// <summary>
+		/// Shifts the hue by the specified number of degrees.
+		/// </summary>
+		/// <returns>The HSV color with hue shifted.</returns>
+		/// <param name="startColor">Starting HSV color.</param>
+		/// <param name="degrees">Degrees to shift the hue.</param>
+		public static ColorHSV ShiftHue (this ColorHSV startColor, float degrees) {
+			float hue = startColor.h;
+			hue += degrees;
+			if (hue > 360f) {
+				hue -= 360f;
+			}
+			if (hue < 0f) {
+				hue += 360f;
+			}
+			startColor.h = hue;
+			return startColor;
 		}
 
 		/// <summary>
@@ -338,6 +750,86 @@ namespace JBirdEngine {
 			}
 			gradient.Add(endColor);
 			return gradient;
+		}
+
+		/// <summary>
+		/// Make a gradient between two colors using HSV (Returns a list of colors blended from startColor to endColor).
+		/// </summary>
+		/// <returns>A list of colors blended from startColor to endColor.</returns>
+		/// <param name="startColor">Start color.</param>
+		/// <param name="endColor">End color.</param>
+		/// <param name="blendColors>Number of blended colors in the middle (returned list's length will be this value plus two).</param>
+		public static List<Color> MakeGradientHSV (Color startColor, Color endColor, int blendColors) {
+			List<Color> gradient = new List<Color>();
+			float startHue = startColor.ToHSV().h;
+			float endHue = endColor.ToHSV().h;
+			float startSat = startColor.ToHSV().s;
+			float endSat = endColor.ToHSV().s;
+			float startVal = startColor.ToHSV().v;
+			float endVal = endColor.ToHSV().v;
+			float degreesPerStep = (endHue - startHue);
+			if (degreesPerStep > 180f) {
+				degreesPerStep = degreesPerStep - 360f;
+			}
+			if (degreesPerStep < -180f) {
+				degreesPerStep = degreesPerStep + 360f;
+			}
+			float saturationPerStep = (endSat - startSat);
+			float valuePerStep = (endVal - startVal);
+			degreesPerStep /= (float)(blendColors + 1);
+			saturationPerStep /= (float)(blendColors + 1);
+			valuePerStep /= (float)(blendColors + 1);
+			gradient.Add(startColor);
+			ColorHSV colorHSV = startColor.ToHSV();
+			for (int i = 0; i < blendColors; i++) {
+				colorHSV.ShiftHue(degreesPerStep);
+				colorHSV.s += saturationPerStep;
+				colorHSV.v += valuePerStep;
+				gradient.Add(colorHSV.ToColor());
+			}
+			gradient.Add(endColor);
+			return gradient;
+		}
+
+		/// <summary>
+		/// Make a rainbow from the start color, shifting the hue a specified number of degrees each step (Returns a list of Colors).
+		/// </summary>
+		/// <param name="startColor">Start color.</param>
+		/// <param name="degreesPerStep">Degrees to shift the hue per step.</param>
+		/// <param name="length">Desired length of the list.</param>
+		public static List<Color> Rainbowify (Color startColor, float degreesPerStep, int length) {
+			List<Color> rainbow = new List<Color>();
+			rainbow.Add(startColor);
+			ColorHSV colorHSV = startColor.ToHSV();
+			for (int i = 0; i < length - 1; i++) {
+				colorHSV.ShiftHue(degreesPerStep);
+				rainbow.Add(colorHSV.ToColor());
+			}
+			return rainbow;
+		}
+
+		/// <summary>
+		/// Make a rainbow from the start color, shifting the hue until it reaches the end hue. (Returns a list of Colors).
+		/// </summary>
+		/// <param name="startColor">Start color.</param>
+		/// <param name="endColor">Hue to stop shifting at (will only use the hue of this color, not value or saturation).</param>
+		/// <param name="length">Desired length of the list.</param>
+		public static List<Color> Rainbowify (Color startColor, Color endColor, int length) {
+			List<Color> rainbow = new List<Color>();
+			float startHue = startColor.ToHSV().h;
+			float endHue = endColor.ToHSV().h;
+			if (endHue < startHue) {
+				endHue += 360f;
+			}
+			float degreesPerStep = (endHue - startHue);
+			degreesPerStep /= (float)length - 1;
+			rainbow.Add(startColor);
+			ColorHSV colorHSV = startColor.ToHSV();
+			for (int i = 0; i < length - 1; i++) {
+				colorHSV.ShiftHue(degreesPerStep);
+				rainbow.Add(colorHSV.ToColor());
+			}
+			return rainbow;
 		}
 
 	}

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 [AddComponentMenu("Scripts/BattleEngine/Tiles/Entities/TileAgent")]
 //[RequireComponent(typeof(Motor_RigidBody))]
 [RequireComponent(typeof(TileMotor))]
+[RequireComponent(typeof(BaseStats))]
 public class TileAgent : TileEntity {
 
     //public RigidBodyMotor motor;
@@ -12,6 +13,14 @@ public class TileAgent : TileEntity {
     public TileMotor motor {
         get { return _motor; }
     }
+
+	private BaseStats _stats;
+	public BaseStats stats {
+		get { return _stats; }
+	}
+
+	public Canvas agentCanvas;
+	public AgentActions agentActions;
 
     private ModelRotationController _modelRotControl;
 
@@ -44,6 +53,7 @@ public class TileAgent : TileEntity {
     protected override void Awake() {
         _motor = GetComponent<TileMotor>();
         _modelRotControl = GetComponent<ModelRotationController>();
+		_stats = GetComponent<BaseStats>();
 
         //Ensure model we have is synchronized
         if (_modelRotControl.modelTf == null && model != null) {//assign to rotation controller

@@ -1,10 +1,15 @@
 fileFormatVersion: 2
 guid: 0655e45fbbc8c6a4199779d187f2cbfa
-timeCreated: 1444200804
+timeCreated: 1447261618
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - nodePrefab: {instanceID: 0}
+  - test: {instanceID: 0}
+  - tileNormal: {fileID: 2100000, guid: c9005def17466a543b40a3a6cb3ed817, type: 2}
+  - tileHover: {fileID: 2100000, guid: b0e2f589e1b7d6b499a2fda640dbed2c, type: 2}
+  - tileSelected: {fileID: 2100000, guid: ac47ae050c38987488555fea37b4c2f6, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

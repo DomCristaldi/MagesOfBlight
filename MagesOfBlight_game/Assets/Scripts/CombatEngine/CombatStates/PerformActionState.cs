@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using JBirdEngine;
 
 /// <summary>
 /// This state handles any actions that are being performed
@@ -8,7 +9,13 @@ using System.Collections;
 
 public class PerformActionState : BaseCombatState {
 
-    public PerformActionState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = false) : base(thisCombatPhase, canUndo) { }
+    public PerformActionState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = false, bool canHoverGrid = false) : base(thisCombatPhase, canUndo, canHoverGrid) { }
+
+	public override void InitState (){
+		base.InitState ();
+
+		battleManRef.selectedAction.agent = battleManRef.selectedAgent;
+	}
 
     public override void UpdateState() {
         base.UpdateState();

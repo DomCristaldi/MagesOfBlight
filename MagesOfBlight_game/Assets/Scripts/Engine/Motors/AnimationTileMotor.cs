@@ -15,9 +15,19 @@ public class AnimationTileMotor : TileMotor {
         _rmCapture = animController.GetComponent<RootMotionCapture>();
     }
 
+    protected override void Update() {
+        base.Update();
+
+        HandleAnimations();
+    }
+
+    protected virtual void HandleAnimations() {
+        animController.SetFloat(movementBlend, _trueDirec.normalized.magnitude);
+    }
+
     protected override Vector3 MoveToLocationMethod(Vector3 position, Vector3 destination, float deltaTime) {
         
-        animController.SetFloat(movementBlend, destination.magnitude);
+        //animController.SetFloat(movementBlend, destination.magnitude);
 
         //return transform.position + _rmCapture.deltaAnimPosition;
 
@@ -31,7 +41,7 @@ public class AnimationTileMotor : TileMotor {
         return base.MoveToLocationMethod(position, destination, deltaTime);
         */
 
-
+        //if we're going to overshoot the target just set it as the destination
         if (Vector3.Distance(position, destination) < _rmCapture.deltaAnimPosition.magnitude) {
             return (destination);
         }
