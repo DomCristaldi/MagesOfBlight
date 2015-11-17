@@ -18,23 +18,32 @@ MonoBehaviour:
     audioClip: {fileID: 0}
   - character: 1
     mood: 0
-    line: 'Not good, the Puppets are right outside. How good are you at learning on
-      your feet? '
-    audioClip: {fileID: 0}
-  - character: 0
-    mood: 0
-    line: Uh, good, I hope.
+    line: Not good, the Puppets are right outside.
     audioClip: {fileID: 0}
   - character: 2
     mood: 0
-    line: 'No holding back, kill them all. '
+    line: No holding back, kill them all.
     audioClip: {fileID: 0}
   - character: 0
     mood: 0
-    line: "What are they, though? There\u2019s so many of them! "
+    line: "What are they, though? There\u2019s so many of them!"
     audioClip: {fileID: 0}
   - character: 2
     mood: 0
-    line: "They\u2019re what you\u2019ll become if you abuse your power. Watch your
-      Blight, and don\u2019t let them get you. "
+    line: "They\u2019re what you\u2019ll become if you abuse your power."
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: How good are you at learning on your feet?
+    audioClip: {fileID: 0}
+  - character: 0
+    mood: 0
+    line: "Uh\u2026"
+    audioClip: {fileID: 0}
+  - character: 1
+    mood: 0
+    line: "Alright, it\u2019s simple, so try to remember this. Every time you use
+      your power the Blight spreads.  If you go awhile without using it, it will dissipate.
+      A higher Blight means more power, but you become more frail.  Lower Blight,
+      it\u2019s the other way around. Don\u2019t get yourself killed."
     audioClip: {fileID: 0}

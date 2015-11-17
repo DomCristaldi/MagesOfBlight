@@ -18,7 +18,7 @@ MonoBehaviour:
     audioClip: {fileID: 0}
   - character: 2
     mood: 0
-    line: This must be their hive.
+    line: This must be their nest.
     audioClip: {fileID: 0}
   - character: 1
     mood: 0
@@ -26,7 +26,8 @@ MonoBehaviour:
     audioClip: {fileID: 0}
   - character: 2
     mood: 0
-    line: Look how the Puppets shield it. I have no doubt.
+    line: Look how the Puppets shield it. I have no doubt. That Hive governs all Blight
+      Puppets.
     audioClip: {fileID: 0}
   - character: 1
     mood: 0

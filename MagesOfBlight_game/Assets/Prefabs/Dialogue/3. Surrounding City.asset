@@ -18,9 +18,9 @@ MonoBehaviour:
     audioClip: {fileID: 0}
   - character: 2
     mood: 0
-    line: There was a time when they were human.The lucky ones never awoke to this
-      nightmare, consumed before they awoke. Others regained consciousness before
-      the curse took them.
+    line: There was a time when they were human.The lucky ones were consumed and never
+      woke to this nightmare. Others regained consciousness before the curse took
+      them.
     audioClip: {fileID: 0}
   - character: 1
     mood: 0
@@ -43,9 +43,10 @@ MonoBehaviour:
     audioClip: {fileID: 0}
   - character: 2
     mood: 0
-    line: There were more. I searched the city when I arose. I saw some who were awake
-      like me, two joined me for a time. The Blight spread faster in some, but others
-      I brought to the temple. You were the first who woke.
+    line: There were more. I searched the city when I woke. I saw some who were awake
+      like me. Two joined me for a time, but they too were taken by The Blight. Others
+      were still unconscious, those I brought to the temple. You were the last to
+      wake.
     audioClip: {fileID: 0}
   - character: 0
     mood: 0
@@ -70,8 +71,8 @@ MonoBehaviour:
     audioClip: {fileID: 0}
   - character: 2
     mood: 0
-    line: I am a priest. According to the priests I am of the same blood as the goddess
-      of land. Now, Pacha is wounded, and I must care for her.
+    line: I am a priest. According to the priests I am of the same blood as Pacha,
+      the goddess of land. Now, Pacha is wounded, and I must care for her.
     audioClip: {fileID: 0}
   - character: 0
     mood: 0

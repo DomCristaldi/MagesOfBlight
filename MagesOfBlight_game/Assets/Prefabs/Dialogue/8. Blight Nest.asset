@@ -67,7 +67,3 @@ MonoBehaviour:
     mood: 0
     line: We can only hope.
     audioClip: {fileID: 0}
-  - character: 1
-    mood: 0
-    line: Less hope, more action!
-    audioClip: {fileID: 0}

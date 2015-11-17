@@ -27,18 +27,17 @@ MonoBehaviour:
     audioClip: {fileID: 0}
   - character: 0
     mood: 0
-    line: "(while getting up) Why, what\u2019s going on?"
+    line: "(While getting up) Why, what\u2019s going on?  Who are you?"
     audioClip: {fileID: 0}
   - character: 2
     mood: 0
-    line: "I\u2019m sure you\u2019re confused.  I\u2019ll explain everything in time,
-      but for now trust me and get moving."
+    line: "My name is Stein. I\u2019m sure you\u2019re confused.  I\u2019ll explain
+      everything in time, but for now trust me and get moving."
     audioClip: {fileID: 0}
   - character: 1
     mood: 0
     line: "Stein! There\u2019s a hoard of Blight Puppets outside moving towards the
-      temple, - so unless you plan to be consumed, we\u2019ve got maybe five minutes.
-      Get him up and move!"
+      temple, we\u2019ve got maybe five minutes."
     audioClip: {fileID: 0}
   - character: 2
     mood: 0
@@ -67,8 +66,8 @@ MonoBehaviour:
     audioClip: {fileID: 0}
   - character: 1
     mood: 0
-    line: Not good!? This Blight gives us powers! With it, I can set things on fire,
-      throw fireballs, spontaneous combustion, all that stuff. Stein throws rocks!
+    line: Not good!? This Blight gives us powers! With it, I can set things on fire!
+      Stein throws rocks!
     audioClip: {fileID: 0}
   - character: 2
     mood: 0

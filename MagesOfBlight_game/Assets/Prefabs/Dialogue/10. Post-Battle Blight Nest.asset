@@ -20,18 +20,10 @@ MonoBehaviour:
     mood: 0
     line: "Look! The Puppets! They\u2019ve stopped attacking!"
     audioClip: {fileID: 0}
-  - character: 1
-    mood: 0
-    line: "You\u2019re right! This thing, it must have been what was controlling them!
-      That means\u2026"
-    audioClip: {fileID: 0}
   - character: 2
     mood: 0
-    line: It lost its control over us. Pacha is once again free.
-    audioClip: {fileID: 0}
-  - character: 1
-    mood: 0
-    line: More importantly, us! Yes!
+    line: "It\u2019s over. Without the Hive, the Blight has lost its control over
+      us. Pacha is once again free."
     audioClip: {fileID: 0}
   - character: 0
     mood: 0
@@ -59,7 +51,7 @@ MonoBehaviour:
   - character: 2
     mood: 0
     line: "If they truly can still be called people. We\u2019ll see. I shall leave
-      them in your hands Nuria. I must see to rebuilding my order, and healing the
+      them in your hands, Nuria. I must see to rebuilding my order, and healing the
       scar upon the land."
     audioClip: {fileID: 0}
   - character: 0
