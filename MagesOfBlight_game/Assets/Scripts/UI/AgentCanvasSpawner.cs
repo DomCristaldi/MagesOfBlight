@@ -120,7 +120,10 @@ public class AgentCanvasSpawner : MonoBehaviour {
 		agentHUDCanvas.transform.name = "HUD Canvas";
 		//set canvas event camera and position in terms of the agent
 		agentHUDCanvas.GetComponent<Canvas> ().worldCamera = Camera.main;
-		agentHUDCanvas.transform.localPosition = new Vector3 (0f,2.3f,0f);
+		if(gameObject.GetComponent<TileAgent>().team == BattleManager.CombatTeam.Player)
+			agentHUDCanvas.transform.localPosition = new Vector3 (0f,2.3f,0f);
+		else
+			agentHUDCanvas.transform.localPosition = new Vector3 (0f,1.6f,0f);
 		healthbar = (GameObject)Instantiate (healthbarPrefab.gameObject);
 		healthbar.transform.SetParent (agentHUDCanvas.transform);
 		healthbar.name = "Health Bar";
