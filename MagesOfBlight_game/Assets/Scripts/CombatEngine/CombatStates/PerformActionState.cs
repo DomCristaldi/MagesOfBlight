@@ -10,6 +10,7 @@ using JBirdEngine;
 public class PerformActionState : BaseCombatState {
 
     private AgentAnimController animControlRef;
+    private ModelRotationController modelRotControl;
 
     private bool readyToPerformAction = false;
 
@@ -18,20 +19,26 @@ public class PerformActionState : BaseCombatState {
 	public override void InitState (){
 		base.InitState ();
 
+        animControlRef = battleManRef.selectedAgent.GetComponent<AgentAnimController>();
+        modelRotControl = battleManRef.selectedAgent.GetComponent<ModelRotationController>();
+
+
 		battleManRef.selectedAction.agent = battleManRef.selectedAgent;
 
-        animControlRef = battleManRef.selectedAgent.GetComponent<AgentAnimController>();
 
         animControlRef.TriggerAnim(battleManRef.selectedAction.animInfo);
-
+        //modelRotControl.desiredPos = battleManRef.targetTile.transform.position;
 	}
 
     public override void UpdateState() {
         base.UpdateState();
 
+        modelRotControl.SetDesiredLookDirec(battleManRef.targetTile.transform.position - battleManRef.selectedAgent.transform.position);
+
+
         //CheckForBlock();
 
-        readyToPerformAction = true;
+        //readyToPerformAction = true;
 
         if (readyToPerformAction) {
             if (battleManRef.selectedAction.DoAction()) {//returns true when finished
@@ -47,6 +54,8 @@ public class PerformActionState : BaseCombatState {
         battleManRef.selectedAgent.UseTurn();
 
         battleManRef.ClearFrameInfo();
+
+        modelRotControl.SetDesiredLookDirec(-Vector3.forward);
     }
 
     private void CheckForBlock() {
