@@ -1,0 +1,224 @@
+fileFormatVersion: 2
+guid: 7497b29312194d64984a40bb708e308a
+timeCreated: 1447882947
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Core
+    100002: Core 1
+    100004: Core 2
+    100006: Core 3
+    100008: Core 4
+    100010: Core 5
+    100012: Fifth
+    100014: FifthBranch
+    100016: First
+    100018: First 1
+    100020: First 2
+    100022: First 3
+    100024: First 4
+    100026: First 5
+    100028: First1
+    100030: FirstB
+    100032: Fourth
+    100034: FourthBranch
+    100036: pSolid10
+    100038: pSolid11
+    100040: pSolid12
+    100042: pSolid13
+    100044: pSolid14
+    100046: pSolid15
+    100048: pSolid16
+    100050: pSolid3
+    100052: pSolid6
+    100054: pSolid7
+    100056: pSolid8
+    100058: pSolid9
+    100060: SecHalfB
+    100062: SecHalfBranch
+    100064: Second
+    100066: Second 1
+    100068: SecondB
+    100070: SecondBranch
+    100072: SixthBranch
+    100074: //RootNode
+    100076: ThirdB
+    100078: ThirdBranch
+    400000: Core
+    400002: Core 1
+    400004: Core 2
+    400006: Core 3
+    400008: Core 4
+    400010: Core 5
+    400012: Fifth
+    400014: FifthBranch
+    400016: First
+    400018: First 1
+    400020: First 2
+    400022: First 3
+    400024: First 4
+    400026: First 5
+    400028: First1
+    400030: FirstB
+    400032: Fourth
+    400034: FourthBranch
+    400036: pSolid10
+    400038: pSolid11
+    400040: pSolid12
+    400042: pSolid13
+    400044: pSolid14
+    400046: pSolid15
+    400048: pSolid16
+    400050: pSolid3
+    400052: pSolid6
+    400054: pSolid7
+    400056: pSolid8
+    400058: pSolid9
+    400060: SecHalfB
+    400062: SecHalfBranch
+    400064: Second
+    400066: Second 1
+    400068: SecondB
+    400070: SecondBranch
+    400072: SixthBranch
+    400074: //RootNode
+    400076: ThirdB
+    400078: ThirdBranch
+    2300000: Core 1
+    2300002: Core 5
+    2300004: FifthBranch
+    2300006: First 3
+    2300008: First 4
+    2300010: First 5
+    2300012: FourthBranch
+    2300014: pSolid10
+    2300016: pSolid11
+    2300018: pSolid12
+    2300020: pSolid13
+    2300022: pSolid14
+    2300024: pSolid15
+    2300026: pSolid16
+    2300028: pSolid3
+    2300030: pSolid6
+    2300032: pSolid7
+    2300034: pSolid8
+    2300036: pSolid9
+    2300038: SecHalfBranch
+    2300040: Second 1
+    2300042: SecondBranch
+    2300044: SixthBranch
+    2300046: ThirdBranch
+    3300000: Core 1
+    3300002: Core 5
+    3300004: FifthBranch
+    3300006: First 3
+    3300008: First 4
+    3300010: First 5
+    3300012: FourthBranch
+    3300014: pSolid10
+    3300016: pSolid11
+    3300018: pSolid12
+    3300020: pSolid13
+    3300022: pSolid14
+    3300024: pSolid15
+    3300026: pSolid16
+    3300028: pSolid3
+    3300030: pSolid6
+    3300032: pSolid7
+    3300034: pSolid8
+    3300036: pSolid9
+    3300038: SecHalfBranch
+    3300040: Second 1
+    3300042: SecondBranch
+    3300044: SixthBranch
+    3300046: ThirdBranch
+    4300000: pSolid3
+    4300002: Core
+    4300004: pSolid6
+    4300006: Second
+    4300008: First
+    4300010: pSolid7
+    4300012: SixthBranch
+    4300014: pSolid8
+    4300016: pSolid10
+    4300018: SecondBranch
+    4300020: pSolid11
+    4300022: First
+    4300024: ThirdBranch
+    4300026: pSolid15
+    4300028: pSolid12
+    4300030: First
+    4300032: SecHalfBranch
+    4300034: pSolid9
+    4300036: FifthBranch
+    4300038: pSolid13
+    4300040: Core
+    4300042: pSolid14
+    4300044: FourthBranch
+    4300046: pSolid16
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
