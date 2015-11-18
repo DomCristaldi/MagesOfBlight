@@ -5,6 +5,6 @@ AnimatorOverrideController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: puppetRigAnimOverride
-  m_Controller: {fileID: 0}
+  m_Name: fireAnimOverride
+  m_Controller: {fileID: 9100000, guid: 135605dc3bf7a5746b806c0926a0dca4, type: 2}
   m_Clips: []

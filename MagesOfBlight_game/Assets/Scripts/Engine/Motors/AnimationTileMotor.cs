@@ -1,18 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(AgentAnimController))]
 public class AnimationTileMotor : TileMotor {
 
-    public Animator animController;
-    public RootMotionCapture _rmCapture;
+    protected AgentAnimController agentAnimControl;
+
+    protected Animator _animController;
+    protected RootMotionCapture _rmCapture;
     public RootMotionCapture rmCapture { get { return _rmCapture; } }
 
     protected string movementBlend = "MovementBlend";
 
+    public float walkAnimMaxVal = 1.0f;
+
     protected override void Awake() {
         base.Awake();
 
-        _rmCapture = animController.GetComponent<RootMotionCapture>();
+        agentAnimControl = GetComponent<AgentAnimController>();
+
+        _animController = agentAnimControl.animController;
+
+        _rmCapture = _animController.GetComponent<RootMotionCapture>();
     }
 
     protected override void Update() {
@@ -22,7 +31,7 @@ public class AnimationTileMotor : TileMotor {
     }
 
     protected virtual void HandleAnimations() {
-        animController.SetFloat(movementBlend, _trueDirec.normalized.magnitude);
+        _animController.SetFloat(movementBlend, _trueDirec.normalized.magnitude);
     }
 
     protected override Vector3 MoveToLocationMethod(Vector3 position, Vector3 destination, float deltaTime) {

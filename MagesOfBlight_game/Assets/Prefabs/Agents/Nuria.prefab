@@ -45,6 +45,7 @@ GameObject:
   - 114: {fileID: 11440636}
   - 114: {fileID: 11402222}
   - 114: {fileID: 11452920}
+  - 114: {fileID: 11444550}
   m_Layer: 0
   m_Name: Nuria
   m_TagString: Untagged
@@ -745,7 +746,7 @@ Animator:
   m_GameObject: {fileID: 196264}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 03b6d170a6cc67c46a77a3e0cf7904cf, type: 3}
-  m_Controller: {fileID: 9100000, guid: 135605dc3bf7a5746b806c0926a0dca4, type: 2}
+  m_Controller: {fileID: 22100000, guid: 6f5054ac7a7bed442901858b2a78d3ec, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -874,8 +875,19 @@ MonoBehaviour:
   suppliedPath: []
   doneMoving: 0
   isMoving: 0
+  walkAnimMaxVal: 1
+--- !u!114 &11444550
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159fb2a3e92f9a54d8c7339122061109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   animController: {fileID: 9525000}
-  _rmCapture: {fileID: 11480964}
 --- !u!114 &11452920
 MonoBehaviour:
   m_ObjectHideFlags: 1

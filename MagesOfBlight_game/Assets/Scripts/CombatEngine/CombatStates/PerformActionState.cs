@@ -9,21 +9,34 @@ using JBirdEngine;
 
 public class PerformActionState : BaseCombatState {
 
+    private AgentAnimController animControlRef;
+
+    private bool readyToPerformAction = false;
+
     public PerformActionState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = false, bool canHoverGrid = false) : base(thisCombatPhase, canUndo, canHoverGrid) { }
 
 	public override void InitState (){
 		base.InitState ();
 
 		battleManRef.selectedAction.agent = battleManRef.selectedAgent;
+
+        animControlRef = battleManRef.selectedAgent.GetComponent<AgentAnimController>();
+
+        animControlRef.TriggerAnim(battleManRef.selectedAction.animInfo);
+
 	}
 
     public override void UpdateState() {
         base.UpdateState();
 
-        CheckForBlock();
+        //CheckForBlock();
 
-        if (battleManRef.selectedAction.DoAction()) {//returns true when finished
-            battleManRef.ChangeCombatState(BattleManager.CombatPhase.CheckTeam);
+        readyToPerformAction = true;
+
+        if (readyToPerformAction) {
+            if (battleManRef.selectedAction.DoAction()) {//returns true when finished
+                battleManRef.ChangeCombatState(BattleManager.CombatPhase.CheckTeam);
+            }
         }
 
     }

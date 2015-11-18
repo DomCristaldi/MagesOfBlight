@@ -1291,8 +1291,8 @@ namespace JBirdEngine {
 			mesh.RecalculateNormals();
 			mesh.RecalculateBounds();
 #if UNITY_EDITOR
-            AssetDatabase.CreateAsset(mesh, "Assets/Meshes/HexMesh.asset");
-			AssetDatabase.SaveAssets();
+            //AssetDatabase.CreateAsset(mesh, "Assets/Meshes/HexMesh.asset");
+			//AssetDatabase.SaveAssets();
 #endif
             return mesh;
 		}
@@ -1331,8 +1331,8 @@ namespace JBirdEngine {
 			mesh.RecalculateNormals();
 			mesh.RecalculateBounds();
 			#if UNITY_EDITOR
-			AssetDatabase.CreateAsset(mesh, "Assets/Meshes/HexRingMesh.asset");
-			AssetDatabase.SaveAssets();
+			//AssetDatabase.CreateAsset(mesh, "Assets/Meshes/HexRingMesh.asset");
+			//AssetDatabase.SaveAssets();
 			#endif
 			return mesh;
 		}
