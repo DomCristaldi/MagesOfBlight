@@ -92,6 +92,7 @@ GameObject:
   - 114: {fileID: 11470562}
   - 114: {fileID: 11413106}
   - 114: {fileID: 11425738}
+  - 114: {fileID: 11407712}
   m_Layer: 0
   m_Name: Puppet
   m_TagString: Untagged
@@ -717,7 +718,7 @@ Animator:
   m_GameObject: {fileID: 103834}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 6525a4abea38b974798322fa936fd99c, type: 3}
-  m_Controller: {fileID: 9100000, guid: 135605dc3bf7a5746b806c0926a0dca4, type: 2}
+  m_Controller: {fileID: 22100000, guid: 26446d09e3ee0db49bf40e294ba44cb8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -725,6 +726,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11407712
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159fb2a3e92f9a54d8c7339122061109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animController: {fileID: 9555288}
 --- !u!114 &11413106
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -841,8 +854,7 @@ MonoBehaviour:
   suppliedPath: []
   doneMoving: 0
   isMoving: 0
-  animController: {fileID: 9555288}
-  _rmCapture: {fileID: 11458532}
+  walkAnimMaxVal: 1
 --- !u!114 &11474130
 MonoBehaviour:
   m_ObjectHideFlags: 1

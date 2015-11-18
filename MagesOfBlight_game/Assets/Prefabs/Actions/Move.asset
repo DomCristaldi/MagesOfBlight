@@ -11,6 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b730b21c1c0839498b3879122e4e02d, type: 3}
   m_Name: Move
   m_EditorClassIdentifier: 
+  animInfo:
+    animType: 3
+    animAttackType: 1
+  agent: {fileID: 0}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   highlightedColor: {r: .742647052, g: .769950271, b: .769950271, a: 1}
   pressedColor: {r: .522058845, g: .522058845, b: .522058845, a: 1}

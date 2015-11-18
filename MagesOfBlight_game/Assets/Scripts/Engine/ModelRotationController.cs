@@ -6,6 +6,17 @@ public class ModelRotationController : MonoBehaviour {
     public Transform modelTf;
 
     public Vector3 desiredDirec;
+    public Vector3 desiredPos {
+        set {
+            if (value != Vector3.zero) {
+                desiredDirec = Vector3.Normalize(value - transform.position);
+            }
+            else {
+                desiredDirec = -Vector3.forward;
+            }
+        }
+    }
+
     private Vector3 _trueDirec;
     public Vector3 trueDirec {
         get { return _trueDirec; }

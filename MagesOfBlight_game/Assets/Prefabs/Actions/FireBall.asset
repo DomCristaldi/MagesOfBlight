@@ -11,6 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fad13f98d76aa340841ee7ce8c9e3c2, type: 3}
   m_Name: FireBall
   m_EditorClassIdentifier: 
+  animInfo:
+    animType: 0
+    animAttackType: 1
   agent: {fileID: 0}
   normalColor: {r: 1, g: 0, b: 0, a: 1}
   highlightedColor: {r: .697000027, g: 0, b: 0, a: 1}

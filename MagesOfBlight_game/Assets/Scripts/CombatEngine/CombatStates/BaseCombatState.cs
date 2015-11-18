@@ -6,8 +6,7 @@ public class BaseCombatState {
 
     /// <summary>
     /// Base State for all Combat States
-    /// Handles making a connectoin with the Battle Manager,
-    ///     Undo funcionality
+    /// Handles making a connection with the Battle Manager,
     ///     TODO: Confirmation locks
     /// </summary>
 

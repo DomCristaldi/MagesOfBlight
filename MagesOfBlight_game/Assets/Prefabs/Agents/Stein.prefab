@@ -119,6 +119,7 @@ GameObject:
   - 114: {fileID: 11450754}
   - 114: {fileID: 11491364}
   - 114: {fileID: 11409132}
+  - 114: {fileID: 11449856}
   m_Layer: 0
   m_Name: Stein
   m_TagString: Untagged
@@ -717,7 +718,7 @@ Animator:
   m_GameObject: {fileID: 116840}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 15e4eb5c831dd8245b14977fc821d76d, type: 3}
-  m_Controller: {fileID: 9100000, guid: 135605dc3bf7a5746b806c0926a0dca4, type: 2}
+  m_Controller: {fileID: 22100000, guid: 4e9f91ee9e13bec4fa1a182b0c42da6d, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -756,6 +757,18 @@ MonoBehaviour:
   hasTurn: 1
   team: 0
   defaultModelLookDirec: {x: -0, y: -0, z: -1}
+--- !u!114 &11449856
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159fb2a3e92f9a54d8c7339122061109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animController: {fileID: 9574302}
 --- !u!114 &11450754
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -790,8 +803,7 @@ MonoBehaviour:
   suppliedPath: []
   doneMoving: 0
   isMoving: 0
-  animController: {fileID: 9574302}
-  _rmCapture: {fileID: 0}
+  walkAnimMaxVal: 1
 --- !u!114 &11482046
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -986,6 +998,10 @@ Prefab:
       value: 
       objectReference: {fileID: 11400000, guid: 6443583511cf63648b64b0fe4002b1c3,
         type: 2}
+    - target: {fileID: 0}
+      propertyPath: animController
+      value: 
+      objectReference: {fileID: 9574302}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 114998}

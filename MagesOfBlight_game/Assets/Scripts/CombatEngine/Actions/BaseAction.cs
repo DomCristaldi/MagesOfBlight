@@ -5,6 +5,8 @@ using JBirdEngine;
 
 public class BaseAction : ScriptableObject {
 
+    public AgentAnimController.AnimationInfo animInfo;
+
 	protected static float targetPrecision = 0.1f;
 
 	public TileAgent agent;

@@ -236,6 +236,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 450086}
   - 114: {fileID: 11467982}
+  - 114: {fileID: 11481640}
   - 114: {fileID: 11444124}
   - 114: {fileID: 11451408}
   - 114: {fileID: 11438072}
@@ -526,7 +527,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169116}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.66000009, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 452506}
@@ -745,7 +746,7 @@ Animator:
   m_GameObject: {fileID: 106296}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 5f0e5325418490d4a9a1c77fb28f696f, type: 3}
-  m_Controller: {fileID: 9100000, guid: 135605dc3bf7a5746b806c0926a0dca4, type: 2}
+  m_Controller: {fileID: 22100000, guid: bce24bc4613f84b4e8581be99f5b629b, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -828,8 +829,7 @@ MonoBehaviour:
   suppliedPath: []
   doneMoving: 0
   isMoving: 0
-  animController: {fileID: 9516060}
-  _rmCapture: {fileID: 11420842}
+  walkAnimMaxVal: 1
 --- !u!114 &11444124
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -901,6 +901,18 @@ MonoBehaviour:
   hasTurn: 1
   team: 0
   defaultModelLookDirec: {x: -0, y: -0, z: -1}
+--- !u!114 &11481640
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159fb2a3e92f9a54d8c7339122061109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animController: {fileID: 9516060}
 --- !u!137 &13770354
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
