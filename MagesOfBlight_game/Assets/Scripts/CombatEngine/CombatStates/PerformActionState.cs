@@ -33,12 +33,12 @@ public class PerformActionState : BaseCombatState {
     public override void UpdateState() {
         base.UpdateState();
 
-        modelRotControl.SetDesiredLookDirec(battleManRef.targetTile.transform.position - battleManRef.selectedAgent.transform.position);
+        //modelRotControl.SetDesiredLookDirec(battleManRef.targetTile.transform.position - battleManRef.selectedAgent.transform.position);
 
 
         //CheckForBlock();
 
-        //readyToPerformAction = true;
+        readyToPerformAction = true;
 
         if (readyToPerformAction) {
             if (battleManRef.selectedAction.DoAction()) {//returns true when finished
@@ -61,5 +61,7 @@ public class PerformActionState : BaseCombatState {
     private void CheckForBlock() {
 
     }
+
+    //private IEnumerator
 
 }

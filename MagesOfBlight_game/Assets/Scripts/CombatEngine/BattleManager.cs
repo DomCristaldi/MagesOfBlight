@@ -376,5 +376,14 @@ public class BattleManager : MonoBehaviour {
     }
 
 
+    public void ConfirmActionSelection() {
+        if (curCombatPhase == CombatPhase.TargetSelection
+         && selectedAgent != null
+         && selectedAction != null
+         && targetTile != null)
+        {
+            ChangeCombatState(CombatPhase.PerformAction);
+        }
+    }
 
 }

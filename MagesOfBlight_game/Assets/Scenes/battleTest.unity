@@ -815,6 +815,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11402344, guid: 8727d86d560a03e4d8524ced3804caae, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 22491384, guid: 8727d86d560a03e4d8524ced3804caae, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -895,6 +899,26 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1446513504}
+    - target: {fileID: 11402344, guid: 8727d86d560a03e4d8524ced3804caae, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11402344, guid: 8727d86d560a03e4d8524ced3804caae, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11402344, guid: 8727d86d560a03e4d8524ced3804caae, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 127744986}
+    - target: {fileID: 11402344, guid: 8727d86d560a03e4d8524ced3804caae, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ConfirmActionSelection
+      objectReference: {fileID: 0}
+    - target: {fileID: 11402344, guid: 8727d86d560a03e4d8524ced3804caae, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8727d86d560a03e4d8524ced3804caae, type: 2}
   m_IsPrefabParent: 0
