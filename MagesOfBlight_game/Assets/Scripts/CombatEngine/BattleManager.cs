@@ -50,11 +50,13 @@ public class BattleManager : MonoBehaviour {
             //teamMembers.Add(new MemberInfo(agent));
         }
 
-        public void RemoveFromTeam(TileAgent agent) {
+        public bool RemoveFromTeam(TileAgent agent) {
             
             if (teamMembers.Contains(agent)) {
                 teamMembers.Remove(agent);
+				return true;
             }
+			return false;
             
             
             //teamMembers.RemoveAll(x => x.agent == agent);//remove all instances of MemberInfos with the supplied Agent
@@ -109,6 +111,8 @@ public class BattleManager : MonoBehaviour {
 
 
     [Header("Setup")]
+
+	public string firstSceneName;
 
     public Camera battleCam;//refrence to the camera we use for selection
     public Transform battleCamTf;//cached transform reference for speed of access
@@ -385,5 +389,16 @@ public class BattleManager : MonoBehaviour {
             ChangeCombatState(CombatPhase.PerformAction);
         }
     }
+
+	public void KillAgent (TileAgent agent) {
+		if (enemyTeam.RemoveFromTeam(agent)) {
+			Debug.Log("An enemy has been slain!");
+			agent.Kill();
+		}
+		if (playerTeam.RemoveFromTeam(agent)) {
+			Debug.Log("Game over, man! It's game over!");
+			Application.LoadLevel(firstSceneName);
+		}
+	}
 
 }

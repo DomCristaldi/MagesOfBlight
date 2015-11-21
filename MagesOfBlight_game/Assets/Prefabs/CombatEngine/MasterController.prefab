@@ -86,12 +86,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c62c0642d8bb0e4592c1fd4c87800d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstSceneName: battleTest
   battleCam: {fileID: 0}
   battleCamTf: {fileID: 0}
   tileLayer:
     serializedVersion: 2
     m_Bits: 256
-  blightRecoveryPerTurn: 3
   playerTeam:
     teamType: 0
     teamMembers: []
@@ -181,6 +181,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: blightRecoveryPerTurn
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: firstSceneName
+      value: battleTest
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

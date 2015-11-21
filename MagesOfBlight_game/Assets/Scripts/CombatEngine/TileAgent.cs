@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 
 [AddComponentMenu("Scripts/BattleEngine/Tiles/Entities/TileAgent")]
@@ -24,6 +24,8 @@ public class TileAgent : TileEntity {
 
     private ModelRotationController _modelRotControl;
 
+	public int moveSteps;
+	public int maxMoveSteps;
 
     public bool hasTurn = true;
     public bool canPerformTurn {//checks all possible conditions that would disallow a turn
@@ -78,10 +80,16 @@ public class TileAgent : TileEntity {
 	
 	protected override void Update () {
         base.Update();
-
+		CheckIfKill();
         //MovementProtocol();
         LookProtocol();
 
+	}
+
+	protected virtual void CheckIfKill () {
+		if (stats.currentHealth <= 0f) {
+			BattleManager.singleton.KillAgent(this);
+		}
 	}
 
     public void FollowPath(List<Vector3> pathToFollow) {
@@ -105,6 +113,7 @@ public class TileAgent : TileEntity {
 
     public void RefreshTurn() {
         hasTurn = true;
+		moveSteps = maxMoveSteps;
     }
 
     protected void LookProtocol() {
@@ -122,5 +131,8 @@ public class TileAgent : TileEntity {
 
     }
 
+	public void Kill () {
+		Destroy(gameObject);
+	}
 
 }

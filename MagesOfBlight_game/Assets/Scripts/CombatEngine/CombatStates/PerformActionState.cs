@@ -19,6 +19,10 @@ public class PerformActionState : BaseCombatState {
 	public override void InitState (){
 		base.InitState ();
 
+		if (BattleManager.singleton.selectedAction as MoveAction != null) {
+			BattleManager.singleton.selectedAction.checkDistance = BattleManager.singleton.selectedAgent.moveSteps;
+		}
+
         animControlRef = battleManRef.selectedAgent.GetComponent<AgentAnimController>();
         modelRotControl = battleManRef.selectedAgent.GetComponent<ModelRotationController>();
 
@@ -51,7 +55,12 @@ public class PerformActionState : BaseCombatState {
     public override void EndState() {
         base.EndState();
 
-        battleManRef.selectedAgent.UseTurn();
+		if (BattleManager.singleton.selectedAction as MoveAction != null) {
+			BattleManager.singleton.selectedAgent.moveSteps -= BattleManager.singleton.selectedAgent.motor.tilesMoved;
+		}
+		else {
+			battleManRef.selectedAgent.UseTurn();
+		}
 
         battleManRef.ClearFrameInfo();
 

@@ -754,6 +754,8 @@ MonoBehaviour:
   model: {fileID: 116840}
   agentCanvas: {fileID: 0}
   agentActions: {fileID: 0}
+  moveSteps: 3
+  maxMoveSteps: 3
   hasTurn: 1
   team: 0
   defaultModelLookDirec: {x: -0, y: -0, z: -1}
@@ -780,7 +782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 731c945318d9395429d1fe0e3d1e3394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 15
   speedRamp:
     serializedVersion: 2
     m_Curve:
@@ -801,6 +803,7 @@ MonoBehaviour:
   moveSpeedModifier: 1
   currentTile: {fileID: 0}
   suppliedPath: []
+  tilesMoved: 0
   doneMoving: 0
   isMoving: 0
   walkAnimMaxVal: 1
@@ -838,6 +841,10 @@ MonoBehaviour:
     button: {fileID: 0}
   proactiveActions:
   - action: {fileID: 11400000, guid: 809e213b9ee99f24ab4548897eaa8fad, type: 2}
+    known: 0
+    usable: 0
+    button: {fileID: 0}
+  - action: {fileID: 11400000, guid: 319ca889e85209d40a40b1ba24a8d975, type: 2}
     known: 0
     usable: 0
     button: {fileID: 0}
@@ -951,7 +958,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: proactiveActions.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: speedRamp.m_Curve.Array.size
@@ -996,12 +1003,24 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: proactiveActions.Array.data[1].action
       value: 
-      objectReference: {fileID: 11400000, guid: 6443583511cf63648b64b0fe4002b1c3,
+      objectReference: {fileID: 11400000, guid: 319ca889e85209d40a40b1ba24a8d975,
         type: 2}
     - target: {fileID: 0}
       propertyPath: animController
       value: 
       objectReference: {fileID: 9574302}
+    - target: {fileID: 0}
+      propertyPath: moveSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxMoveSteps
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: moveSteps
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 114998}

@@ -768,6 +768,8 @@ MonoBehaviour:
   model: {fileID: 103834}
   agentCanvas: {fileID: 0}
   agentActions: {fileID: 0}
+  moveSteps: 2
+  maxMoveSteps: 2
   hasTurn: 1
   team: 1
   defaultModelLookDirec: {x: -0, y: -0, z: -1}
@@ -831,7 +833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 731c945318d9395429d1fe0e3d1e3394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 15
   speedRamp:
     serializedVersion: 2
     m_Curve:
@@ -852,6 +854,7 @@ MonoBehaviour:
   moveSpeedModifier: 1
   currentTile: {fileID: 0}
   suppliedPath: []
+  tilesMoved: 0
   doneMoving: 0
   isMoving: 0
   walkAnimMaxVal: 1
@@ -880,6 +883,10 @@ MonoBehaviour:
   - action: {fileID: 11400000, guid: 809e213b9ee99f24ab4548897eaa8fad, type: 2}
     known: 1
     usable: 1
+    button: {fileID: 0}
+  - action: {fileID: 11400000, guid: 319ca889e85209d40a40b1ba24a8d975, type: 2}
+    known: 0
+    usable: 0
     button: {fileID: 0}
   - action: {fileID: 11400000, guid: 55982705f4677714a90bf58620a2246f, type: 2}
     known: 1
@@ -950,6 +957,10 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: proactiveActions.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: speedRamp.m_Curve.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -993,6 +1004,31 @@ Prefab:
       propertyPath: _rmCapture
       value: 
       objectReference: {fileID: 11458532}
+    - target: {fileID: 0}
+      propertyPath: moveSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: proactiveActions.Array.data[1].action
+      value: 
+      objectReference: {fileID: 11400000, guid: 319ca889e85209d40a40b1ba24a8d975,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: proactiveActions.Array.data[1].known
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: proactiveActions.Array.data[1].usable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxMoveSteps
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: moveSteps
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 115730}

@@ -47,6 +47,7 @@ public class TileMotor : MonoBehaviour {
     [Header("Path Info")]
     public HexNode currentTile;
     public List<HexNode> suppliedPath;
+	public int tilesMoved;
 
 
     [HideInInspector]
@@ -174,7 +175,7 @@ public class TileMotor : MonoBehaviour {
 
         if (transform.position == end.transform.position) {
             Debug.Log("at location");
-
+			tilesMoved++;
             return true;
         }
 

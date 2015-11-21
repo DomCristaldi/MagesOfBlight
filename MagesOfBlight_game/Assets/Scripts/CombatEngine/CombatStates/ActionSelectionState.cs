@@ -44,7 +44,9 @@ public class ActionSelectionState : BaseCombatState {
 
     public override void UpdateState() {
         base.UpdateState();
-
+		if (battleManRef.selectedAction as MoveAction != null && battleManRef.selectedAgent.moveSteps <= 0) {
+			battleManRef.selectedAction = null;
+		}
         if (battleManRef.selectedAction != null) {
             battleManRef.ChangeCombatState(BattleManager.CombatPhase.TargetSelection);
         }
