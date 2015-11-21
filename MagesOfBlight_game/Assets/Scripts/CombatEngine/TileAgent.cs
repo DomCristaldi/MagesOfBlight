@@ -114,6 +114,7 @@ public class TileAgent : TileEntity {
     public void RefreshTurn() {
         hasTurn = true;
 		moveSteps = maxMoveSteps;
+		motor.tilesMoved = 0;
     }
 
     protected void LookProtocol() {
