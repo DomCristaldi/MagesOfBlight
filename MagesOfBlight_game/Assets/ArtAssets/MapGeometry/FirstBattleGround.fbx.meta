@@ -1,0 +1,442 @@
+fileFormatVersion: 2
+guid: 2efb6493c16ebb04d81edcc44f6cb876
+timeCreated: 1448908860
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Core
+    100002: Core 1
+    100004: Core 2
+    100006: Core 3
+    100008: //RootNode
+    100010: Flower5Grass1
+    100012: FlowerLarge
+    100014: FlowerMedium
+    100016: FlowerMedium 1
+    100018: FlowerSmall
+    100020: FlowerSmall 1
+    100022: Oncidium7_flower4_pPlane9
+    100024: Oncidium7_flower4_pPlane9 1
+    100026: Oncidium7_pPlane3
+    100028: Oncidium7_pPlane3 1
+    100030: Oncidium8_pPlane3
+    100032: Oncidium8_Stem_flower4_pPlane9
+    100034: Oncidium9_pPlane3
+    100036: Oncidium9_pPlane3 1
+    100038: Oncidium9_Stem_AllFlowers_flower4_pPlane9
+    100040: Oncidium9_Stem_AllFlowers_flower4_pPlane9 1
+    100042: pasted__pCylinder188
+    100044: pasted__pCylinder204
+    100046: pasted__pCylinder205
+    100048: pasted__pCylinder206
+    100050: pCube34
+    100052: pCube35
+    100054: pCube36
+    100056: pCylinder257
+    100058: pCylinder259
+    100060: pCylinder267
+    100062: pCylinder285
+    100064: pCylinder286
+    100066: pCylinder287
+    100068: pCylinder288
+    100070: pCylinder289
+    100072: pCylinder290
+    100074: pCylinder291
+    100076: pCylinder292
+    100078: pCylinder293
+    100080: pCylinder294
+    100082: pCylinder5
+    100084: pCylinder5 1
+    100086: pCylinder5 2
+    100088: pCylinder6
+    100090: pCylinder6 1
+    100092: pCylinder6 2
+    100094: pCylinder7
+    100096: pCylinder7 1
+    100098: pCylinder7 2
+    100100: pCylinder8
+    100102: pCylinder9
+    100104: polySurface37
+    100106: polySurface39
+    100108: polySurface40
+    100110: polySurface41
+    100112: polySurface42
+    100114: polySurface43
+    100116: polySurface44
+    100118: polySurface45
+    100120: polySurface46
+    100122: polySurface47
+    100124: polySurface48
+    100126: pSolid10
+    100128: pSolid10 1
+    100130: pSolid10 2
+    100132: pSolid3
+    100134: pSolid3 1
+    100136: pSolid3 2
+    100138: pSolid3 3
+    100140: pSolid3 4
+    100142: pSolid4
+    100144: pSolid4 1
+    100146: Sapling2Rock2Flower1
+    100148: Sapling_4
+    100150: Sapling_5
+    100152: Second
+    100154: SecondBranch
+    100156: Tree_12
+    100158: Tree_13
+    100160: Tree_14
+    100162: Tree_15
+    100164: TreeFlower2Rock3Grass1
+    400000: Core
+    400002: Core 1
+    400004: Core 2
+    400006: Core 3
+    400008: //RootNode
+    400010: Flower5Grass1
+    400012: FlowerLarge
+    400014: FlowerMedium
+    400016: FlowerMedium 1
+    400018: FlowerSmall
+    400020: FlowerSmall 1
+    400022: Oncidium7_flower4_pPlane9
+    400024: Oncidium7_flower4_pPlane9 1
+    400026: Oncidium7_pPlane3
+    400028: Oncidium7_pPlane3 1
+    400030: Oncidium8_pPlane3
+    400032: Oncidium8_Stem_flower4_pPlane9
+    400034: Oncidium9_pPlane3
+    400036: Oncidium9_pPlane3 1
+    400038: Oncidium9_Stem_AllFlowers_flower4_pPlane9
+    400040: Oncidium9_Stem_AllFlowers_flower4_pPlane9 1
+    400042: pasted__pCylinder188
+    400044: pasted__pCylinder204
+    400046: pasted__pCylinder205
+    400048: pasted__pCylinder206
+    400050: pCube34
+    400052: pCube35
+    400054: pCube36
+    400056: pCylinder257
+    400058: pCylinder259
+    400060: pCylinder267
+    400062: pCylinder285
+    400064: pCylinder286
+    400066: pCylinder287
+    400068: pCylinder288
+    400070: pCylinder289
+    400072: pCylinder290
+    400074: pCylinder291
+    400076: pCylinder292
+    400078: pCylinder293
+    400080: pCylinder294
+    400082: pCylinder5
+    400084: pCylinder5 1
+    400086: pCylinder5 2
+    400088: pCylinder6
+    400090: pCylinder6 1
+    400092: pCylinder6 2
+    400094: pCylinder7
+    400096: pCylinder7 1
+    400098: pCylinder7 2
+    400100: pCylinder8
+    400102: pCylinder9
+    400104: polySurface37
+    400106: polySurface39
+    400108: polySurface40
+    400110: polySurface41
+    400112: polySurface42
+    400114: polySurface43
+    400116: polySurface44
+    400118: polySurface45
+    400120: polySurface46
+    400122: polySurface47
+    400124: polySurface48
+    400126: pSolid10
+    400128: pSolid10 1
+    400130: pSolid10 2
+    400132: pSolid3
+    400134: pSolid3 1
+    400136: pSolid3 2
+    400138: pSolid3 3
+    400140: pSolid3 4
+    400142: pSolid4
+    400144: pSolid4 1
+    400146: Sapling2Rock2Flower1
+    400148: Sapling_4
+    400150: Sapling_5
+    400152: Second
+    400154: SecondBranch
+    400156: Tree_12
+    400158: Tree_13
+    400160: Tree_14
+    400162: Tree_15
+    400164: TreeFlower2Rock3Grass1
+    2300000: Core
+    2300002: Core 1
+    2300004: Core 2
+    2300006: Core 3
+    2300008: Oncidium7_flower4_pPlane9
+    2300010: Oncidium7_flower4_pPlane9 1
+    2300012: Oncidium7_pPlane3
+    2300014: Oncidium7_pPlane3 1
+    2300016: Oncidium8_pPlane3
+    2300018: Oncidium8_Stem_flower4_pPlane9
+    2300020: Oncidium9_pPlane3
+    2300022: Oncidium9_pPlane3 1
+    2300024: Oncidium9_Stem_AllFlowers_flower4_pPlane9
+    2300026: Oncidium9_Stem_AllFlowers_flower4_pPlane9 1
+    2300028: pasted__pCylinder188
+    2300030: pasted__pCylinder204
+    2300032: pasted__pCylinder205
+    2300034: pasted__pCylinder206
+    2300036: pCube34
+    2300038: pCube35
+    2300040: pCube36
+    2300042: pCylinder257
+    2300044: pCylinder259
+    2300046: pCylinder267
+    2300048: pCylinder285
+    2300050: pCylinder286
+    2300052: pCylinder287
+    2300054: pCylinder288
+    2300056: pCylinder289
+    2300058: pCylinder290
+    2300060: pCylinder291
+    2300062: pCylinder292
+    2300064: pCylinder293
+    2300066: pCylinder294
+    2300068: pCylinder5
+    2300070: pCylinder5 1
+    2300072: pCylinder5 2
+    2300074: pCylinder6
+    2300076: pCylinder6 1
+    2300078: pCylinder6 2
+    2300080: pCylinder7
+    2300082: pCylinder7 1
+    2300084: pCylinder7 2
+    2300086: pCylinder8
+    2300088: pCylinder9
+    2300090: polySurface37
+    2300092: polySurface39
+    2300094: polySurface40
+    2300096: polySurface41
+    2300098: polySurface42
+    2300100: polySurface43
+    2300102: polySurface44
+    2300104: polySurface45
+    2300106: polySurface46
+    2300108: polySurface47
+    2300110: polySurface48
+    2300112: pSolid10
+    2300114: pSolid10 1
+    2300116: pSolid10 2
+    2300118: pSolid3
+    2300120: pSolid3 1
+    2300122: pSolid3 2
+    2300124: pSolid3 3
+    2300126: pSolid3 4
+    2300128: pSolid4
+    2300130: pSolid4 1
+    2300132: Second
+    2300134: SecondBranch
+    3300000: Core
+    3300002: Core 1
+    3300004: Core 2
+    3300006: Core 3
+    3300008: Oncidium7_flower4_pPlane9
+    3300010: Oncidium7_flower4_pPlane9 1
+    3300012: Oncidium7_pPlane3
+    3300014: Oncidium7_pPlane3 1
+    3300016: Oncidium8_pPlane3
+    3300018: Oncidium8_Stem_flower4_pPlane9
+    3300020: Oncidium9_pPlane3
+    3300022: Oncidium9_pPlane3 1
+    3300024: Oncidium9_Stem_AllFlowers_flower4_pPlane9
+    3300026: Oncidium9_Stem_AllFlowers_flower4_pPlane9 1
+    3300028: pasted__pCylinder188
+    3300030: pasted__pCylinder204
+    3300032: pasted__pCylinder205
+    3300034: pasted__pCylinder206
+    3300036: pCube34
+    3300038: pCube35
+    3300040: pCube36
+    3300042: pCylinder257
+    3300044: pCylinder259
+    3300046: pCylinder267
+    3300048: pCylinder285
+    3300050: pCylinder286
+    3300052: pCylinder287
+    3300054: pCylinder288
+    3300056: pCylinder289
+    3300058: pCylinder290
+    3300060: pCylinder291
+    3300062: pCylinder292
+    3300064: pCylinder293
+    3300066: pCylinder294
+    3300068: pCylinder5
+    3300070: pCylinder5 1
+    3300072: pCylinder5 2
+    3300074: pCylinder6
+    3300076: pCylinder6 1
+    3300078: pCylinder6 2
+    3300080: pCylinder7
+    3300082: pCylinder7 1
+    3300084: pCylinder7 2
+    3300086: pCylinder8
+    3300088: pCylinder9
+    3300090: polySurface37
+    3300092: polySurface39
+    3300094: polySurface40
+    3300096: polySurface41
+    3300098: polySurface42
+    3300100: polySurface43
+    3300102: polySurface44
+    3300104: polySurface45
+    3300106: polySurface46
+    3300108: polySurface47
+    3300110: polySurface48
+    3300112: pSolid10
+    3300114: pSolid10 1
+    3300116: pSolid10 2
+    3300118: pSolid3
+    3300120: pSolid3 1
+    3300122: pSolid3 2
+    3300124: pSolid3 3
+    3300126: pSolid3 4
+    3300128: pSolid4
+    3300130: pSolid4 1
+    3300132: Second
+    3300134: SecondBranch
+    4300000: Core
+    4300002: pSolid3
+    4300004: Oncidium9_Stem_AllFlowers_flower4_pPlane9
+    4300006: Oncidium9_pPlane3
+    4300008: pCylinder5
+    4300010: pCylinder6
+    4300012: pCylinder7
+    4300014: pSolid4
+    4300016: pSolid10
+    4300018: Oncidium7_flower4_pPlane9
+    4300020: Oncidium7_pPlane3
+    4300022: pSolid4
+    4300024: Core
+    4300026: pSolid3
+    4300028: pSolid10
+    4300030: Oncidium9_Stem_AllFlowers_flower4_pPlane9
+    4300032: Oncidium9_pPlane3
+    4300034: Oncidium8_Stem_flower4_pPlane9
+    4300036: Oncidium8_pPlane3
+    4300038: pCylinder9
+    4300040: pCylinder5
+    4300042: pCylinder8
+    4300044: pCylinder6
+    4300046: pCylinder7
+    4300048: pasted__pCylinder188
+    4300050: pCylinder259
+    4300052: pasted__pCylinder206
+    4300054: polySurface44
+    4300056: polySurface43
+    4300058: polySurface42
+    4300060: polySurface41
+    4300062: polySurface40
+    4300064: pCylinder257
+    4300066: pCylinder267
+    4300068: polySurface39
+    4300070: pCylinder286
+    4300072: pCylinder285
+    4300074: pasted__pCylinder205
+    4300076: pasted__pCylinder204
+    4300078: SecondBranch
+    4300080: pSolid10
+    4300082: Core
+    4300084: pSolid3
+    4300086: Second
+    4300088: pSolid3
+    4300090: Core
+    4300092: pSolid3
+    4300094: Oncidium7_flower4_pPlane9
+    4300096: Oncidium7_pPlane3
+    4300098: pCylinder293
+    4300100: pCylinder292
+    4300102: pCylinder291
+    4300104: pCylinder290
+    4300106: pCylinder6
+    4300108: pCylinder5
+    4300110: pCylinder288
+    4300112: pCylinder289
+    4300114: pCylinder287
+    4300116: pCylinder7
+    4300118: pCube36
+    4300120: pCube35
+    4300122: pCube34
+    4300124: pCylinder294
+    4300126: polySurface37
+    4300128: polySurface48
+    4300130: polySurface45
+    4300132: polySurface46
+    4300134: polySurface47
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
