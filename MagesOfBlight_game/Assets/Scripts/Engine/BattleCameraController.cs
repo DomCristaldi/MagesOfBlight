@@ -20,7 +20,7 @@ public class BattleCameraController : MonoBehaviour {
     public float zoomScaling = 6.0f;
     public float zoomSpeed = 1.0f;
 
-    [Space]
+    //[Space]
     public AnimationCurve cameraAngleCurve;
     public float cameraRotateSpeed = 4.0f;
     private Quaternion cameraRot;
