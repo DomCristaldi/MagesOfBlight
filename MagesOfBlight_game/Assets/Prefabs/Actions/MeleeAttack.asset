@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animInfo:
     animType: 0
-    animAttackType: 0
+    animAttackType: 1
   agent: {fileID: 0}
   normalColor: {r: 1, g: .784313738, b: .501960814, a: 1}
   highlightedColor: {r: .741176486, g: .603921592, b: .384313732, a: 1}
