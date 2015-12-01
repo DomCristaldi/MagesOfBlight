@@ -13,10 +13,11 @@ public class AgentAnimController : MonoBehaviour {
         }
 
         public enum AttackType {
-            Melee = 0,
-            RangedDirect = 1,
-            RangedAOE = 2,
-            RangedSummon = 3,
+            None = 0,
+            Melee = 1,
+            RangedDirect = 2,
+            RangedAOE = 3,
+            RangedSummon = 4,
         }
 
         public AnimType animType;
