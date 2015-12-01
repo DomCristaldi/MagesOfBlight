@@ -20,6 +20,7 @@ MonoBehaviour:
   pressedColor: {r: .521568656, g: .521568656, b: .521568656, a: 1}
   disabledColor: {r: .325490206, g: .325490206, b: .325490206, a: 1}
   actionName: Do Nothing
+  damage: 0
   blightRequired: 0
   blightGiven: 0
   checkThroughOccupied: 0

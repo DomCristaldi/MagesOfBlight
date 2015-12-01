@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using JBirdEngine;
 
 public class AILogic : BaseCombatState {
 
@@ -29,12 +30,17 @@ public class AILogic : BaseCombatState {
         //Determine target
         TileAgent aggroTarget = currentAI.aggroTarget;
         if (aggroTarget == null) {
-            aggroTarget = JBirdEngine.ListHelper.GetClosestToPosition<TileAgent>(battleManRef.playerTeam.teamMembers, currentAI.transform.position);
+            if (currentAI.lastTarget != null) {
+                aggroTarget = currentAI.lastTarget;
+            }
+            else {
+                aggroTarget = JBirdEngine.ListHelper.GetClosestToPosition<TileAgent>(battleManRef.playerTeam.teamMembers, currentAI.transform.position);
+            }
         }
         if (aggroTarget == null) {
             Debug.LogError("AILogic: Closest player could not be found!");
         }
-
+        currentAI.lastTarget = aggroTarget;
         HexNode targetTile = aggroTarget.motor.currentTile;
         HexNode currentTile = currentAI.motor.currentTile;
 
@@ -68,7 +74,7 @@ public class AILogic : BaseCombatState {
                         currentAI.moveSteps = 0;
                     }
                     else {
-                        battleManRef.targetTile = JBirdEngine.ListHelper.GetClosestToPosition<HexNode>(targetTile.connections, currentAI.transform.position);
+                        battleManRef.targetTile = ListHelper.GetClosestToPosition<HexNode>(targetTile.connections, currentAI.transform.position);
                         battleManRef.ChangeCombatState(BattleManager.CombatPhase.PerformAction);
                         return;
                     }
@@ -82,12 +88,13 @@ public class AILogic : BaseCombatState {
                         battleManRef.selectedAction = actionData.action;
                         battleManRef.targetTile = targetTile;
                         battleManRef.ChangeCombatState(BattleManager.CombatPhase.PerformAction);
+                        currentAI.lastTarget = null;
                         return;
                     }
                 }
             }
 
-            //Pick the best attack or end the turn if none are available
+            //Compile a list of possible actions
             List<BaseAction> potentialActions = new List<BaseAction>();
             foreach (AgentActions.ActionData actionData in currentAI.agentActions.proactiveActions) {
                 if (actionData == null || actionData.action == null) {
@@ -107,15 +114,86 @@ public class AILogic : BaseCombatState {
                     potentialActions.Add(actionData.action);
                 }
             }
-            if (potentialActions.Count > 0) {
-                //Select the action with the highest damage
 
+            //Select the action with the highest damage
+            float highestDamage = 0f;
+            BaseAction bestAction = battleManRef.defaultAction;
+            foreach (BaseAction action in potentialActions) {
+                if (action.damage > highestDamage) {
+                    highestDamage = action.damage;
+                    bestAction = action;
+                }
             }
-            else {
-                battleManRef.selectedAction = battleManRef.defaultAction;
-                battleManRef.targetTile = targetTile;
-            }
+            battleManRef.selectedAction = bestAction;
+            battleManRef.targetTile = targetTile;
             battleManRef.ChangeCombatState(BattleManager.CombatPhase.PerformAction);
+            currentAI.lastTarget = null;
+            return;
+        }
+
+        //RANGE
+        else if (currentProtocol == BehaviourProtocol.range) {
+
+            //Try to move 2 tiles away in a straight line from the target
+            if (currentAI.moveSteps > 0 && !currentAI.hasMoved) {
+                currentAI.hasMoved = true;
+                foreach (AgentActions.ActionData actionData in currentAI.agentActions.proactiveActions) {
+                    if (actionData.action as MoveAction != null) {
+                        battleManRef.selectedAction = actionData.action;
+                        break;
+                    }
+                }
+                if (battleManRef.selectedAction == null) {
+                    Debug.LogError("AILogic: Enemy {0} has no move action!");
+                    currentAI.moveSteps = 0;
+                }
+                else {
+                    Vector3 desiredPosition = HexGrid.SnapToHexDirection(currentAI.transform.position - aggroTarget.transform.position).normalized * HexGridAssembler.singleton.tileRadius * 4f + aggroTarget.transform.position;
+                    Debug.DrawLine(aggroTarget.transform.position + Vector3.up, desiredPosition + Vector3.up, MoreColors.BobRoss.phthaloBlue, 100f);
+                    battleManRef.targetTile = ListHelper.GetClosestToPosition<HexNode>(HexGridAssembler.singleton.tiles, desiredPosition);
+                    if (battleManRef.targetTile.entityOnTile != null) {
+                        battleManRef.targetTile = currentTile;
+                    }
+                    battleManRef.ChangeCombatState(BattleManager.CombatPhase.PerformAction);
+                    return;
+                }
+            }
+
+            //Compile a list of possible actions
+            List<BaseAction> potentialActions = new List<BaseAction>();
+            foreach (AgentActions.ActionData actionData in currentAI.agentActions.proactiveActions) {
+                if (actionData == null || actionData.action == null) {
+                    Debug.LogErrorFormat("AILogic: Enemy {0} has a null action!");
+                    continue;
+                }
+                if (actionData.action as MoveAction != null) {
+                    continue;
+                }
+                if (actionData.action as DoNothingAction != null) {
+                    continue;
+                }
+                if (actionData.action as BasicMeleeAction != null) {
+                    continue;
+                }
+                if (actionData.action.CheckTiles().Contains(targetTile)) {
+                    potentialActions.Add(actionData.action);
+                }
+            }
+
+            //Select the action with the highest damage
+            float highestDamage = 0f;
+            BaseAction bestAction = battleManRef.defaultAction;
+            foreach (BaseAction action in potentialActions) {
+                if (action.damage > highestDamage) {
+                    highestDamage = action.damage;
+                    bestAction = action;
+                }
+            }
+            battleManRef.selectedAction = bestAction;
+            battleManRef.targetTile = targetTile;
+            battleManRef.ChangeCombatState(BattleManager.CombatPhase.PerformAction);
+            currentAI.lastTarget = null;
+            return;
         }
 
     }

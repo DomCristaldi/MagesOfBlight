@@ -20,6 +20,7 @@ MonoBehaviour:
   pressedColor: {r: .521568656, g: .407843143, b: .258823544, a: 1}
   disabledColor: {r: .325490206, g: .254901975, b: .160784319, a: 1}
   actionName: Melee
+  damage: 3
   blightRequired: 0
   blightGiven: 0
   checkThroughOccupied: 0
@@ -27,4 +28,3 @@ MonoBehaviour:
   checkDistance: 1
   canCounter: 1
   canBlock: 1
-  meleeDamage: 3

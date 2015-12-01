@@ -174,7 +174,7 @@ public class BattleManager : MonoBehaviour {
         }
         battleCamTf = battleCam.GetComponent<Transform>();
 
-        GameManager.singleton.battleMan = singleton;
+        //GameManager.singleton.battleMan = singleton;
 
         ChangeCombatState(CombatPhase.EnterCombat);//TESTING
     }

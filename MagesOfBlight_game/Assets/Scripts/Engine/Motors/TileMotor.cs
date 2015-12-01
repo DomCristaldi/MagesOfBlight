@@ -194,7 +194,11 @@ public class TileMotor : MonoBehaviour {
 
         isMoving = true;
 
-        if (pathList.Count < 2) { yield break; }//path isn't long enough, break out
+        if (pathList.Count < 2) {//path isn't long enough, break out
+            doneMoving = true;
+            isMoving = false;
+            yield break; 
+        }
 
         //SetDesiredDirec(pathList[1].transform.position - pathList[0].transform.position);
         desiredPoint = pathList[1].transform.position;

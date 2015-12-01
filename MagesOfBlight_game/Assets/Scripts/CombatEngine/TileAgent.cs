@@ -111,7 +111,7 @@ public class TileAgent : TileEntity {
         hasTurn = false;
     }
 
-    public void RefreshTurn() {
+    public virtual void RefreshTurn() {
         hasTurn = true;
 		moveSteps = maxMoveSteps;
 		motor.tilesMoved = 0;
