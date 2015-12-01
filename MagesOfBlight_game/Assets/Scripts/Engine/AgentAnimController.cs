@@ -13,10 +13,11 @@ public class AgentAnimController : MonoBehaviour {
         }
 
         public enum AttackType {
-            Melee = 0,
-            RangedDirect = 1,
-            RangedAOE = 2,
-            RangedSummon = 3,
+            None = 0,
+            Melee = 1,
+            RangedDirect = 2,
+            RangedAOE = 3,
+            RangedSummon = 4,
         }
 
         public AnimType animType;
@@ -40,7 +41,7 @@ public class AgentAnimController : MonoBehaviour {
         switch (info.animType) {
             case (AnimationInfo.AnimType.Attack):
 
-                Debug.Log("set this shit");
+                //Debug.Log("set this shit");
 
                 animController.SetInteger("AttackTypeInt", (int)info.animAttackType);
                 animController.SetTrigger("AttackTrig");
