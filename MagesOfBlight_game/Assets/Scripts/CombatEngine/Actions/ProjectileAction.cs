@@ -31,6 +31,7 @@ public class ProjectileAction : LineBaseAction {
 		projectileMade = true;
 		projectile.action = this;
 		projectile.target = BattleManager.singleton.targetTile.entityOnTile.transform;
+        projectile.damage = damage;
 	}
 
 	IEnumerator WaitAfterHit () {

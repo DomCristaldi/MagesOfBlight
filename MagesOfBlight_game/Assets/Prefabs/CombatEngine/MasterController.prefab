@@ -105,6 +105,7 @@ MonoBehaviour:
   targetTile: {fileID: 0}
   selectedAgent: {fileID: 0}
   selectedAction: {fileID: 0}
+  defaultAction: {fileID: 11400000, guid: b2bb493f193b9ad4fb43e36daa8fc40a, type: 2}
 --- !u!114 &11469710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -186,6 +187,11 @@ Prefab:
       propertyPath: firstSceneName
       value: battleTest
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: defaultAction
+      value: 
+      objectReference: {fileID: 11400000, guid: b2bb493f193b9ad4fb43e36daa8fc40a,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 147074}

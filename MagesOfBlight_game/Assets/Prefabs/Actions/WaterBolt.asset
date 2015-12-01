@@ -20,6 +20,7 @@ MonoBehaviour:
   pressedColor: {r: 0, g: .227450997, b: .764705956, a: 1}
   disabledColor: {r: .588235319, g: .588235319, b: .588235319, a: 1}
   actionName: Water Bolt
+  damage: 4
   blightRequired: .00999999978
   blightGiven: 10
   checkThroughOccupied: 0

@@ -5,7 +5,7 @@ public class BaseProjectile : MonoBehaviour {
 
 	public Transform target;
 	public float speed;
-	public float damage;
+    public float damage;
 	public ProjectileAction action;
 
 	public bool CheckProximity () {

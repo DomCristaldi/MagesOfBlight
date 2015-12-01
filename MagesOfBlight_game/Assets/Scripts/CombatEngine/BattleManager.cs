@@ -148,6 +148,8 @@ public class BattleManager : MonoBehaviour {
     public TileAgent selectedAgent;
 	public BaseAction selectedAction;
 
+    public DoNothingAction defaultAction;
+
     //public bool reactionWindowOpen;
 
     //public List<TileAgent> agentList;
