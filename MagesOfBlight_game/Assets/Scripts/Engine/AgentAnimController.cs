@@ -41,7 +41,7 @@ public class AgentAnimController : MonoBehaviour {
         switch (info.animType) {
             case (AnimationInfo.AnimType.Attack):
 
-                Debug.Log("set this shit");
+                //Debug.Log("set this shit");
 
                 animController.SetInteger("AttackTypeInt", (int)info.animAttackType);
                 animController.SetTrigger("AttackTrig");
