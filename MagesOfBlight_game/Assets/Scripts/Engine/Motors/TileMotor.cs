@@ -48,7 +48,7 @@ public class TileMotor : MonoBehaviour {
     public HexNode currentTile;
     public List<HexNode> suppliedPath;
 	public int tilesMoved;
-
+    public int availableMoveSteps;
 
     [HideInInspector]
     public bool doneMoving;
@@ -200,11 +200,15 @@ public class TileMotor : MonoBehaviour {
         desiredPoint = pathList[1].transform.position;
 
         int i = 0;
-        while (i < pathList.Count - 1) {
+        while (i < pathList.Count - 1 && availableMoveSteps > 0) {
             //move along path, update what tile Agent is heading to when arrived at current target tile
             if (MoveToLocation(pathList[i], pathList[i + 1])) {
                 ++i;
-                if (i < pathList.Count - 1) {
+                --availableMoveSteps;
+                if (availableMoveSteps == 0) {
+                    desiredPoint = transform.position;
+                }
+                else if (i < pathList.Count - 1) {
                     desiredPoint = pathList[i + 1].transform.position;
                     //SetDesiredDirec(pathList[i + 1].transform.position - pathList[i].transform.position);
                 }

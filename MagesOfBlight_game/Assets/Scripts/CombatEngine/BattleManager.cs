@@ -104,6 +104,8 @@ public class BattleManager : MonoBehaviour {
         Proactive,
         Reactive,
         CheckTeam,
+        AISelection,
+        AILogic,
     }
 
 
@@ -342,6 +344,15 @@ public class BattleManager : MonoBehaviour {
                 break;
             case CombatPhase.CheckTeam://CHECK TEAM (switch which team is going based on if all team members have gone)
                 currentBattleState = new CheckTeamState(state);
+                break;
+            case CombatPhase.AISelection://SELECT AI AGENT
+                currentBattleState = new AISelection(state);
+                break;
+            case CombatPhase.AILogic://PERFORM AI LOGIC
+                currentBattleState = new AILogic(state);
+                break;
+            default:
+                Debug.LogError("BattleManager: Undefined state transition!");
                 break;
         }
 

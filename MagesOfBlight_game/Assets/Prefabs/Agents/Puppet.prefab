@@ -86,7 +86,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 406218}
-  - 114: {fileID: 11417384}
+  - 114: {fileID: 11438056}
   - 114: {fileID: 11474130}
   - 114: {fileID: 11421210}
   - 114: {fileID: 11470562}
@@ -754,25 +754,6 @@ MonoBehaviour:
   maxBlight: 100
   currentBlight: 100
   blightRecovery: 0
---- !u!114 &11417384
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 115730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01339d98af7d25e44a4642210e6040f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  model: {fileID: 103834}
-  agentCanvas: {fileID: 0}
-  agentActions: {fileID: 0}
-  moveSteps: 2
-  maxMoveSteps: 2
-  hasTurn: 1
-  team: 1
-  defaultModelLookDirec: {x: -0, y: -0, z: -1}
 --- !u!114 &11421210
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -811,6 +792,26 @@ MonoBehaviour:
   modelTf: {fileID: 459704}
   desiredDirec: {x: 0, y: 0, z: 0}
   redirectSpeed: .0799999982
+--- !u!114 &11438056
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180b5dcc8f7d2ab4e8cdeefa4c4260cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  model: {fileID: 100034, guid: 6525a4abea38b974798322fa936fd99c, type: 3}
+  agentCanvas: {fileID: 0}
+  agentActions: {fileID: 0}
+  moveSteps: 2
+  maxMoveSteps: 2
+  hasTurn: 1
+  team: 1
+  defaultModelLookDirec: {x: -0, y: -0, z: -1}
+  aggroTarget: {fileID: 0}
 --- !u!114 &11458532
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -855,6 +856,7 @@ MonoBehaviour:
   currentTile: {fileID: 0}
   suppliedPath: []
   tilesMoved: 0
+  availableMoveSteps: 0
   doneMoving: 0
   isMoving: 0
   walkAnimMaxVal: 1
@@ -889,6 +891,10 @@ MonoBehaviour:
     usable: 0
     button: {fileID: 0}
   - action: {fileID: 11400000, guid: 55982705f4677714a90bf58620a2246f, type: 2}
+    known: 1
+    usable: 1
+    button: {fileID: 0}
+  - action: {fileID: 11400000, guid: b2bb493f193b9ad4fb43e36daa8fc40a, type: 2}
     known: 1
     usable: 1
     button: {fileID: 0}
@@ -958,7 +964,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: proactiveActions.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: speedRamp.m_Curve.Array.size
@@ -983,7 +989,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: model
       value: 
-      objectReference: {fileID: 103834}
+      objectReference: {fileID: 100034, guid: 6525a4abea38b974798322fa936fd99c, type: 3}
     - target: {fileID: 0}
       propertyPath: modelTf
       value: 
@@ -1029,6 +1035,15 @@ Prefab:
       propertyPath: moveSteps
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: team
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: proactiveActions.Array.data[3].action
+      value: 
+      objectReference: {fileID: 11400000, guid: b2bb493f193b9ad4fb43e36daa8fc40a,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 115730}

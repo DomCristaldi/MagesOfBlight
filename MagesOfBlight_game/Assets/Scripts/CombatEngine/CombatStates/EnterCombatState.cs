@@ -24,7 +24,8 @@ public class EnterCombatState : BaseCombatState {
 
             //place the agent on the node
             agent.transform.position = foundNode.transform.position;
-            foundNode.GetComponent<HexNode>().entityOnTile = agent;
+            foundNode.entityOnTile = agent;
+            agent.motor.currentTile = foundNode;
 
             //initialize the agent's motor
             agent.motor.desiredPoint = agent.transform.position;

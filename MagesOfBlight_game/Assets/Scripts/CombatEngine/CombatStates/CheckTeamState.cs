@@ -32,9 +32,15 @@ public class CheckTeamState : BaseCombatState {
             }
         }
 
-        //***TODO: add in switching to AI where necessary***
-
-        battleManRef.ChangeCombatState(BattleManager.CombatPhase.TileSelection);
+        if (battleManRef.curCombatTeam == BattleManager.CombatTeam.Enemy) {
+            battleManRef.ChangeCombatState(BattleManager.CombatPhase.AISelection);
+        }
+        else if (battleManRef.curCombatTeam == BattleManager.CombatTeam.Player) {
+            battleManRef.ChangeCombatState(BattleManager.CombatPhase.TileSelection);
+        }
+        else {
+            Debug.LogError("CheckTeamState: Unknown team selected!");
+        }
         
         
     }

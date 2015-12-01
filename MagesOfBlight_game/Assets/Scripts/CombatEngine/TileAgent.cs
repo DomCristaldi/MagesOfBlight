@@ -64,7 +64,7 @@ public class TileAgent : TileEntity {
         else if (model == null && _modelRotControl.modelTf != null) {//get model from rotation controller
             model = _modelRotControl.gameObject;
         }
-
+        RefreshTurn();
         base.Awake();
 
     }
@@ -115,6 +115,7 @@ public class TileAgent : TileEntity {
         hasTurn = true;
 		moveSteps = maxMoveSteps;
 		motor.tilesMoved = 0;
+        motor.availableMoveSteps = maxMoveSteps;
     }
 
     protected void LookProtocol() {

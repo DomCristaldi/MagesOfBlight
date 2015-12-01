@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e05d7fe949b444aaeccad366a1b4d9, type: 3}
+  m_Name: DoNothing
+  m_EditorClassIdentifier: 
+  animInfo:
+    animType: 0
+    animAttackType: 0
+  agent: {fileID: 0}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  highlightedColor: {r: .741176486, g: .768627524, b: .768627524, a: 1}
+  pressedColor: {r: .521568656, g: .521568656, b: .521568656, a: 1}
+  disabledColor: {r: .325490206, g: .325490206, b: .325490206, a: 1}
+  actionName: Do Nothing
+  blightRequired: 0
+  blightGiven: 0
+  checkThroughOccupied: 0
+  tileCheckFlags: 0
+  checkDistance: 2147483647
+  canCounter: 0
+  canBlock: 0
