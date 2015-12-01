@@ -20,6 +20,7 @@ MonoBehaviour:
   pressedColor: {r: .447058856, g: .321568638, b: 0, a: 1}
   disabledColor: {r: .588235319, g: .588235319, b: .588235319, a: 1}
   actionName: Rock Blast
+  damage: 7
   blightRequired: .00999999978
   blightGiven: 10
   checkThroughOccupied: 0
