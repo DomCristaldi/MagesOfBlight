@@ -780,7 +780,7 @@ MonoBehaviour:
   currentHealth: 100
   maxBlight: 100
   currentBlight: 50
-  blightRecovery: 3
+  blightRecovery: 0
 --- !u!114 &11434162
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1070,7 +1070,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: blightRecovery
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: proactiveActions.Array.data[0].known

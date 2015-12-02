@@ -349,10 +349,10 @@ public class BattleManager : MonoBehaviour {
                 currentBattleState = new CheckTeamState(state);
                 break;
             case CombatPhase.AISelection://SELECT AI AGENT
-                currentBattleState = new AISelection(state);
+                currentBattleState = new AISelectionState(state);
                 break;
             case CombatPhase.AILogic://PERFORM AI LOGIC
-                currentBattleState = new AILogic(state);
+                currentBattleState = new AILogicState(state);
                 break;
             case CombatPhase.Dialogue://HANDLE DIALOGUE UI
                 currentBattleState = new DialogueState(state, nextState);
