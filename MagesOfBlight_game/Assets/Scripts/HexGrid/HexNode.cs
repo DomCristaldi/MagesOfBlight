@@ -125,6 +125,11 @@ public class HexNode : MonoBehaviour, INode<HexNode> {
 		other.connections[HexGrid.ReverseConnectionIndex(direction)] = this;
 	}
 
+    public void RemoveConnection (HexNode other, HexGrid.ConnectionIndex direction) {
+        connections[(int)direction] = null;
+        other.connections[HexGrid.ReverseConnectionIndex(direction)] = null;
+    }
+
     public void SetNormalMat() {
         hexRing.material = tileNormalMat;
     }
@@ -141,7 +146,18 @@ public class HexNode : MonoBehaviour, INode<HexNode> {
         hexRing.material = tileSelectableMat;
     }
 
+    void DisconnectAll () {
+        for (int i = 0; i < 6; i++) {
+            if (connections[i] == null) {
+                continue;
+            }
+            RemoveConnection(connections[i], (HexGrid.ConnectionIndex)i);
+        }
+    }
 
+    void OnDisable () {
+        DisconnectAll();
+    }
 
 
 }
