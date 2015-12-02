@@ -47,6 +47,7 @@ public class PerformActionState : BaseCombatState {
         if (readyToPerformAction) {
             if (battleManRef.selectedAction.DoAction()) {//returns true when finished
                 battleManRef.ChangeCombatState(BattleManager.CombatPhase.CheckTeam);
+
             }
         }
 
