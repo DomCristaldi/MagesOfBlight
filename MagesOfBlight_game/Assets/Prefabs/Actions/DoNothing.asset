@@ -22,7 +22,7 @@ MonoBehaviour:
   actionName: Do Nothing
   damage: 0
   blightRequired: 0
-  blightGiven: 0
+  blightGiven: -5
   checkThroughOccupied: 0
   tileCheckFlags: 0
   checkDistance: 2147483647

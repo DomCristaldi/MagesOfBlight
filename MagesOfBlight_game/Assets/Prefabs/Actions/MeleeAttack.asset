@@ -22,7 +22,7 @@ MonoBehaviour:
   actionName: Melee
   damage: 3
   blightRequired: 0
-  blightGiven: 0
+  blightGiven: -5
   checkThroughOccupied: 0
   tileCheckFlags: 4
   checkDistance: 1

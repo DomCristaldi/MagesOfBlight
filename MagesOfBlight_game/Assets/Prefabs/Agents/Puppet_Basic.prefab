@@ -94,7 +94,7 @@ GameObject:
   - 114: {fileID: 11425738}
   - 114: {fileID: 11407712}
   m_Layer: 0
-  m_Name: Puppet
+  m_Name: Puppet_Basic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -812,7 +812,8 @@ MonoBehaviour:
   team: 1
   defaultModelLookDirec: {x: -0, y: -0, z: -1}
   aggroTarget: {fileID: 0}
-  behaviourProtocol: 2
+  lastTarget: {fileID: 0}
+  behaviourProtocol: 0
   hasMoved: 0
 --- !u!114 &11458532
 MonoBehaviour:
@@ -1048,7 +1049,7 @@ Prefab:
         type: 2}
     - target: {fileID: 0}
       propertyPath: behaviourProtocol
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
