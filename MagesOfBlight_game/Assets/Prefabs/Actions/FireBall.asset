@@ -29,5 +29,6 @@ MonoBehaviour:
   canCounter: 1
   canBlock: 1
   projectilePrefab: {fileID: 11412994, guid: 4f2766e8d07a65e43b350edc664a4af3, type: 2}
-  waitTimeAfterHit: 1
+  waitTimeBeforeCast: 1
+  waitTimeAfterHit: .5
   projectile: {fileID: 0}

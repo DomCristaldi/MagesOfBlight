@@ -15,4 +15,8 @@ public class AITileAgent : TileAgent {
         hasMoved = false;
     }
 
+    public void SetAggro (TileAgent newTarget) {
+        aggroTarget = newTarget;
+    }
+
 }
