@@ -34,8 +34,8 @@ public class ButtonActionInfo : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
 	void OpenTooltip(){
 		name = actionData.action.actionName;
-		blightCost = "" + actionData.action.blightGiven;
-		damage = "10";
+		blightCost = "Cost: " + actionData.action.blightGiven;
+		damage = "Dam: " + actionData.action.damage;
 
 		tooltip.transform.GetChild (0).GetComponent<Text> ().text = name;
 		tooltip.transform.GetChild (1).GetComponent<Text> ().text = blightCost;

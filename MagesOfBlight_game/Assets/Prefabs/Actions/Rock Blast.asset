@@ -13,13 +13,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animInfo:
     animType: 0
-    animAttackType: 1
+    animAttackType: 2
   agent: {fileID: 0}
   normalColor: {r: .647058845, g: .468559861, b: 0, a: 1}
   highlightedColor: {r: .448529422, g: .323484868, b: 0, a: 1}
   pressedColor: {r: .447058856, g: .321568638, b: 0, a: 1}
   disabledColor: {r: .588235319, g: .588235319, b: .588235319, a: 1}
   actionName: Rock Blast
+  damage: 7
   blightRequired: .00999999978
   blightGiven: 10
   checkThroughOccupied: 0
@@ -28,5 +29,6 @@ MonoBehaviour:
   canCounter: 1
   canBlock: 1
   projectilePrefab: {fileID: 11419542, guid: bc1def37220160344a5dec1b165018a3, type: 2}
-  waitTimeAfterHit: 1
+  waitTimeBeforeCast: 1
+  waitTimeAfterHit: .5
   projectile: {fileID: 0}

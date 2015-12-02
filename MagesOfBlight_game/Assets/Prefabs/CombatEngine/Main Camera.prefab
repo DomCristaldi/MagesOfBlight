@@ -27,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 195472}
   m_LocalRotation: {x: .382683456, y: 0, z: 0, w: .923879504}
-  m_LocalPosition: {x: 0, y: 5.38000011, z: -7.80000019}
+  m_LocalPosition: {x: .439999998, y: 5.38000011, z: -7.80000019}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -48,7 +48,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: -5
+  near clip plane: -20
   far clip plane: 50
   field of view: 60
   orthographic: 1
@@ -91,6 +91,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bea0478e5ca124468b960fcc0785dba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clampReferencePoint: {fileID: 0}
+  clampDistX: 29.5
+  clampDistY: 13.4200001
+  clampDistZ: 22.8999996
   zoomAmount: 6.39999962
   closestZoom: 1
   farthestZoom: 10
@@ -102,11 +106,11 @@ MonoBehaviour:
     - time: 0
       value: 1
       inSlope: -5.5789814
-      outSlope: -5.5789814
-      tangentMode: 10
-    - time: .0896220952
+      outSlope: Infinity
+      tangentMode: 1
+    - time: .0799999982
       value: .5
-      inSlope: -.066084668
+      inSlope: -.0481107682
       outSlope: -0
       tangentMode: 17
     - time: .464088082
@@ -128,6 +132,11 @@ MonoBehaviour:
     m_PostInfinity: 2
   cameraRotateSpeed: 10
   cameraAngleDown: 45
+  cameraPositionCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!124 &12434906
 Behaviour:
   m_ObjectHideFlags: 1

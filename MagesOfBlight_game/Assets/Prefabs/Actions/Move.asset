@@ -13,13 +13,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animInfo:
     animType: 3
-    animAttackType: 1
+    animAttackType: 0
   agent: {fileID: 0}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   highlightedColor: {r: .742647052, g: .769950271, b: .769950271, a: 1}
   pressedColor: {r: .522058845, g: .522058845, b: .522058845, a: 1}
   disabledColor: {r: .323529422, g: .323529422, b: .323529422, a: 1}
   actionName: Move
+  damage: 0
   blightRequired: 0
   blightGiven: 0
   checkThroughOccupied: 0

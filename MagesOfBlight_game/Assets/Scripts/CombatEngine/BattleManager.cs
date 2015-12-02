@@ -88,22 +88,25 @@ public class BattleManager : MonoBehaviour {
     }
 
     public enum CombatTeam {
-        Player,
-        Enemy,
+        Player = 0,
+        Enemy = 1,
     }
 
     public enum CombatPhase {
-        None,
-        EnterCombat,
-        ExitCombat,
-        TileSelection,
-        ActionSelection,
-        TargetSelection,
-        ConfirmAction,
-        PerformAction,
-        Proactive,
-        Reactive,
-        CheckTeam,
+        None = 0,
+        EnterCombat = 1,
+        ExitCombat = 2,
+        TileSelection = 3,
+        ActionSelection = 4,
+        TargetSelection = 5,
+        ConfirmAction = 6,
+        PerformAction = 7,
+        Proactive = 8,
+        Reactive = 9,
+        CheckTeam = 10,
+        AISelection = 11,
+        AILogic = 12,
+        Dialogue = 13,
     }
 
 
@@ -146,6 +149,8 @@ public class BattleManager : MonoBehaviour {
     public TileAgent selectedAgent;
 	public BaseAction selectedAction;
 
+    public DoNothingAction defaultAction;
+
     //public bool reactionWindowOpen;
 
     //public List<TileAgent> agentList;
@@ -170,7 +175,7 @@ public class BattleManager : MonoBehaviour {
         }
         battleCamTf = battleCam.GetComponent<Transform>();
 
-        GameManager.singleton.battleMan = singleton;
+        //GameManager.singleton.battleMan = singleton;
 
         ChangeCombatState(CombatPhase.EnterCombat);//TESTING
     }
@@ -313,7 +318,7 @@ public class BattleManager : MonoBehaviour {
     */
 
     //END CURRENT STATE, DETERMINE NEXT STATE, AND INITIALIZE IT AFTER CHOSEN
-    public void ChangeCombatState(CombatPhase state) {
+    public void ChangeCombatState(CombatPhase state, CombatPhase nextState = CombatPhase.None) {
         if (currentBattleState != null) {
             currentBattleState.EndState();
         }
@@ -342,6 +347,19 @@ public class BattleManager : MonoBehaviour {
                 break;
             case CombatPhase.CheckTeam://CHECK TEAM (switch which team is going based on if all team members have gone)
                 currentBattleState = new CheckTeamState(state);
+                break;
+            case CombatPhase.AISelection://SELECT AI AGENT
+                currentBattleState = new AISelectionState(state);
+                break;
+            case CombatPhase.AILogic://PERFORM AI LOGIC
+                currentBattleState = new AILogicState(state);
+                break;
+            case CombatPhase.Dialogue://HANDLE DIALOGUE UI
+                currentBattleState = new DialogueState(state, nextState);
+                break;
+
+            default:
+                Debug.LogError("BattleManager: Undefined state transition!");
                 break;
         }
 

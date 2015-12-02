@@ -48,7 +48,12 @@ public class ActionSelectionState : BaseCombatState {
 			battleManRef.selectedAction = null;
 		}
         if (battleManRef.selectedAction != null) {
-            battleManRef.ChangeCombatState(BattleManager.CombatPhase.TargetSelection);
+            if (battleManRef.selectedAction as DoNothingAction != null) {
+                battleManRef.ChangeCombatState(BattleManager.CombatPhase.PerformAction);
+            }
+            else {
+                battleManRef.ChangeCombatState(BattleManager.CombatPhase.TargetSelection);
+            }
         }
 
     }

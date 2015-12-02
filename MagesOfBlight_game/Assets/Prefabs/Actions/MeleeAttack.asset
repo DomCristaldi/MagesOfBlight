@@ -13,18 +13,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animInfo:
     animType: 0
-    animAttackType: 0
+    animAttackType: 1
   agent: {fileID: 0}
   normalColor: {r: 1, g: .784313738, b: .501960814, a: 1}
   highlightedColor: {r: .741176486, g: .603921592, b: .384313732, a: 1}
   pressedColor: {r: .521568656, g: .407843143, b: .258823544, a: 1}
   disabledColor: {r: .325490206, g: .254901975, b: .160784319, a: 1}
   actionName: Melee
+  damage: 3
   blightRequired: 0
-  blightGiven: 0
+  blightGiven: -5
   checkThroughOccupied: 0
   tileCheckFlags: 4
   checkDistance: 1
   canCounter: 1
   canBlock: 1
-  meleeDamage: 3

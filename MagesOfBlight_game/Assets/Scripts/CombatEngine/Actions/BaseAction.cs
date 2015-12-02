@@ -17,6 +17,7 @@ public class BaseAction : ScriptableObject {
 	public Color disabledColor;
 	public string actionName;
 
+    public float damage;
 	public float blightRequired;
 	public float blightGiven;
 

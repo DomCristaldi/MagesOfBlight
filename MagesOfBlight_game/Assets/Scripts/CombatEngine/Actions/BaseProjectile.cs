@@ -5,7 +5,7 @@ public class BaseProjectile : MonoBehaviour {
 
 	public Transform target;
 	public float speed;
-	public float damage;
+    public float damage;
 	public ProjectileAction action;
 
 	public bool CheckProximity () {
@@ -21,10 +21,13 @@ public class BaseProjectile : MonoBehaviour {
 	}
 
 	public virtual void DealDamage () {
-		BaseStats targetStats = target.GetComponent<BaseStats>();
-		if (targetStats != null) {
-			targetStats.TakeDamage(damage);
+		TileAgent targetAgent = target.GetComponent<TileAgent>();
+		if (targetAgent != null && targetAgent.stats != null) {
+			targetAgent.stats.TakeDamage(damage);
 		}
+        if (targetAgent as AITileAgent != null) {
+            (targetAgent as AITileAgent).SetAggro(BattleManager.singleton.selectedAgent);
+        }
 	}
 
 	public virtual void DestroySelf () {

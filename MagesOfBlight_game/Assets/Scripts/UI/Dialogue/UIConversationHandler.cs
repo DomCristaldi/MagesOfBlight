@@ -18,13 +18,13 @@ public class UIConversationHandler : MonoBehaviour {
 	int dialogueIndexNumber;
 	int conversationIndexNumber;
 
-	public bool startConversation;
+	public bool conversationActive;
 
 	//list of dialogue obj from the conversation
 	List<DialogueObject> dialogueList = new List<DialogueObject>();
 
 	void Awake(){
-		DontDestroyOnLoad (gameObject);
+		//DontDestroyOnLoad (gameObject);
 	}
 
 	// Use this for initialization
@@ -33,17 +33,21 @@ public class UIConversationHandler : MonoBehaviour {
 		conversationIndexNumber = 0;
 		dialogueIndexNumber = 0;
 		dialogueList = convo[0].dialogue;
-		startConversation = false;
+		conversationActive = false;
 		showConversation(dialogueIndexNumber);
 		dialogueIndexNumber++;
-		dialogueCanvas.enabled = false;
-	}
-	
+
+		//dialogueCanvas.enabled = false;
+        SetCanvasState(false);
+    }
+
 	// Update is called once per frame
 	void Update () {
-		if (startConversation) {
-			dialogueCanvas.enabled = true;
-			runConversation ();
+		if (conversationActive) {
+			//dialogueCanvas.enabled = true;
+            //SetCanvasState(true);
+
+            runConversation ();
 		}
 	}
 
@@ -51,10 +55,13 @@ public class UIConversationHandler : MonoBehaviour {
 	public void runConversation(){
 		//if enter is pressed and the conversation is done, turn off dialogue box and interate conversation number
 		if (Input.GetKeyDown (KeyCode.Return) && dialogueIndexNumber == dialogueList.Count) {
-			dialogueCanvas.enabled = false;
-			dialogueIndexNumber = 0;
+			
+            //dialogueCanvas.enabled = false;
+            SetCanvasState(false);
+
+            dialogueIndexNumber = 0;
 			conversationIndexNumber++;
-			if(conversationIndexNumber < convo.Count) {dialogueList = convo[conversationIndexNumber].dialogue;startConversation = false;}
+			if(conversationIndexNumber < convo.Count) {dialogueList = convo[conversationIndexNumber].dialogue;conversationActive = false;}
 			else Destroy(gameObject);
 		}
 		//if enter is pressed, move to next convo as long as the dialogue is not over yet
@@ -69,5 +76,15 @@ public class UIConversationHandler : MonoBehaviour {
 		textDialogue.text = dialogueList [indexInList].line;
 		characterImage.sprite = dialogueList [indexInList].sprite;
 	}
+
+    private void SetCanvasState(bool setting) {
+        //dialogueCanvas.enabled = setting;
+        gameObject.SetActive(setting);
+    }
+
+    public void ActivateDialogue() {
+        SetCanvasState(true);
+        conversationActive = true;
+    }
 
 }
