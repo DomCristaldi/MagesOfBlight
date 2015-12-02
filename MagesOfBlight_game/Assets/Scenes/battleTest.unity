@@ -85,6 +85,10 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &14581005 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 411570, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
+  m_PrefabInternal: {fileID: 981046276}
 --- !u!1001 &201726552
 Prefab:
   m_ObjectHideFlags: 0
@@ -611,37 +615,9 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11434364, guid: d5840b95b7fc0c641867a5e9e0859870, type: 2}
-      propertyPath: cameraAngleCurve.m_Curve.Array.data[0].tangentMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11434364, guid: d5840b95b7fc0c641867a5e9e0859870, type: 2}
-      propertyPath: cameraAngleCurve.m_Curve.Array.data[5].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11434364, guid: d5840b95b7fc0c641867a5e9e0859870, type: 2}
-      propertyPath: cameraAngleCurve.m_Curve.Array.data[5].value
-      value: .25
-      objectReference: {fileID: 0}
-    - target: {fileID: 11434364, guid: d5840b95b7fc0c641867a5e9e0859870, type: 2}
-      propertyPath: cameraAngleCurve.m_Curve.Array.data[5].outSlope
-      value: -.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 11434364, guid: d5840b95b7fc0c641867a5e9e0859870, type: 2}
-      propertyPath: cameraAngleCurve.m_Curve.Array.data[5].tangentMode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 11434364, guid: d5840b95b7fc0c641867a5e9e0859870, type: 2}
-      propertyPath: cameraAngleCurve.m_Curve.Array.data[0].outSlope
-      value: Infinity
-      objectReference: {fileID: 0}
-    - target: {fileID: 11434364, guid: d5840b95b7fc0c641867a5e9e0859870, type: 2}
-      propertyPath: cameraAngleCurve.m_Curve.Array.data[1].time
-      value: .0799999982
-      objectReference: {fileID: 0}
-    - target: {fileID: 11434364, guid: d5840b95b7fc0c641867a5e9e0859870, type: 2}
-      propertyPath: cameraAngleCurve.m_Curve.Array.data[1].inSlope
-      value: -.0481107682
-      objectReference: {fileID: 0}
+      propertyPath: clampReferencePoint
+      value: 
+      objectReference: {fileID: 14581005}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5840b95b7fc0c641867a5e9e0859870, type: 2}
   m_IsPrefabParent: 0

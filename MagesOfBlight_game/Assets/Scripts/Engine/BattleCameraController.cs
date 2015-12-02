@@ -6,6 +6,12 @@ public class BattleCameraController : MonoBehaviour {
 
     BattleCameraController singleton = null;
 
+    //public BoxCollider cameraArea;
+    public Transform clampReferencePoint;
+    public float clampDistX,
+                 clampDistY,
+                 clampDistZ;
+
     Camera cam;
 
     Vector3 dragMarkerPos;
@@ -31,6 +37,8 @@ public class BattleCameraController : MonoBehaviour {
         set { }
     }
     */
+
+    public AnimationCurve cameraPositionCurve;
 
 
     public Vector3 mousePosOnScreen {
@@ -69,8 +77,10 @@ public class BattleCameraController : MonoBehaviour {
         HandleMovement();
         HandleZoom();
 
-        AssignCameraAngle();
-        AdjustCamera();
+        AdjustCameraPosition();
+
+        //AssignCameraAngle();
+        //AdjustCamera();
 
         Debug.DrawRay(dragMarkerPos, Vector3.up, Color.green);
 	}
@@ -113,7 +123,12 @@ public class BattleCameraController : MonoBehaviour {
             prevMousePos = GetMousePosOnGrid();
         }
 
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, clampReferencePoint.position.x - clampDistX, clampReferencePoint.position.x + clampDistX),
 
+                               Mathf.Clamp(transform.position.y, clampReferencePoint.position.y - clampDistY, clampReferencePoint.position.y + clampDistY),
+
+                               Mathf.Clamp(transform.position.z, clampReferencePoint.position.z - clampDistZ, clampReferencePoint.position.z + clampDistZ)
+                              );
     }
 
     private void HandleZoom() {
@@ -169,6 +184,11 @@ public class BattleCameraController : MonoBehaviour {
         cam.transform.rotation = Quaternion.Slerp(cam.transform.rotation,
                                                   cameraRot,
                                                   cameraRotateSpeed * Time.deltaTime);
+
+    }
+
+
+    private void AdjustCameraPosition() {
 
     }
 
