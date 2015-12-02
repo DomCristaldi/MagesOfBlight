@@ -24,7 +24,7 @@ public class UIConversationHandler : MonoBehaviour {
 	List<DialogueObject> dialogueList = new List<DialogueObject>();
 
 	void Awake(){
-		DontDestroyOnLoad (gameObject);
+		//DontDestroyOnLoad (gameObject);
 	}
 
 	// Use this for initialization

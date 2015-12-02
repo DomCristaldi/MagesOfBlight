@@ -32,8 +32,9 @@ public class EnterCombatState : BaseCombatState {
         }
 
 
-        battleManRef.ChangeCombatState(BattleManager.CombatPhase.TileSelection);
-
+        //battleManRef.ChangeCombatState(BattleManager.CombatPhase.TileSelection);
+        battleManRef.ChangeCombatState(BattleManager.CombatPhase.Dialogue,
+                                       BattleManager.CombatPhase.TileSelection);
 
     }
 
