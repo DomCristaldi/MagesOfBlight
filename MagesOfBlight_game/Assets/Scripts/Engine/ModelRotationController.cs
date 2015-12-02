@@ -38,6 +38,9 @@ public class ModelRotationController : MonoBehaviour {
 	    UpdateTrueDirec();
 
         AssignRotationToModel();
+
+        Debug.DrawRay(transform.position, desiredDirec * 5.0f, Color.red);
+        //Debug.DrawRay(transform.position, _trueDirec * 5.0f, Color.blue);
 	}
 
     private void UpdateTrueDirec() {

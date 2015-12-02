@@ -16,7 +16,7 @@ public class Confirmation : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(BattleManager.singleton.targetTile != null){
+		if(BattleManager.singleton.curCombatPhase == BattleManager.CombatPhase.TargetSelection && BattleManager.singleton.targetTile != null) {
 			transform.localPosition = BattleManager.singleton.targetTile.transform.localPosition;
 			confirmButton.SetActive (true);
 		}

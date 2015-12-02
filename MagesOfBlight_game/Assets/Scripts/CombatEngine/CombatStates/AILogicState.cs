@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using JBirdEngine;
 
-public class AILogic : BaseCombatState {
+public class AILogicState : BaseCombatState {
 
     public enum BehaviourProtocol {
         basic,//rush above 50% health, range below 50% health
@@ -12,7 +12,7 @@ public class AILogic : BaseCombatState {
         puppeteer,//behaviour used by the hivemind
     }
 
-    public AILogic(BattleManager.CombatPhase thisCombatPhase, bool canUndo = false, bool canHoverGrid = false) : base(thisCombatPhase, canUndo, canHoverGrid) { }
+    public AILogicState(BattleManager.CombatPhase thisCombatPhase, bool canUndo = false, bool canHoverGrid = false) : base(thisCombatPhase, canUndo, canHoverGrid) { }
 
     public override void InitState () {
         base.InitState();

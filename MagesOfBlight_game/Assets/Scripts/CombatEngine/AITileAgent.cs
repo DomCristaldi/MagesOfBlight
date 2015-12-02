@@ -6,7 +6,7 @@ public class AITileAgent : TileAgent {
     public TileAgent aggroTarget;
     public TileAgent lastTarget;
 
-    public AILogic.BehaviourProtocol behaviourProtocol;
+    public AILogicState.BehaviourProtocol behaviourProtocol;
 
     public bool hasMoved = false;
 
