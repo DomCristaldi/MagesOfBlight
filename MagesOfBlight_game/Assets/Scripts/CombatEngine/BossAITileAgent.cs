@@ -17,6 +17,9 @@ public class BossAITileAgent : AITileAgent {
     }
 
     void SetWalkable () {
+        if (motor.currentTile == null) {
+            return;
+        }
         foreach (HexNode node in motor.currentTile.connections) {
             node.entityOnTile = null;
         }
@@ -24,6 +27,9 @@ public class BossAITileAgent : AITileAgent {
     }
 
     void SetObstructed () {
+        if (motor.currentTile == null) {
+            return;
+        }
         foreach (HexNode node in motor.currentTile.connections) {
             node.entityOnTile = this;
         }
