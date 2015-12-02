@@ -41,7 +41,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_LightmapsMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -66,7 +66,8 @@ LightmapSettings:
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
     m_ReflectionCompression: 2
-  m_LightmapSnapshot: {fileID: 0}
+  m_LightmapSnapshot: {fileID: 112000001, guid: 8ea024d0981cbfe40a431fb8ed6c9efe,
+    type: 2}
   m_RuntimeCPUUsage: 25
 --- !u!196 &4
 NavMeshSettings:
@@ -153,6 +154,48 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 981046276}
   m_Script: {fileID: 11500000, guid: 8c62c0642d8bb0e4592c1fd4c87800d4, type: 3}
+--- !u!1001 &715738742
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 413842, guid: bc5b55184044d9b47bd3368fb346f558, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -4.20652771
+      objectReference: {fileID: 0}
+    - target: {fileID: 413842, guid: bc5b55184044d9b47bd3368fb346f558, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 13.971036
+      objectReference: {fileID: 0}
+    - target: {fileID: 413842, guid: bc5b55184044d9b47bd3368fb346f558, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -17.6421089
+      objectReference: {fileID: 0}
+    - target: {fileID: 413842, guid: bc5b55184044d9b47bd3368fb346f558, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 413842, guid: bc5b55184044d9b47bd3368fb346f558, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 413842, guid: bc5b55184044d9b47bd3368fb346f558, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 413842, guid: bc5b55184044d9b47bd3368fb346f558, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 413842, guid: bc5b55184044d9b47bd3368fb346f558, type: 2}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: bc5b55184044d9b47bd3368fb346f558, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &725534530
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,14 +323,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 11464438, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
-      propertyPath: enemyTeam.teamMembers.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 11464438, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
-      propertyPath: playerTeam.teamMembers.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 411570, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -318,7 +353,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 411570, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 147074, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
+      propertyPath: m_Name
+      value: BattleController
       objectReference: {fileID: 0}
     - target: {fileID: 11464438, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
       propertyPath: battleCam
@@ -328,22 +367,6 @@ Prefab:
       propertyPath: battleCamTf
       value: 
       objectReference: {fileID: 404975250}
-    - target: {fileID: 11464438, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
-      propertyPath: enemyTeam.teamMembers.Array.data[3]
-      value: 
-      objectReference: {fileID: 837696932}
-    - target: {fileID: 11464438, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
-      propertyPath: enemyTeam.teamMembers.Array.data[2]
-      value: 
-      objectReference: {fileID: 294475865}
-    - target: {fileID: 11464438, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
-      propertyPath: enemyTeam.teamMembers.Array.data[1]
-      value: 
-      objectReference: {fileID: 1510021366}
-    - target: {fileID: 11464438, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
-      propertyPath: enemyTeam.teamMembers.Array.data[0]
-      value: 
-      objectReference: {fileID: 917717640}
     - target: {fileID: 11464438, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
       propertyPath: playerTeam.teamMembers.Array.data[0]
       value: 
@@ -356,6 +379,22 @@ Prefab:
       propertyPath: playerTeam.teamMembers.Array.data[2]
       value: 
       objectReference: {fileID: 811010356}
+    - target: {fileID: 11464438, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
+      propertyPath: enemyTeam.teamMembers.Array.data[0]
+      value: 
+      objectReference: {fileID: 917717640}
+    - target: {fileID: 11464438, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
+      propertyPath: enemyTeam.teamMembers.Array.data[1]
+      value: 
+      objectReference: {fileID: 1510021366}
+    - target: {fileID: 11464438, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
+      propertyPath: enemyTeam.teamMembers.Array.data[2]
+      value: 
+      objectReference: {fileID: 294475865}
+    - target: {fileID: 11464438, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
+      propertyPath: enemyTeam.teamMembers.Array.data[3]
+      value: 
+      objectReference: {fileID: 837696932}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
   m_IsPrefabParent: 0

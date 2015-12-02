@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11414330}
   - 114: {fileID: 11469710}
   m_Layer: 8
-  m_Name: MasterController
+  m_Name: BattleController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,10 +94,17 @@ MonoBehaviour:
     m_Bits: 256
   playerTeam:
     teamType: 0
-    teamMembers: []
+    teamMembers:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   enemyTeam:
     teamType: 1
-    teamMembers: []
+    teamMembers:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   curCombatTeam: 0
   curCombatPhase: 0
   hoveredTile: {fileID: 0}
