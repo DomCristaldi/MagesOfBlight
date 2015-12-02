@@ -48,14 +48,6 @@ public class HexGridAssembler : MonoBehaviour {
 
 	void Start () {
 		CreateGrid();
-
-		/*
-		List<Color> blendColors = ColorHelper.MakeGradientHSV((0xFF00FF).ToColor(), (0x888800).ToColor(), tiles.Count);
-
-		for (int i = 0; i < tiles.Count; i++) {
-			tiles[i].hexRing.material.color = blendColors[i];
-		}
-		*/
 	}
 
 	void Update () {
