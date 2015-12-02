@@ -196,6 +196,11 @@ public class AILogicState : BaseCombatState {
             return;
         }
 
+        //PUPPETEER HIVEMIND BOSS THING
+        else if (currentProtocol == BehaviourProtocol.puppeteer) {
+
+        }
+
     }
 
 }
