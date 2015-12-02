@@ -300,6 +300,7 @@ GameObject:
   - 223: {fileID: 654496348}
   - 114: {fileID: 654496347}
   - 114: {fileID: 654496346}
+  - 114: {fileID: 654496349}
   m_Layer: 5
   m_Name: DialogueCanvas
   m_TagString: Untagged
@@ -384,6 +385,17 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!114 &654496349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 654496344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 845cf11c342c9df4f913ae7bf6b78241, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &701761355
 GameObject:
   m_ObjectHideFlags: 0

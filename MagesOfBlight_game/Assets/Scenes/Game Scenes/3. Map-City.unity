@@ -231,6 +231,7 @@ GameObject:
   - 223: {fileID: 385967176}
   - 114: {fileID: 385967178}
   - 114: {fileID: 385967177}
+  - 114: {fileID: 385967179}
   m_Layer: 5
   m_Name: DialogueCanvas
   m_TagString: Untagged
@@ -315,6 +316,17 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &385967179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 385967174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 845cf11c342c9df4f913ae7bf6b78241, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &632021561
 GameObject:
   m_ObjectHideFlags: 0
