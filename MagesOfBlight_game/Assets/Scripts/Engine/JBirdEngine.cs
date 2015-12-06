@@ -463,9 +463,33 @@ namespace JBirdEngine {
 
 			public ColorHSV (float hue, float saturation, float value, float alpha) {
 				h = hue;
-				s = saturation;
-				v = value;
-				a = alpha;
+                if (h > 360f) {
+                    h -= 360f;
+                }
+                if (h < 0f) {
+                    h += 360f;
+                }
+                s = saturation;
+                if (s > 1f) {
+                    s = 1f;
+                }
+                if (s < 0f) {
+                    s = 0f;
+                }
+                v = value;
+                if (v > 1f) {
+                    v = 1f;
+                }
+                if (v < 0f) {
+                    v = 0f;
+                }
+                a = alpha;
+                if (a > 1f) {
+                    a = 1f;
+                }
+                if (a < 0f) {
+                    a = 0f;
+                }
 			}
 
 		}
@@ -487,14 +511,14 @@ namespace JBirdEngine {
 				hue = 0f;
 			}
 			else if (cMax == color.r) {
-				hue = (color.g - color.b) / delta;
-			}
-			else if (cMax == color.g) {
-				hue = (color.b - color.r) / delta;
-			}
-			else {
-				hue = (color.r - color.g) / delta;
-			}
+                hue = ((color.g - color.b) % 6) / delta;
+            }
+            else if (cMax == color.g) {
+                hue = ((color.b - color.r) + 2) / delta;
+            }
+            else {
+                hue = ((color.r - color.g) + 4) / delta;
+            }
 			//Convert to degrees
 			hue *= 60f;
 			if (hue < 0f) {
