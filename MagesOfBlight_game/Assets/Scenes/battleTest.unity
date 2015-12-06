@@ -700,6 +700,14 @@ Prefab:
       propertyPath: clampDistX
       value: 9.30000019
       objectReference: {fileID: 0}
+    - target: {fileID: 2001498, guid: d5840b95b7fc0c641867a5e9e0859870, type: 2}
+      propertyPath: near clip plane
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2001498, guid: d5840b95b7fc0c641867a5e9e0859870, type: 2}
+      propertyPath: orthographic
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5840b95b7fc0c641867a5e9e0859870, type: 2}
   m_IsPrefabParent: 0
