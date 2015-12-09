@@ -89,6 +89,12 @@ public class BattleManager : MonoBehaviour {
             }
         }
 
+        public void KillTeam() {
+            foreach (TileAgent agent in teamMembers) {
+                agent.GetComponent<BaseStats>().currentHealth = 0.0f;
+            }
+        }
+
     }
 
     public enum CombatTeam {
@@ -199,7 +205,19 @@ public class BattleManager : MonoBehaviour {
         }
         print(debugString);
         */
+
+
 	}
+
+    private void CheckInputs() {
+        if (InputHandler.singleton.controls.GetAxis(InputHandler.AxisKey.KillAllPlayers) != 0.0f) {
+            KillTeam(CombatTeam.Player);
+        }
+
+        if (InputHandler.singleton.controls.GetAxis(InputHandler.AxisKey.KillAllEnemies) != 0.0f) {
+            KillTeam(CombatTeam.Enemy);
+        }
+    }
 
     public void SetHoveredTile(HexNode tile) {
 
@@ -432,5 +450,32 @@ public class BattleManager : MonoBehaviour {
 			//Application.LoadLevel(firstSceneName);
 		}
 	}
+
+    public void KillTeam(CombatTeam team) {
+        switch (team) {
+
+            case CombatTeam.Player:
+
+                playerTeam.KillTeam();
+
+                /*
+                foreach (TileAgent agent in playerTeam.teamMembers) {
+                    agent.GetComponent<BaseStats>().currentHealth = 0.0f;
+                }
+                */
+                
+                break;
+
+            case CombatTeam.Enemy:
+                enemyTeam.KillTeam();
+                /*
+                foreach (TileAgent agent in enemyTeam.teamMembers) {
+                    agent.GetComponent<BaseStats>().currentHealth = 0.0f;
+                }
+                */
+                break;
+        }
+
+    }
 
 }

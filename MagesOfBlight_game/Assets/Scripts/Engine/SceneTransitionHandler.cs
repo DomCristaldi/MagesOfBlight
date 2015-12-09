@@ -63,13 +63,19 @@ public class SceneTransitionHandler : MonoBehaviour {
     private void CheckInputs() {
         if (InputHandler.singleton != null) {
             CheckSkipScene();
+            CheckReloadLevel();
         }
     }
 
     private void CheckSkipScene() {
-
         if (InputHandler.singleton.controls.GetAxis(InputHandler.AxisKey.SkipLevel) != 0.0f) {
             LoadNextLevel();
+        }
+    }
+
+    private void CheckReloadLevel() {
+        if (InputHandler.singleton.controls.GetAxis(InputHandler.AxisKey.ReloadLevel) != 0.0f) {
+            ReloadLevel();
         }
     }
 }
