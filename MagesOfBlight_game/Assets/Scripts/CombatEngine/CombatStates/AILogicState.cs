@@ -205,9 +205,9 @@ public class AILogicState : BaseCombatState {
                 Debug.LogWarningFormat("AILogicState: AI Agent {0} is using puppeteer protocol, but is not a Boss AI Agent!", currentAI.name);
                 return;
             }
-            AITileAgent spawnAgent = bossAI.respawnQueue.PopFront<AITileAgent>();
+            AITileAgent spawnAgent = bossAI.respawnQueue.PopFront<AITileAgent>(true);
             if (spawnAgent == default(AITileAgent)) {
-                Debug.LogWarningFormat("AILogicState: Boss AI {0} respawn queue is empty!", bossAI.name);
+                //Debug.LogWarningFormat("AILogicState: Boss AI {0} respawn queue is empty!", bossAI.name);
             }
             else {
                 spawnAgent.SetActive(true);

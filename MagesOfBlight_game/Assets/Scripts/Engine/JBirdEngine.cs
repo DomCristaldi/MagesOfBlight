@@ -1159,10 +1159,13 @@ namespace JBirdEngine {
         /// </summary>
         /// <typeparam name="T">The type of the list.</typeparam>
         /// <param name="list">The list to pop from.</param>
+        /// <param name="hideWarnings">Set to true to disable warning messages if the list is empty.</param>
         /// <returns>First element of supplied list.</returns>
-        public static T PopFront<T> (this List<T> list) {
+        public static T PopFront<T> (this List<T> list, bool hideWarnings = false) {
             if (list.Count == 0) {
-                Debug.LogWarningFormat("List<{0}>.PopFront(): List is empty!", typeof(T));
+                if (!hideWarnings) {
+                    Debug.LogWarningFormat("List<{0}>.PopFront(): List is empty! Returning default {0}.", typeof(T));
+                }
                 return default(T);
             }
             T temp = list[0];

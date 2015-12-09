@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b730b21c1c0839498b3879122e4e02d, type: 3}
-  m_Name: Move
+  m_Name: MoveNuria
   m_EditorClassIdentifier: 
   animInfo:
     animType: 3
@@ -25,6 +25,6 @@ MonoBehaviour:
   blightGiven: 0
   checkThroughOccupied: 0
   tileCheckFlags: 1
-  checkDistance: 5
+  checkDistance: -2
   canCounter: 0
   canBlock: 0

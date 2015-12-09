@@ -51,11 +51,13 @@ public class ButtonActionInfo : MonoBehaviour, IPointerEnterHandler, IPointerExi
 	//when hovered over, show tooltip
 	public void OnPointerEnter(PointerEventData data){
 		OpenTooltip ();
+        BattleManager.singleton.checkedTiles = actionData.action.CheckTiles();
 	}
 
 	//close tooltip
 	public void OnPointerExit(PointerEventData data){
 		CloseTooltip ();
+        BattleManager.singleton.checkedTiles.Clear();
 	}
 
 }

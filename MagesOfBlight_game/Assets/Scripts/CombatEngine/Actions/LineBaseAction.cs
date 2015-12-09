@@ -10,7 +10,9 @@ public class LineBaseAction : BaseAction {
 		HexNode start = BattleManager.singleton.selectedTile;
 		for (int i = 0; i < 6; i++) {
 			HexNode checkNode = start;
-			while (checkNode.connections[i] != null) {
+            int depth = 0;
+			while (checkNode.connections[i] != null && depth < checkDistance) {
+                depth++;
 				checkNode = checkNode.connections[i];
 				if (checkNode.entityOnTile != null) {
 					if (checkNode.entityOnTile as TileAgent != null) {

@@ -149,6 +149,7 @@ public class BattleManager : MonoBehaviour {
     public HexNode hoveredTile;
     public HexNode selectedTile;
     public HexNode targetTile;
+    public List<HexNode> checkedTiles;
 
     public TileAgent selectedAgent;
 	public BaseAction selectedAction;
@@ -164,6 +165,8 @@ public class BattleManager : MonoBehaviour {
         if (singleton == null) {
             singleton = this;
         }
+
+        checkedTiles = new List<HexNode>();
 
         prevCombatPhaseStack = new Stack<CombatPhase>();
 

@@ -63,4 +63,9 @@ public class TargetSelectionState : BaseCombatState {
 
     }
 
+    public override void EndState () {
+        base.EndState();
+        BattleManager.singleton.checkedTiles.Clear();
+    }
+
 }

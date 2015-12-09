@@ -15,7 +15,8 @@ public class HexNode : MonoBehaviour, INode<HexNode> {
     public Material tileNormalMat;
     public Material tileHoverMat;
     public Material tileTargetMat;
-    public Material tileSelectableMat;
+    public Material tileHasActionsMat;
+    public Material tileEnemyMat;
 
     [Header("Debug lines:")]
 	public bool showEdges;
@@ -94,6 +95,9 @@ public class HexNode : MonoBehaviour, INode<HexNode> {
 		if (showEdges) DebugDrawEdges(Color.black);
 		if (showRadialLines) DebugDrawLinks(Color.blue);
 		if (showConnections) DebugDrawConnections(Color.green);
+        if (BattleManager.singleton.hoveredTile != this) {
+            SetNormalMat();
+        }
 	}
 
 	void DebugDrawEdges (Color color) {
@@ -138,19 +142,28 @@ public class HexNode : MonoBehaviour, INode<HexNode> {
     }
 
     public void SetNormalMat() {
-        hexRing.material = tileNormalMat;
+        if (BattleManager.singleton.checkedTiles.Contains(this)) {
+            hexRing.material = tileTargetMat;
+        }
+        else if (entityOnTile != null) {
+            TileAgent agent = entityOnTile as TileAgent;
+            if (agent != null && agent.hasTurn && agent.team == BattleManager.CombatTeam.Player) {
+                hexRing.material = tileHasActionsMat;
+            }
+            else if (agent != null && agent.hasTurn && agent.team == BattleManager.CombatTeam.Enemy) {
+                hexRing.material = tileEnemyMat;
+            }
+            else {
+                hexRing.material = tileNormalMat;
+            }
+        }
+        else {
+            hexRing.material = tileNormalMat;
+        }
     }
 
     public void SetHoverMat() {
         hexRing.material = tileHoverMat;
-    }
-
-    public void SetTargetedMat() {
-        hexRing.material = tileTargetMat;
-    }
-
-    public void SetSelectableMat() {
-        hexRing.material = tileSelectableMat;
     }
 
     void DisconnectAll () {

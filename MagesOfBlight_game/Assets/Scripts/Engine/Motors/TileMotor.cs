@@ -174,7 +174,7 @@ public class TileMotor : MonoBehaviour {
         }
 
         if (transform.position == end.transform.position) {
-            Debug.Log("at location");
+            //Debug.Log("at location");
 			tilesMoved++;
             return true;
         }

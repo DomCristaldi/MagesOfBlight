@@ -29,6 +29,9 @@ public class EnterCombatState : BaseCombatState {
 
             //initialize the agent's motor
             agent.motor.desiredPoint = agent.transform.position;
+
+            //set the initial color of the node ring
+            foundNode.SetNormalMat();
         }
 
 
