@@ -77,10 +77,10 @@ public class BattleCameraController : MonoBehaviour {
         HandleMovement();
         HandleZoom();
 
-        AdjustCameraPosition();
+        //AdjustCameraPosition();
 
-        //AssignCameraAngle();
-        //AdjustCamera();
+        AssignCameraAngle();
+        AdjustCamera();
 
         Debug.DrawRay(dragMarkerPos, Vector3.up, Color.green);
 	}
