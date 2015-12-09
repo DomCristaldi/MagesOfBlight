@@ -26,6 +26,10 @@ public class BattleManager : MonoBehaviour {
         //public List<MemberInfo> teamMembers;
         public List<TileAgent> teamMembers;
 
+        public float numberOfTeamMembers {
+            get { return teamMembers.Count; }
+        }
+
         public BattleTeam(params TileAgent[] membersToAdd) {
             if (membersToAdd.Length > 0) {
                 teamMembers = membersToAdd.ToList<TileAgent>();
@@ -412,10 +416,17 @@ public class BattleManager : MonoBehaviour {
 		if (enemyTeam.RemoveFromTeam(agent)) {
 			Debug.Log("An enemy has been slain!");
 			agent.Kill();
+
+            if (enemyTeam.numberOfTeamMembers == 0) {
+                SceneTransitionHandler.singleton.LoadNextLevel();
+            }
 		}
 		if (playerTeam.RemoveFromTeam(agent)) {
 			Debug.Log("Game over, man! It's game over!");
-			Application.LoadLevel(firstSceneName);
+
+            SceneTransitionHandler.singleton.ReloadLevel();
+
+			//Application.LoadLevel(firstSceneName);
 		}
 	}
 
