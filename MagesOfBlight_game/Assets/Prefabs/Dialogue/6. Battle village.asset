@@ -15,112 +15,149 @@ MonoBehaviour:
   - character: 1
     mood: 1
     line: So what was this? You knew there were Blighted here, is that it Stein?
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 8062a98d483ae4c429fe9631c0c807b7, type: 3}
   - character: 2
     mood: 0
-    line: "It\u2019s safe to assume any village we come across will already be infected."
-    audioClip: {fileID: 0}
+    line: "I think it\u2019s safe to assume any village we come across will already
+      be infected."
+    audioClip: {fileID: 8300000, guid: d2e7b7ffeaef6db4289f283f3613bfc0, type: 3}
   - character: 1
     mood: 1
-    line: You made us go out of our way to kill all of these people!?
-    audioClip: {fileID: 0}
+    line: You made us go out of our way to kill all these people!?
+    audioClip: {fileID: 8300000, guid: d5c621e8f01289b48905fa05a9c50336, type: 3}
   - character: 2
     mood: 0
     line: "I knew these people. They didn\u2019t deserve an end as unnatural as this."
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 69934ea45a4cfae4281d73e90cecdd45, type: 3}
   - character: 1
     mood: 0
     line: They met their end with you, Stein! They were alive, we could have saved
       them!
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 0babf41a8a84d2e4da10a8c7328b3f56, type: 3}
   - character: 0
     mood: 0
     line: Nuria, please try to calm down, we -
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: c18ef97c631ab8642949af0e320ef3ec, type: 3}
   - character: 1
     mood: 1
     line: How can I calm down! These were innocent people! We could have stayed on
       the road!
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: a263df552d397f54eb3206e7c8b4ed0b, type: 3}
   - character: 0
     mood: 0
     line: You know how dangerous it is to be out in the open like that, Nuria! This
       was a safer bet.
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: aececa5e15b9010489d176c36ff226ed, type: 3}
   - character: 2
     mood: 0
     line: This was the only decision to be made.
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 011104acbfabfe04a8094c27b10098a3, type: 3}
   - character: 1
     mood: 1
     line: "No! You don\u2019t get to decide who lives or dies by what you deem as
-      \u201Cnatural\u201D!! I won\u2019t let you use my powers for this\u2026 this\u2026
-      murder any longer!!"
-    audioClip: {fileID: 0}
+      \u201Cnatural\u201D!!"
+    audioClip: {fileID: 8300000, guid: 0b0569c16a8f44e448a0034f85908daf, type: 3}
+  - character: 1
+    mood: 1
+    line: "I won\u2019t let you use my powers for this murder any longer!!"
+    audioClip: {fileID: 8300000, guid: fe518fb504a6071458f3f5cb57e5f68c, type: 3}
   - character: 0
     mood: 0
-    line: "Nuria! Wait! It\u2019s going to be dark soon!"
-    audioClip: {fileID: 0}
+    line: "Nuria! Wait! It\u2019s gonna to be dark soon!"
+    audioClip: {fileID: 8300000, guid: ddafb7b904ce1ce4fa5c6e1bad7080a9, type: 3}
   - character: 1
     mood: 1
     line: "I\u2019ll make my own light!!"
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 4da7aca6f199b064595c6cbcda687210, type: 3}
   - character: 0
     mood: 0
-    line: We have to follow her!
-    audioClip: {fileID: 0}
+    line: Stein, we have to follow her!
+    audioClip: {fileID: 8300000, guid: bda2932ce5908824480ce90c487154ed, type: 3}
   - character: 2
     mood: 0
     line: "Whatever we do will wait until morning. It won\u2019t do us any good to
       lose our way in the dark."
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 1dab2d37790bd5e49a85e315b2d99607, type: 3}
   - character: 0
     mood: 0
-    line: "No, Stein. We have to stick together. She\u2019s just as much an asset
-      to our survival as we are to hers."
-    audioClip: {fileID: 0}
+    line: No, Stein. We have to stick together.
+    audioClip: {fileID: 8300000, guid: 89d722ca338eea243b8a22ff42cf46dd, type: 3}
+  - character: 0
+    mood: 0
+    line: "She\u2019s just as much an asset to our survival as we are to hers."
+    audioClip: {fileID: 8300000, guid: dd80a98d6188309418e1570f2ff58002, type: 3}
   - character: 2
     mood: 0
     line: And if you find her? What then Avon? Do you propose we tie her up and drag
-      her along with us. No, give her the night. If you are adamant, we will search
-      for her come morning.
-    audioClip: {fileID: 0}
+      her along with us.
+    audioClip: {fileID: 8300000, guid: 076b6f99d879b784a93b18c804a7bd0b, type: 3}
+  - character: 2
+    mood: 0
+    line: No, give her the night. If you are adamant, we will search for her come
+      morning.
+    audioClip: {fileID: 8300000, guid: dc7a12bd89aa2974d828e5e6df024fb0, type: 3}
   - character: 0
     mood: 1
-    line: She might be dead come morning, Stein!
-    audioClip: {fileID: 0}
+    line: She might be dead come morning!
+    audioClip: {fileID: 8300000, guid: 4e115a81b13bd9744a8c6c5f0b01e87a, type: 3}
   - character: 2
     mood: 1
     line: "We may well be dead if we wander off in the night. It\u2019s a risk we
-      cannot take."
-    audioClip: {fileID: 0}
+      simply cannot take."
+    audioClip: {fileID: 8300000, guid: ab86a377410178243aa612054a428d7d, type: 3}
   - character: 0
     mood: 1
-    line: "You spend so much time worrying about giving these Blighted people a \u201Cnatural\u201D
-      end, yet you turn your back on one who can still easily be saved from such a
-      fate? Fine. You can stay here, then, but I\u2019m going to help a human in need!"
-    audioClip: {fileID: 0}
+    line: You spend so much time worrying about giving these Blighted people a natural
+      end.
+    audioClip: {fileID: 8300000, guid: 0545a455f2893bb448dbd933dc5dc366, type: 3}
+  - character: 0
+    mood: 1
+    line: Yet you turn your back on one who can still easily be saved from such a
+      fate?
+    audioClip: {fileID: 8300000, guid: 5d49de36cb173e840b4950ca7e3e8c08, type: 3}
+  - character: 0
+    mood: 1
+    line: "Ok, fine. You can stay here, then, but I\u2019m going to help a human in
+      need!"
+    audioClip: {fileID: 8300000, guid: 8cbcf1d872190af41959f8655abc40df, type: 3}
   - character: 2
     mood: 0
-    line: Nuria will be fine, Avon. During the first week after the Blight spread,
-      she was alone. I had been watching over you when she stumbled into my camp.
-    audioClip: {fileID: 0}
+    line: Nuria will be fine, Avon. She was alone during the entire first week of
+      the Blight.
+    audioClip: {fileID: 8300000, guid: a7529e97dcdeb1143b377404fa943d16, type: 3}
+  - character: 2
+    mood: 0
+    line: I was searching through the remains of my temple when she put you in my
+      care.
+    audioClip: {fileID: 8300000, guid: 116385e6e51cc214683f8fd9f3d9b524, type: 3}
   - character: 0
     mood: 0
     line: "You hadn\u2019t told me that."
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 14a2820ff6505534884ffdbc64e280fc, type: 3}
   - character: 2
     mood: 0
-    line: "Even after finding her way to the temple, she continued to patrol the area
-      without my aid. One night won\u2019t kill her. You need your rest, and we need
-      to get our bearings. Wait for morning and track her then."
-    audioClip: {fileID: 0}
+    line: Even after finding her way to the temple, she continued to patrol the area
+      without my aid.
+    audioClip: {fileID: 8300000, guid: db4c2134e8d82e24798a54e69aaba89b, type: 3}
+  - character: 2
+    mood: 0
+    line: "One night won\u2019t kill her. You need your rest, and we need to get our
+      bearings."
+    audioClip: {fileID: 8300000, guid: 45177511210172249bc268d7ee2dd45b, type: 3}
+  - character: 2
+    mood: 0
+    line: Wait for morning and track her then.
+    audioClip: {fileID: 8300000, guid: d754645ac698eb24e82a77d3066bc5b5, type: 3}
   - character: 0
     mood: 0
     line: "If you\u2019re sure she\u2019ll be okay, then I guess it is best we stay.
-      Still, I\u2019m worried... We leave at the first light of day, alright?"
-    audioClip: {fileID: 0}
+      Still, I\u2019m worried... "
+    audioClip: {fileID: 8300000, guid: b9f4a5edee2cfdb4b85935a1ad401939, type: 3}
+  - character: 0
+    mood: 0
+    line: We leave at the first light of day, alright?
+    audioClip: {fileID: 8300000, guid: c76dc28db124ac448a72f30d68622bc9, type: 3}
   - character: 2
     mood: 0
     line: You have my word.
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 6eb33fa86894e1448bcfdacf2f85b833, type: 3}
