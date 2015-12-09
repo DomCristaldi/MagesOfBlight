@@ -27,36 +27,58 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 1b439ccdd9fecfb4f8a8aaf94593baad, type: 3}
   - character: 0
     mood: 0
-    line: But the Blight is still here, I can still use magic. I assumed that if we
-      could cut this thing off at the source, our magic would go away.
-    audioClip: {fileID: 0}
+    line: But the Blight's still here, I can still use magic.
+    audioClip: {fileID: 8300000, guid: eaa8dcf5b3546bb42923ef3426d6428f, type: 3}
+  - character: 0
+    mood: 0
+    line: I assumed that if we could cut this thing off at the source, our magic would
+      go away.
+    audioClip: {fileID: 8300000, guid: 1023b5b906bd9d44087326bb7fd6de24, type: 3}
   - character: 1
     mood: 0
     line: Why would you want to be normal when you can light things on fire!?
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 30a3731ca2640e34e95c4259863aa0ad, type: 3}
   - character: 0
     mood: 0
     line: "I can\u2019t light things on fire, Nuria\u2026"
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 5be57e37bc31f814ea858636010290af, type: 3}
   - character: 2
     mood: 0
     line: We still have the Puppets to be concerned with. Those accursed things are
-      still here as well. It should be quick work to end their suffering.
-    audioClip: {fileID: 0}
+      still here as well.
+    audioClip: {fileID: 8300000, guid: fe3aea2b62723b540af95287601289ff, type: 3}
+  - character: 2
+    mood: 0
+    line: It should be quick work to end their suffering.
+    audioClip: {fileID: 8300000, guid: 3bfec6ebc4e41c442970420c1e1d9e19, type: 3}
   - character: 1
     mood: 0
     line: "Those people, you mean! There\u2019s nothing to be done, we saved them
-      from that brain controlling them! Their suffering has already ended!"
-    audioClip: {fileID: 0}
+      from that brain controlling them!"
+    audioClip: {fileID: 8300000, guid: f8a7add7d2b0f354d86ae6469c0ffd38, type: 3}
+  - character: 1
+    mood: 0
+    line: Their suffering has already ended!
+    audioClip: {fileID: 8300000, guid: fa23965231a35b640aedbfeda87590ef, type: 3}
   - character: 2
     mood: 0
-    line: "If they truly can still be called people. We\u2019ll see. I shall leave
-      them in your hands, Nuria. I must see to rebuilding my order, and healing the
-      scar upon the land."
-    audioClip: {fileID: 0}
+    line: We shall see if they can truly still be called people. I shall leave them
+      in your hands, Nuria.
+    audioClip: {fileID: 8300000, guid: 4a7fb3c6a289568469f7603e3880592a, type: 3}
+  - character: 2
+    mood: 0
+    line: I must see to rebuilding my order, and healing the scar upon the land.
+    audioClip: {fileID: 8300000, guid: 42fb37e9a93885240a978bf6e9639468, type: 3}
   - character: 0
     mood: 0
-    line: "Now that we\u2019ve made it safe for them to use magic, I think giving
-      these people the choice of how to handle their Blight is the best thing we can
-      do for them. Now help me get these guys back on their feet."
-    audioClip: {fileID: 0}
+    line: "Now that we\u2019ve made it safe for them to use magic..."
+    audioClip: {fileID: 8300000, guid: cba55d673a57190499300038c3744075, type: 3}
+  - character: 0
+    mood: 0
+    line: Giving these people the choice of how to handle their Blight is probably
+      the best thing we can do for them.
+    audioClip: {fileID: 8300000, guid: 5c0f12f612e99c54f85f194de0f577b9, type: 3}
+  - character: 0
+    mood: 0
+    line: Now, could you help me get these guys back on their feet?
+    audioClip: {fileID: 8300000, guid: 110a19437ac2b044789dc9824a3181ea, type: 3}
