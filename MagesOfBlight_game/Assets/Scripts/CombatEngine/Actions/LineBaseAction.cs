@@ -5,7 +5,7 @@ using JBirdEngine;
 
 public class LineBaseAction : BaseAction {
 
-	public override List<HexNode> CheckTiles () {
+    public override List<HexNode> CheckTiles () {
 		List<HexNode> nodeList = new List<HexNode>();
 		HexNode start = BattleManager.singleton.selectedTile;
 		for (int i = 0; i < 6; i++) {

@@ -33,11 +33,12 @@ public class BaseAction : ScriptableObject {
 	public bool checkThroughOccupied = false;
 	public TileCheckFlags tileCheckFlags;
 	public int checkDistance = int.MaxValue;
+    public bool includeSelf = false;
 
 	public bool canCounter;
 	public bool canBlock;
 
-	public virtual List<HexNode> CheckTiles () {
+    public virtual List<HexNode> CheckTiles () {
 		return new List<HexNode>();
 	}
 

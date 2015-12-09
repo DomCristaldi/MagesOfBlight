@@ -33,6 +33,13 @@ public class BaseStats : MonoBehaviour {
 		currentHealth -= amount;
 	}
 
+    public virtual void Heal (float amount) {
+        currentHealth += amount;
+        if (currentHealth > maxHealth) {
+            currentHealth = maxHealth;
+        }
+    }
+
 	public virtual void AddBlight (float amount) {
 		currentBlight += amount;
 	}

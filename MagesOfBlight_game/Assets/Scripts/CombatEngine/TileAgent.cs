@@ -149,4 +149,14 @@ public class TileAgent : TileEntity {
 		Destroy(gameObject);
 	}
 
+    public virtual void Heal (float amount) {
+        foreach (TileAgent agent in BattleManager.singleton.enemyTeam.teamMembers) {
+            AITileAgent agentAI = agent as AITileAgent;
+            if (agentAI != null && agentAI.aggroTarget == this) {
+                agentAI.aggroTarget = BattleManager.singleton.selectedAgent;
+            }
+        }
+        stats.Heal(amount);
+    }
+
 }

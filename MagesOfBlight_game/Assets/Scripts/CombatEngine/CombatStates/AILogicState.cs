@@ -217,6 +217,8 @@ public class AILogicState : BaseCombatState {
                 spawnAgent.stats.currentHealth = spawnAgent.stats.maxHealth;
                 spawnAgent.motor.currentTile = bossAI.spawnHex;
                 spawnAgent.motor.currentTile.entityOnTile = spawnAgent;
+                spawnAgent.aggroTarget = null;
+                spawnAgent.lastTarget = null;
                 for (int i = 1; i < BattleManager.singleton.enemyTeam.teamMembers.Count; i++) {
                     if (BattleManager.singleton.enemyTeam.teamMembers[i] == spawnAgent) {
                         TileAgent secondPlace = BattleManager.singleton.enemyTeam.teamMembers[1];

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a22324f150031a740875e931750df841, type: 3}
+  m_Name: Heal
+  m_EditorClassIdentifier: 
+  animInfo:
+    animType: 0
+    animAttackType: 4
+  agent: {fileID: 0}
+  normalColor: {r: .878000021, g: .552999973, b: .99026376, a: 1}
+  highlightedColor: {r: .878431439, g: .465000004, b: .992156923, a: 1}
+  pressedColor: {r: .878431439, g: .347000003, b: .992156923, a: 1}
+  disabledColor: {r: .588235319, g: .588235319, b: .588235319, a: 1}
+  actionName: Heal
+  damage: 20
+  blightRequired: .00999999978
+  blightGiven: 10
+  checkThroughOccupied: 1
+  tileCheckFlags: 4
+  checkDistance: 4
+  includeSelf: 1
+  canCounter: 0
+  canBlock: 0
