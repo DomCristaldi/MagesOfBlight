@@ -779,6 +779,7 @@ MonoBehaviour:
   textDialogue: {fileID: 701761356}
   characterImage: {fileID: 1173548704}
   audio: {fileID: 1915466141}
+  isMapScene: 1
   conversationActive: 0
 --- !u!1001 &1379257754
 Prefab:

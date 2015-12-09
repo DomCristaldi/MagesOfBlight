@@ -25,6 +25,8 @@ public class InputHandler : MonoBehaviour {
         Zoom = 8,
 
         Block = 9,
+
+        SkipLevel = 10,
     }
 
 

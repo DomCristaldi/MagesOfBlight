@@ -964,6 +964,7 @@ MonoBehaviour:
   textDialogue: {fileID: 1278637023}
   characterImage: {fileID: 1136222980}
   audio: {fileID: 355626131}
+  isMapScene: 1
   conversationActive: 0
 --- !u!224 &1540004180
 RectTransform:
