@@ -199,6 +199,21 @@ public class AILogicState : BaseCombatState {
         //PUPPETEER HIVEMIND BOSS THING
         else if (currentProtocol == BehaviourProtocol.puppeteer) {
 
+            BossAITileAgent bossAI = currentAI as BossAITileAgent;
+            if (bossAI == null) {
+                currentAI.hasTurn = false;
+                Debug.LogWarningFormat("AILogicState: AI Agent {0} is using puppeteer protocol, but is not a Boss AI Agent!", currentAI.name);
+                return;
+            }
+            AITileAgent spawnPrefab = bossAI.respawnQueue.PopFront<AITileAgent>();
+            if (spawnPrefab == default(AITileAgent)) {
+                Debug.LogWarningFormat("AILogicState: Boss AI {0} respawn queue is empty! Default object is {1}.", bossAI.name, spawnPrefab);
+            }
+            else {
+                GameObject.Instantiate(spawnPrefab, bossAI.spawnHex.transform.position, Quaternion.identity);
+                bossAI.hasTurn = true;
+            }
+
         }
 
     }
