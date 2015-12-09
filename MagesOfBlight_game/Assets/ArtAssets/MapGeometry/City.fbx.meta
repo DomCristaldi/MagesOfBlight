@@ -1,0 +1,776 @@
+fileFormatVersion: 2
+guid: bc434708b106eda4f8b5b225d5d4dbe5
+timeCreated: 1449624735
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Blocks
+    100002: Blocks 1
+    100004: Blocks 2
+    100006: Blocks 3
+    100008: Blocks 4
+    100010: //RootNode
+    100012: Core
+    100014: Core 1
+    100016: FifthBranch
+    100018: Flower5Grass3
+    100020: FlowerLarge
+    100022: FlowerLarge 1
+    100024: FlowerMedium
+    100026: FlowerSmall
+    100028: Foundation
+    100030: group14
+    100032: House
+    100034: House1
+    100036: House2
+    100038: House3
+    100040: House4
+    100042: Med_pCylinder1
+    100044: Med_pCylinder29
+    100046: Oncidium7_flower4_pPlane9
+    100048: Oncidium7_pPlane3
+    100050: Oncidium8_pPlane3
+    100052: Oncidium8_pPlane3 1
+    100054: Oncidium8_Stem_flower4_pPlane9
+    100056: Oncidium8_Stem_flower4_pPlane9 1
+    100058: Oncidium9_pPlane3
+    100060: Oncidium9_Stem_AllFlowers_flower4_pPlane9
+    100062: pasted__pCylinder185
+    100064: pasted__pCylinder189
+    100066: pasted__pCylinder190
+    100068: pasted__pCylinder283
+    100070: pasted__pCylinder289
+    100072: pasted__pCylinder290
+    100074: pasted__pCylinder291
+    100076: pasted__pCylinder292
+    100078: pasted__pCylinder293
+    100080: pasted__pCylinder294
+    100082: pasted__pCylinder295
+    100084: pasted__pCylinder296
+    100086: pasted__pCylinder297
+    100088: pasted__pCylinder298
+    100090: pasted__pCylinder299
+    100092: pasted__pCylinder300
+    100094: pasted__pCylinder301
+    100096: pasted__pCylinder302
+    100098: pasted__pCylinder303
+    100100: pCylinder273
+    100102: pCylinder280
+    100104: pCylinder285
+    100106: pCylinder332
+    100108: pCylinder333
+    100110: pCylinder334
+    100112: pCylinder335
+    100114: pCylinder337
+    100116: pCylinder338
+    100118: pCylinder339
+    100120: pCylinder341
+    100122: pCylinder342
+    100124: pCylinder343
+    100126: pCylinder344
+    100128: pCylinder345
+    100130: pCylinder346
+    100132: pCylinder347
+    100134: pCylinder348
+    100136: pCylinder349
+    100138: pCylinder350
+    100140: pCylinder351
+    100142: pCylinder352
+    100144: pCylinder353
+    100146: pCylinder354
+    100148: pCylinder355
+    100150: pCylinder356
+    100152: pCylinder357
+    100154: pCylinder358
+    100156: pCylinder359
+    100158: pCylinder360
+    100160: pCylinder361
+    100162: pCylinder362
+    100164: pCylinder363
+    100166: pCylinder364
+    100168: pCylinder365
+    100170: pCylinder366
+    100172: pCylinder367
+    100174: pCylinder368
+    100176: pCylinder369
+    100178: pCylinder370
+    100180: pCylinder5
+    100182: pCylinder5 1
+    100184: pCylinder6
+    100186: pCylinder6 1
+    100188: pCylinder7
+    100190: pCylinder7 1
+    100192: pCylinder8
+    100194: pCylinder9
+    100196: polySurface143
+    100198: polySurface147
+    100200: polySurface148
+    100202: polySurface149
+    100204: polySurface150
+    100206: polySurface151
+    100208: polySurface152
+    100210: polySurface153
+    100212: polySurface154
+    100214: polySurface155
+    100216: polySurface156
+    100218: polySurface157
+    100220: pSolid1
+    100222: pSolid10
+    100224: pSolid10 1
+    100226: pSolid10 2
+    100228: pSolid11
+    100230: pSolid13
+    100232: pSolid15
+    100234: pSolid3
+    100236: pSolid3 1
+    100238: pSolid7
+    100240: Rafters
+    100242: Rafters 1
+    100244: Rafters 2
+    100246: Rafters 3
+    100248: Rafters 4
+    100250: Sapling_8
+    100252: Sapling_9
+    100254: SecondBranch
+    100256: SecondBranch 1
+    100258: Tall_pCylinder1
+    100260: Tall_pCylinder53
+    100262: Tall_pCylinder54
+    100264: Tall_pCylinder55
+    100266: Tall_pCylinder56
+    100268: Tall_pCylinder57
+    100270: Tall_pCylinder58
+    100272: Tall_pCylinder59
+    100274: Tall_pCylinder60
+    100276: Tall_pCylinder61
+    100278: Tall_pCylinder62
+    100280: Tall_pCylinder63
+    100282: Thatch
+    100284: Thatch 1
+    100286: Thatch 2
+    100288: Thatch 3
+    100290: Thatch 4
+    100292: transform34
+    100294: transform35
+    100296: transform36
+    100298: transform37
+    100300: transform38
+    100302: Tree_25
+    100304: Tree_26
+    100306: Tree_27
+    100308: WaitingBlocks
+    100310: WaitingBlocks1
+    100312: WaitingRafters
+    400000: Blocks
+    400002: Blocks 1
+    400004: Blocks 2
+    400006: Blocks 3
+    400008: Blocks 4
+    400010: //RootNode
+    400012: Core
+    400014: Core 1
+    400016: FifthBranch
+    400018: Flower5Grass3
+    400020: FlowerLarge
+    400022: FlowerLarge 1
+    400024: FlowerMedium
+    400026: FlowerSmall
+    400028: Foundation
+    400030: group14
+    400032: House
+    400034: House1
+    400036: House2
+    400038: House3
+    400040: House4
+    400042: Med_pCylinder1
+    400044: Med_pCylinder29
+    400046: Oncidium7_flower4_pPlane9
+    400048: Oncidium7_pPlane3
+    400050: Oncidium8_pPlane3
+    400052: Oncidium8_pPlane3 1
+    400054: Oncidium8_Stem_flower4_pPlane9
+    400056: Oncidium8_Stem_flower4_pPlane9 1
+    400058: Oncidium9_pPlane3
+    400060: Oncidium9_Stem_AllFlowers_flower4_pPlane9
+    400062: pasted__pCylinder185
+    400064: pasted__pCylinder189
+    400066: pasted__pCylinder190
+    400068: pasted__pCylinder283
+    400070: pasted__pCylinder289
+    400072: pasted__pCylinder290
+    400074: pasted__pCylinder291
+    400076: pasted__pCylinder292
+    400078: pasted__pCylinder293
+    400080: pasted__pCylinder294
+    400082: pasted__pCylinder295
+    400084: pasted__pCylinder296
+    400086: pasted__pCylinder297
+    400088: pasted__pCylinder298
+    400090: pasted__pCylinder299
+    400092: pasted__pCylinder300
+    400094: pasted__pCylinder301
+    400096: pasted__pCylinder302
+    400098: pasted__pCylinder303
+    400100: pCylinder273
+    400102: pCylinder280
+    400104: pCylinder285
+    400106: pCylinder332
+    400108: pCylinder333
+    400110: pCylinder334
+    400112: pCylinder335
+    400114: pCylinder337
+    400116: pCylinder338
+    400118: pCylinder339
+    400120: pCylinder341
+    400122: pCylinder342
+    400124: pCylinder343
+    400126: pCylinder344
+    400128: pCylinder345
+    400130: pCylinder346
+    400132: pCylinder347
+    400134: pCylinder348
+    400136: pCylinder349
+    400138: pCylinder350
+    400140: pCylinder351
+    400142: pCylinder352
+    400144: pCylinder353
+    400146: pCylinder354
+    400148: pCylinder355
+    400150: pCylinder356
+    400152: pCylinder357
+    400154: pCylinder358
+    400156: pCylinder359
+    400158: pCylinder360
+    400160: pCylinder361
+    400162: pCylinder362
+    400164: pCylinder363
+    400166: pCylinder364
+    400168: pCylinder365
+    400170: pCylinder366
+    400172: pCylinder367
+    400174: pCylinder368
+    400176: pCylinder369
+    400178: pCylinder370
+    400180: pCylinder5
+    400182: pCylinder5 1
+    400184: pCylinder6
+    400186: pCylinder6 1
+    400188: pCylinder7
+    400190: pCylinder7 1
+    400192: pCylinder8
+    400194: pCylinder9
+    400196: polySurface143
+    400198: polySurface147
+    400200: polySurface148
+    400202: polySurface149
+    400204: polySurface150
+    400206: polySurface151
+    400208: polySurface152
+    400210: polySurface153
+    400212: polySurface154
+    400214: polySurface155
+    400216: polySurface156
+    400218: polySurface157
+    400220: pSolid1
+    400222: pSolid10
+    400224: pSolid10 1
+    400226: pSolid10 2
+    400228: pSolid11
+    400230: pSolid13
+    400232: pSolid15
+    400234: pSolid3
+    400236: pSolid3 1
+    400238: pSolid7
+    400240: Rafters
+    400242: Rafters 1
+    400244: Rafters 2
+    400246: Rafters 3
+    400248: Rafters 4
+    400250: Sapling_8
+    400252: Sapling_9
+    400254: SecondBranch
+    400256: SecondBranch 1
+    400258: Tall_pCylinder1
+    400260: Tall_pCylinder53
+    400262: Tall_pCylinder54
+    400264: Tall_pCylinder55
+    400266: Tall_pCylinder56
+    400268: Tall_pCylinder57
+    400270: Tall_pCylinder58
+    400272: Tall_pCylinder59
+    400274: Tall_pCylinder60
+    400276: Tall_pCylinder61
+    400278: Tall_pCylinder62
+    400280: Tall_pCylinder63
+    400282: Thatch
+    400284: Thatch 1
+    400286: Thatch 2
+    400288: Thatch 3
+    400290: Thatch 4
+    400292: transform34
+    400294: transform35
+    400296: transform36
+    400298: transform37
+    400300: transform38
+    400302: Tree_25
+    400304: Tree_26
+    400306: Tree_27
+    400308: WaitingBlocks
+    400310: WaitingBlocks1
+    400312: WaitingRafters
+    2300000: Blocks
+    2300002: Blocks 1
+    2300004: Blocks 2
+    2300006: Blocks 3
+    2300008: Blocks 4
+    2300010: Core
+    2300012: Core 1
+    2300014: FifthBranch
+    2300016: Foundation
+    2300018: Med_pCylinder1
+    2300020: Med_pCylinder29
+    2300022: Oncidium7_flower4_pPlane9
+    2300024: Oncidium7_pPlane3
+    2300026: Oncidium8_pPlane3
+    2300028: Oncidium8_pPlane3 1
+    2300030: Oncidium8_Stem_flower4_pPlane9
+    2300032: Oncidium8_Stem_flower4_pPlane9 1
+    2300034: Oncidium9_pPlane3
+    2300036: Oncidium9_Stem_AllFlowers_flower4_pPlane9
+    2300038: pasted__pCylinder185
+    2300040: pasted__pCylinder189
+    2300042: pasted__pCylinder190
+    2300044: pasted__pCylinder283
+    2300046: pasted__pCylinder289
+    2300048: pasted__pCylinder290
+    2300050: pasted__pCylinder291
+    2300052: pasted__pCylinder292
+    2300054: pasted__pCylinder293
+    2300056: pasted__pCylinder294
+    2300058: pasted__pCylinder295
+    2300060: pasted__pCylinder296
+    2300062: pasted__pCylinder297
+    2300064: pasted__pCylinder298
+    2300066: pasted__pCylinder299
+    2300068: pasted__pCylinder300
+    2300070: pasted__pCylinder301
+    2300072: pasted__pCylinder302
+    2300074: pasted__pCylinder303
+    2300076: pCylinder273
+    2300078: pCylinder280
+    2300080: pCylinder285
+    2300082: pCylinder332
+    2300084: pCylinder333
+    2300086: pCylinder334
+    2300088: pCylinder335
+    2300090: pCylinder337
+    2300092: pCylinder338
+    2300094: pCylinder339
+    2300096: pCylinder341
+    2300098: pCylinder342
+    2300100: pCylinder343
+    2300102: pCylinder344
+    2300104: pCylinder345
+    2300106: pCylinder346
+    2300108: pCylinder347
+    2300110: pCylinder348
+    2300112: pCylinder349
+    2300114: pCylinder350
+    2300116: pCylinder351
+    2300118: pCylinder352
+    2300120: pCylinder353
+    2300122: pCylinder354
+    2300124: pCylinder355
+    2300126: pCylinder356
+    2300128: pCylinder357
+    2300130: pCylinder358
+    2300132: pCylinder359
+    2300134: pCylinder360
+    2300136: pCylinder361
+    2300138: pCylinder362
+    2300140: pCylinder363
+    2300142: pCylinder364
+    2300144: pCylinder365
+    2300146: pCylinder366
+    2300148: pCylinder367
+    2300150: pCylinder368
+    2300152: pCylinder369
+    2300154: pCylinder370
+    2300156: pCylinder5
+    2300158: pCylinder5 1
+    2300160: pCylinder6
+    2300162: pCylinder6 1
+    2300164: pCylinder7
+    2300166: pCylinder7 1
+    2300168: pCylinder8
+    2300170: pCylinder9
+    2300172: polySurface148
+    2300174: polySurface150
+    2300176: polySurface151
+    2300178: polySurface152
+    2300180: polySurface155
+    2300182: polySurface156
+    2300184: polySurface157
+    2300186: pSolid1
+    2300188: pSolid10
+    2300190: pSolid10 1
+    2300192: pSolid10 2
+    2300194: pSolid11
+    2300196: pSolid13
+    2300198: pSolid15
+    2300200: pSolid3
+    2300202: pSolid3 1
+    2300204: pSolid7
+    2300206: Rafters
+    2300208: Rafters 1
+    2300210: Rafters 2
+    2300212: Rafters 3
+    2300214: Rafters 4
+    2300216: SecondBranch
+    2300218: SecondBranch 1
+    2300220: Tall_pCylinder1
+    2300222: Tall_pCylinder53
+    2300224: Tall_pCylinder54
+    2300226: Tall_pCylinder55
+    2300228: Tall_pCylinder56
+    2300230: Tall_pCylinder57
+    2300232: Tall_pCylinder58
+    2300234: Tall_pCylinder59
+    2300236: Tall_pCylinder60
+    2300238: Tall_pCylinder61
+    2300240: Tall_pCylinder62
+    2300242: Tall_pCylinder63
+    2300244: Thatch
+    2300246: Thatch 1
+    2300248: Thatch 2
+    2300250: Thatch 3
+    2300252: Thatch 4
+    2300254: WaitingBlocks
+    2300256: WaitingBlocks1
+    2300258: WaitingRafters
+    3300000: Blocks
+    3300002: Blocks 1
+    3300004: Blocks 2
+    3300006: Blocks 3
+    3300008: Blocks 4
+    3300010: Core
+    3300012: Core 1
+    3300014: FifthBranch
+    3300016: Foundation
+    3300018: Med_pCylinder1
+    3300020: Med_pCylinder29
+    3300022: Oncidium7_flower4_pPlane9
+    3300024: Oncidium7_pPlane3
+    3300026: Oncidium8_pPlane3
+    3300028: Oncidium8_pPlane3 1
+    3300030: Oncidium8_Stem_flower4_pPlane9
+    3300032: Oncidium8_Stem_flower4_pPlane9 1
+    3300034: Oncidium9_pPlane3
+    3300036: Oncidium9_Stem_AllFlowers_flower4_pPlane9
+    3300038: pasted__pCylinder185
+    3300040: pasted__pCylinder189
+    3300042: pasted__pCylinder190
+    3300044: pasted__pCylinder283
+    3300046: pasted__pCylinder289
+    3300048: pasted__pCylinder290
+    3300050: pasted__pCylinder291
+    3300052: pasted__pCylinder292
+    3300054: pasted__pCylinder293
+    3300056: pasted__pCylinder294
+    3300058: pasted__pCylinder295
+    3300060: pasted__pCylinder296
+    3300062: pasted__pCylinder297
+    3300064: pasted__pCylinder298
+    3300066: pasted__pCylinder299
+    3300068: pasted__pCylinder300
+    3300070: pasted__pCylinder301
+    3300072: pasted__pCylinder302
+    3300074: pasted__pCylinder303
+    3300076: pCylinder273
+    3300078: pCylinder280
+    3300080: pCylinder285
+    3300082: pCylinder332
+    3300084: pCylinder333
+    3300086: pCylinder334
+    3300088: pCylinder335
+    3300090: pCylinder337
+    3300092: pCylinder338
+    3300094: pCylinder339
+    3300096: pCylinder341
+    3300098: pCylinder342
+    3300100: pCylinder343
+    3300102: pCylinder344
+    3300104: pCylinder345
+    3300106: pCylinder346
+    3300108: pCylinder347
+    3300110: pCylinder348
+    3300112: pCylinder349
+    3300114: pCylinder350
+    3300116: pCylinder351
+    3300118: pCylinder352
+    3300120: pCylinder353
+    3300122: pCylinder354
+    3300124: pCylinder355
+    3300126: pCylinder356
+    3300128: pCylinder357
+    3300130: pCylinder358
+    3300132: pCylinder359
+    3300134: pCylinder360
+    3300136: pCylinder361
+    3300138: pCylinder362
+    3300140: pCylinder363
+    3300142: pCylinder364
+    3300144: pCylinder365
+    3300146: pCylinder366
+    3300148: pCylinder367
+    3300150: pCylinder368
+    3300152: pCylinder369
+    3300154: pCylinder370
+    3300156: pCylinder5
+    3300158: pCylinder5 1
+    3300160: pCylinder6
+    3300162: pCylinder6 1
+    3300164: pCylinder7
+    3300166: pCylinder7 1
+    3300168: pCylinder8
+    3300170: pCylinder9
+    3300172: polySurface148
+    3300174: polySurface150
+    3300176: polySurface151
+    3300178: polySurface152
+    3300180: polySurface155
+    3300182: polySurface156
+    3300184: polySurface157
+    3300186: pSolid1
+    3300188: pSolid10
+    3300190: pSolid10 1
+    3300192: pSolid10 2
+    3300194: pSolid11
+    3300196: pSolid13
+    3300198: pSolid15
+    3300200: pSolid3
+    3300202: pSolid3 1
+    3300204: pSolid7
+    3300206: Rafters
+    3300208: Rafters 1
+    3300210: Rafters 2
+    3300212: Rafters 3
+    3300214: Rafters 4
+    3300216: SecondBranch
+    3300218: SecondBranch 1
+    3300220: Tall_pCylinder1
+    3300222: Tall_pCylinder53
+    3300224: Tall_pCylinder54
+    3300226: Tall_pCylinder55
+    3300228: Tall_pCylinder56
+    3300230: Tall_pCylinder57
+    3300232: Tall_pCylinder58
+    3300234: Tall_pCylinder59
+    3300236: Tall_pCylinder60
+    3300238: Tall_pCylinder61
+    3300240: Tall_pCylinder62
+    3300242: Tall_pCylinder63
+    3300244: Thatch
+    3300246: Thatch 1
+    3300248: Thatch 2
+    3300250: Thatch 3
+    3300252: Thatch 4
+    3300254: WaitingBlocks
+    3300256: WaitingBlocks1
+    3300258: WaitingRafters
+    4300000: pCylinder368
+    4300002: pCylinder367
+    4300004: pCylinder366
+    4300006: pCylinder365
+    4300008: pCylinder364
+    4300010: pCylinder363
+    4300012: pCylinder362
+    4300014: Core
+    4300016: pSolid3
+    4300018: pCylinder361
+    4300020: pCylinder360
+    4300022: Oncidium9_Stem_AllFlowers_flower4_pPlane9
+    4300024: Oncidium9_pPlane3
+    4300026: pSolid15
+    4300028: pSolid10
+    4300030: pCylinder359
+    4300032: pCylinder358
+    4300034: pCylinder357
+    4300036: pCylinder356
+    4300038: pCylinder355
+    4300040: Tall_pCylinder63
+    4300042: Med_pCylinder29
+    4300044: Tall_pCylinder62
+    4300046: SecondBranch
+    4300048: pSolid10
+    4300050: Oncidium8_Stem_flower4_pPlane9
+    4300052: Oncidium8_pPlane3
+    4300054: pCylinder9
+    4300056: pCylinder5
+    4300058: pCylinder8
+    4300060: pCylinder6
+    4300062: pCylinder7
+    4300064: pCylinder369
+    4300066: pCylinder370
+    4300068: Tall_pCylinder61
+    4300070: Tall_pCylinder60
+    4300072: Tall_pCylinder59
+    4300074: Tall_pCylinder58
+    4300076: Tall_pCylinder57
+    4300078: Tall_pCylinder56
+    4300080: Tall_pCylinder55
+    4300082: pCylinder354
+    4300084: pCylinder353
+    4300086: pSolid1
+    4300088: pSolid11
+    4300090: pSolid7
+    4300092: Oncidium8_Stem_flower4_pPlane9
+    4300094: Oncidium8_pPlane3
+    4300096: FifthBranch
+    4300098: pSolid13
+    4300100: pCylinder352
+    4300102: pCylinder351
+    4300104: Med_pCylinder1
+    4300106: Tall_pCylinder54
+    4300108: Tall_pCylinder53
+    4300110: Tall_pCylinder1
+    4300112: Oncidium7_flower4_pPlane9
+    4300114: Oncidium7_pPlane3
+    4300116: pCylinder350
+    4300118: pCylinder349
+    4300120: pCylinder5
+    4300122: pCylinder7
+    4300124: pCylinder6
+    4300126: Core
+    4300128: pSolid3
+    4300130: SecondBranch
+    4300132: pSolid10
+    4300134: pasted__pCylinder303
+    4300136: pCylinder348
+    4300138: pCylinder273
+    4300140: pasted__pCylinder302
+    4300142: pasted__pCylinder301
+    4300144: pasted__pCylinder300
+    4300146: pasted__pCylinder299
+    4300148: pasted__pCylinder189
+    4300150: pCylinder347
+    4300152: pasted__pCylinder298
+    4300154: pasted__pCylinder297
+    4300156: pCylinder346
+    4300158: pasted__pCylinder296
+    4300160: pCylinder345
+    4300162: pasted__pCylinder295
+    4300164: pCylinder344
+    4300166: pasted__pCylinder294
+    4300168: pasted__pCylinder293
+    4300170: pasted__pCylinder292
+    4300172: pasted__pCylinder291
+    4300174: pCylinder343
+    4300176: pasted__pCylinder190
+    4300178: pCylinder285
+    4300180: pCylinder342
+    4300182: pCylinder341
+    4300184: pasted__pCylinder290
+    4300186: pCylinder339
+    4300188: pCylinder338
+    4300190: pasted__pCylinder289
+    4300192: pCylinder337
+    4300194: pCylinder335
+    4300196: pasted__pCylinder283
+    4300198: pCylinder334
+    4300200: pasted__pCylinder185
+    4300202: pCylinder333
+    4300204: pCylinder332
+    4300206: pCylinder280
+    4300208: WaitingBlocks1
+    4300210: WaitingRafters
+    4300212: Foundation
+    4300214: WaitingBlocks
+    4300216: Blocks
+    4300218: Thatch
+    4300220: Rafters
+    4300222: Blocks
+    4300224: Thatch
+    4300226: Rafters
+    4300228: Blocks
+    4300230: Thatch
+    4300232: Rafters
+    4300234: Blocks
+    4300236: Thatch
+    4300238: Rafters
+    4300240: Blocks
+    4300242: Thatch
+    4300244: Rafters
+    4300246: polySurface151
+    4300248: polySurface152
+    4300250: polySurface156
+    4300252: polySurface157
+    4300254: polySurface155
+    4300256: polySurface150
+    4300258: polySurface148
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
