@@ -1154,6 +1154,22 @@ namespace JBirdEngine {
 			return GetClosestToPosition(list, position, maxDist);
 		}
 
+        /// <summary>
+        /// Returns the first element from a list and then removes it from the list (Returns default of the specified type if list is empty).
+        /// </summary>
+        /// <typeparam name="T">The type of the list.</typeparam>
+        /// <param name="list">The list to pop from.</param>
+        /// <returns>First element of supplied list.</returns>
+        public static T PopFront<T> (this List<T> list) {
+            if (list.Count == 0) {
+                Debug.LogWarningFormat("List<{0}>.PopFront(): List is empty!", typeof(T));
+                return default(T);
+            }
+            T temp = list[0];
+            list.RemoveAt(0);
+            return temp;
+        }
+
 	}
 
 	/// <summary>

@@ -3,6 +3,10 @@ using System.Collections;
 
 public class AITileAgent : TileAgent {
 
+    public AITileAgent prefab;
+
+    public BossAITileAgent bossAI;
+
     public TileAgent aggroTarget;
     public TileAgent lastTarget;
 
