@@ -44,6 +44,9 @@ public class BossAITileAgent : AITileAgent {
             return;
         }
         foreach (HexNode node in motor.currentTile.connections) {
+            if (node == null) {
+                continue;
+            }
             node.entityOnTile = this;
         }
         motor.currentTile.entityOnTile = this;

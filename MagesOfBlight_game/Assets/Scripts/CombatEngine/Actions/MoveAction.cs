@@ -6,12 +6,24 @@ using JBirdEngine;
 [CreateAssetMenuAttribute]
 public class MoveAction : RangeBaseAction {
 
+    bool firstDoAction;
+
 	public override void Init () {
 		base.Init();
+        firstDoAction = true;
 		tileCheckFlags = EnumHelper.CombineFlags<TileCheckFlags>(TileCheckFlags.unoccupied);
 	}
 
-	public override bool DoAction () {        
+	public override bool DoAction () {
+
+        if (firstDoAction) {
+            foreach (HexNode node in HexGridAssembler.singleton.tiles) {
+                if (node.entityOnTile != null && node.entityOnTile != BattleManager.singleton.selectedAgent) {
+                    node.RemoveFromTemporaryGraph();
+                }
+            }
+            firstDoAction = false;
+        }
 
         //ASSIGN PATH
         if (BattleManager.singleton.selectedAgent.motor.suppliedPath == null || BattleManager.singleton.selectedAgent.motor.suppliedPath.Count == 0) {
@@ -27,5 +39,14 @@ public class MoveAction : RangeBaseAction {
 
         return pathingResult;
 	}
+
+    protected override bool ActionSuccess () {
+        foreach (HexNode node in HexGridAssembler.singleton.tiles) {
+            if (node.entityOnTile != null) {
+                node.AddToTemporaryGraph();
+            }
+        }
+        return base.ActionSuccess();
+    }
 
 }

@@ -205,14 +205,28 @@ public class AILogicState : BaseCombatState {
                 Debug.LogWarningFormat("AILogicState: AI Agent {0} is using puppeteer protocol, but is not a Boss AI Agent!", currentAI.name);
                 return;
             }
-            AITileAgent spawnPrefab = bossAI.respawnQueue.PopFront<AITileAgent>();
-            if (spawnPrefab == default(AITileAgent)) {
-                Debug.LogWarningFormat("AILogicState: Boss AI {0} respawn queue is empty! Default object is {1}.", bossAI.name, spawnPrefab);
+            AITileAgent spawnAgent = bossAI.respawnQueue.PopFront<AITileAgent>();
+            if (spawnAgent == default(AITileAgent)) {
+                Debug.LogWarningFormat("AILogicState: Boss AI {0} respawn queue is empty!", bossAI.name);
             }
             else {
-                GameObject.Instantiate(spawnPrefab, bossAI.spawnHex.transform.position, Quaternion.identity);
-                bossAI.hasTurn = true;
+                spawnAgent.SetActive(true);
+                spawnAgent.transform.position = bossAI.spawnHex.transform.position;
+                spawnAgent.RegisterWithTeam();
+                spawnAgent.RefreshTurn();
+                spawnAgent.stats.currentHealth = spawnAgent.stats.maxHealth;
+                spawnAgent.motor.currentTile = bossAI.spawnHex;
+                spawnAgent.motor.currentTile.entityOnTile = spawnAgent;
+                for (int i = 1; i < BattleManager.singleton.enemyTeam.teamMembers.Count; i++) {
+                    if (BattleManager.singleton.enemyTeam.teamMembers[i] == spawnAgent) {
+                        TileAgent secondPlace = BattleManager.singleton.enemyTeam.teamMembers[1];
+                        BattleManager.singleton.enemyTeam.teamMembers[1] = spawnAgent;
+                        BattleManager.singleton.enemyTeam.teamMembers[i] = secondPlace;
+                    }
+                }
             }
+            bossAI.hasTurn = false;
+            battleManRef.ChangeCombatState(BattleManager.CombatPhase.AISelection);
 
         }
 

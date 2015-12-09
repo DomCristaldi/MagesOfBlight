@@ -1258,11 +1258,14 @@ MonoBehaviour:
   hasTurn: 1
   team: 1
   defaultModelLookDirec: {x: -0, y: -1, z: 0}
+  prefab: {fileID: 0}
+  bossAI: {fileID: 0}
   aggroTarget: {fileID: 0}
   lastTarget: {fileID: 0}
-  behaviourProtocol: 0
+  behaviourProtocol: 3
   hasMoved: 0
   spawnDirection: 0
+  respawnQueue: []
 --- !u!114 &11483130
 MonoBehaviour:
   m_ObjectHideFlags: 1
