@@ -19,8 +19,11 @@ public class BasicMeleeAction : LineBaseAction {
 		if (targetAgent != null && BattleManager.singleton.selectedTile.connections.Contains(BattleManager.singleton.targetTile)) {
 			targetAgent.stats.TakeDamage(damage);
 		}
-
-		return ActionSuccess();
+        BattleManager.singleton.StartCoroutine(WaitAfterHit());
+        if (waitOver) {
+            return ActionSuccess();
+        }
+        return false;
 	}
 
     IEnumerator WaitAfterHit () {
