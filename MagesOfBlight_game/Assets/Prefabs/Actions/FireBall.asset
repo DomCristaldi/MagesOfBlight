@@ -20,9 +20,10 @@ MonoBehaviour:
   pressedColor: {r: .697000027, g: 0, b: 0, a: 1}
   disabledColor: {r: .588235259, g: .588235259, b: .588235259, a: 1}
   actionName: Fireball
-  damage: 7
+  damage: 9
   blightRequired: .00999999978
   blightGiven: 7
+  waitTimeAfterHit: .5
   checkThroughOccupied: 0
   tileCheckFlags: 4
   checkDistance: 5
@@ -31,5 +32,4 @@ MonoBehaviour:
   canBlock: 1
   projectilePrefab: {fileID: 11412994, guid: 4f2766e8d07a65e43b350edc664a4af3, type: 2}
   waitTimeBeforeCast: 1
-  waitTimeAfterHit: .5
   projectile: {fileID: 0}

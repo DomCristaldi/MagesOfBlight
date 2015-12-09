@@ -13,9 +13,11 @@ public class ExitCombatState : BaseCombatState {
         base.InitState();
 
         if (BattleManager.singleton.enemyTeam.numberOfTeamMembers == 0) {
+            TransitionStatHandler.RecoverStats();
             SceneTransitionHandler.singleton.LoadNextLevel();
         }
         else if (BattleManager.singleton.playerTeam.numberOfTeamMembers != 3) {
+            TransitionStatHandler.ResetStats();
             SceneTransitionHandler.singleton.ReloadLevel();
         }
         else {

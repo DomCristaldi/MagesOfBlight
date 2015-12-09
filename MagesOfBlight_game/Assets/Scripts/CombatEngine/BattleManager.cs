@@ -436,7 +436,7 @@ public class BattleManager : MonoBehaviour {
 
 	public void KillAgent (TileAgent agent) {
 		if (enemyTeam.RemoveFromTeam(agent)) {
-			Debug.Log("An enemy has been slain!");
+			//Debug.Log("An enemy has been slain!");
 			agent.Kill();
 
             /*
@@ -446,7 +446,7 @@ public class BattleManager : MonoBehaviour {
             */
 		}
 		if (playerTeam.RemoveFromTeam(agent)) {
-			Debug.Log("Game over, man! It's game over!");
+			//Debug.Log("Game over, man! It's game over!");
 
             //SceneTransitionHandler.singleton.ReloadLevel();
 

@@ -102,6 +102,9 @@ public class TileAgent : TileEntity {
 		if (stats.currentHealth <= 0f) {
 			BattleManager.singleton.KillAgent(this);
 		}
+        else if (team == BattleManager.CombatTeam.Player && stats.currentBlight >= 100f) {
+            BattleManager.singleton.KillAgent(this);
+        }
 	}
 
     public void FollowPath(List<Vector3> pathToFollow) {

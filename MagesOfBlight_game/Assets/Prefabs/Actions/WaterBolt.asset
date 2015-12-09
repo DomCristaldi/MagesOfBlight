@@ -20,9 +20,10 @@ MonoBehaviour:
   pressedColor: {r: 0, g: .227450997, b: .764705956, a: 1}
   disabledColor: {r: .588235319, g: .588235319, b: .588235319, a: 1}
   actionName: Water Bolt
-  damage: 4
+  damage: 6
   blightRequired: .00999999978
   blightGiven: 6
+  waitTimeAfterHit: .5
   checkThroughOccupied: 0
   tileCheckFlags: 4
   checkDistance: 6
@@ -31,5 +32,4 @@ MonoBehaviour:
   canBlock: 1
   projectilePrefab: {fileID: 11479426, guid: 66606a982a43e844fbece67bf73032e9, type: 2}
   waitTimeBeforeCast: 1
-  waitTimeAfterHit: .5
   projectile: {fileID: 0}
