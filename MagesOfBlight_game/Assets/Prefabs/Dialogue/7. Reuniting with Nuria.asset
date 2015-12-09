@@ -15,25 +15,25 @@ MonoBehaviour:
   - character: 0
     mood: 0
     line: There! In the distance! Is that - ? Nuria!!
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 0ae3003aa8d407d419680bd1be7035fb, type: 3}
   - character: 1
     mood: 0
     line: "Stupid Puppets! Don\u2019t you know I\u2019m trying to help you!?"
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: b5922066cbc8f3840b61e12eb5ee88eb, type: 3}
   - character: 2
     mood: 0
-    line: The Earth weeps at such a corruption. For Pacha we must stop this.
-    audioClip: {fileID: 0}
+    line: The Earth weeps at such corruption. For Pacha we must stop this.
+    audioClip: {fileID: 8300000, guid: f291a5dddfd076141a921134e148dcfb, type: 3}
   - character: 0
     mood: 0
     line: "There\u2019s too many of them! She won\u2019t last long Stein!"
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 192d702c31e83cf478820fdefc2bb3d7, type: 3}
   - character: 2
     mood: 0
-    line: "Just keep your center and focus. We can\u2019t afford to make mistakes.
-      One misstep in a mob this big means death."
-    audioClip: {fileID: 0}
+    line: "Focus. We can\u2019t afford to make a mistake. One misstep in a mob this
+      big means death."
+    audioClip: {fileID: 8300000, guid: d175c5a41f0e7374c93bfa070316586d, type: 3}
   - character: 0
     mood: 0
     line: "Just hang on a little longer, Nuria, we\u2019re coming."
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 3de45a6fdcd05dc4b9ca6e77dd662950, type: 3}
