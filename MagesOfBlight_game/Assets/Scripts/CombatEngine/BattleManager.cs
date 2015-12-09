@@ -21,7 +21,7 @@ public class BattleManager : MonoBehaviour {
         }
         */
 
-        public CombatTeam teamType;
+        //public CombatTeam teamType;
 
         //public List<MemberInfo> teamMembers;
         public List<TileAgent> teamMembers;
