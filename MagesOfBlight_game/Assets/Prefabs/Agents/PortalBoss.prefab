@@ -296,6 +296,7 @@ GameObject:
   - 114: {fileID: 11427836}
   - 114: {fileID: 11458186}
   - 114: {fileID: 11483130}
+  - 114: {fileID: 11439424}
   m_Layer: 0
   m_Name: PortalBoss
   m_TagString: Untagged
@@ -1212,6 +1213,32 @@ MonoBehaviour:
   maxBlight: 100
   currentBlight: 0
   blightRecovery: 0
+--- !u!114 &11439424
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 182820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5489849a8d36b524c81874885725c2a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockAction:
+    action: {fileID: 0}
+    known: 0
+    usable: 0
+    button: {fileID: 0}
+  counterAction:
+    action: {fileID: 0}
+    known: 0
+    usable: 0
+    button: {fileID: 0}
+  proactiveActions:
+  - action: {fileID: 11400000, guid: b2bb493f193b9ad4fb43e36daa8fc40a, type: 2}
+    known: 1
+    usable: 1
+    button: {fileID: 0}
 --- !u!114 &11458186
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1242,7 +1269,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 182820}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5bb0613b615530949bfc151369564a64, type: 3}
   m_Name: 
