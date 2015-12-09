@@ -9,22 +9,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17d6206c6d2e5d34dbfee644b9bab481, type: 3}
-  m_Name: MeleeAttack
+  m_Name: MeleeNuria
   m_EditorClassIdentifier: 
   animInfo:
     animType: 0
-    animAttackType: 1
+    animAttackType: 0
   agent: {fileID: 0}
-  normalColor: {r: 1, g: .784313738, b: .501960814, a: 1}
-  highlightedColor: {r: .741176486, g: .603921592, b: .384313732, a: 1}
-  pressedColor: {r: .521568656, g: .407843143, b: .258823544, a: 1}
-  disabledColor: {r: .325490206, g: .254901975, b: .160784319, a: 1}
+  normalColor: {r: 1, g: .784313798, b: .501960814, a: 1}
+  highlightedColor: {r: .741176486, g: .603921592, b: .384313762, a: 1}
+  pressedColor: {r: .521568656, g: .407843173, b: .258823544, a: 1}
+  disabledColor: {r: .223529428, g: .223529428, b: .223529428, a: 1}
   actionName: Melee
-  damage: 3
+  damage: 5
   blightRequired: 0
   blightGiven: -5
+  waitTimeAfterHit: .5
   checkThroughOccupied: 0
   tileCheckFlags: 4
   checkDistance: 1
+  includeSelf: 0
   canCounter: 1
   canBlock: 1

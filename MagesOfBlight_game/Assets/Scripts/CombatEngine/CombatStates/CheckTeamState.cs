@@ -12,9 +12,18 @@ public class CheckTeamState : BaseCombatState {
     public override void InitState() {
         base.InitState();
 
+        //Debug.Log("CHECKING TEAM");
+
+
+        if (CheckEndBattle()) {//If the battle is going to end, don't bother dealing with the teams any more
+            return;
+        }
+
         battleManRef.RefreshPrevPhaseStack();
 
         if (battleManRef.GetCurrentTeam().TurnComplete()) {
+
+
             
             //***TODO: come back and make less specific***
             if (battleManRef.curCombatTeam == BattleManager.CombatTeam.Player) {
@@ -43,6 +52,34 @@ public class CheckTeamState : BaseCombatState {
         }
         
         
+    }
+
+    private bool CheckEndBattle() {
+
+        if (BattleManager.singleton.enemyTeam.numberOfTeamMembers == 0
+         || BattleManager.singleton.playerTeam.numberOfTeamMembers != 3)
+        {
+
+            BattleManager.singleton.ChangeCombatState(BattleManager.CombatPhase.ExitCombat);
+
+            return true;
+        }
+
+        return false;
+        /*
+        if (BattleManager.singleton.enemyTeam.numberOfTeamMembers == 0) {
+
+
+
+            return;
+        }
+
+        else if (BattleManager.singleton.playerTeam.numberOfTeamMembers == 0) {
+
+
+            return;
+        }
+        */
     }
 
 }

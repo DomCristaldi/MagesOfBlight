@@ -7,7 +7,6 @@ public class ProjectileAction : LineBaseAction {
 
 	public BaseProjectile projectilePrefab;
     public float waitTimeBeforeCast;
-	public float waitTimeAfterHit;
 	public BaseProjectile projectile;
 
     bool castingStart;

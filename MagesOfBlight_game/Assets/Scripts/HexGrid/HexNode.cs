@@ -187,7 +187,9 @@ public class HexNode : MonoBehaviour, INode<HexNode> {
     public void AddToTemporaryGraph () {
         for (int i = 0; i < 6; i++) {
             connections[i] = graphConnections[i];
-            connections[i].connections[HexGrid.ReverseConnectionIndex(i)] = connections[i].graphConnections[HexGrid.ReverseConnectionIndex(i)];
+            if (connections[i] != null) {
+                connections[i].connections[HexGrid.ReverseConnectionIndex(i)] = connections[i].graphConnections[HexGrid.ReverseConnectionIndex(i)];
+            }
         }
     }
 
