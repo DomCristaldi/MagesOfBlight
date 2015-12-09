@@ -62,7 +62,7 @@ public class UIConversationHandler : MonoBehaviour {
             dialogueIndexNumber = 0;
 			conversationIndexNumber++;
 			if(conversationIndexNumber < convo.Count) {dialogueList = convo[conversationIndexNumber].dialogue;conversationActive = false;}
-			else Destroy(gameObject);
+			else conversationActive = false;
 		}
 		//if enter is pressed, move to next convo as long as the dialogue is not over yet
 		if(Input.GetKeyDown(KeyCode.Return) && dialogueIndexNumber < dialogueList.Count){
@@ -74,9 +74,9 @@ public class UIConversationHandler : MonoBehaviour {
 	//function to be called each iteration of the list
 	void showConversation(int indexInList){
 		//stop previous audio
-		audio.Stop ();
 		//start next audio
 		if (dialogueList [indexInList].audioClip != null) {
+			audio.Stop ();
 			audio.clip = dialogueList [indexInList].audioClip;
 			audio.Play ();
 		}

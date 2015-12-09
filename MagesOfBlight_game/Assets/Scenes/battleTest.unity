@@ -357,7 +357,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 411570, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 11464438, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
       propertyPath: battleCam
@@ -403,7 +403,8 @@ Prefab:
       propertyPath: enemyTeam.teamMembers.Array.data[4]
       value: 
       objectReference: {fileID: 917717640}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11414330, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: ea0c4270c65f89240a3678cb32c8a056, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1009549948

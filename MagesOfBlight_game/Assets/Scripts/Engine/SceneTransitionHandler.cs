@@ -4,8 +4,10 @@ using System.Collections;
 
 public class SceneTransitionHandler : MonoBehaviour {
 
-    private static SceneTransitionHandler singleton;
+    public static SceneTransitionHandler singleton;
     public Animator levelGraph;
+
+    public string currentSceneName;
 
     public bool onlyInBuild = true;
 
@@ -30,10 +32,26 @@ public class SceneTransitionHandler : MonoBehaviour {
         else if (!onlyInBuild && Application.isEditor) {
             levelGraph.enabled = true;
         }
+
+        currentSceneName = Application.loadedLevelName;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
 	}
+
+    /// <summary>
+    /// Tell the Scene State Machine to transition to the next level
+    /// </summary>
+    public void LoadNextLevel() {
+        levelGraph.SetTrigger("NextLevelTrig");
+    }
+
+    /// <summary>
+    /// Use Application.Load to load the current scene
+    /// </summary>
+    public void ReloadLevel() {
+        Application.LoadLevel(currentSceneName);
+    }
 }
