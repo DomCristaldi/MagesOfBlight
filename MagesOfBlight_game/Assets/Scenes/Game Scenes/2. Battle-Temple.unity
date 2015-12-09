@@ -305,15 +305,7 @@ MonoBehaviour:
   dialogueCanvas: {fileID: 623792974}
   textDialogue: {fileID: 894095460}
   characterImage: {fileID: 1489613344}
-  audio:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  audio: {fileID: 0}
   conversationActive: 0
 --- !u!1 &894095458
 GameObject:

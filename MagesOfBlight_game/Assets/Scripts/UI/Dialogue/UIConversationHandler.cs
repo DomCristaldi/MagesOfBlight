@@ -13,7 +13,7 @@ public class UIConversationHandler : MonoBehaviour {
 	public Text textDialogue;
 	public Image characterImage;
 	//audio to be played 
-	public List<AudioSource> audio; // <-------------------- assigned in inspector, needs to be same size as the dialogue (1 clip per line in convo)
+	public AudioSource audio; // <-------------------- assigned in inspector, needs to be same size as the dialogue (1 clip per line in convo)
 	//number for handling the lists
 	int dialogueIndexNumber;
 	int conversationIndexNumber;
@@ -74,11 +74,12 @@ public class UIConversationHandler : MonoBehaviour {
 	//function to be called each iteration of the list
 	void showConversation(int indexInList){
 		//stop previous audio
-		if (indexInList != 0 && audio [indexInList-1]!=null && audio [indexInList-1].isPlaying) {
-			audio [indexInList-1].Stop ();
-		}
+		audio.Stop ();
 		//start next audio
-		//audio [indexInList].Play ();
+		if (dialogueList [indexInList].audioClip != null) {
+			audio.clip = dialogueList [indexInList].audioClip;
+			audio.Play ();
+		}
 		textDialogue.text = dialogueList [indexInList].line;
 		characterImage.sprite = dialogueList [indexInList].sprite;
 	}
