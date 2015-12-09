@@ -18,6 +18,7 @@ public class UIConversationHandler : MonoBehaviour {
 	int dialogueIndexNumber;
 	int conversationIndexNumber;
 
+    public bool isMapScene;
 	public bool conversationActive;
 
 	//list of dialogue obj from the conversation
@@ -47,12 +48,14 @@ public class UIConversationHandler : MonoBehaviour {
 			//dialogueCanvas.enabled = true;
             //SetCanvasState(true);
 
-            runConversation ();
+            RunConversation ();
 		}
+
+        CheckSceneTransition();
 	}
 
 	//function to call when we want to activate the next conversation
-	public void runConversation(){
+	public void RunConversation(){
 		//if enter is pressed and the conversation is done, turn off dialogue box and interate conversation number
 		if (Input.GetKeyDown (KeyCode.Return) && dialogueIndexNumber == dialogueList.Count) {
 			
@@ -92,6 +95,12 @@ public class UIConversationHandler : MonoBehaviour {
     public void ActivateDialogue() {
         SetCanvasState(true);
         conversationActive = true;
+    }
+
+    private void CheckSceneTransition() {
+        if (isMapScene && !conversationActive) {
+            SceneTransitionHandler.singleton.LoadNextLevel();
+        }
     }
 
 }

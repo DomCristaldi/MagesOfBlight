@@ -38,14 +38,19 @@ public class SceneTransitionHandler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+        CheckInputs();
 	}
 
     /// <summary>
     /// Tell the Scene State Machine to transition to the next level
     /// </summary>
     public void LoadNextLevel() {
-        levelGraph.SetTrigger("NextLevelTrig");
+        if (Application.isEditor && !onlyInBuild) {
+            levelGraph.SetTrigger("NextLevelTrig");
+        }
+        else {
+            Debug.Log("Loading Next Scene");
+        }
     }
 
     /// <summary>
@@ -53,5 +58,24 @@ public class SceneTransitionHandler : MonoBehaviour {
     /// </summary>
     public void ReloadLevel() {
         Application.LoadLevel(currentSceneName);
+    }
+
+    private void CheckInputs() {
+        if (InputHandler.singleton != null) {
+            CheckSkipScene();
+            CheckReloadLevel();
+        }
+    }
+
+    private void CheckSkipScene() {
+        if (InputHandler.singleton.controls.GetAxis(InputHandler.AxisKey.SkipLevel) != 0.0f) {
+            LoadNextLevel();
+        }
+    }
+
+    private void CheckReloadLevel() {
+        if (InputHandler.singleton.controls.GetAxis(InputHandler.AxisKey.ReloadLevel) != 0.0f) {
+            ReloadLevel();
+        }
     }
 }

@@ -25,6 +25,12 @@ public class InputHandler : MonoBehaviour {
         Zoom = 8,
 
         Block = 9,
+
+        SkipLevel = 10,
+        ReloadLevel = 11,
+
+        KillAllEnemies = 12,
+        KillAllPlayers = 13,
     }
 
 
