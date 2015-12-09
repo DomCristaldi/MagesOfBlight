@@ -823,7 +823,16 @@ MonoBehaviour:
   dialogueCanvas: {fileID: 500895745}
   textDialogue: {fileID: 1089035285}
   characterImage: {fileID: 1188846437}
-  audioClip: {fileID: 0}
+  audio:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   conversationActive: 0
 --- !u!224 &1544427044
 RectTransform:

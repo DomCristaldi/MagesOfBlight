@@ -972,7 +972,27 @@ MonoBehaviour:
   dialogueCanvas: {fileID: 385967176}
   textDialogue: {fileID: 124273350}
   characterImage: {fileID: 1379564034}
-  audioClip: {fileID: 0}
+  audio:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   conversationActive: 0
 --- !u!1 &2121548532
 GameObject:
