@@ -15,35 +15,46 @@ MonoBehaviour:
   - character: 0
     mood: 0
     line: 'WHAT ARE THOSE!? '
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 220eedfe7a45aaf4c8ff3380c9c15d7c, type: 3}
   - character: 1
     mood: 0
     line: Not good, the Puppets are right outside.
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: a8abf517d8952c44caf55596a4d3880c, type: 3}
   - character: 2
     mood: 0
-    line: No holding back, kill them all.
-    audioClip: {fileID: 0}
+    line: Don't hold back, kill them all.
+    audioClip: {fileID: 8300000, guid: 581184a6857b2454d9943093aaeea136, type: 3}
   - character: 0
     mood: 0
-    line: "What are they, though? There\u2019s so many of them!"
-    audioClip: {fileID: 0}
+    line: "Wh-What are they, though? There\u2019s so many of them!"
+    audioClip: {fileID: 8300000, guid: f1d6b5ba2f95c62439a05000f31bea2d, type: 3}
   - character: 2
     mood: 0
     line: "They\u2019re what you\u2019ll become if you abuse your power."
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: aabbbe5fcaa6c2449a995cfdea35dca4, type: 3}
   - character: 1
     mood: 0
     line: How good are you at learning on your feet?
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: d14a1090e60a7a54daa134cde11caea5, type: 3}
   - character: 0
     mood: 0
     line: "Uh\u2026"
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: ff80af873447a3f4f98f5fed96b172a1, type: 3}
   - character: 1
     mood: 0
-    line: "Alright, it\u2019s simple, so try to remember this. Every time you use
-      your power the Blight spreads.  If you go awhile without using it, it will dissipate.
-      A higher Blight means more power, but you become more frail.  Lower Blight,
-      it\u2019s the other way around. Don\u2019t get yourself killed."
-    audioClip: {fileID: 0}
+    line: "Alright, it\u2019s simple, so try to remember this."
+    audioClip: {fileID: 8300000, guid: cb6dffb116cc42d429212db5ee629bb6, type: 3}
+  - character: 1
+    mood: 0
+    line: Everytime you use your power the Blight spreads.  If you go awhile without
+      using it, it will dissipate.
+    audioClip: {fileID: 8300000, guid: 2167b28aed6c84d4597c154dba5fd29c, type: 3}
+  - character: 1
+    mood: 0
+    line: "Higher Blight means more power, but you'll become more frail.  Lower Blight,
+      it\u2019s the other way around."
+    audioClip: {fileID: 8300000, guid: 74e53e42c9f64024885f4a786426a5c3, type: 3}
+  - character: 1
+    mood: 0
+    line: "Don\u2019t get yourself killed."
+    audioClip: {fileID: 8300000, guid: 1de5f582eb98924478cdb707785ceb6e, type: 3}
