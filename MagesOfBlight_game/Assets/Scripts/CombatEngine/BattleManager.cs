@@ -206,6 +206,7 @@ public class BattleManager : MonoBehaviour {
         print(debugString);
         */
 
+        CheckInputs();
 
 	}
 
@@ -478,6 +479,7 @@ public class BattleManager : MonoBehaviour {
                 break;
         }
 
+        ChangeCombatState(CombatPhase.ExitCombat);
     }
 
 }
