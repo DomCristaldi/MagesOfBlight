@@ -158,6 +158,7 @@ MonoBehaviour:
   showConnections: 0
   radius: 0
   connections: []
+  graphConnections: []
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

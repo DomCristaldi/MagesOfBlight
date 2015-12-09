@@ -96,7 +96,7 @@ public class TileAgent : TileEntity {
 
     }
 
-    private void RegisterWithTeam() {
+    public void RegisterWithTeam() {
         switch (team) {
             case BattleManager.CombatTeam.Player:
                 battleManRef.playerTeam.AddToTeam(this);
@@ -133,7 +133,7 @@ public class TileAgent : TileEntity {
 
     }
 
-	public void Kill () {
+	public virtual void Kill () {
 		Destroy(gameObject);
 	}
 

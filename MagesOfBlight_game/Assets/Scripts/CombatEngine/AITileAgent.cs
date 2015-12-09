@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using JBirdEngine;
 
 public class AITileAgent : TileAgent {
 
@@ -21,6 +22,16 @@ public class AITileAgent : TileAgent {
 
     public void SetAggro (TileAgent newTarget) {
         aggroTarget = newTarget;
+    }
+
+    public override void Kill () {
+        if (bossAI != null) {
+            bossAI.respawnQueue.Add(this);
+            this.SetActive(false);
+        }
+        else {
+            base.Kill();
+        }
     }
 
 }

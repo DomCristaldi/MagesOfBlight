@@ -27,6 +27,7 @@ public class HexNode : MonoBehaviour, INode<HexNode> {
 
 	//INode necessities:
 	public List<HexNode> connections;
+    public List<HexNode> graphConnections;
 	private float _g;
 	private float _h;
 	private HexNode _cameFrom;
@@ -72,8 +73,10 @@ public class HexNode : MonoBehaviour, INode<HexNode> {
 
 	protected virtual void Awake () {
 		connections = new List<HexNode>();
+        graphConnections = new List<HexNode>();
 		for (int i  = 0; i < 6; i++) {
 			connections.Add(null);
+            graphConnections.Add(null);
 		}
 		ResetGH();
 	}
@@ -121,11 +124,15 @@ public class HexNode : MonoBehaviour, INode<HexNode> {
 	}
 
 	public void AddConnection (HexNode other, HexGrid.ConnectionIndex direction) {
-		connections[(int)direction] = other;
-		other.connections[HexGrid.ReverseConnectionIndex(direction)] = this;
+		graphConnections[(int)direction] = other;
+		other.graphConnections[HexGrid.ReverseConnectionIndex(direction)] = this;
+        connections[(int)direction] = other;
+        other.connections[HexGrid.ReverseConnectionIndex(direction)] = this;
 	}
 
     public void RemoveConnection (HexNode other, HexGrid.ConnectionIndex direction) {
+        graphConnections[(int)direction] = null;
+        other.graphConnections[HexGrid.ReverseConnectionIndex(direction)] = null;
         connections[(int)direction] = null;
         other.connections[HexGrid.ReverseConnectionIndex(direction)] = null;
     }
@@ -148,10 +155,26 @@ public class HexNode : MonoBehaviour, INode<HexNode> {
 
     void DisconnectAll () {
         for (int i = 0; i < 6; i++) {
-            if (connections[i] == null) {
+            if (graphConnections[i] == null) {
                 continue;
             }
-            RemoveConnection(connections[i], (HexGrid.ConnectionIndex)i);
+            RemoveConnection(graphConnections[i], (HexGrid.ConnectionIndex)i);
+        }
+    }
+
+    public void RemoveFromTemporaryGraph () {
+        for (int i = 0; i < 6; i++) {
+            if (connections[i] != null) {
+                connections[i].connections[HexGrid.ReverseConnectionIndex(i)] = null;
+            }
+            connections[i] = null;
+        }
+    }
+
+    public void AddToTemporaryGraph () {
+        for (int i = 0; i < 6; i++) {
+            connections[i] = graphConnections[i];
+            connections[i].connections[HexGrid.ReverseConnectionIndex(i)] = connections[i].graphConnections[HexGrid.ReverseConnectionIndex(i)];
         }
     }
 
