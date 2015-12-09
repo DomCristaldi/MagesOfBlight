@@ -23,6 +23,8 @@ public class BaseAction : ScriptableObject {
 
 	float range = Mathf.Infinity;
 
+    public float waitTimeAfterHit;
+
 	public enum TileCheckFlags {
 		none = 0,
 		unoccupied = 1,

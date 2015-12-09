@@ -23,8 +23,10 @@ MonoBehaviour:
   damage: 3
   blightRequired: 0
   blightGiven: -5
+  waitTimeAfterHit: .5
   checkThroughOccupied: 0
   tileCheckFlags: 4
   checkDistance: 1
+  includeSelf: 0
   canCounter: 1
   canBlock: 1
