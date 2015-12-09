@@ -74,4 +74,10 @@ public class BossAITileAgent : AITileAgent {
             _firstLateUpdate = false;
         }
     }
+
+    public override void Kill () {
+        TransitionStatHandler.StartStats();
+        SceneTransitionHandler.singleton.LoadNextLevel();
+    }
+
 }
