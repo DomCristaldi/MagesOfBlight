@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 413842}
   - 114: {fileID: 11423386}
   - 95: {fileID: 9563332}
+  - 114: {fileID: 11441202}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -59,6 +60,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGraph: {fileID: 0}
   onlyInBuild: 1
+--- !u!114 &11441202
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70b343acd9ba78d4ca16aa355cf80bc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultPortrait: {fileID: 0}
+  characters:
+  - character: 0
+    defaultPortrait: {fileID: 21300000, guid: e806ec126aed5414480099b207bfafe4, type: 3}
+    moodSprites: []
+  - character: 1
+    defaultPortrait: {fileID: 21300000, guid: b4fe4b16bb2c6074d8fac989e664d08d, type: 3}
+    moodSprites: []
+  - character: 2
+    defaultPortrait: {fileID: 21300000, guid: 6a87569127e0bfc49973b965faa09b51, type: 3}
+    moodSprites: []
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
