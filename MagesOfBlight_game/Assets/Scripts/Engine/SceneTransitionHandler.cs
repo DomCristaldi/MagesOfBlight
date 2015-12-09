@@ -18,13 +18,14 @@ public class SceneTransitionHandler : MonoBehaviour {
         if (levelGraph == null) {
             levelGraph = GetComponent<Animator>();
         }
-        levelGraph.enabled = false;
+        levelGraph.enabled = true;
 
         DontDestroyOnLoad(gameObject);
     }
 
 	// Use this for initialization
 	void Start () {
+        
         if (!Application.isEditor) {
             levelGraph.enabled = true;
         }
@@ -45,7 +46,7 @@ public class SceneTransitionHandler : MonoBehaviour {
     /// Tell the Scene State Machine to transition to the next level
     /// </summary>
     public void LoadNextLevel() {
-        if (Application.isEditor && !onlyInBuild) {
+        if (Application.isEditor && !onlyInBuild || !Application.isEditor) {
             levelGraph.SetTrigger("NextLevelTrig");
         }
         else {

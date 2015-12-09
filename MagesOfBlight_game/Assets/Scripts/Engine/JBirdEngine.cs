@@ -874,7 +874,9 @@ namespace JBirdEngine {
 				singleton = instance;
 			}
 			else {
-				GameObject.Destroy(instance.gameObject);
+                if (Application.isPlaying) {
+                    GameObject.Destroy(instance.gameObject);
+                }
 			}
 		}
 
