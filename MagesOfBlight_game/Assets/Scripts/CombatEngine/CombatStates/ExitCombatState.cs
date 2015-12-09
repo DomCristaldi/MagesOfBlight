@@ -12,7 +12,15 @@ public class ExitCombatState : BaseCombatState {
     public override void InitState() {
         base.InitState();
 
-
+        if (BattleManager.singleton.enemyTeam.numberOfTeamMembers == 0) {
+            SceneTransitionHandler.singleton.LoadNextLevel();
+        }
+        else if (BattleManager.singleton.playerTeam.numberOfTeamMembers != 3) {
+            SceneTransitionHandler.singleton.ReloadLevel();
+        }
+        else {
+            Debug.LogError("Exit Combat State doesn't know where to go. Come here and add a proper transition condition");
+        }
     }
 
     public override void UpdateState() {

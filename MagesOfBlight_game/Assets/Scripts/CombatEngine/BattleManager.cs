@@ -438,14 +438,16 @@ public class BattleManager : MonoBehaviour {
 			Debug.Log("An enemy has been slain!");
 			agent.Kill();
 
+            /*
             if (enemyTeam.numberOfTeamMembers == 0) {
                 SceneTransitionHandler.singleton.LoadNextLevel();
             }
+            */
 		}
 		if (playerTeam.RemoveFromTeam(agent)) {
 			Debug.Log("Game over, man! It's game over!");
 
-            SceneTransitionHandler.singleton.ReloadLevel();
+            //SceneTransitionHandler.singleton.ReloadLevel();
 
 			//Application.LoadLevel(firstSceneName);
 		}
