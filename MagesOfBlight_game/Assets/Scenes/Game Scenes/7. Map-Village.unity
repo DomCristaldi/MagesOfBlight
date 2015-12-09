@@ -923,6 +923,7 @@ MonoBehaviour:
   textDialogue: {fileID: 1089035285}
   characterImage: {fileID: 1188846437}
   audio: {fileID: 709720261}
+  isMapScene: 1
   conversationActive: 0
 --- !u!224 &1544427044
 RectTransform:

@@ -22,7 +22,7 @@ MonoBehaviour:
   actionName: Heal
   damage: 20
   blightRequired: .00999999978
-  blightGiven: 10
+  blightGiven: 8
   checkThroughOccupied: 1
   tileCheckFlags: 4
   checkDistance: 4

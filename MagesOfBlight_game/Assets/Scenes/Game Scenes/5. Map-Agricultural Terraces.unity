@@ -334,6 +334,7 @@ MonoBehaviour:
   textDialogue: {fileID: 1020319528}
   characterImage: {fileID: 1071033070}
   audio: {fileID: 1011882568}
+  isMapScene: 1
   conversationActive: 0
 --- !u!1 &615811602
 GameObject:
