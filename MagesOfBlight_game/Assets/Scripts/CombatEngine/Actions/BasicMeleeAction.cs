@@ -5,6 +5,7 @@ using JBirdEngine;
 [CreateAssetMenuAttribute]
 public class BasicMeleeAction : LineBaseAction {
 
+    bool didWhap;
     bool waitOver;
 
 	public override void Init () {
@@ -12,14 +13,16 @@ public class BasicMeleeAction : LineBaseAction {
 		checkDistance = 1;
 		tileCheckFlags = EnumHelper.CombineFlags<TileCheckFlags>(TileCheckFlags.agentOccupied);
         waitOver = false;
+        didWhap = false;
 	}
 
 	public override bool DoAction () {
 		TileAgent targetAgent = (TileAgent)BattleManager.singleton.targetTile.entityOnTile;
-		if (targetAgent != null && BattleManager.singleton.selectedTile.connections.Contains(BattleManager.singleton.targetTile)) {
-			targetAgent.stats.TakeDamage(damage);
-		}
-        BattleManager.singleton.StartCoroutine(WaitAfterHit());
+        if (targetAgent != null && BattleManager.singleton.selectedTile.connections.Contains(BattleManager.singleton.targetTile) && !didWhap) {
+            targetAgent.stats.TakeDamage(damage);
+            didWhap = true;
+            BattleManager.singleton.StartCoroutine(WaitAfterHit());
+        }
         if (waitOver) {
             return ActionSuccess();
         }
