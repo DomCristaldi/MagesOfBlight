@@ -14,13 +14,16 @@ MonoBehaviour:
   dialogue:
   - character: 2
     mood: 1
-    line: "What were you thinking, Nuria! We\u2019ve never seen a place so infested.
-      Did you think you could walk amongst them unharmed!"
-    audioClip: {fileID: 0}
+    line: "What were you thinking, Nuria!? We\u2019ve never seen a place so infested. "
+    audioClip: {fileID: 8300000, guid: 5e1be7c965a911e4aa9a6975233d668b, type: 3}
+  - character: 2
+    mood: 1
+    line: Did you think you could walk amongst them unharmed!?
+    audioClip: {fileID: 8300000, guid: aa229bc3909649d4fa621f9ad2da0083, type: 3}
   - character: 1
     mood: 0
-    line: "Don\u2019t tell me you were worried about me?"
-    audioClip: {fileID: 0}
+    line: "Don\u2019t tell me you were worried about me."
+    audioClip: {fileID: 8300000, guid: 7246a7fcccfc18a41a1187088efb8e77, type: 3}
   - character: 2
     mood: 0
     line: '...'
@@ -29,41 +32,53 @@ MonoBehaviour:
     mood: 0
     line: "I- I\u2019m sorry Stein. It\u2019s just, I followed a small group here.The
       next thing I knew I was in the middle of them."
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 8c1e6f4cd3734694a92947f3350c9e51, type: 3}
   - character: 2
     mood: 0
-    line: "I trust now you understand our situation? We cannot look upon these creatures
-      with sympathy. For Pacha\u2019s sake you must steel yourself."
-    audioClip: {fileID: 0}
+    line: I trust now you understand our situation? We cannot look upon these creatures
+      with sympathy.
+    audioClip: {fileID: 8300000, guid: 6b92ff43f8df6e147ab28743b55910b0, type: 3}
+  - character: 2
+    mood: 0
+    line: "For Pacha\u2019s sake you must steel yourself."
+    audioClip: {fileID: 8300000, guid: 954d9d4fdd0d5a94ca14373b02bf0011, type: 3}
   - character: 1
     mood: 0
     line: "I can\u2019t believe they are beyond help Stein, but I\u2019ll do what
       I must."
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: c16b16e95986c6f4fbc9cf8ba176392f, type: 3}
   - character: 0
     mood: 0
-    line: "That\u2019s all we can ask. Welcome back, Nuria. We were both worried."
-    audioClip: {fileID: 0}
+    line: "That\u2019s all we can ask. Welcome back, Nuria. We were both worried about
+      you."
+    audioClip: {fileID: 8300000, guid: 69d5eec9ee8abe842ab791faef9bda73, type: 3}
   - character: 1
     mood: 0
-    line: "Thanks Avon. Now for the task at hand. These puppets are here for a reason.
-      I think they\u2019re guarding something in those caves."
-    audioClip: {fileID: 0}
+    line: Thanks Avon. Now for the task at hand. These puppets are here for a reason.
+    audioClip: {fileID: 8300000, guid: e0f485fc32a2af54e973431b75a2550f, type: 3}
+  - character: 1
+    mood: 0
+    line: "I think they\u2019re guarding something in those caves."
+    audioClip: {fileID: 8300000, guid: 02ed307fce928ec45b51b02469828339, type: 3}
   - character: 0
     mood: 0
     line: "Maybe it\u2019s a way to break the curse?"
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 3c01ca6b4d807e84092a17e039097d99, type: 3}
   - character: 2
     mood: 0
     line: "I have a feeling it\u2019s not so straightforward. Something much more
       sinister is at work here."
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 425c9fbee2b4a89469afee0122f4384a, type: 3}
   - character: 0
     mood: 0
-    line: "Either way, something that they don\u2019t want us getting near must be
-      bad for them. And if it\u2019s bad for them, that\u2019s good for us, right?"
-    audioClip: {fileID: 0}
+    line: "Either way, something that they don\u2019t want us getting to must be bad
+      for them."
+    audioClip: {fileID: 8300000, guid: 5bf1466a00ffac64a9480f550901594c, type: 3}
+  - character: 0
+    mood: 0
+    line: "And if it\u2019s bad for them, then it's good for us, right?"
+    audioClip: {fileID: 8300000, guid: db6f7ddfc6151cd4e8e59152c07c46a3, type: 3}
   - character: 2
     mood: 0
     line: We can only hope.
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: fefba2914cfbe2c4ebeee2ef1c754e0f, type: 3}

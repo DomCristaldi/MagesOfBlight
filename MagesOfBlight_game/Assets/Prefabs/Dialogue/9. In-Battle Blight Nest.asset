@@ -15,29 +15,29 @@ MonoBehaviour:
   - character: 0
     mood: 0
     line: Stein, what is that?
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 422e59a30df29204596ab7fb9f44501e, type: 3}
   - character: 2
     mood: 0
     line: This must be their nest.
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 297e5c81c008d6b4bbf0287bb6ec3f01, type: 3}
   - character: 1
     mood: 0
     line: You think that thing is controlling the Blight?
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: b12a6896369f700459bceb3f7c4f111d, type: 3}
   - character: 2
     mood: 0
-    line: Look how the Puppets shield it. I have no doubt. That Hive governs all Blight
-      Puppets.
-    audioClip: {fileID: 0}
+    line: Look how the Puppets shield it. I have no doubt. That Hive must govern all
+      Blight Puppets.
+    audioClip: {fileID: 8300000, guid: df6ec3cef671bfd44aa779cddbf80148, type: 3}
   - character: 1
     mood: 0
     line: So killing that will end this?
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 03581213bdf10e1409569a866f6eb1ef, type: 3}
   - character: 2
     mood: 0
-    line: Probably
-    audioClip: {fileID: 0}
+    line: Probably.
+    audioClip: {fileID: 8300000, guid: 39bf93eb5a3ef1a4380e53c74f5cc050, type: 3}
   - character: 0
     mood: 0
     line: Good odds.
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: e44612e13f4afb04daed6d6fde5d5d89, type: 3}
