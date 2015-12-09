@@ -15,16 +15,16 @@ MonoBehaviour:
   - character: 1
     mood: 0
     line: We did it!
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: fc28767765c1c7549bef2aa44e384034, type: 3}
   - character: 0
     mood: 0
     line: "Look! The Puppets! They\u2019ve stopped attacking!"
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 92219b2aae300c74c88de55cadb35e4a, type: 3}
   - character: 2
     mood: 0
     line: "It\u2019s over. Without the Hive, the Blight has lost its control over
       us. Pacha is once again free."
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 1b439ccdd9fecfb4f8a8aaf94593baad, type: 3}
   - character: 0
     mood: 0
     line: But the Blight is still here, I can still use magic. I assumed that if we
