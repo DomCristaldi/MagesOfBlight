@@ -14,43 +14,51 @@ MonoBehaviour:
   dialogue:
   - character: 0
     mood: 0
-    line: "How far do you think we\u2019ll have to go."
-    audioClip: {fileID: 0}
+    line: "How far do you think we\u2019ll have to go?"
+    audioClip: {fileID: 8300000, guid: fb2e869125f6c2749a873047221b9876, type: 3}
   - character: 1
     mood: 0
     line: "We\u2019ll probably be following the road all the way to the coast."
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 8193455b518e32b4d81055fba82c5fd2, type: 3}
   - character: 0
     mood: 0
     line: "I\u2019ve never been this far out into the country before. It\u2019s kind
       of peaceful, albeit ominous."
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 09bb2962b226d914190f0cb86d3b9c5b, type: 3}
   - character: 1
     mood: 0
     line: "I\u2019ve been all the way to the coast before. It\u2019s just a straight
       line North from here."
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: b2025281c5b20e1459e8c041142f22dc, type: 3}
   - character: 2
     mood: 0
-    line: "There\u2019s a village a few miles to the east, let\u2019s head that way."
-    audioClip: {fileID: 0}
+    line: "There is a village a few miles to the east, let\u2019s head that way."
+    audioClip: {fileID: 8300000, guid: f1600984c64902840a6d7f04265123fd, type: 3}
   - character: 1
     mood: 0
     line: "What? Why? There\u2019s still several hours of light left, we could cover
-      more ground if we press on. We might even reach the next village along the road."
-    audioClip: {fileID: 0}
+      more ground if we press on."
+    audioClip: {fileID: 8300000, guid: c5560aa26ef295248ad610afd6b887d2, type: 3}
+  - character: 1
+    mood: 0
+    line: We might even reach the next village along the road.
+    audioClip: {fileID: 8300000, guid: 006b28846d9652b49aa4633864fdc44d, type: 3}
   - character: 2
     mood: 0
     line: "Still, I\u2019d like to head for this village. I know the way well enough,
       and can get us there before nightfall."
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: fdda58012da1422429cf6056b7f3713c, type: 3}
   - character: 0
     mood: 0
-    line: "I think I agree with Stein; I\u2019d like to know we can reach a roof to
-      sleep under, rather than stumble on the road at night."
-    audioClip: {fileID: 0}
+    line: I think I agree with Stein.
+    audioClip: {fileID: 8300000, guid: 898d195f0ed67ff4faaf979eb2c90c5a, type: 3}
+  - character: 0
+    mood: 0
+    line: "I\u2019d like to know we can reach a roof to sleep under, rather than stumble
+      on the road at night."
+    audioClip: {fileID: 8300000, guid: e889b00ccb638aa488b331bb76979e48, type: 3}
   - character: 1
     mood: 0
     line: "Alright, but we get up early and hit the road as soon as we can. I don\u2019t
       like the idea of being a sitting duck."
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: e9f9dd7dea625a246a58592d57910a03, type: 3}
