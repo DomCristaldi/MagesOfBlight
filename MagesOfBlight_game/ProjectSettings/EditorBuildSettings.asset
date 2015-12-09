@@ -22,7 +22,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game Scenes/7. Map-Village.unity
   - enabled: 1
-    path: Assets/Scenes/Game Scenes/8. Battle-Village.unity
+    path: Assets/Scenes/Game Scenes/broken village.unity
   - enabled: 1
     path: Assets/Scenes/Game Scenes/9. Map-Outside Cave.unity
   - enabled: 1
