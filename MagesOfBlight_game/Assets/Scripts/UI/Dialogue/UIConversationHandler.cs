@@ -74,11 +74,11 @@ public class UIConversationHandler : MonoBehaviour {
 	//function to be called each iteration of the list
 	void showConversation(int indexInList){
 		//stop previous audio
-		if (indexInList != 0 && audio [indexInList-1].isPlaying) {
+		if (indexInList != 0 && audio [indexInList-1]!=null && audio [indexInList-1].isPlaying) {
 			audio [indexInList-1].Stop ();
 		}
 		//start next audio
-		audio [indexInList].Play ();
+		//audio [indexInList].Play ();
 		textDialogue.text = dialogueList [indexInList].line;
 		characterImage.sprite = dialogueList [indexInList].sprite;
 	}

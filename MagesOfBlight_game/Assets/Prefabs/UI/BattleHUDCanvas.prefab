@@ -1315,7 +1315,27 @@ MonoBehaviour:
   dialogueCanvas: {fileID: 22323104}
   textDialogue: {fileID: 11491790}
   characterImage: {fileID: 11408462}
-  audio: []
+  audio:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   conversationActive: 0
 --- !u!114 &11481592
 MonoBehaviour:
