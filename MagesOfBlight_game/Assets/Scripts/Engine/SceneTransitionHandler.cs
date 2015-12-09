@@ -36,4 +36,8 @@ public class SceneTransitionHandler : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    public void TransitionToNextLevel() {
+        levelGraph.SetTrigger("NextLevelTrig");
+    }
 }
