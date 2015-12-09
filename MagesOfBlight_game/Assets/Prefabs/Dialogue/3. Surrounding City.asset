@@ -15,96 +15,136 @@ MonoBehaviour:
   - character: 0
     mood: 0
     line: "So those things.  You\u2019re saying they\u2019re people?"
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: be6531fa16d0b254bb055da69c582a19, type: 3}
   - character: 2
     mood: 0
-    line: There was a time when they were human.The lucky ones were consumed and never
-      woke to this nightmare. Others regained consciousness before the curse took
-      them.
-    audioClip: {fileID: 0}
+    line: They once were human.
+    audioClip: {fileID: 8300000, guid: 72f1286be7d4d5a4785622b29a27b318, type: 3}
+  - character: 2
+    mood: 0
+    line: The lucky ones were consumed and never woke to this nightmare.
+    audioClip: {fileID: 8300000, guid: 7ccb24f38ecd7444d918121a8e49111f, type: 3}
+  - character: 2
+    mood: 0
+    line: Others regained consciousness before the curse took them.
+    audioClip: {fileID: 8300000, guid: 5740a62ba53f4324e9cfc288b076ec75, type: 3}
   - character: 1
     mood: 0
     line: "That\u2019s what happens when you use too much magic. The Blight spreads
-      through you.  It\u2019s a gift...but it can destroy you."
-    audioClip: {fileID: 0}
+      through you."
+    audioClip: {fileID: 8300000, guid: ea11b02f1b8cb2e4780c1d91c50aeae6, type: 3}
+  - character: 1
+    mood: 0
+    line: "It\u2019s a gift...but it can destroy you."
+    audioClip: {fileID: 8300000, guid: 057edcc372a108e4f93095c9c35d5e45, type: 3}
   - character: 0
     mood: 0
-    line: "Honestly, that\u2019s concerning. It does seem pretty useful, but you\u2019re
-      sure it\u2019s safe?"
-    audioClip: {fileID: 0}
+    line: "Honestly, that\u2019s concerning. It does seem pretty useful though, but
+      you\u2019re sure it\u2019s safe?"
+    audioClip: {fileID: 8300000, guid: 10556a1497d4bea4fa195cc307397e8a, type: 3}
   - character: 1
     mood: 0
     line: "Just make sure it\u2019s managed and you\u2019ll be fine."
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: f813710c41ed8e44990ca5e6c686166a, type: 3}
   - character: 0
     mood: 0
-    line: "Are we all that\u2019s left? There were so many people in the city, are
+    line: "Are we all that\u2019s left? There were so many people in the city, are...are
       we the only ones that survived?"
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 1a7becba401880e4da19bad3c04706f5, type: 3}
   - character: 2
     mood: 0
     line: There were more. I searched the city when I woke. I saw some who were awake
-      like me. Two joined me for a time, but they too were taken by The Blight. Others
-      were still unconscious, those I brought to the temple. You were the last to
-      wake.
-    audioClip: {fileID: 0}
+      like me.
+    audioClip: {fileID: 8300000, guid: 93578f406fce1b2419aec68e4090f1b5, type: 3}
+  - character: 2
+    mood: 0
+    line: Two joined me for a time, but they too were taken by the Blight.
+    audioClip: {fileID: 8300000, guid: f00a8b0cd65f3964eba6bf79b77fae31, type: 3}
+  - character: 2
+    mood: 0
+    line: Others were still unconscious.  Those I took to the Temple.  You were the
+      last to wake.
+    audioClip: {fileID: 8300000, guid: 7fd3d6d12bfb87b498e4054e4ca338ff, type: 3}
   - character: 0
     mood: 0
     line: How long was I asleep?
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: fb393c01af5be0b459bc804d18b72ef8, type: 3}
   - character: 2
     mood: 0
     line: Two weeks.
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 810ea83788283f5429ff8b778182665a, type: 3}
   - character: 0
     mood: 0
-    line: "That long? ... Thank you. For watching over me. I\u2019ll make it up to
-      you somehow."
-    audioClip: {fileID: 0}
+    line: "That long!? Well...thank you. For watching over me. I\u2019ll make it up
+      to you somehow."
+    audioClip: {fileID: 8300000, guid: c9c754e3516af4147acdf5c0c32b138f, type: 3}
   - character: 2
     mood: 0
     line: "There\u2019s no need.  It is my duty as a priest. "
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 73c7c8a19271faa49a75cf0caacc2258, type: 3}
   - character: 0
     mood: 0
     line: You were a priest?
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: a1dab86cc24593d448e3feb3e96798da, type: 3}
   - character: 2
     mood: 0
-    line: I am a priest. According to the priests I am of the same blood as Pacha,
-      the goddess of land. Now, Pacha is wounded, and I must care for her.
-    audioClip: {fileID: 0}
+    line: I AM a priest. According to the priests I am the same blood as Pacha, the
+      goddess of land.
+    audioClip: {fileID: 8300000, guid: d39c0d63e7a71b64086e952527cb1934, type: 3}
+  - character: 2
+    mood: 0
+    line: Now, Pacha is wounded and I must care for her.
+    audioClip: {fileID: 8300000, guid: ae39ab56e616e164b8d8c640c5ae36a2, type: 3}
   - character: 0
     mood: 0
-    line: What about you, Nuria?
-    audioClip: {fileID: 0}
+    line: And what about you, Nuria?
+    audioClip: {fileID: 8300000, guid: 4bbf9df75e217934094ce09820b1ff31, type: 3}
   - character: 1
     mood: 0
     line: "I didn\u2019t have a job before. I lived in the streets, moving from place
-      to place. Not much different from now. What about you?"
-    audioClip: {fileID: 0}
+      to place. Not much different from now."
+    audioClip: {fileID: 8300000, guid: 1e0a046c9f58bb44c9fbcd640372ff7b, type: 3}
+  - character: 1
+    mood: 0
+    line: What about you?
+    audioClip: {fileID: 8300000, guid: 055f8595d2e7c1b4daf4556cd4f179d3, type: 3}
   - character: 0
     mood: 0
-    line: "My father was a goldsmith. I lived on the other side of the city. My father
-      occasionally traveled to the coast, but I\u2019ve never traveled beyond the
-      city."
-    audioClip: {fileID: 0}
+    line: My father was a healer. I lived on the other side of the city.
+    audioClip: {fileID: 8300000, guid: 961b4d4f587d7974eb38d5980771e5a5, type: 3}
+  - character: 0
+    mood: 0
+    line: "My father occasionally traveled to the coast, but I\u2019ve never traveled
+      beyond the borders of the city."
+    audioClip: {fileID: 8300000, guid: 4bcbbc75c3078e945a4f9ad89f64a132, type: 3}
   - character: 1
     mood: 0
     line: "Well, here\u2019s your chance."
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 2b20cd8963dad104b8dc711ff1d6495b, type: 3}
   - character: 0
     mood: 0
-    line: Where will we go?
-    audioClip: {fileID: 0}
+    line: Wh-Where will we go?
+    audioClip: {fileID: 8300000, guid: 9e8ee13970b013d44a706e7c5dad0781, type: 3}
   - character: 2
     mood: 0
-    line: We follow the road. Fight off the Blight as we can, helping survivors, and
-      warning others of this corruption. Until we know how to cleanse Pacha, leaving
-      this accursed place is the best we can do.
-    audioClip: {fileID: 0}
+    line: We follow the road.
+    audioClip: {fileID: 8300000, guid: d6c79586eddb67643a7d74b17d73db3a, type: 3}
+  - character: 2
+    mood: 0
+    line: Fight off the Blight as we can, helping survivors, and warning others of
+      this corruption.
+    audioClip: {fileID: 8300000, guid: bf55f319be92d9142a67b2088ce6e54b, type: 3}
+  - character: 2
+    mood: 0
+    line: Until we know how to cleanse Pacha, leaving this accursed place is the best
+      we can do.
+    audioClip: {fileID: 8300000, guid: a991c5e633287c742964cadd5fc09de9, type: 3}
   - character: 1
     mood: 0
     line: "Our first priority is to get away from the city. It\u2019s crawling with
-      Puppets. Once we\u2019re on the road we can figure out what comes next."
-    audioClip: {fileID: 0}
+      Puppets."
+    audioClip: {fileID: 8300000, guid: aef864594ded23f46b2fd42070ff09ce, type: 3}
+  - character: 1
+    mood: 0
+    line: "Once we\u2019re on the road we can figure out what comes next."
+    audioClip: {fileID: 8300000, guid: 566b4daed9c0a5844a807fdb0cfd10c3, type: 3}

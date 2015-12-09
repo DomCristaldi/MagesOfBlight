@@ -11,6 +11,7 @@ GameObject:
   - 223: {fileID: 22365666}
   - 114: {fileID: 11438440}
   - 114: {fileID: 11420792}
+  - 114: {fileID: 11486452}
   m_Layer: 5
   m_Name: AgentHUDCanvas
   m_TagString: Untagged
@@ -55,6 +56,17 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &11486452
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 103392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a4a014b1fd91c34ea4b0617767a65e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!223 &22365666
 Canvas:
   m_ObjectHideFlags: 1
