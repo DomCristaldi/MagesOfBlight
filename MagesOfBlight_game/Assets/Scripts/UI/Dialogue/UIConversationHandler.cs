@@ -68,7 +68,7 @@ public class UIConversationHandler : MonoBehaviour {
 			else conversationActive = false;
 		}
 		//if enter is pressed, move to next convo as long as the dialogue is not over yet
-		if(Input.GetKeyDown(KeyCode.Return) && dialogueIndexNumber < dialogueList.Count){
+		else if(Input.GetKeyDown(KeyCode.Return) && dialogueIndexNumber < dialogueList.Count){
 			showConversation(dialogueIndexNumber);
 			dialogueIndexNumber++;
 		}
