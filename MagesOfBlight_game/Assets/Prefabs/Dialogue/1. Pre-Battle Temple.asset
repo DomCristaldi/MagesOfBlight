@@ -14,70 +14,74 @@ MonoBehaviour:
   dialogue:
   - character: 2
     mood: 0
-    line: You're Awake? Good. As soon as you can move we leave.
-    audioClip: {fileID: 0}
+    line: You're awake? Good. As soon as you can move we leave.
+    audioClip: {fileID: 8300000, guid: a1d079a168782f44ab46ad500f7bfe6a, type: 3}
   - character: 0
     mood: 0
     line: What? What is this? Where am I?
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 7fd59b825715fa04283cc8f745544b03, type: 3}
   - character: 2
     mood: 0
-    line: "You\u2019re in the Manqus temple. My name is Stein, now hurry, we can\u2019t
+    line: "You\u2019re in the Manqus Temple. My name is Stein, now get up, we can\u2019t
       linger here much longer."
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: e1d42471c845cdd409646cff4acff72e, type: 3}
   - character: 0
     mood: 0
-    line: "(While getting up) Why, what\u2019s going on?  Who are you?"
-    audioClip: {fileID: 0}
+    line: "Why, what\u2019s going on?"
+    audioClip: {fileID: 8300000, guid: 551e8951f4916f34f957ad0524c2c2ff, type: 3}
   - character: 2
     mood: 0
-    line: "My name is Stein. I\u2019m sure you\u2019re confused.  I\u2019ll explain
-      everything in time, but for now trust me and get moving."
-    audioClip: {fileID: 0}
+    line: "I\u2019m sure you\u2019re confused."
+    audioClip: {fileID: 8300000, guid: d54c3473dda929c469ec67ec659273b1, type: 3}
+  - character: 2
+    mood: 0
+    line: "I\u2019ll explain everything in time, but for now I need you to trust me
+      and get moving."
+    audioClip: {fileID: 8300000, guid: 105ee5c4236f57e48bd37ee545966846, type: 3}
   - character: 1
     mood: 0
     line: "Stein! There\u2019s a hoard of Blight Puppets outside moving towards the
-      temple, we\u2019ve got maybe five minutes."
-    audioClip: {fileID: 0}
-  - character: 2
+      temple."
+    audioClip: {fileID: 8300000, guid: 6a25f30f48ac097409262514c412e9e9, type: 3}
+  - character: 1
     mood: 0
-    line: You heard her, go!
-    audioClip: {fileID: 0}
+    line: We've got maybe five minutes.
+    audioClip: {fileID: 8300000, guid: ce8a57937bb13874ab7f3bfd2dedfc29, type: 3}
   - character: 0
     mood: 0
     line: Wait, who is she?
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: f6f44140b765a5f44a9ff60ab39333a8, type: 3}
   - character: 1
     mood: 0
     line: "Nuria. We\u2019re both Blighted, like you. It\u2019ll be useful if we\u2019re
       going to get out of here alive. "
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: d49270ca088d6b646945b6b3a275b120, type: 3}
   - character: 0
     mood: 0
-    line: "Blighted? I mean, I feel weird, but\u2026 What do you mean, \u201CBlighted\u201D?"
-    audioClip: {fileID: 0}
+    line: "Blighted? I mean, I feel weird, but\u2026 What do you mean, Blighted?"
+    audioClip: {fileID: 8300000, guid: bb51b47a2c4cbef418d20431c2789879, type: 3}
   - character: 2
     mood: 0
-    line: Look at your arm.
-    audioClip: {fileID: 0}
+    line: Just look at your arm.
+    audioClip: {fileID: 8300000, guid: d9e3c5ab1739c4c479bfa252b2f00c87, type: 3}
   - character: 0
     mood: 0
-    line: "My--WOAH. That\u2019s\u2026 I imagine that\u2019s not good... "
-    audioClip: {fileID: 0}
+    line: "My--WOAH. That\u2019s\u2026 I mean, I imagine that\u2019s not good... "
+    audioClip: {fileID: 8300000, guid: ce22163bff2143045bb7f4c273ed686d, type: 3}
   - character: 1
     mood: 0
-    line: Not good!? This Blight gives us powers! With it, I can set things on fire!
-      Stein throws rocks!
-    audioClip: {fileID: 0}
+    line: Not good!? This Blight gives us powers! With it, I can set things on fire,
+      and Stein can throw rocks!
+    audioClip: {fileID: 8300000, guid: 056913c8b3d66cf468a80a7ba054f4bd, type: 3}
   - character: 2
     mood: 0
-    line: "If you\u2019re not careful, it will kill you."
-    audioClip: {fileID: 0}
+    line: "And if you\u2019re not careful, it will kill you."
+    audioClip: {fileID: 8300000, guid: f8130c06cbbf9814ba6a6388ae654ba7, type: 3}
   - character: 1
     mood: 0
     line: "It won\u2019t kill you, it\u2019ll just-"
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 9db65a96b62e3cb4c98195293aec1cc4, type: 3}
   - character: 2
     mood: 1
     line: "Enough, Nuria.  We\u2019ll talk more later. Let\u2019s get moving."
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 898a474d98118bf46b3f76a29c6772b2, type: 3}
