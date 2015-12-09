@@ -30,7 +30,7 @@ public class TileSelectionState : BaseCombatState {
 
     public override void EndState() {
         base.EndState();
-
+        
         battleManRef.selectedAgent.GetComponent<AgentCanvasSpawner>().agentCanvas.SetActive(false);
         battleManRef.ClearSelectedAction();
     }

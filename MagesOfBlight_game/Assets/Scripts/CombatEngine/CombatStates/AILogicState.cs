@@ -205,9 +205,9 @@ public class AILogicState : BaseCombatState {
                 Debug.LogWarningFormat("AILogicState: AI Agent {0} is using puppeteer protocol, but is not a Boss AI Agent!", currentAI.name);
                 return;
             }
-            AITileAgent spawnAgent = bossAI.respawnQueue.PopFront<AITileAgent>();
+            AITileAgent spawnAgent = bossAI.respawnQueue.PopFront<AITileAgent>(true);
             if (spawnAgent == default(AITileAgent)) {
-                Debug.LogWarningFormat("AILogicState: Boss AI {0} respawn queue is empty!", bossAI.name);
+                //Debug.LogWarningFormat("AILogicState: Boss AI {0} respawn queue is empty!", bossAI.name);
             }
             else {
                 spawnAgent.SetActive(true);
@@ -217,6 +217,8 @@ public class AILogicState : BaseCombatState {
                 spawnAgent.stats.currentHealth = spawnAgent.stats.maxHealth;
                 spawnAgent.motor.currentTile = bossAI.spawnHex;
                 spawnAgent.motor.currentTile.entityOnTile = spawnAgent;
+                spawnAgent.aggroTarget = null;
+                spawnAgent.lastTarget = null;
                 for (int i = 1; i < BattleManager.singleton.enemyTeam.teamMembers.Count; i++) {
                     if (BattleManager.singleton.enemyTeam.teamMembers[i] == spawnAgent) {
                         TileAgent secondPlace = BattleManager.singleton.enemyTeam.teamMembers[1];

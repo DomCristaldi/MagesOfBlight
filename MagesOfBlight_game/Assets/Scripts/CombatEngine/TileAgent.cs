@@ -5,6 +5,7 @@ using System.Collections.Generic;
 //[RequireComponent(typeof(Motor_RigidBody))]
 [RequireComponent(typeof(TileMotor))]
 [RequireComponent(typeof(BaseStats))]
+[RequireComponent(typeof(AgentActions))]
 public class TileAgent : TileEntity {
 
     //public RigidBodyMotor motor;
@@ -26,6 +27,7 @@ public class TileAgent : TileEntity {
 
 	public int moveSteps;
 	public int maxMoveSteps;
+    MoveAction moveAction;
 
     public bool hasTurn = true;
     public bool canPerformTurn {//checks all possible conditions that would disallow a turn
@@ -76,6 +78,14 @@ public class TileAgent : TileEntity {
 
         _modelRotControl.SetDesiredLookDirec(-Vector3.forward);
 
+        agentActions = GetComponent<AgentActions>();
+
+        foreach (AgentActions.ActionData actionData in agentActions.proactiveActions) {
+            if (actionData.action as MoveAction != null) {
+                moveAction = actionData.action as MoveAction;
+            }
+        }
+
     }
 	
 	protected override void Update () {
@@ -83,7 +93,9 @@ public class TileAgent : TileEntity {
 		CheckIfKill();
         //MovementProtocol();
         LookProtocol();
-
+        if (moveAction != null) {
+            moveAction.checkDistance = moveSteps;
+        }
 	}
 
 	protected virtual void CheckIfKill () {
@@ -136,5 +148,15 @@ public class TileAgent : TileEntity {
 	public virtual void Kill () {
 		Destroy(gameObject);
 	}
+
+    public virtual void Heal (float amount) {
+        foreach (TileAgent agent in BattleManager.singleton.enemyTeam.teamMembers) {
+            AITileAgent agentAI = agent as AITileAgent;
+            if (agentAI != null && agentAI.aggroTarget == this) {
+                agentAI.aggroTarget = BattleManager.singleton.selectedAgent;
+            }
+        }
+        stats.Heal(amount);
+    }
 
 }

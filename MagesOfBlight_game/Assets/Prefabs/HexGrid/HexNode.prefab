@@ -151,8 +151,9 @@ MonoBehaviour:
   hexRing: {fileID: 2370416}
   tileNormalMat: {fileID: 2100000, guid: c9005def17466a543b40a3a6cb3ed817, type: 2}
   tileHoverMat: {fileID: 2100000, guid: b0e2f589e1b7d6b499a2fda640dbed2c, type: 2}
-  tileTargetMat: {fileID: 2100000, guid: ac47ae050c38987488555fea37b4c2f6, type: 2}
-  tileSelectableMat: {fileID: 2100000, guid: 2b22a9c991cedba4eaec2d9220f56622, type: 2}
+  tileTargetMat: {fileID: 2100000, guid: 570eadaa61c5b994fa93c8e48b750158, type: 2}
+  tileHasActionsMat: {fileID: 2100000, guid: caac44de53d63a34983da22057677491, type: 2}
+  tileEnemyMat: {fileID: 2100000, guid: 1d3e46e8105fe244fa15a7e048fe4988, type: 2}
   showEdges: 0
   showRadialLines: 0
   showConnections: 0
@@ -209,7 +210,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: tileTargetMat
       value: 
-      objectReference: {fileID: 2100000, guid: ac47ae050c38987488555fea37b4c2f6, type: 2}
+      objectReference: {fileID: 2100000, guid: 570eadaa61c5b994fa93c8e48b750158, type: 2}
     - target: {fileID: 0}
       propertyPath: m_Enabled
       value: 0
@@ -222,6 +223,14 @@ Prefab:
       propertyPath: m_ReceiveShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: tileHasActionsMat
+      value: 
+      objectReference: {fileID: 2100000, guid: caac44de53d63a34983da22057677491, type: 2}
+    - target: {fileID: 0}
+      propertyPath: tileEnemyMat
+      value: 
+      objectReference: {fileID: 2100000, guid: 1d3e46e8105fe244fa15a7e048fe4988, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 106004}

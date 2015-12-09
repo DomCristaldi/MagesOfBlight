@@ -5,9 +5,12 @@ using JBirdEngine;
 
 public class RangeBaseAction : BaseAction {
 
-	public override List<HexNode> CheckTiles () {
+    public override List<HexNode> CheckTiles () {
 		List<HexNode> nodeList = new List<HexNode>();
 		HexNode start = BattleManager.singleton.selectedTile;
+        if (includeSelf) {
+            nodeList.Add(start);
+        }
 		List<HexNode> outerRing = new List<HexNode>();
 		List<HexNode> innerCircle = new List<HexNode>();
 		List<HexNode> nextRing = new List<HexNode>();
