@@ -12,7 +12,7 @@ public class CheckTeamState : BaseCombatState {
     public override void InitState() {
         base.InitState();
 
-        Debug.Log("CHECKING TEAM");
+        //Debug.Log("CHECKING TEAM");
 
 
         if (CheckEndBattle()) {//If the battle is going to end, don't bother dealing with the teams any more
